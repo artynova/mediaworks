@@ -8,7 +8,7 @@ architectury {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/hexdummy.accesswidener")
+    accessWidenerPath = file("src/main/resources/mediaworks.accesswidener")
 }
 
 dependencies {
@@ -23,6 +23,9 @@ dependencies {
     modCompileOnly "at.petra-k.paucal:paucal-common-$minecraftVersion:$paucalVersion"
     modCompileOnly "at.petra-k.hexcasting:hexcasting-fabric-$minecraftVersion:$hexcastingVersion"
     modCompileOnly "vazkii.patchouli:Patchouli-xplat:$minecraftVersion-$patchouliVersion"
+
+    // for other-mod-friendly expression value modification
+    compileOnly(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixinExtrasVersion}"))
 }
 
 publishing {

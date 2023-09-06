@@ -52,6 +52,7 @@ allprojects {
     group = project.mavenGroup
 
     repositories {
+        mavenCentral()
         maven { url 'https://jitpack.io' }
         maven {
             url "https://squiddev.cc/maven/"
@@ -149,7 +150,7 @@ ext.getLatestChangelog = {
     return changelog.trim()
 }
 
-ext.bookPath = "data/hexdummy/patchouli_books/hexdummybook"
+ext.bookPath = "data/mediaworks/patchouli_books/mediaworksbook"
 
 tasks.register("viewLatestChangelog") {
     group "documentation"
@@ -166,6 +167,6 @@ tasks.register("generateOnlineNotebookPage") {
     exec {
         workingDir "${rootDir}"
         executable 'python'
-        args "doc/collate_data.py", "common/src/main/resources", "doc/HexCastingResources", "hexdummy", "hexdummybook", "doc/template.html", "doc/out.html"
+        args "doc/collate_data.py", "common/src/main/resources", "doc/HexCastingResources", "mediaworks", "mediaworksbook", "doc/template.html", "doc/out.html"
     }
 }

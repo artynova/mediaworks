@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "hexdummy",
+  "id": "mediaworks",
   "version": "${version}",
-  "name": "Dummy Hex Casting Addon",
+  "name": "Mediaworks",
   "description": "Please describe me!",
   "authors": [
     "artynova"
@@ -16,16 +16,24 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.hexdummy.fabric.HexDummyFabric"
+      "io.github.artynova.mediaworks.fabric.MediaworksFabric"
     ],
     "client": [
-      "net.hexdummy.fabric.HexDummyClientFabric"
+      "io.github.artynova.mediaworks.fabric.MediaworksClientFabric"
+    ],
+    "cardinal-components": [
+      "io.github.artynova.mediaworks.fabric.cc.MediaworksCardinalComponents"
     ]
   },
   "mixins": [
-    "hexdummy-common.mixins.json",
-    "hexdummy.mixins.json"
+    "mediaworks-common.mixins.json",
+    "mediaworks.mixins.json"
   ],
+  "custom": {
+    "cardinal-components": [
+      "mediaworks:astral_projection"
+    ]
+  },
   "depends": {
     "minecraft": ">=1.19.2",
     "fabricloader": ">=0.14.21",

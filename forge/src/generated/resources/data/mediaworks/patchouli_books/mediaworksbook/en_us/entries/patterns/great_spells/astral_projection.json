@@ -1,0 +1,26 @@
+{
+  "name": "mediaworks.entry.astral_projection",
+  "category": "hexcasting:patterns/great_spells",
+  "icon": "mediaworks:textures/mob_effect/astral_projection.png",
+  "sortnum": 5,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "mediaworks:astral_projection",
+      "anchor": "mediaworks:astral_projection",
+      "input": "number",
+      "output": "",
+      "text": "mediaworks.page.astral_projection.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "mediaworks.page.astral_projection.2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "mediaworks.page.astral_projection.3"
+    }
+  ]
+}

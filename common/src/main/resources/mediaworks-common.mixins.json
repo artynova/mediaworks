@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "package": "io.github.artynova.mediaworks.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+    "projection.BackgroundRendererMixin",
+    "projection.ClientPlayerEntityMixin",
+    "projection.GameRendererMixin",
+    "projection.InGameHudMixin",
+    "projection.MinecraftClientMixin",
+    "projection.MouseMixin",
+    "projection.PlayerEntityRendererMixin",
+    "projection.WorldRendererAccessor",
+    "projection.WorldRendererMixin"
+  ],
+  "mixins": [
+    "projection.EntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

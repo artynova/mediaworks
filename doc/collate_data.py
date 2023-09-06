@@ -6,7 +6,7 @@ from collections import namedtuple
 from sys import argv, stdout
 
 # TO USE:
-# python doc/collate_data.py common/src/main/resources doc/HexCastingResources hexdummy hexdummybook doc/template.html doc/out.html
+# python doc/collate_data.py common/src/main/resources doc/HexCastingResources mediaworks mediaworksbook doc/template.html doc/out.html
 
 # IMPORTANT: if you change pattern registration code, go to line 199 and verify the pattern_pat regex
 
@@ -76,6 +76,7 @@ types = {
 keys = {
     "use": "Right Click",
     "sneak": "Left Shift",
+    "mediaworks.return": ";"
 }
 
 bind1 = (lambda: None).__get__(0).__class__
@@ -211,7 +212,7 @@ def identity(x): return x
 
 pattern_pat = re.compile(
     r'(register|registerPerWorld)\(HexPattern\.fromAngles\("([qweasd]+)",\s*HexDir\.(\w+)\),\s*"([^"]+)"?')
-pattern_stubs = [(None, "net/hexdummy/registry/HexDummyPatternRegistry.java")]
+pattern_stubs = [(None, "io/github/artynova/mediaworks/casting/patterns/MediaworksPatterns.java")]
 
 
 def fetch_patterns(root_data):

@@ -17,8 +17,8 @@ loom {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
-        mixinConfig "hexdummy-common.mixins.json"
-        mixinConfig "hexdummy.mixins.json"
+        mixinConfig "mediaworks-common.mixins.json"
+        mixinConfig "mediaworks.mixins.json"
     }
 }
 
@@ -48,6 +48,8 @@ dependencies {
     modRuntimeOnly "vazkii.patchouli:Patchouli:${minecraftVersion}-${patchouliVersion}"
 
     runtimeOnly "thedarkcolour:kotlinforforge:$project.forgeKotlinVersion"
+
+    runtimeOnly(include("com.github.llamalad7.mixinextras:mixinextras-forge:${mixinExtrasVersion}"))
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }

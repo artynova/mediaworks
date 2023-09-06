@@ -4,37 +4,37 @@ loaderVersion = "[43,)"
 license = "MIT"
 
 [[mods]]
-modId = "hexdummy"
+modId = "mediaworks"
 version = "${version}"
-displayName = "Dummy Hex Casting Addon"
+displayName = "Mediaworks"
 logoFile = "icon.png"
 authors = "artynova"
 description = '''
-Describe me!
+Hex Casting addon themed around Media utilities and manipulation.
 '''
 
-[[dependencies.hexdummy]]
+[[dependencies.mediaworks]]
 modId = "forge"
 mandatory = true
 versionRange = "[43,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexdummy]]
+[[dependencies.mediaworks]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.19.2,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexdummy]]
+[[dependencies.mediaworks]]
 modId = "architectury"
 mandatory = true
 versionRange = "[6.5.85,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexdummy]]
+[[dependencies.mediaworks]]
 modId = "hexcasting"
 mandatory = true
 versionRange = "[0.10.3,)"

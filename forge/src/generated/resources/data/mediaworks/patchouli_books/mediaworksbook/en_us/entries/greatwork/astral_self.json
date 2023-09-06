@@ -1,0 +1,33 @@
+{
+  "name": "mediaworks.entry.astral_self",
+  "category": "hexcasting:greatwork",
+  "icon": "minecraft:end_crystal",
+  "entry_color": "54398a",
+  "advancement": "hexcasting:enlightenment",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "mediaworks.page.astral_self.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "mediaworks.page.astral_self.2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "mediaworks.page.astral_self.3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "mediaworks.page.astral_self.4"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "mediaworks.page.astral_self.5"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "mediaworks.page.astral_self.6"
+    }
+  ]
+}
