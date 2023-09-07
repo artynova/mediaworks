@@ -24,8 +24,7 @@ public class InGameHudMixin {
 
     @Inject(method = "getCameraPlayer", at = @At("HEAD"), cancellable = true)
     private void injectPlayerBody(CallbackInfoReturnable<PlayerEntity> cir) {
-        if (AstralProjectionClient.isDissociated())
-            cir.setReturnValue(MinecraftClient.getInstance().player);
+        if (AstralProjectionClient.isDissociated()) cir.setReturnValue(MinecraftClient.getInstance().player);
     }
 
     @Inject(method = "renderHotbar", at = @At("HEAD"))

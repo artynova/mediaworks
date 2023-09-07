@@ -10,7 +10,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
 import org.jetbrains.annotations.Nullable;
 
-public class ProjectionDataSerializer {
+public class AstralDataSerializer {
     public static final String ASTRAL_POSITION_TAG = "mediaworks:astral_pos";
     public static final String ASTRAL_IOTA_TAG = "mediaworks:astral_iota";
     public static final String ASTRAL_ORIGIN_TAG = "mediaworks:astral_origin";

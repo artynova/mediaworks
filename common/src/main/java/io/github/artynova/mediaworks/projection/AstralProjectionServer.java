@@ -26,6 +26,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.World;
 
 import java.util.HashMap;
 import java.util.List;
@@ -155,5 +157,13 @@ public class AstralProjectionServer {
         if (!(entity instanceof ServerPlayerEntity serverPlayer)) return EventResult.pass();
         endProjection(serverPlayer);
         return EventResult.pass();
+    }
+
+    /**
+     * Ends the Astral Projection state if the player body manages to change dimensions.
+     */
+    public static void handleDimensionChange(ServerPlayerEntity player, RegistryKey<World> previous, RegistryKey<World> current) {
+        if (!isProjectingOnServer(player)) return;
+        endProjectionAbruptly(player);
     }
 }

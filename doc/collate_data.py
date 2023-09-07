@@ -76,7 +76,7 @@ types = {
 keys = {
     "use": "Right Click",
     "sneak": "Left Shift",
-    "mediaworks.return": ";"
+    "inventory": "E"
 }
 
 bind1 = (lambda: None).__get__(0).__class__

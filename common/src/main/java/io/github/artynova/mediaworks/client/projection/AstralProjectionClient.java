@@ -3,9 +3,9 @@ package io.github.artynova.mediaworks.client.projection;
 import com.mojang.blaze3d.systems.RenderSystem;
 import io.github.artynova.mediaworks.client.render.RenderHelper;
 import io.github.artynova.mediaworks.client.render.ShaderHandler;
-import io.github.artynova.mediaworks.client.render.WorldRenderContext;
 import io.github.artynova.mediaworks.networking.AstralPositionSyncC2SMsg;
 import io.github.artynova.mediaworks.networking.CastAstralIotaC2SMsg;
+import io.github.artynova.mediaworks.networking.EndProjectionC2SMsg;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.projection.AstralPosition;
 import io.github.artynova.mediaworks.sound.AstralAmbienceLoop;
@@ -14,12 +14,14 @@ import io.github.artynova.mediaworks.util.MathHelpers;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.input.Input;
 import net.minecraft.client.input.KeyboardInput;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.client.render.BackgroundRenderer;
-import net.minecraft.client.render.FogShape;
+import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.function.TriFunction;
 
@@ -28,7 +30,7 @@ public class AstralProjectionClient {
     private static final MinecraftClient CLIENT = MinecraftClient.getInstance();
     private static final TriFunction<Float, Float, Float, Float> INTERPOLATION_DELTA_FUNCTION = MathHelpers.slowdownInterpolationProgressWithCoeff(10);
     private static final int CLOSE_OVERLAY_COLOR = 0x00888888;
-    private static final int FAR_OVERLAY_COLOR = 0xE9111111;
+    private static final int FAR_OVERLAY_COLOR = 0xEE111111;
     private static final float[] FOG_COMPONENTS = new float[]{0.588f, 0.588f, 0.588f};
     private static final float FOG_THICKENING_GRADIENT_BLOCKS = 1.0f;
     private static final float FAR_FOG_RADIUS = 16f;
@@ -68,23 +70,10 @@ public class AstralProjectionClient {
     /**
      * Renders the player's astral body.
      */
-    public static void renderAstralBody(WorldRenderContext context) {
-        if (context.getCamera().isThirdPerson()) {
-            RenderHelper.renderPlayerEntity(astralCamera, context.getMatrixStack(), context.getWorldRenderer(), context.getCamera(), context.getTickDelta(), context.getConsumers());
+    public static void renderAstralBody(MatrixStack matrixStack, WorldRenderer worldRenderer, Camera camera, float tickDelta, VertexConsumerProvider consumers) {
+        if (camera.isThirdPerson()) {
+            RenderHelper.renderPlayerEntity(astralCamera, matrixStack, worldRenderer, camera, tickDelta, consumers);
         }
-    }
-
-    public static void handleHudRender(MatrixStack matrixStack, float tickDelta) {
-        if (isDissociated()) {
-            MinecraftClient client = MinecraftClient.getInstance();
-            float width = client.getWindow().getWidth();
-            float height = client.getWindow().getHeight();
-            float squaredDistance = (float) astralCamera.getPos().squaredDistanceTo(client.player.getPos());
-            int color = RenderHelper.interpolateColor(squaredDistance, 0, (float) Math.pow(HexHelpers.getAmbitRadius(client.player), 2), CLOSE_OVERLAY_COLOR, FAR_OVERLAY_COLOR, INTERPOLATION_DELTA_FUNCTION);
-            System.out.println(color);
-            RenderHelper.drawRect(matrixStack, 0, 0, width, height, color);
-        }
-
     }
 
     public static void applyFogPosition(float viewDistance, BackgroundRenderer.FogType fogType) {
@@ -124,20 +113,28 @@ public class AstralProjectionClient {
         ShaderHandler.getShader().render(tickDelta);
     }
 
-    public static void setupShaderDimensions(int width, int height) {
-        ShaderHandler.getShader().setupDimensions(width, height);
+    public static void renderOverlay(MatrixStack matrixStack) {
+        int scaledWidth = CLIENT.getWindow().getScaledWidth();
+        int scaledHeight = CLIENT.getWindow().getScaledHeight();
+        MinecraftClient client = MinecraftClient.getInstance();
+        float squaredDistance = (float) astralCamera.getPos().squaredDistanceTo(client.player.getPos());
+        int color = RenderHelper.interpolateColor(squaredDistance, 0, (float) Math.pow(HexHelpers.getAmbitRadius(client.player), 2), CLOSE_OVERLAY_COLOR, FAR_OVERLAY_COLOR, INTERPOLATION_DELTA_FUNCTION);
+        System.out.println(Integer.toHexString(color));
+        DrawableHelper.fill(matrixStack, 0, 0, scaledWidth, scaledHeight, color);
     }
 
     public static void startProjection() {
-        MinecraftClient client = MinecraftClient.getInstance();
-        ClientPlayerEntity player = client.player;
+        ClientPlayerEntity player = CLIENT.player;
         ambienceLoop = new AstralAmbienceLoop(player);
-        astralCamera = new AstralCameraEntity(client, client.world);
-        astralCamera.input = new KeyboardInput(client.options);
+        astralCamera = new AstralCameraEntity(CLIENT, CLIENT.world);
+        astralCamera.input = new KeyboardInput(CLIENT.options);
         CLIENT.getSoundManager().play(ambienceLoop);
         clearInputActivities(player.input);
         player.input = new Input();
-        client.setCameraEntity(astralCamera);
+        CLIENT.setCameraEntity(astralCamera);
+        MutableText text = Text.translatable("mediaworks.messages.projection", CLIENT.options.inventoryKey.getBoundKeyLocalizedText());
+        CLIENT.inGameHud.setOverlayMessage(text, false);
+        CLIENT.getNarratorManager().narrate(text);
     }
 
     private static void clearInputActivities(Input input) {
@@ -182,6 +179,10 @@ public class AstralProjectionClient {
     public static void syncFromServer(AstralPosition incoming) {
         if (!isDissociated()) startProjection();
         astralCamera.updatePositionAndAngles(incoming.coordinates().getX(), incoming.coordinates().getY(), incoming.coordinates().getZ(), incoming.yaw(), incoming.pitch());
+    }
+
+    public static void initiateEarlyEnd() {
+        MediaworksNetworking.sendToServer(new EndProjectionC2SMsg());
     }
 
     public static AstralCameraEntity getAstralCamera() {

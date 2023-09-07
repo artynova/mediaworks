@@ -10,5 +10,6 @@ public class MediaworksEvents {
         TickEvent.ServerLevelTick.PLAYER_POST.register(AstralProjectionServer::handlePlayerTick);
         PlayerEvent.PLAYER_JOIN.register(AstralProjectionServer::handleJoin);
         EntityEvent.LIVING_DEATH.register(AstralProjectionServer::handleDeath);
+        PlayerEvent.CHANGE_DIMENSION.register(AstralProjectionServer::handleDimensionChange);
     }
 }

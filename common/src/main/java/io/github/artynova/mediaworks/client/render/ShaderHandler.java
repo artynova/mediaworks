@@ -19,7 +19,7 @@ public class ShaderHandler implements SynchronousResourceReloader {
         try {
             if (shader != null) shader.close();
             shader = new ShaderEffect(MinecraftClient.getInstance().getTextureManager(), MinecraftClient.getInstance().getResourceManager(), MinecraftClient.getInstance().getFramebuffer(), SHADER_ID);
-            shader.setupDimensions(MinecraftClient.getInstance().getWindow().getFramebufferWidth(), MinecraftClient.getInstance().getWindow().getFramebufferHeight());
+            setupShaderDimensions(MinecraftClient.getInstance().getWindow().getFramebufferWidth(), MinecraftClient.getInstance().getWindow().getFramebufferHeight());
         } catch (IOException e) {
             LOGGER.error(e);
             throw new RuntimeException(e);
@@ -29,6 +29,10 @@ public class ShaderHandler implements SynchronousResourceReloader {
     public static ShaderEffect getShader() {
         if (shader == null) loadShader();
         return shader;
+    }
+
+    public static void setupShaderDimensions(int width, int height) {
+        if (shader != null) shader.setupDimensions(width, height);
     }
 
     @Override

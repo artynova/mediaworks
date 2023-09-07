@@ -20,6 +20,7 @@ public class CastAstralIotaC2SMsg {
     }
 
     public void encode(PacketByteBuf buf) {
+
     }
 
     public void apply(Supplier<NetworkManager.PacketContext> contextSupplier) {

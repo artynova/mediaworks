@@ -15,6 +15,7 @@ public class EndProjectionS2CMsg {
     }
 
     public void encode(PacketByteBuf buf) {
+
     }
 
     public void apply(Supplier<NetworkManager.PacketContext> contextSupplier) {

@@ -3,7 +3,7 @@ package io.github.artynova.mediaworks.fabric.cc;
 import at.petrak.hexcasting.api.spell.iota.Iota;
 import dev.onyxstudios.cca.api.v3.component.Component;
 import io.github.artynova.mediaworks.projection.AstralPosition;
-import io.github.artynova.mediaworks.projection.ProjectionDataSerializer;
+import io.github.artynova.mediaworks.projection.AstralDataSerializer;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Vec3d;
@@ -22,16 +22,16 @@ public class AstralProjectionComp implements Component {
 
     @Override
     public void readFromNbt(@NotNull NbtCompound tag) {
-        position = ProjectionDataSerializer.getPlayerAstralPosition(tag);
-        iota = ProjectionDataSerializer.getPlayerAstralIota(tag, owner.getWorld());
-        origin = ProjectionDataSerializer.getPlayerAstralOrigin(tag);
+        position = AstralDataSerializer.getPlayerAstralPosition(tag);
+        iota = AstralDataSerializer.getPlayerAstralIota(tag, owner.getWorld());
+        origin = AstralDataSerializer.getPlayerAstralOrigin(tag);
     }
 
     @Override
     public void writeToNbt(@NotNull NbtCompound tag) {
-        ProjectionDataSerializer.putPlayerAstralPosition(tag, position);
-        ProjectionDataSerializer.putPlayerAstralIota(tag, iota);
-        ProjectionDataSerializer.putPlayerAstralOrigin(tag, origin);
+        AstralDataSerializer.putPlayerAstralPosition(tag, position);
+        AstralDataSerializer.putPlayerAstralIota(tag, iota);
+        AstralDataSerializer.putPlayerAstralOrigin(tag, origin);
     }
 
     public @Nullable AstralPosition getPosition() {
