@@ -20,7 +20,7 @@
   "mediaworks.entry.astral_utils": "Astral Utilities",
   "mediaworks.page.astral_utils.1": "A family of patterns that interact with my $(l:mediaworks:greatwork/astral_self)Astral Self/$ during projection.",
   "hexcasting.spell.book.mediaworks:astral_pos": "Astral Locale Reflection",
-  "mediaworks.page.astral_utils.astral_pos": "Returns the \"eye\" position vector of my astral self, similarly to how $(l:patterns/basics#hexcasting:entity_pos/eye)$(thing)Compass' Purification/$ works for my physical body. Since this is a $(thing)Reflection/$, my astral self's exact position is $(italic)almost/$ safe from other casters.$(br)$(italic)They still see the particles, though.../$",
+  "mediaworks.page.astral_utils.astral_pos": "Returns the \"eye\" position vector of my astral self, similarly to how $(l:patterns/basics#hexcasting:entity_pos/eye)$(thing)Compass' Purification/$ works for my physical body. Returns $(l:casting/influences)$(thing)Null/$ if I am not projecting.",
   "hexcasting.spell.book.mediaworks:astral_look": "Astral Gaze Reflection",
-  "mediaworks.page.astral_utils.astral_look": "Returns the direction my astral self is looking in, similarly to how $(l:patterns/basics#hexcasting:get_entity_look)$(thing)Alidade's Purification/$ works for my physical body. Since this is a $(thing)Reflection/$, my astral self's look direction is $(italic)almost/$ safe from other casters."
+  "mediaworks.page.astral_utils.astral_look": "Returns the direction my astral self is looking in, similarly to how $(l:patterns/basics#hexcasting:get_entity_look)$(thing)Alidade's Purification/$ works for my physical body. Returns $(l:casting/influences)$(thing)Null/$ if I am not projecting."
 }

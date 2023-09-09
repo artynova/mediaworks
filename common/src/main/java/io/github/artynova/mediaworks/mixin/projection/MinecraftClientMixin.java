@@ -63,4 +63,9 @@ public class MinecraftClientMixin {
         if (AstralProjectionClient.isDissociated()) AstralProjectionClient.initiateEarlyEnd();
         else operation.call(instance, screen);
     }
+
+    @ModifyExpressionValue(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isSpectator()Z", ordinal = 2))
+    private boolean cancelDrop(boolean previous) {
+        return previous || AstralProjectionClient.isDissociated();
+    }
 }
