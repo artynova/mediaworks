@@ -1,17 +1,24 @@
 package io.github.artynova.mediaworks.macula;
 
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
-import io.github.artynova.mediaworks.Mediaworks;
-import io.github.artynova.mediaworks.client.macula.TextVisageRenderer;
 import io.github.artynova.mediaworks.registry.MediaworksRegistries;
+import net.minecraft.util.Identifier;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static io.github.artynova.mediaworks.Mediaworks.id;
 
 public class MediaworksVisageTypes {
-    public static final DeferredRegister<VisageType<?>> VISAGE_TYPES = DeferredRegister.create(Mediaworks.MOD_ID, MediaworksRegistries.VISAGE_TYPE_REGISTRY_KEY);
-    public static final RegistrySupplier<VisageType<TextVisage>> TEXT = VISAGE_TYPES.register("text", () -> TextVisage.TYPE);
+    private static final Map<Identifier, VisageType<?>> TYPES = new HashMap<>();
+    public static final VisageType<TextVisage> TEXT = register("text", TextVisage.TYPE);
 
     public static void init() {
-        VISAGE_TYPES.register();
+        for (Map.Entry<Identifier, VisageType<?>> entry : TYPES.entrySet())
+            MediaworksRegistries.VISAGE_TYPES.register(entry.getKey(), entry::getValue);
     }
 
+    public static <T extends VisageType<?>> T register(String name, T visageType) {
+        TYPES.put(id(name), visageType);
+        return visageType;
+    }
 }

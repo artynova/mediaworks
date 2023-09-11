@@ -31,7 +31,6 @@ public class ShaderLoader implements SynchronousResourceReloader {
     }
 
     public static ShaderEffect getShader() {
-        if (shader == null) loadShader();
         return shader;
     }
 

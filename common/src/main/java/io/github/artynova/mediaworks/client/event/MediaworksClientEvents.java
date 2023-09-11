@@ -18,8 +18,5 @@ public class MediaworksClientEvents {
         ClientPlayerEvent.CLIENT_PLAYER_QUIT.register(AstralProjectionClient::handleQuit);
 
         ClientPlayerEvent.CLIENT_PLAYER_QUIT.register(MaculaClient::handleQuit);
-
-        ReloadListenerRegistry.register(ResourceType.CLIENT_RESOURCES, ShaderLoader.getInstance());
-        ReloadListenerRegistry.register(ResourceType.CLIENT_RESOURCES, VisageRendererLoader.getInstance());
     }
 }

@@ -22,9 +22,6 @@ public class MaculaServer {
      * Syncs macula data to the joining client.
      */
     public static void handleJoin(ServerPlayerEntity player) {
-        EntityIota iota = new EntityIota(player);
-        Visage visage = new TextVisage(TextVisage.captureText(iota), new Vec2f(0,0));
-        MediaworksAbstractions.addToMacula(player, visage);
         syncToClient(player);
     }
 

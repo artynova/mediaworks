@@ -1,7 +1,6 @@
 package io.github.artynova.mediaworks.client.macula;
 
 import dev.architectury.registry.registries.Registries;
-import dev.architectury.registry.registries.RegistrySupplier;
 import io.github.artynova.mediaworks.macula.Visage;
 import io.github.artynova.mediaworks.macula.VisageType;
 import io.github.artynova.mediaworks.registry.MediaworksRegistries;
@@ -27,7 +26,7 @@ public class VisageRenderers {
             try {
                 map.put(type, factory.create());
             } catch (Exception e) {
-                throw new RuntimeException("Failed to create renderer for " + Registries.getId(type, MediaworksRegistries.VISAGE_TYPE_REGISTRY_KEY));
+                throw new RuntimeException("Failed to create renderer for " + MediaworksRegistries.getVisageTypeId(type));
             }
         });
         return map;
