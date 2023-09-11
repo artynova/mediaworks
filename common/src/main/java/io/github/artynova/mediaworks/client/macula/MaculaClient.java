@@ -19,6 +19,7 @@ public class MaculaClient {
     private static List<VisageRenderer.Prepared<?>> preparedRenderers;
 
     public static void render(MatrixStack matrixStack) {
+        System.out.println("try render");
         assert CLIENT.world != null;
         preparedRenderers.forEach(renderer -> renderer.render(matrixStack));
         preparedRenderers.removeIf(VisageRenderer.Prepared::doneDisplaying);
@@ -26,7 +27,11 @@ public class MaculaClient {
 
     public static void syncFromServer(NbtCompound maculaCompound) {
         assert CLIENT.world != null;
+        System.out.println("compound:");
+        System.out.println(maculaCompound);
         Macula macula = MaculaSerializer.getMacula(maculaCompound, CLIENT.world);
+        System.out.println("decoded macula");
+        System.out.println(macula);
         setMacula(macula);
     }
 

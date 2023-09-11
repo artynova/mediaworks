@@ -7,7 +7,7 @@ import io.github.artynova.mediaworks.networking.projection.SyncAstralPositionC2S
 import io.github.artynova.mediaworks.networking.projection.CastAstralIotaC2SMsg;
 import io.github.artynova.mediaworks.networking.projection.EndProjectionC2SMsg;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
-import io.github.artynova.mediaworks.projection.AstralPosition;
+import io.github.artynova.mediaworks.logic.projection.AstralPosition;
 import io.github.artynova.mediaworks.sound.AstralAmbienceLoop;
 import io.github.artynova.mediaworks.util.HexHelpers;
 import io.github.artynova.mediaworks.util.MathHelpers;

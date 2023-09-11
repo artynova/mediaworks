@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.projection;
+package io.github.artynova.mediaworks.logic.projection;
 
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtDouble;

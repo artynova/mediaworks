@@ -7,6 +7,7 @@ import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
 import io.github.artynova.mediaworks.MediaworksAbstractions
+import io.github.artynova.mediaworks.macula.MaculaServer
 
 class OpMaculaClear : SpellAction {
     override val argc: Int = 0

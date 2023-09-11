@@ -2,7 +2,7 @@ package io.github.artynova.mediaworks.networking.projection;
 
 import dev.architectury.networking.NetworkManager;
 import io.github.artynova.mediaworks.client.projection.AstralProjectionClient;
-import io.github.artynova.mediaworks.projection.AstralPosition;
+import io.github.artynova.mediaworks.logic.projection.AstralPosition;
 import net.minecraft.network.PacketByteBuf;
 
 import java.util.function.Supplier;

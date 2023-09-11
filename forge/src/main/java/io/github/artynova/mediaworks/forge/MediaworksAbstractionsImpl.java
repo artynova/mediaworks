@@ -1,14 +1,16 @@
 package io.github.artynova.mediaworks.forge;
 
 import at.petrak.hexcasting.api.spell.iota.Iota;
+import io.github.artynova.mediaworks.forge.capabilities.MediaworksCapabilities;
 import io.github.artynova.mediaworks.macula.Macula;
 import io.github.artynova.mediaworks.macula.MaculaSerializer;
 import io.github.artynova.mediaworks.macula.Visage;
 import io.github.artynova.mediaworks.macula.VisageSerializer;
-import io.github.artynova.mediaworks.networking.NbtCompoundMsg;
+import io.github.artynova.mediaworks.logic.projection.AstralProjection;
+import io.github.artynova.mediaworks.logic.projection.AstralProjectionHolder;
 import io.github.artynova.mediaworks.networking.SyncMaculaS2CMsg;
-import io.github.artynova.mediaworks.projection.AstralDataSerializer;
-import io.github.artynova.mediaworks.projection.AstralPosition;
+import io.github.artynova.mediaworks.logic.projection.AstralDataSerializer;
+import io.github.artynova.mediaworks.logic.projection.AstralPosition;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
@@ -17,29 +19,13 @@ import net.minecraft.util.math.Vec3d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
 public class MediaworksAbstractionsImpl {
-    public static @Nullable AstralPosition getAstralPosition(ServerPlayerEntity player) {
-        return AstralDataSerializer.getPlayerAstralPosition(player.getPersistentData());
-    }
-
-    public static void setAstralPosition(ServerPlayerEntity player, @Nullable AstralPosition data) {
-        AstralDataSerializer.putPlayerAstralPosition(player.getPersistentData(), data);
-    }
-
-    public static @Nullable Iota getAstralIota(ServerPlayerEntity player) {
-        return AstralDataSerializer.getPlayerAstralIota(player.getPersistentData(), player.getWorld());
-    }
-
-    public static void setAstralIota(ServerPlayerEntity player, @Nullable Iota iota) {
-        AstralDataSerializer.putPlayerAstralIota(player.getPersistentData(), iota);
-    }
-
-    public static @Nullable Vec3d getAstralOrigin(ServerPlayerEntity player) {
-        return AstralDataSerializer.getPlayerAstralOrigin(player.getPersistentData());
-    }
-
-    public static void setAstralOrigin(ServerPlayerEntity player, @Nullable Vec3d position) {
-        AstralDataSerializer.putPlayerAstralOrigin(player.getPersistentData(), position);
+    public static @NotNull AstralProjection getProjection(@NotNull ServerPlayerEntity player) {
+        Optional<AstralProjectionHolder> cap = player.getCapability(MediaworksCapabilities.PROJECTION_HOLDER_CAP).resolve();
+        assert cap.isPresent(); // there should not be such a situation where this capability is missing
+        return cap.get().unwrap();
     }
 
     public static Macula getMacula(@NotNull ServerPlayerEntity player) {

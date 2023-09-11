@@ -1,7 +1,7 @@
 package io.github.artynova.mediaworks.networking.projection;
 
 import dev.architectury.networking.NetworkManager;
-import io.github.artynova.mediaworks.projection.AstralProjectionServer;
+import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 

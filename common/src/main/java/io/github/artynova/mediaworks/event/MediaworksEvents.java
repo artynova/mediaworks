@@ -7,7 +7,7 @@ import dev.architectury.registry.ReloadListenerRegistry;
 import io.github.artynova.mediaworks.client.macula.VisageRendererLoader;
 import io.github.artynova.mediaworks.client.render.ShaderLoader;
 import io.github.artynova.mediaworks.macula.MaculaServer;
-import io.github.artynova.mediaworks.projection.AstralProjectionServer;
+import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer;
 import net.minecraft.resource.ResourceType;
 
 public class MediaworksEvents {
@@ -17,6 +17,8 @@ public class MediaworksEvents {
 
         TickEvent.ServerLevelTick.PLAYER_POST.register(AstralProjectionServer::handlePlayerTick);
         PlayerEvent.PLAYER_JOIN.register(AstralProjectionServer::handleJoin);
+        PlayerEvent.PLAYER_QUIT.register(AstralProjectionServer::handleQuit);
+        PlayerEvent.PLAYER_CLONE.register(AstralProjectionServer::handleClone);
         EntityEvent.LIVING_DEATH.register(AstralProjectionServer::handleDeath);
         PlayerEvent.CHANGE_DIMENSION.register(AstralProjectionServer::handleDimensionChange);
 

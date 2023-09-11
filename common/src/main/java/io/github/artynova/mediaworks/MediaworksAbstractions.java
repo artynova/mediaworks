@@ -1,47 +1,17 @@
 package io.github.artynova.mediaworks;
 
-import at.petrak.hexcasting.api.spell.iota.Iota;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import io.github.artynova.mediaworks.macula.Macula;
 import io.github.artynova.mediaworks.macula.Visage;
-import io.github.artynova.mediaworks.macula.VisageType;
+import io.github.artynova.mediaworks.logic.projection.AstralProjection;
 import io.github.artynova.mediaworks.networking.SyncMaculaS2CMsg;
-import io.github.artynova.mediaworks.projection.AstralPosition;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.registry.Registry;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 // Static helper methods that depend on the mod loader in some way.
 public class MediaworksAbstractions {
     @ExpectPlatform
-    public static @Nullable AstralPosition getAstralPosition(@NotNull ServerPlayerEntity player) {
-        throw new AssertionError();
-    }
-
-    @ExpectPlatform
-    public static void setAstralPosition(@NotNull ServerPlayerEntity player, @Nullable AstralPosition position) {
-        throw new AssertionError();
-    }
-
-    @ExpectPlatform
-    public static @Nullable Iota getAstralIota(@NotNull ServerPlayerEntity player) {
-        throw new AssertionError();
-    }
-
-    @ExpectPlatform
-    public static void setAstralIota(@NotNull ServerPlayerEntity player, @Nullable Iota iota) {
-        throw new AssertionError();
-    }
-
-    @ExpectPlatform
-    public static @Nullable Vec3d getAstralOrigin(@NotNull ServerPlayerEntity player) {
-        throw new AssertionError();
-    }
-
-    @ExpectPlatform
-    public static void setAstralOrigin(@NotNull ServerPlayerEntity player, @Nullable Vec3d position) {
+    public static @NotNull AstralProjection getProjection(@NotNull ServerPlayerEntity player) {
         throw new AssertionError();
     }
 

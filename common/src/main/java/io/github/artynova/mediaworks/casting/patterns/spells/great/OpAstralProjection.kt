@@ -8,8 +8,8 @@ import at.petrak.hexcasting.api.spell.casting.sideeffects.OperatorSideEffect
 import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.mishaps.MishapImmuneEntity
 import at.petrak.hexcasting.api.spell.mishaps.MishapNotEnoughArgs
-import io.github.artynova.mediaworks.MediaworksAbstractions
 import io.github.artynova.mediaworks.effect.MediaworksEffects
+import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer
 import net.minecraft.entity.effect.StatusEffectInstance
 
 class OpAstralProjection : SpellAction {
@@ -88,7 +88,7 @@ class OpAstralProjection : SpellAction {
                 )
             )
 
-            MediaworksAbstractions.setAstralIota(ctx.caster, ravenmind)
+            AstralProjectionServer.getProjection(ctx.caster).iota = ravenmind
         }
     }
 }

@@ -32,6 +32,7 @@ public class TextVisageRenderer implements VisageRenderer<TextVisage> {
 
         @Override
         public void render(MatrixStack matrixStack) {
+            System.out.println("ACTUALLY RENDER");
             int x, y;
             int maxWidth, maxHeight;
             x = Math.round(visage.getOrigin().x);

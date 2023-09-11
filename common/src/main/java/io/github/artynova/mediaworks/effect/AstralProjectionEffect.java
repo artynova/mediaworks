@@ -1,6 +1,6 @@
 package io.github.artynova.mediaworks.effect;
 
-import io.github.artynova.mediaworks.projection.AstralProjectionServer;
+import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
