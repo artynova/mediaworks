@@ -1,9 +1,12 @@
 package io.github.artynova.mediaworks;
 
+import io.github.artynova.mediaworks.casting.iotas.MediaworksIotaTypes;
 import io.github.artynova.mediaworks.casting.patterns.MediaworksPatterns;
 import io.github.artynova.mediaworks.effect.MediaworksEffects;
 import io.github.artynova.mediaworks.event.MediaworksEvents;
+import io.github.artynova.mediaworks.macula.MediaworksVisageTypes;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
+import io.github.artynova.mediaworks.registry.MediaworksRegistries;
 import io.github.artynova.mediaworks.sound.MediaworksSounds;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
@@ -15,11 +18,14 @@ public class Mediaworks {
 
 
     public static void init() {
+        MediaworksRegistries.init();
         MediaworksEffects.init();
+        MediaworksIotaTypes.init();
         MediaworksPatterns.init();
         MediaworksEvents.init();
         MediaworksNetworking.init();
         MediaworksSounds.init();
+        MediaworksVisageTypes.init();
     }
 
     /**

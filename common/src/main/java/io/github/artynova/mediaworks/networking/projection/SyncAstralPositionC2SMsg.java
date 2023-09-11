@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.networking;
+package io.github.artynova.mediaworks.networking.projection;
 
 import dev.architectury.networking.NetworkManager;
 import io.github.artynova.mediaworks.projection.AstralPosition;
@@ -8,12 +8,12 @@ import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.function.Supplier;
 
-public class AstralPositionSyncC2SMsg extends AstralPositionMsg {
-    public AstralPositionSyncC2SMsg(AstralPosition data) {
+public class SyncAstralPositionC2SMsg extends AstralPositionMsg {
+    public SyncAstralPositionC2SMsg(AstralPosition data) {
         super(data);
     }
 
-    public AstralPositionSyncC2SMsg(PacketByteBuf buf) {
+    public SyncAstralPositionC2SMsg(PacketByteBuf buf) {
         super(buf);
     }
 

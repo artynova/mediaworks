@@ -2,6 +2,7 @@ package io.github.artynova.mediaworks.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import io.github.artynova.mediaworks.Mediaworks;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -13,5 +14,6 @@ public class MediaworksForge {
         EventBuses.registerModEventBus(Mediaworks.MOD_ID, bus);
         bus.addListener(MediaworksClientForge::init);
         Mediaworks.init();
+        CapabilityManager.INSTANCE
     }
 }

@@ -1,7 +1,7 @@
 package io.github.artynova.mediaworks.mixin.projection;
 
 import io.github.artynova.mediaworks.client.projection.AstralProjectionClient;
-import io.github.artynova.mediaworks.client.render.ShaderHandler;
+import io.github.artynova.mediaworks.client.render.ShaderLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.GameRenderer;
@@ -27,13 +27,6 @@ public abstract class GameRendererMixin {
         }
     }
 
-//    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gl/Framebuffer;beginWrite(Z)V"))
-//    private void applyShaderGame(float tickDelta, long startTime, boolean tick, CallbackInfo ci) {
-//        if (AstralProjectionClient.isDissociated()) {
-//            AstralProjectionClient.renderShader(tickDelta);
-//        }
-//    }
-
     @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;lerp(FFF)F", ordinal = 0), locals = LocalCapture.CAPTURE_FAILHARD)
     private void applyOverlay(float tickDelta, long startTime, boolean tick, CallbackInfo ci, int i, int j, Window window, Matrix4f matrix4f, MatrixStack matrixStack, MatrixStack matrixStack2) {
         if (AstralProjectionClient.isDissociated()) {
@@ -42,7 +35,7 @@ public abstract class GameRendererMixin {
     }
 
     @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiler/Profiler;pop()V"))
-    private void applyShaderHud(float tickDelta, long startTime, boolean tick, CallbackInfo ci) {
+    private void applyShader(float tickDelta, long startTime, boolean tick, CallbackInfo ci) {
         if (AstralProjectionClient.isDissociated()) {
             AstralProjectionClient.renderShader(tickDelta);
             getClient().getFramebuffer().beginWrite(true); // so that projection shader doesn't kill menu rendering
@@ -51,6 +44,6 @@ public abstract class GameRendererMixin {
 
     @Inject(method = "onResized", at = @At(value = "TAIL"))
     private void onResized(int width, int height, CallbackInfo ci) {
-        ShaderHandler.setupShaderDimensions(width, height);
+        ShaderLoader.setupShaderDimensions(width, height);
     }
 }
