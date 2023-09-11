@@ -31,7 +31,8 @@
   ],
   "custom": {
     "cardinal-components": [
-      "mediaworks:astral_projection"
+      "mediaworks:astral_projection",
+      "mediaworks:macula"
     ]
   },
   "depends": {

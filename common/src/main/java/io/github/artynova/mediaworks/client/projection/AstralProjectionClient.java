@@ -2,10 +2,10 @@ package io.github.artynova.mediaworks.client.projection;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import io.github.artynova.mediaworks.client.render.RenderHelper;
-import io.github.artynova.mediaworks.client.render.ShaderHandler;
-import io.github.artynova.mediaworks.networking.AstralPositionSyncC2SMsg;
-import io.github.artynova.mediaworks.networking.CastAstralIotaC2SMsg;
-import io.github.artynova.mediaworks.networking.EndProjectionC2SMsg;
+import io.github.artynova.mediaworks.client.render.ShaderLoader;
+import io.github.artynova.mediaworks.networking.projection.SyncAstralPositionC2SMsg;
+import io.github.artynova.mediaworks.networking.projection.CastAstralIotaC2SMsg;
+import io.github.artynova.mediaworks.networking.projection.EndProjectionC2SMsg;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.projection.AstralPosition;
 import io.github.artynova.mediaworks.sound.AstralAmbienceLoop;
@@ -29,8 +29,8 @@ import org.apache.commons.lang3.function.TriFunction;
 public class AstralProjectionClient {
     private static final MinecraftClient CLIENT = MinecraftClient.getInstance();
     private static final TriFunction<Float, Float, Float, Float> INTERPOLATION_DELTA_FUNCTION = MathHelpers.slowdownInterpolationProgressWithCoeff(10);
-    private static final int CLOSE_OVERLAY_COLOR = 0x00888888;
-    private static final int FAR_OVERLAY_COLOR = 0xEE111111;
+    private static final int CLOSE_OVERLAY_COLOR = 0x00_888888;
+    private static final int FAR_OVERLAY_COLOR = 0xEE_111111;
     private static final float[] FOG_COMPONENTS = new float[]{0.588f, 0.588f, 0.588f};
     private static final float FOG_THICKENING_GRADIENT_BLOCKS = 1.0f;
     private static final float FAR_FOG_RADIUS = 16f;
@@ -110,7 +110,7 @@ public class AstralProjectionClient {
     }
 
     public static void renderShader(float tickDelta) {
-        ShaderHandler.getShader().render(tickDelta);
+        ShaderLoader.getShader().render(tickDelta);
     }
 
     public static void renderOverlay(MatrixStack matrixStack) {
@@ -119,7 +119,6 @@ public class AstralProjectionClient {
         MinecraftClient client = MinecraftClient.getInstance();
         float squaredDistance = (float) astralCamera.getPos().squaredDistanceTo(client.player.getPos());
         int color = RenderHelper.interpolateColor(squaredDistance, 0, (float) Math.pow(HexHelpers.getAmbitRadius(client.player), 2), CLOSE_OVERLAY_COLOR, FAR_OVERLAY_COLOR, INTERPOLATION_DELTA_FUNCTION);
-        System.out.println(Integer.toHexString(color));
         DrawableHelper.fill(matrixStack, 0, 0, scaledWidth, scaledHeight, color);
     }
 
@@ -173,7 +172,7 @@ public class AstralProjectionClient {
 
     public static void syncToServer() {
         if (!isDissociated()) return;
-        MediaworksNetworking.sendToServer(new AstralPositionSyncC2SMsg(getAstralPosition()));
+        MediaworksNetworking.sendToServer(new SyncAstralPositionC2SMsg(getAstralPosition()));
     }
 
     public static void syncFromServer(AstralPosition incoming) {

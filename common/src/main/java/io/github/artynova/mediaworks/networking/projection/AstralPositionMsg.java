@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.networking;
+package io.github.artynova.mediaworks.networking.projection;
 
 import dev.architectury.networking.NetworkManager;
 import io.github.artynova.mediaworks.projection.AstralPosition;

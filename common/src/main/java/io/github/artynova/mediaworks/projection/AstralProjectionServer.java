@@ -10,8 +10,8 @@ import at.petrak.hexcasting.xplat.IXplatAbstractions;
 import dev.architectury.event.EventResult;
 import io.github.artynova.mediaworks.MediaworksAbstractions;
 import io.github.artynova.mediaworks.effect.MediaworksEffects;
-import io.github.artynova.mediaworks.networking.AstralPositionSyncS2CMsg;
-import io.github.artynova.mediaworks.networking.EndProjectionS2CMsg;
+import io.github.artynova.mediaworks.networking.projection.SyncAstralPositionS2CMsg;
+import io.github.artynova.mediaworks.networking.projection.EndProjectionS2CMsg;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.networking.SpawnHexParticlesS2CMsg;
 import io.github.artynova.mediaworks.sound.MediaworksSounds;
@@ -62,7 +62,7 @@ public class AstralProjectionServer {
     }
 
     public static void syncToClient(ServerPlayerEntity player, AstralPosition position) {
-        MediaworksNetworking.sendToPlayer(player, new AstralPositionSyncS2CMsg(position));
+        MediaworksNetworking.sendToPlayer(player, new SyncAstralPositionS2CMsg(position));
     }
 
     public static boolean isProjectingOnServer(ServerPlayerEntity player) {

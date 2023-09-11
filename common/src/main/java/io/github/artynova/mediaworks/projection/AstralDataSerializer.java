@@ -15,12 +15,12 @@ public class AstralDataSerializer {
     public static final String ASTRAL_IOTA_TAG = "mediaworks:astral_iota";
     public static final String ASTRAL_ORIGIN_TAG = "mediaworks:astral_origin";
 
-    public static void putPlayerAstralPosition(NbtCompound playerTags, @Nullable AstralPosition position) {
+    public static void putPlayerAstralPosition(NbtCompound playerData, @Nullable AstralPosition position) {
         if (position == null) {
-            playerTags.remove(ASTRAL_POSITION_TAG);
+            playerData.remove(ASTRAL_POSITION_TAG);
             return;
         }
-        playerTags.put(ASTRAL_POSITION_TAG, AstralPosition.serialize(position));
+        playerData.put(ASTRAL_POSITION_TAG, AstralPosition.serialize(position));
     }
 
     public static @Nullable AstralPosition getPlayerAstralPosition(NbtCompound playerData) {

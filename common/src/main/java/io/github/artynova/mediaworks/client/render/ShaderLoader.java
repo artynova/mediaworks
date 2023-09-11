@@ -11,9 +11,13 @@ import java.io.IOException;
 import static io.github.artynova.mediaworks.Mediaworks.LOGGER;
 import static io.github.artynova.mediaworks.Mediaworks.id;
 
-public class ShaderHandler implements SynchronousResourceReloader {
+public class ShaderLoader implements SynchronousResourceReloader {
+    private static final ShaderLoader INSTANCE = new ShaderLoader();
     private static final Identifier SHADER_ID = id("shaders/post/astral.json");
     private static ShaderEffect shader;
+
+    private ShaderLoader() {
+    }
 
     private static void loadShader() {
         try {
@@ -27,12 +31,15 @@ public class ShaderHandler implements SynchronousResourceReloader {
     }
 
     public static ShaderEffect getShader() {
-        if (shader == null) loadShader();
         return shader;
     }
 
     public static void setupShaderDimensions(int width, int height) {
         if (shader != null) shader.setupDimensions(width, height);
+    }
+
+    public static ShaderLoader getInstance() {
+        return INSTANCE;
     }
 
     @Override

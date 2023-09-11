@@ -6,6 +6,7 @@ import at.petrak.hexcasting.api.spell.math.HexDir;
 import at.petrak.hexcasting.api.spell.math.HexPattern;
 import io.github.artynova.mediaworks.casting.patterns.player.OpAstralLook;
 import io.github.artynova.mediaworks.casting.patterns.player.OpAstralPos;
+import io.github.artynova.mediaworks.casting.patterns.spells.OpMaculaClear;
 import io.github.artynova.mediaworks.casting.patterns.spells.great.OpAstralProjection;
 import kotlin.Triple;
 import net.minecraft.util.Identifier;
@@ -21,6 +22,7 @@ public class MediaworksPatterns {
     public static HexPattern ASTRAL_PROJECTION = registerPerWorld(HexPattern.fromAngles("qdadwewewdadeadwddaaedqdeddew", HexDir.NORTH_WEST), "astral_projection", new OpAstralProjection());
     public static HexPattern ASTRAL_POS = register(HexPattern.fromAngles("qaqqqqaq", HexDir.NORTH_EAST), "astral_pos", new OpAstralPos());
     public static HexPattern ASTRAL_LOOK = register(HexPattern.fromAngles("waawaq", HexDir.NORTH_EAST), "astral_look", new OpAstralLook());
+    public static HexPattern MACULA_CLEAR = register(HexPattern.fromAngles("awawa", HexDir.WEST), "macula_clear", new OpMaculaClear());
 
     public static void init() {
         try {
