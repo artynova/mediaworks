@@ -29,8 +29,7 @@ class OpAstralProjection : SpellAction {
             throw MishapNotEnoughArgs(this.argc, stack.size)
         val args = stack.takeLast(this.argc)
         for (_i in 0 until this.argc) stack.removeLast()
-        val executeResult =
-            this.execute(args, ctx, ravenmind) ?: return OperationResult(continuation, stack, ravenmind, listOf())
+        val executeResult = this.execute(args, ctx, ravenmind)
         val (spell, media, particles) = executeResult
 
         val sideEffects = mutableListOf<OperatorSideEffect>()
@@ -72,7 +71,7 @@ class OpAstralProjection : SpellAction {
 
     // a dud, it is not actually used because thing class has a rewritten operate method,
     // but it is still required by the interface
-    override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>>? {
+    override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
         return execute(args, ctx, null)
     }
 

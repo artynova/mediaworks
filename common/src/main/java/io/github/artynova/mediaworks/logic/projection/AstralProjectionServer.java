@@ -9,12 +9,11 @@ import at.petrak.hexcasting.api.spell.iota.ListIota;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
 import dev.architectury.event.EventResult;
 import io.github.artynova.mediaworks.MediaworksAbstractions;
-import io.github.artynova.mediaworks.logic.DataCache;
 import io.github.artynova.mediaworks.effect.MediaworksEffects;
-import io.github.artynova.mediaworks.networking.projection.SyncAstralPositionS2CMsg;
-import io.github.artynova.mediaworks.networking.projection.EndProjectionS2CMsg;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.networking.SpawnHexParticlesS2CMsg;
+import io.github.artynova.mediaworks.networking.projection.EndProjectionS2CMsg;
+import io.github.artynova.mediaworks.networking.projection.SyncAstralPositionS2CMsg;
 import io.github.artynova.mediaworks.sound.MediaworksSounds;
 import io.github.artynova.mediaworks.util.HexHelpers;
 import io.github.artynova.mediaworks.util.PlayerHelpers;
@@ -30,7 +29,10 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 public class AstralProjectionServer {
     public static final int NAUSEA_TICKS = 200;
@@ -40,12 +42,20 @@ public class AstralProjectionServer {
     public static final int CAST_COOLDOWN_TICKS = 10;
     public static final double SQUARED_BODY_MOVEMENT_LIMIT = 9.0;
 
-    private static final DataCache<ServerPlayerEntity, AstralProjection> PROJECTION_CACHE = new DataCache<>(player -> {
-        AstralProjection projection = MediaworksAbstractions.getProjection(player);
-        projection.setCooldown(0);
-        return projection;
-    });
+    private static final Map<ServerPlayerEntity, AstralProjection> PROJECTION_CACHE = new HashMap<>();
+    private static final Function<? super ServerPlayerEntity, ? extends AstralProjection> CACHE_POPULATOR = MediaworksAbstractions::getProjection;
 
+    public static AstralProjection getProjection(ServerPlayerEntity player) {
+        return PROJECTION_CACHE.computeIfAbsent(player, CACHE_POPULATOR);
+    }
+
+    public static void clearCache(ServerPlayerEntity player) {
+        PROJECTION_CACHE.remove(player);
+    }
+
+    public static boolean isProjecting(ServerPlayerEntity player) {
+        return getProjection(player).isActive();
+    }
 
     public static void syncFromClient(ServerPlayerEntity player, AstralPosition position) {
         if (!isProjecting(player)) return;
@@ -69,14 +79,6 @@ public class AstralProjectionServer {
         MediaworksNetworking.sendToPlayer(player, new SyncAstralPositionS2CMsg(position));
     }
 
-    public static boolean isProjecting(ServerPlayerEntity player) {
-        return getProjection(player).isActive();
-    }
-
-    public static AstralProjection getProjection(ServerPlayerEntity player) {
-        return PROJECTION_CACHE.getOrCompute(player);
-    }
-
     /**
      * Starts the projection state. Does not consider the buff.
      */
@@ -96,7 +98,7 @@ public class AstralProjectionServer {
     public static void endProjection(ServerPlayerEntity player) {
         MediaworksNetworking.sendToPlayer(player, new EndProjectionS2CMsg());
         getProjection(player).end();
-        PROJECTION_CACHE.remove(player);
+        clearCache(player);
         player.playSound(MediaworksSounds.PROJECTION_RETURN.get(), SoundCategory.PLAYERS, 1f, 1f);
     }
 
@@ -165,7 +167,7 @@ public class AstralProjectionServer {
      * Removes the player's projection data from the cache when quitting.
      */
     public static void handleQuit(ServerPlayerEntity player) {
-        PROJECTION_CACHE.remove(player);
+        clearCache(player);
     }
 
     /**
@@ -176,7 +178,6 @@ public class AstralProjectionServer {
         if (wonGame) {
             endProjectionAbruptly(oldPlayer);
             newPlayer.playSound(MediaworksSounds.PROJECTION_RETURN.get(), SoundCategory.PLAYERS, 1f, 1f);
-
         }
     }
 

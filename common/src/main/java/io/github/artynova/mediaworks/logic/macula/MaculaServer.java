@@ -1,16 +1,20 @@
 package io.github.artynova.mediaworks.logic.macula;
 
 import io.github.artynova.mediaworks.MediaworksAbstractions;
-import io.github.artynova.mediaworks.logic.DataCache;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.networking.SyncMaculaS2CMsg;
 import net.minecraft.server.network.ServerPlayerEntity;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+
 public class MaculaServer {
-    public static DataCache<ServerPlayerEntity, Macula> MACULA_CACHE = new DataCache<>(MediaworksAbstractions::getMacula);
+    public static final Map<ServerPlayerEntity, Macula> MACULA_CACHE = new HashMap<>();
+    private static final Function<? super ServerPlayerEntity, ? extends Macula> CACHE_POPULATOR = MediaworksAbstractions::getMacula;
 
     public static Macula getMacula(ServerPlayerEntity player) {
-        return MACULA_CACHE.getOrCompute(player);
+        return MACULA_CACHE.computeIfAbsent(player, CACHE_POPULATOR);
     }
 
     public static void clearCache(ServerPlayerEntity player) {
