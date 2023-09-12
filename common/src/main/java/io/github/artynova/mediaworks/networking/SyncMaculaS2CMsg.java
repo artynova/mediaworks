@@ -2,8 +2,9 @@ package io.github.artynova.mediaworks.networking;
 
 import dev.architectury.networking.NetworkManager;
 import io.github.artynova.mediaworks.client.macula.MaculaClient;
-import io.github.artynova.mediaworks.macula.Macula;
-import io.github.artynova.mediaworks.macula.MaculaSerializer;
+import io.github.artynova.mediaworks.logic.macula.Macula;
+import io.github.artynova.mediaworks.logic.macula.MaculaContent;
+import io.github.artynova.mediaworks.logic.macula.MaculaSerializer;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.network.PacketByteBuf;
@@ -12,23 +13,13 @@ import net.minecraft.world.World;
 import java.util.function.Supplier;
 
 public class SyncMaculaS2CMsg extends NbtCompoundMsg {
-    public SyncMaculaS2CMsg(NbtList maculaList) {
-        super(wrapMacula(maculaList));
+    public SyncMaculaS2CMsg(Macula macula) {
+        super(wrapMacula(macula));
     }
 
-    public SyncMaculaS2CMsg(Macula macula, World world) {
-        super(wrapMacula(macula, world));
-    }
-
-    private static NbtCompound wrapMacula(Macula macula, World world) {
+    private static NbtCompound wrapMacula(Macula macula) {
         NbtCompound compound = new NbtCompound();
-        MaculaSerializer.putMacula(compound, macula, world);
-        return compound;
-    }
-
-    private static NbtCompound wrapMacula(NbtList maculaList) {
-        NbtCompound compound = new NbtCompound();
-        compound.put(MaculaSerializer.MACULA_TAG, maculaList);
+        macula.writeToNbt(compound);
         return compound;
     }
 

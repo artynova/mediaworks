@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.casting.iotas;
+package io.github.artynova.mediaworks.casting.iota;
 
 import at.petrak.hexcasting.api.spell.iota.Iota;
 import at.petrak.hexcasting.api.spell.iota.IotaType;

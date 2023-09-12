@@ -24,6 +24,8 @@ dependencies {
     modCompileOnly "at.petra-k.hexcasting:hexcasting-fabric-$minecraftVersion:$hexcastingVersion"
     modCompileOnly "vazkii.patchouli:Patchouli-xplat:$minecraftVersion-$patchouliVersion"
 
+    modImplementation "maven.modrinth:moreiotas:${moreIotasFabricVersion}"
+
     // for other-mod-friendly expression value modification
     compileOnly(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixinExtrasVersion}"))
 }

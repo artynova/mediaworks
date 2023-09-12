@@ -1,11 +1,9 @@
-package io.github.artynova.mediaworks.casting.iotas;
+package io.github.artynova.mediaworks.casting.iota;
 
 import at.petrak.hexcasting.api.spell.iota.Iota;
 import at.petrak.hexcasting.api.spell.iota.IotaType;
 import at.petrak.hexcasting.api.utils.HexUtils;
-import at.petrak.hexcasting.api.utils.NBTHelper;
 import io.github.artynova.mediaworks.util.NbtHelpers;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.server.world.ServerWorld;

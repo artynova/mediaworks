@@ -1,6 +1,8 @@
-package io.github.artynova.mediaworks.macula;
+package io.github.artynova.mediaworks.logic.macula;
 
 import at.petrak.hexcasting.api.spell.iota.Iota;
+import dev.architectury.platform.Platform;
+import io.github.artynova.mediaworks.Mediaworks;
 import io.github.artynova.mediaworks.util.NbtHelpers;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
@@ -8,6 +10,7 @@ import net.minecraft.nbt.NbtString;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.Vec2f;
 import org.jetbrains.annotations.NotNull;
+import ram.talia.moreiotas.api.spell.iota.StringIota;
 
 public class TextVisage extends Visage {
     public static final Vec2f UNBOUNDED_DIMENSIONS = new Vec2f(-1, -1);
@@ -52,6 +55,9 @@ public class TextVisage extends Visage {
     }
 
     public static Text captureText(Iota iota) {
+        if (Platform.isModLoaded(Mediaworks.MOREIOTAS_ID) && iota instanceof StringIota stringIota) {
+            return Text.literal(stringIota.getString());
+        }
         return iota.display();
     }
 

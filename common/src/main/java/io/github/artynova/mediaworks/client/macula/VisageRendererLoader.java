@@ -1,7 +1,7 @@
 package io.github.artynova.mediaworks.client.macula;
 
-import io.github.artynova.mediaworks.macula.Visage;
-import io.github.artynova.mediaworks.macula.VisageType;
+import io.github.artynova.mediaworks.logic.macula.Visage;
+import io.github.artynova.mediaworks.logic.macula.VisageType;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.SynchronousResourceReloader;
 

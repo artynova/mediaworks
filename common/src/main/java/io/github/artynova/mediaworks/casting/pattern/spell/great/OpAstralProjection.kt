@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.casting.patterns.spells.great
+package io.github.artynova.mediaworks.casting.pattern.spell.great
 
 import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.api.spell.*

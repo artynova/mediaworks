@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.macula;
+package io.github.artynova.mediaworks.logic.macula;
 
 import io.github.artynova.mediaworks.registry.MediaworksRegistries;
 import net.minecraft.nbt.NbtCompound;

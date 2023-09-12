@@ -21,6 +21,6 @@ public class MediaworksForge {
         Mediaworks.init();
 
         modBus.addListener(MediaworksCapabilities::registerCaps);
-        eventBus.addGenericListener(Entity.class, MediaworksCapabilities::attachItemCaps);
+        eventBus.addGenericListener(Entity.class, MediaworksCapabilities::attachEntityCaps);
     }
 }

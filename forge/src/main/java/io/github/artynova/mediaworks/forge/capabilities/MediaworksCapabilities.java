@@ -2,6 +2,7 @@ package io.github.artynova.mediaworks.forge.capabilities;
 
 import io.github.artynova.mediaworks.logic.PersistentDataContainer;
 import io.github.artynova.mediaworks.logic.PersistentDataWrapper;
+import io.github.artynova.mediaworks.logic.macula.MaculaHolder;
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionHolder;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NbtCompound;
@@ -24,16 +25,21 @@ public class MediaworksCapabilities {
     public static final Capability<AstralProjectionHolder> PROJECTION_HOLDER_CAP = CapabilityManager.get(new CapabilityToken<>() {
     });
     public static final Identifier PROJECTION_HOLDER_CAP_ID = id("projection_holder");
+    public static final Capability<MaculaHolder> MACULA_HOLDER_CAP = CapabilityManager.get(new CapabilityToken<>() {
+    });
+    public static final Identifier MACULA_HOLDER_CAP_ID = id("macula_holder");
 
     public static void registerCaps(RegisterCapabilitiesEvent event) {
         event.register(AstralProjectionHolder.class);
+        event.register(MaculaHolder.class);
     }
 
-    public static void attachItemCaps(AttachCapabilitiesEvent<Entity> event) {
+    public static void attachEntityCaps(AttachCapabilitiesEvent<Entity> event) {
         Entity entity = event.getObject();
 
         if (entity instanceof ServerPlayerEntity player) {
             event.addCapability(PROJECTION_HOLDER_CAP_ID, providePersistent(player, PROJECTION_HOLDER_CAP, () -> new ProjectionHolderCap(player)));
+            event.addCapability(MACULA_HOLDER_CAP_ID, providePersistent(player, MACULA_HOLDER_CAP, () -> new MaculaHolderCap(player)));
         }
     }
 

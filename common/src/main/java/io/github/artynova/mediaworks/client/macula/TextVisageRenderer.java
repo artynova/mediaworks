@@ -1,17 +1,14 @@
 package io.github.artynova.mediaworks.client.macula;
 
-import io.github.artynova.mediaworks.macula.TextVisage;
+import io.github.artynova.mediaworks.logic.macula.TextVisage;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.OrderedText;
-import net.minecraft.text.StringVisitable;
 import net.minecraft.text.Text;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Environment(EnvType.CLIENT)
@@ -32,7 +29,6 @@ public class TextVisageRenderer implements VisageRenderer<TextVisage> {
 
         @Override
         public void render(MatrixStack matrixStack) {
-            System.out.println("ACTUALLY RENDER");
             int x, y;
             int maxWidth, maxHeight;
             x = Math.round(visage.getOrigin().x);

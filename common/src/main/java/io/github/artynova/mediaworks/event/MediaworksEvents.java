@@ -6,7 +6,7 @@ import dev.architectury.event.events.common.TickEvent;
 import dev.architectury.registry.ReloadListenerRegistry;
 import io.github.artynova.mediaworks.client.macula.VisageRendererLoader;
 import io.github.artynova.mediaworks.client.render.ShaderLoader;
-import io.github.artynova.mediaworks.macula.MaculaServer;
+import io.github.artynova.mediaworks.logic.macula.MaculaServer;
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer;
 import net.minecraft.resource.ResourceType;
 
@@ -24,5 +24,6 @@ public class MediaworksEvents {
 
         PlayerEvent.PLAYER_CLONE.register(MaculaServer::handleClone);
         PlayerEvent.PLAYER_JOIN.register(MaculaServer::handleJoin);
+        PlayerEvent.PLAYER_JOIN.register(MaculaServer::handleQuit);
     }
 }

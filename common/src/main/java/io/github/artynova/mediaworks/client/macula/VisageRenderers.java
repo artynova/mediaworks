@@ -1,8 +1,7 @@
 package io.github.artynova.mediaworks.client.macula;
 
-import dev.architectury.registry.registries.Registries;
-import io.github.artynova.mediaworks.macula.Visage;
-import io.github.artynova.mediaworks.macula.VisageType;
+import io.github.artynova.mediaworks.logic.macula.Visage;
+import io.github.artynova.mediaworks.logic.macula.VisageType;
 import io.github.artynova.mediaworks.registry.MediaworksRegistries;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

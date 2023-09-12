@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.macula;
+package io.github.artynova.mediaworks.logic.macula;
 
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
@@ -11,10 +11,10 @@ import java.util.ArrayList;
  * Macula-specialized Array List extension, for clearer code and as a container for
  * helper methods.
  */
-public class Macula extends ArrayList<Visage> {
-    public static NbtList serialize(@NotNull Macula macula, long currentTime) {
+public class MaculaContent extends ArrayList<Visage> {
+    public static NbtList serialize(@NotNull MaculaContent maculaContent, long currentTime) {
         NbtList list = new NbtList();
-        for (Visage visage : macula) {
+        for (Visage visage : maculaContent) {
             if (visage.hasTimedOut(currentTime)) continue;
             list.add(VisageSerializer.serialize(visage));
         }
@@ -24,17 +24,17 @@ public class Macula extends ArrayList<Visage> {
     /**
      * Deserializes a trimmed version of the macula (
      */
-    public static Macula deserialize(@NotNull NbtList list, long currentTime) {
-        Macula macula = new Macula();
+    public static MaculaContent deserialize(@NotNull NbtList list, long currentTime) {
+        MaculaContent maculaContent = new MaculaContent();
 
-        if (list.isEmpty()) return macula;
-        if (list.getHeldType() != NbtElement.COMPOUND_TYPE) return macula;
+        if (list.isEmpty()) return maculaContent;
+        if (list.getHeldType() != NbtElement.COMPOUND_TYPE) return maculaContent;
         for (NbtElement element : list) {
             Visage visage = VisageSerializer.deserialize((NbtCompound) element, currentTime);
             if (visage == null) continue;
-            macula.add(visage);
+            maculaContent.add(visage);
         }
-        return macula;
+        return maculaContent;
     }
 
     /**

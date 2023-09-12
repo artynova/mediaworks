@@ -1,13 +1,13 @@
-package io.github.artynova.mediaworks.casting.patterns;
+package io.github.artynova.mediaworks.casting.pattern;
 
 import at.petrak.hexcasting.api.PatternRegistry;
 import at.petrak.hexcasting.api.spell.Action;
 import at.petrak.hexcasting.api.spell.math.HexDir;
 import at.petrak.hexcasting.api.spell.math.HexPattern;
-import io.github.artynova.mediaworks.casting.patterns.player.OpAstralLook;
-import io.github.artynova.mediaworks.casting.patterns.player.OpAstralPos;
-import io.github.artynova.mediaworks.casting.patterns.spells.OpMaculaClear;
-import io.github.artynova.mediaworks.casting.patterns.spells.great.OpAstralProjection;
+import io.github.artynova.mediaworks.casting.pattern.player.OpAstralLook;
+import io.github.artynova.mediaworks.casting.pattern.player.OpAstralPos;
+import io.github.artynova.mediaworks.casting.pattern.spell.OpMaculaClear;
+import io.github.artynova.mediaworks.casting.pattern.spell.great.OpAstralProjection;
 import kotlin.Triple;
 import net.minecraft.util.Identifier;
 
@@ -25,6 +25,7 @@ public class MediaworksPatterns {
     public static HexPattern MACULA_CLEAR = register(HexPattern.fromAngles("awawa", HexDir.WEST), "macula_clear", new OpMaculaClear());
 
     public static void init() {
+
         try {
             for (Triple<HexPattern, Identifier, Action> patternTriple : PATTERNS) {
                 PatternRegistry.mapPattern(patternTriple.getFirst(), patternTriple.getSecond(), patternTriple.getThird());

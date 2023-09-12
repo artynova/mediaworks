@@ -51,6 +51,8 @@ dependencies {
 
     runtimeOnly(include("com.github.llamalad7.mixinextras:mixinextras-forge:${mixinExtrasVersion}"))
 
+    modRuntimeOnly "maven.modrinth:moreiotas:${moreIotasForgeVersion}"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }

@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.macula;
+package io.github.artynova.mediaworks.logic.macula;
 
 import net.minecraft.world.World;
 

@@ -3,7 +3,7 @@ package io.github.artynova.mediaworks.registry;
 import dev.architectury.registry.registries.Registrar;
 import dev.architectury.registry.registries.Registries;
 import io.github.artynova.mediaworks.Mediaworks;
-import io.github.artynova.mediaworks.macula.VisageType;
+import io.github.artynova.mediaworks.logic.macula.VisageType;
 import net.minecraft.util.Identifier;
 
 import static io.github.artynova.mediaworks.Mediaworks.id;

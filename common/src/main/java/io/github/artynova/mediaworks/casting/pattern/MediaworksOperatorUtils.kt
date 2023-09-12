@@ -1,9 +1,9 @@
-package io.github.artynova.mediaworks.casting.patterns
+package io.github.artynova.mediaworks.casting.pattern
 
 import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.spell.mishaps.MishapNotEnoughArgs
-import io.github.artynova.mediaworks.casting.iotas.Vec2Iota
+import io.github.artynova.mediaworks.casting.iota.Vec2Iota
 import net.minecraft.util.math.Vec2f
 
 fun List<Iota>.getVec2(idx: Int, argc: Int = 0): Vec2f {

@@ -32,7 +32,7 @@
   "custom": {
     "cardinal-components": [
       "mediaworks:projection_holder",
-      "mediaworks:macula"
+      "mediaworks:macula_holder"
     ]
   },
   "depends": {

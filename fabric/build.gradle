@@ -55,6 +55,8 @@ dependencies {
 
     runtimeOnly(include("com.github.llamalad7.mixinextras:mixinextras-fabric:${mixinExtrasVersion}"))
 
+    modRuntimeOnly "maven.modrinth:moreiotas:${moreIotasFabricVersion}"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }

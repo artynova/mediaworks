@@ -1,8 +1,7 @@
 package io.github.artynova.mediaworks.client.macula;
 
-import io.github.artynova.mediaworks.macula.Macula;
-import io.github.artynova.mediaworks.macula.MaculaSerializer;
-import io.github.artynova.mediaworks.macula.Visage;
+import io.github.artynova.mediaworks.logic.macula.MaculaContent;
+import io.github.artynova.mediaworks.logic.macula.MaculaSerializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -19,7 +18,6 @@ public class MaculaClient {
     private static List<VisageRenderer.Prepared<?>> preparedRenderers;
 
     public static void render(MatrixStack matrixStack) {
-        System.out.println("try render");
         assert CLIENT.world != null;
         preparedRenderers.forEach(renderer -> renderer.render(matrixStack));
         preparedRenderers.removeIf(VisageRenderer.Prepared::doneDisplaying);
@@ -27,23 +25,22 @@ public class MaculaClient {
 
     public static void syncFromServer(NbtCompound maculaCompound) {
         assert CLIENT.world != null;
-        System.out.println("compound:");
-        System.out.println(maculaCompound);
-        Macula macula = MaculaSerializer.getMacula(maculaCompound, CLIENT.world);
-        System.out.println("decoded macula");
-        System.out.println(macula);
-        setMacula(macula);
+        MaculaContent maculaContent = MaculaSerializer.getContent(maculaCompound, CLIENT.world);
+        setVisages(maculaContent);
     }
 
     /**
-     * Converts the Macula into an efficient rendering-ready list.
+     * Converts the Macula content into an efficient rendering-ready list and stores the list.
      */
-    public static void setMacula(Macula macula) {
+    public static void setVisages(MaculaContent maculaContent) {
         List<VisageRenderer.Prepared<?>> newList = new ArrayList<>();
-        macula.forEach(visage -> newList.add(VisageRendererLoader.getRenderer(visage).prepare(visage)));
+        maculaContent.forEach(visage -> newList.add(VisageRendererLoader.getRenderer(visage).prepare(visage)));
         preparedRenderers = newList;
     }
 
+    /**
+     * Clears the rendering list.
+     */
     public static void handleQuit(PlayerEntity player) {
         preparedRenderers = new ArrayList<>();
     }
