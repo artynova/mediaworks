@@ -1,14 +1,12 @@
 package io.github.artynova.mediaworks.mixin.projection;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import io.github.artynova.mediaworks.client.projection.AstralProjectionClient;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.client.tutorial.TutorialManager;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
@@ -53,16 +51,20 @@ public class MinecraftClientMixin {
         return previous && !AstralProjectionClient.isDissociated();
     }
 
-    @WrapWithCondition(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/tutorial/TutorialManager;onInventoryOpened()V"))
-    private boolean cancelTutorialProgress(TutorialManager instance) {
-        return !AstralProjectionClient.isDissociated();
+    // I'd rather not cancel the entire handleInputEvents call, but this is required to bypass a problematic Inventorio mixin
+    @Inject(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/tutorial/TutorialManager;onInventoryOpened()V"), cancellable = true)
+    private void hijackOpenInventory(CallbackInfo ci) {
+        if (AstralProjectionClient.isDissociated()) {
+            AstralProjectionClient.initiateEarlyEnd();
+            ci.cancel();
+        }
     }
 
-    @WrapOperation(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MinecraftClient;setScreen(Lnet/minecraft/client/gui/screen/Screen;)V", ordinal = 1))
-    private void wrapOpenInventory(MinecraftClient instance, Screen screen, Operation<Void> operation) {
-        if (AstralProjectionClient.isDissociated()) AstralProjectionClient.initiateEarlyEnd();
-        else operation.call(instance, screen);
-    }
+//    @WrapOperation(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MinecraftClient;setScreen(Lnet/minecraft/client/gui/screen/Screen;)V", ordinal = 1))
+//    private void wrapOpenInventory(MinecraftClient instance, Screen screen, Operation<Void> operation) {
+//        if (AstralProjectionClient.isDissociated()) AstralProjectionClient.initiateEarlyEnd();
+//        else operation.call(instance, screen);
+//    }
 
     @ModifyExpressionValue(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isSpectator()Z", ordinal = 2))
     private boolean cancelDrop(boolean previous) {

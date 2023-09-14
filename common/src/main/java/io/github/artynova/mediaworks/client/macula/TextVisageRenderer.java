@@ -23,21 +23,19 @@ public class TextVisageRenderer implements VisageRenderer<TextVisage> {
 
     private static class PreparedTextVisageRenderer implements Prepared<TextVisage> {
         private final TextVisage visage;
+        private final int x;
+        private final int y;
+        private final List<OrderedText> lines;
+
         private PreparedTextVisageRenderer(TextVisage visage) {
             this.visage = visage;
-        }
 
-        @Override
-        public void render(MatrixStack matrixStack) {
-            int x, y;
-            int maxWidth, maxHeight;
             x = Math.round(visage.getOrigin().x);
             y = Math.round(visage.getOrigin().y);
-            maxWidth = Math.round(visage.getDimensions().x);
-            maxHeight = Math.round(visage.getDimensions().y);
-            Text text = visage.getText();
+            int maxWidth = Math.round(visage.getDimensions().x);
+            int maxHeight = Math.round(visage.getDimensions().y);
 
-            List<OrderedText> lines;
+            Text text = visage.getText();
             if (visage.isBounded()) {
                 // wrap text horizontally, and limit lines to only those that fully fit by using integer division
                 int maxLines = maxHeight / textRenderer.fontHeight;
@@ -45,6 +43,10 @@ public class TextVisageRenderer implements VisageRenderer<TextVisage> {
                 lines = temp.subList(0, Math.min(temp.size(), maxLines));
             }
             else lines = List.of(text.asOrderedText());
+        }
+
+        @Override
+        public void render(MatrixStack matrixStack) {
             int rowY = y;
             for (OrderedText orderedText : lines) {
                 textRenderer.drawWithShadow(matrixStack, orderedText, x, rowY, 0xFF_FFFFFF);

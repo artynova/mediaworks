@@ -1,7 +1,10 @@
 package io.github.artynova.mediaworks.client.event;
 
+import dev.architectury.event.events.client.ClientGuiEvent;
+import dev.architectury.event.events.client.ClientLifecycleEvent;
 import dev.architectury.event.events.client.ClientPlayerEvent;
 import dev.architectury.event.events.client.ClientTickEvent;
+import dev.architectury.event.events.common.PlayerEvent;
 import dev.architectury.registry.ReloadListenerRegistry;
 import io.github.artynova.mediaworks.client.macula.MaculaClient;
 import io.github.artynova.mediaworks.client.macula.VisageRendererLoader;
@@ -17,6 +20,7 @@ public class MediaworksClientEvents {
         ClientTickEvent.CLIENT_POST.register(AstralProjectionClient::handlePostTick);
         ClientPlayerEvent.CLIENT_PLAYER_QUIT.register(AstralProjectionClient::handleQuit);
 
+        ClientPlayerEvent.CLIENT_PLAYER_JOIN.register(MaculaClient::handleJoin);
         ClientPlayerEvent.CLIENT_PLAYER_QUIT.register(MaculaClient::handleQuit);
     }
 }

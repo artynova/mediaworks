@@ -2,7 +2,7 @@ package io.github.artynova.mediaworks.logic.macula;
 
 import io.github.artynova.mediaworks.MediaworksAbstractions;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
-import io.github.artynova.mediaworks.networking.SyncMaculaS2CMsg;
+import io.github.artynova.mediaworks.networking.macula.SyncMaculaContentS2CMsg;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.HashMap;
@@ -22,14 +22,15 @@ public class MaculaServer {
     }
 
     public static void handleClone(ServerPlayerEntity oldPlayer, ServerPlayerEntity newPlayer, boolean wonGame) {
-        if (!wonGame) {
-            // update the client with an empty macula on respawn
-            clearCache(oldPlayer);
-            syncToClient(newPlayer);
-            return;
-        }
-        // update the new player with a filled macula on returning from the end, no client sync is necessary
-        getMacula(newPlayer).setContent(getMacula(oldPlayer).getContent());
+        Macula oldMacula = getMacula(oldPlayer);
+        Macula newMacula = getMacula(newPlayer);
+        // copy screen dimensions in any case
+        newMacula.setWidth(oldMacula.getWidth());
+        newMacula.setHeight(oldMacula.getHeight());
+        // update the new player data with the old macula content on returning from the end, no client sync is necessary
+        if (wonGame) newMacula.setContent(oldMacula.getContent());
+        // update the client with the empty macula on respawn
+        else syncContentToClient(newPlayer);
         clearCache(oldPlayer);
     }
 
@@ -37,7 +38,7 @@ public class MaculaServer {
      * Syncs macula data to the joining client.
      */
     public static void handleJoin(ServerPlayerEntity player) {
-        syncToClient(player);
+        syncContentToClient(player);
     }
 
     /**
@@ -47,7 +48,13 @@ public class MaculaServer {
         clearCache(player);
     }
 
-    public static void syncToClient(ServerPlayerEntity player) {
-        MediaworksNetworking.sendToPlayer(player, new SyncMaculaS2CMsg(getMacula(player)));
+    public static void syncContentToClient(ServerPlayerEntity player) {
+        MediaworksNetworking.sendToPlayer(player, new SyncMaculaContentS2CMsg(getMacula(player)));
+    }
+
+    public static void syncDimensionsFromClient(ServerPlayerEntity player, int width, int height) {
+        Macula macula = getMacula(player);
+        macula.setWidth(width);
+        macula.setHeight(height);
     }
 }

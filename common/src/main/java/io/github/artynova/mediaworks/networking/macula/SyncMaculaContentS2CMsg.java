@@ -1,19 +1,16 @@
-package io.github.artynova.mediaworks.networking;
+package io.github.artynova.mediaworks.networking.macula;
 
 import dev.architectury.networking.NetworkManager;
 import io.github.artynova.mediaworks.client.macula.MaculaClient;
 import io.github.artynova.mediaworks.logic.macula.Macula;
-import io.github.artynova.mediaworks.logic.macula.MaculaContent;
-import io.github.artynova.mediaworks.logic.macula.MaculaSerializer;
+import io.github.artynova.mediaworks.networking.NbtCompoundMsg;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtList;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.world.World;
 
 import java.util.function.Supplier;
 
-public class SyncMaculaS2CMsg extends NbtCompoundMsg {
-    public SyncMaculaS2CMsg(Macula macula) {
+public class SyncMaculaContentS2CMsg extends NbtCompoundMsg {
+    public SyncMaculaContentS2CMsg(Macula macula) {
         super(wrapMacula(macula));
     }
 
@@ -23,7 +20,7 @@ public class SyncMaculaS2CMsg extends NbtCompoundMsg {
         return compound;
     }
 
-    public SyncMaculaS2CMsg(PacketByteBuf buf) {
+    public SyncMaculaContentS2CMsg(PacketByteBuf buf) {
         super(buf);
     }
 

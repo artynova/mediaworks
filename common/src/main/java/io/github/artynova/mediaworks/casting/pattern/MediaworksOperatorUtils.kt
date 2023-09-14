@@ -14,3 +14,7 @@ fun List<Iota>.getVec2(idx: Int, argc: Int = 0): Vec2f {
         throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "flatvector")
     }
 }
+
+fun Vec2f.asActionResult(): List<Iota> {
+    return listOf(Vec2Iota(this))
+}

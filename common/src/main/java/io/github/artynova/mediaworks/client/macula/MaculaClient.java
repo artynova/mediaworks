@@ -2,6 +2,8 @@ package io.github.artynova.mediaworks.client.macula;
 
 import io.github.artynova.mediaworks.logic.macula.MaculaContent;
 import io.github.artynova.mediaworks.logic.macula.MaculaSerializer;
+import io.github.artynova.mediaworks.networking.MediaworksNetworking;
+import io.github.artynova.mediaworks.networking.macula.SyncMaculaDimensionsC2SMsg;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -36,6 +38,17 @@ public class MaculaClient {
         List<VisageRenderer.Prepared<?>> newList = new ArrayList<>();
         maculaContent.forEach(visage -> newList.add(VisageRendererLoader.getRenderer(visage).prepare(visage)));
         preparedRenderers = newList;
+    }
+
+    public static void sendDimensions() {
+        MediaworksNetworking.sendToServer(new SyncMaculaDimensionsC2SMsg(CLIENT.getWindow().getScaledWidth(), CLIENT.getWindow().getScaledHeight()));
+    }
+
+    /**
+     * Sends initial macula dimensions.
+     */
+    public static void handleJoin(PlayerEntity player) {
+        sendDimensions();
     }
 
     /**

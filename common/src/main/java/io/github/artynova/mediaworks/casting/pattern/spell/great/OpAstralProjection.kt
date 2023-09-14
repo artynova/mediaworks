@@ -8,17 +8,16 @@ import at.petrak.hexcasting.api.spell.casting.sideeffects.OperatorSideEffect
 import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.mishaps.MishapImmuneEntity
 import at.petrak.hexcasting.api.spell.mishaps.MishapNotEnoughArgs
+import io.github.artynova.mediaworks.casting.pattern.RavenmindSpellAction
 import io.github.artynova.mediaworks.effect.MediaworksEffects
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer
 import net.minecraft.entity.effect.StatusEffectInstance
 
-class OpAstralProjection : SpellAction {
+class OpAstralProjection : RavenmindSpellAction {
     override val isGreat: Boolean = true
     override val argc: Int = 1
     val costPerSecond: Int = MediaConstants.DUST_UNIT * 2
 
-    // this is basically SpellAction code
-    // changes are minimal, just needed to access the cast's ravenmind
     override fun operate(
         continuation: SpellContinuation,
         stack: MutableList<Iota>,
@@ -51,7 +50,7 @@ class OpAstralProjection : SpellAction {
         return OperationResult(continuation, stack, ravenmind, sideEffects)
     }
 
-    fun execute(
+    override fun execute(
         args: List<Iota>,
         ctx: CastingContext,
         ravenmind: Iota?
@@ -67,12 +66,6 @@ class OpAstralProjection : SpellAction {
             (duration * costPerSecond).toInt(),
             listOf(ParticleSpray.burst(ctx.caster.pos, 1.0))
         )
-    }
-
-    // a dud, it is not actually used because thing class has a rewritten operate method,
-    // but it is still required by the interface
-    override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
-        return execute(args, ctx, null)
     }
 
     private data class Spell(val duration: Double, val ravenmind: Iota?) : RenderedSpell {

@@ -1,6 +1,8 @@
 package io.github.artynova.mediaworks.networking;
 
 import dev.architectury.networking.NetworkChannel;
+import io.github.artynova.mediaworks.networking.macula.SyncMaculaContentS2CMsg;
+import io.github.artynova.mediaworks.networking.macula.SyncMaculaDimensionsC2SMsg;
 import io.github.artynova.mediaworks.networking.projection.*;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -18,7 +20,8 @@ public class MediaworksNetworking {
         CHANNEL.register(SpawnHexParticlesS2CMsg.class, SpawnHexParticlesS2CMsg::encode, SpawnHexParticlesS2CMsg::new, SpawnHexParticlesS2CMsg::apply);
         CHANNEL.register(CastAstralIotaC2SMsg.class, CastAstralIotaC2SMsg::encode, CastAstralIotaC2SMsg::new, CastAstralIotaC2SMsg::apply);
 
-        CHANNEL.register(SyncMaculaS2CMsg.class, SyncMaculaS2CMsg::encode, SyncMaculaS2CMsg::new, SyncMaculaS2CMsg::apply);
+        CHANNEL.register(SyncMaculaContentS2CMsg.class, SyncMaculaContentS2CMsg::encode, SyncMaculaContentS2CMsg::new, SyncMaculaContentS2CMsg::apply);
+        CHANNEL.register(SyncMaculaDimensionsC2SMsg.class, SyncMaculaDimensionsC2SMsg::encode, SyncMaculaDimensionsC2SMsg::new, SyncMaculaDimensionsC2SMsg::apply);
     }
 
     public static <T> void sendToServer(T message) {

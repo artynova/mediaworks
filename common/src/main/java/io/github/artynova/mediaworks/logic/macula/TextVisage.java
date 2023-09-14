@@ -8,6 +8,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtString;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.Vec2f;
 import org.jetbrains.annotations.NotNull;
 import ram.talia.moreiotas.api.spell.iota.StringIota;
@@ -44,7 +45,7 @@ public class TextVisage extends Visage {
         super(TYPE);
         this.text = text;
         this.origin = origin;
-        if ((dimensions.x < 0 && dimensions.x != -1) || (dimensions.y < 0 && dimensions.y != -1)) {
+        if (!UNBOUNDED_DIMENSIONS.equals(dimensions) && (dimensions.x < 0 || dimensions.y < 0)) {
             throw new IllegalArgumentException("Illegal TextVisage sizes: " + dimensions);
         }
         this.dimensions = dimensions;
@@ -56,7 +57,8 @@ public class TextVisage extends Visage {
 
     public static Text captureText(Iota iota) {
         if (Platform.isModLoaded(Mediaworks.MOREIOTAS_ID) && iota instanceof StringIota stringIota) {
-            return Text.literal(stringIota.getString());
+            // replacing old formatting (typeable in-game) with new formatting (not typeable in-game)
+            return Text.literal(stringIota.getString().replaceAll("&([1-9a-fk-orA-FK-OR])", "§$1"));
         }
         return iota.display();
     }

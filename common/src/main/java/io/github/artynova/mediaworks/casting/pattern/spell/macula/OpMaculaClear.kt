@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.casting.pattern.spell
+package io.github.artynova.mediaworks.casting.pattern.spell.macula
 
 import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.api.spell.ParticleSpray
@@ -6,7 +6,6 @@ import at.petrak.hexcasting.api.spell.RenderedSpell
 import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
-import io.github.artynova.mediaworks.MediaworksAbstractions
 import io.github.artynova.mediaworks.logic.macula.MaculaServer
 
 class OpMaculaClear : SpellAction {
@@ -24,7 +23,7 @@ class OpMaculaClear : SpellAction {
     private class Spell : RenderedSpell {
         override fun cast(ctx: CastingContext) {
             MaculaServer.getMacula(ctx.caster).clear()
-            MaculaServer.syncToClient(ctx.caster)
+            MaculaServer.syncContentToClient(ctx.caster)
         }
     }
 }
