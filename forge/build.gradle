@@ -36,11 +36,11 @@ dependencies {
     forge "net.minecraftforge:forge:${project.forgeVersion}"
     modApi "dev.architectury:architectury-forge:${project.architecturyVersion}"
 
+    // Hex Casting and dependencies
     modImplementation("at.petra-k.hexcasting:hexcasting-forge-${project.minecraftVersion}:${project.hexcastingVersion}") {
         transitive = false
     }
 
-    // // Hex Casting Dependencies
     modCompileOnly "at.petra-k.paucal:paucal-forge-${minecraftVersion}:${paucalVersion}"
     modCompileOnly "vazkii.patchouli:Patchouli:${minecraftVersion}-${patchouliVersion}"
 
@@ -51,8 +51,9 @@ dependencies {
 
     runtimeOnly(include("com.github.llamalad7.mixinextras:mixinextras-forge:${mixinExtrasVersion}"))
 
-    modImplementation "maven.modrinth:moreiotas:${moreIotasForgeVersion}"
-    modRuntimeOnly "maven.modrinth:moreiotas:${moreIotasForgeVersion}"
+    // mysteriously does not work in dev environment only; since production builds are fine, so shall it be
+//    modImplementation "maven.modrinth:moreiotas:${moreIotasForgeVersion}"
+//    modRuntimeOnly "maven.modrinth:moreiotas:${moreIotasForgeVersion}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }

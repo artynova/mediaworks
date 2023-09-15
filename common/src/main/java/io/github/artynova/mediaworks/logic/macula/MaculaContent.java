@@ -6,17 +6,27 @@ import net.minecraft.nbt.NbtList;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Macula-specialized Array List extension, for clearer code and as a container for
  * helper methods.
  */
-public class MaculaContent extends ArrayList<Visage> {
+public class MaculaContent extends ArrayList<VisageEntry> {
+    public static final Comparator<VisageEntry> DEPTH_COMPARATOR = Comparator.comparingInt(entry -> entry.getOrigin().getZ());
+
+    /**
+     * Run a standard stable sort that arranges the entries in display order.
+     */
+    public void sortByDepth() {
+        sort(DEPTH_COMPARATOR);
+    }
+
     public static NbtList serialize(@NotNull MaculaContent maculaContent, long currentTime) {
         NbtList list = new NbtList();
-        for (Visage visage : maculaContent) {
-            if (visage.hasTimedOut(currentTime)) continue;
-            list.add(VisageSerializer.serialize(visage));
+        for (VisageEntry entry : maculaContent) {
+            if (entry.hasTimedOut(currentTime)) continue;
+            list.add(VisageSerializer.serializeEntry(entry));
         }
         return list;
     }
@@ -30,20 +40,10 @@ public class MaculaContent extends ArrayList<Visage> {
         if (list.isEmpty()) return maculaContent;
         if (list.getHeldType() != NbtElement.COMPOUND_TYPE) return maculaContent;
         for (NbtElement element : list) {
-            Visage visage = VisageSerializer.deserialize((NbtCompound) element, currentTime);
-            if (visage == null) continue;
-            maculaContent.add(visage);
+            VisageEntry entry = VisageSerializer.deserializeEntry((NbtCompound) element);
+            if (entry.hasTimedOut(currentTime)) continue;
+            maculaContent.add(entry);
         }
         return maculaContent;
-    }
-
-    /**
-     * Removes all {@link Visage} nbt entries that cannot be drawn for any reason,
-     * like being invalid or having timed out.
-     */
-    public static void trimMaculaData(@NotNull NbtList list, long currentTime) {
-        if (list.isEmpty()) return;
-        if (list.getHeldType() != NbtElement.COMPOUND_TYPE) return;
-        list.removeIf(element -> VisageSerializer.deserialize((NbtCompound) element, currentTime) == null);
     }
 }

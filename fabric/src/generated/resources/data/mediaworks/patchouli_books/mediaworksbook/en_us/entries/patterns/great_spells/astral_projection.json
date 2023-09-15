@@ -14,13 +14,7 @@
       "output": "",
       "text": "mediaworks.page.astral_projection.1"
     },
-    {
-      "type": "patchouli:text",
-      "text": "mediaworks.page.astral_projection.2"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "mediaworks.page.astral_projection.3"
-    }
+    "mediaworks.page.astral_projection.2",
+    "mediaworks.page.astral_projection.3"
   ]
 }

@@ -16,6 +16,7 @@
     "projection.WorldRendererMixin"
   ],
   "mixins": [
+    "HexInteropMixin",
     "projection.EntityMixin"
   ],
   "injectors": {

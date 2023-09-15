@@ -1,15 +1,16 @@
 package io.github.artynova.mediaworks.logic.macula;
 
-import net.minecraft.world.World;
+import at.petrak.hexcasting.api.spell.iota.GarbageIota;
+import io.github.artynova.mediaworks.casting.iota.VisageIota;
+import net.minecraft.text.MutableText;
 
 /**
- * Data container for an instance of some VisageType.
- * Meant for data storage and client-server communication.
+ * Data container for an instance of some VisageType, contains type-specific information required to reproduce the
+ * given visage at any coordinates, fleeting or not.
  * Rendering functionality is registered clientside in {@link io.github.artynova.mediaworks.client.macula.VisageRenderers}.
  */
 public abstract class Visage {
     private final VisageType<?> type;
-    private long endTime = -1;
 
     /**
      * @param type Type object of the visage. Implementations are expected to ensure that its type parameter matches the actual visage class.
@@ -18,26 +19,19 @@ public abstract class Visage {
         this.type = type;
     }
 
+    /**
+     * @return A new instance of a "garbage" visage, i.e. an unbounded {@link TextVisage} displaying a {@link GarbageIota}.
+     */
+    public static Visage makeGarbageVisage() {
+        return new TextVisage(TextVisage.captureText(new GarbageIota()));
+    }
+
     public VisageType<?> getType() {
         return type;
     }
 
     /**
-     * @return tick after which the visage is no longer displayed, or -1 if it should display until cleared.
-     * @see World#getTime()
+     * @return The colorless text display that represents a {@link VisageIota} holding this visage.
      */
-    public long getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(long endTime) {
-        if (endTime < 0 && endTime != -1) {
-            throw new IllegalArgumentException("Invalid endTime in Visage: " + endTime + ", must be -1 or >= 0");
-        }
-        this.endTime = endTime;
-    }
-
-    public boolean hasTimedOut(long currentTime) {
-        return endTime > -1 && endTime <= currentTime;
-    }
+    public abstract MutableText displayOnStack();
 }

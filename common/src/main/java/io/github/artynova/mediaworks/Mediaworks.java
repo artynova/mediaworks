@@ -4,6 +4,7 @@ import io.github.artynova.mediaworks.casting.iota.MediaworksIotaTypes;
 import io.github.artynova.mediaworks.casting.pattern.MediaworksPatterns;
 import io.github.artynova.mediaworks.effect.MediaworksEffects;
 import io.github.artynova.mediaworks.event.MediaworksEvents;
+import io.github.artynova.mediaworks.interop.MediaworksInterop;
 import io.github.artynova.mediaworks.logic.macula.MediaworksVisageTypes;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.registry.MediaworksRegistries;
@@ -14,7 +15,6 @@ import org.apache.logging.log4j.Logger;
 
 public class Mediaworks {
     public static final String MOD_ID = "mediaworks";
-    public static final String MOREIOTAS_ID = "moreiotas"; // not used all that much, but it's best to keep magic strings to a minimum
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
 
@@ -27,6 +27,7 @@ public class Mediaworks {
         MediaworksNetworking.init();
         MediaworksSounds.init();
         MediaworksVisageTypes.init();
+        MediaworksInterop.init();
     }
 
     /**

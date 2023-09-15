@@ -34,10 +34,11 @@ dependencies {
         exclude group: "net.fabricmc", module: "fabric-loader"
     }
 
-    // Hex Casting stuff
+    // Hex Casting and dependencies
     modImplementation("at.petra-k.hexcasting:hexcasting-fabric-${minecraftVersion}:${hexcastingVersion}") {
         // If not excluded here, calls a nonexistent method and crashes the dev client
         exclude module: "phosphor"
+        exclude module: "pehkui"
     }
 
     modImplementation "at.petra-k.paucal:paucal-fabric-${minecraftVersion}:${paucalVersion}"
@@ -53,6 +54,7 @@ dependencies {
 
     modImplementation "dev.emi:trinkets:${trinketsVersion}"
 
+    // Mediaworks other dependencies
     runtimeOnly(include("com.github.llamalad7.mixinextras:mixinextras-fabric:${mixinExtrasVersion}"))
 
     modRuntimeOnly "maven.modrinth:moreiotas:${moreIotasFabricVersion}"

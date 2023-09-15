@@ -5,58 +5,50 @@ import at.petrak.hexcasting.api.spell.ParticleSpray
 import at.petrak.hexcasting.api.spell.RenderedSpell
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.getPositiveDouble
+import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.DoubleIota
 import at.petrak.hexcasting.api.spell.iota.Iota
 import io.github.artynova.mediaworks.casting.mishap.MishapBlackEye
 import io.github.artynova.mediaworks.casting.pattern.OverloadedSpellAction
-import io.github.artynova.mediaworks.casting.pattern.getVec2
+import io.github.artynova.mediaworks.casting.pattern.getVisage
 import io.github.artynova.mediaworks.logic.macula.Macula
 import io.github.artynova.mediaworks.logic.macula.MaculaServer
-import io.github.artynova.mediaworks.logic.macula.TextVisage
-import net.minecraft.text.Text
-import net.minecraft.util.math.Vec2f
+import io.github.artynova.mediaworks.logic.macula.Visage
+import io.github.artynova.mediaworks.logic.macula.VisageEntry
+import net.minecraft.util.math.Vec3d
+import net.minecraft.util.math.Vec3i
+import kotlin.math.roundToInt
 
-class OpMaculaAdd(val bounded: Boolean) : OverloadedSpellAction {
-    val minArgc = if (bounded) 3 else 2
-
+class OpMaculaAdd : OverloadedSpellAction {
     override fun argc(allArgs: List<Iota>): Int {
-        if (allArgs.size <= minArgc) return minArgc
-        return if (allArgs.get(minArgc) is DoubleIota) minArgc + 1 else minArgc
+        if (allArgs.size <= 2) return 2
+        return if (allArgs.get(2) is DoubleIota) 3 else 2
     }
 
     val cost: Int = MediaConstants.DUST_UNIT / 100
 
     override fun execute(
-        args: List<Iota>,
-        argc: Int,
-        ctx: CastingContext
+        args: List<Iota>, argc: Int, ctx: CastingContext
     ): Triple<RenderedSpell, Int, List<ParticleSpray>> {
-        if (MaculaServer.getMacula(ctx.caster).isFull) throw MishapBlackEye(MishapBlackEye.Reason.EXCEED_VISAGE_CAP)
-        val origin: Vec2f = args.getVec2(0, argc)
-        val dimensions: Vec2f = if (bounded) args.getVec2(1, argc) else TextVisage.UNBOUNDED_DIMENSIONS
-        if (bounded && (dimensions.x < 0 || dimensions.y < 0)) throw MishapBlackEye(MishapBlackEye.Reason.BAD_DIMENSIONS)
+        val macula: Macula = MaculaServer.getMacula(ctx.caster)
+        if (macula.checkFullness()) throw MishapBlackEye("visage_cap")
 
-        val text: Text = TextVisage.captureText(args.get(minArgc - 1))
+        val originDouble: Vec3d = args.getVec3(0, argc)
+        val origin: Vec3i = Vec3i(originDouble.x.roundToInt(), originDouble.y.roundToInt(), originDouble.z.roundToInt())
+        val visage: Visage = args.getVisage(1, argc)
 
-
-        val ticks: Double = if (argc == minArgc) -1.0 else args.getPositiveDouble(minArgc, argc) * 20
-        if (ticks > Macula.MAX_FLEETING_VISAGE_TICKS) throw MishapBlackEye(MishapBlackEye.Reason.EXCEED_DURATION_CAP)
-
+        val ticks: Double = if (argc == 2) -1.0 else args.getPositiveDouble(2, argc) * 20
+        if (ticks > Macula.MAX_FLEETING_VISAGE_TICKS) throw MishapBlackEye("duration_cap")
         val endTime: Long = if (ticks == -1.0) -1 else ctx.caster.world.time + ticks.toLong()
 
         return Triple(
-            Spell(text, origin, dimensions, endTime),
-            cost,
-            listOf(ParticleSpray.burst(ctx.caster.pos, 1.0))
+            Spell(macula, VisageEntry(visage, origin, endTime)), cost, listOf(ParticleSpray.burst(ctx.caster.pos, 1.0))
         )
     }
 
-    private data class Spell(val text: Text, val origin: Vec2f, val dimensions: Vec2f, val endTime: Long) :
-        RenderedSpell {
+    private data class Spell(val macula: Macula, val entry: VisageEntry) : RenderedSpell {
         override fun cast(ctx: CastingContext) {
-            val visage: TextVisage = TextVisage(text, origin, dimensions)
-            visage.endTime = endTime
-            MaculaServer.getMacula(ctx.caster).add(visage)
+            MaculaServer.getMacula(ctx.caster).add(entry)
             MaculaServer.syncContentToClient(ctx.caster)
         }
     }

@@ -9,11 +9,16 @@ import io.github.artynova.mediaworks.client.render.ShaderLoader;
 import io.github.artynova.mediaworks.logic.macula.MaculaServer;
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer;
 import net.minecraft.resource.ResourceType;
+import net.minecraft.util.Identifier;
+
+import static io.github.artynova.mediaworks.Mediaworks.id;
 
 public class MediaworksEvents {
+    public static final Identifier SHADER_RELOADER_ID = id("shader_reloader");
+    public static final Identifier VISAGE_RENDERER_RELOADER_ID = id("shader_reloader");
     public static void init() {
-        ReloadListenerRegistry.register(ResourceType.CLIENT_RESOURCES, ShaderLoader.getInstance());
-        ReloadListenerRegistry.register(ResourceType.CLIENT_RESOURCES, VisageRendererLoader.getInstance());
+        ReloadListenerRegistry.register(ResourceType.CLIENT_RESOURCES, ShaderLoader.getInstance(), SHADER_RELOADER_ID);
+        ReloadListenerRegistry.register(ResourceType.CLIENT_RESOURCES, VisageRendererLoader.getInstance(), VISAGE_RENDERER_RELOADER_ID);
 
         TickEvent.ServerLevelTick.PLAYER_POST.register(AstralProjectionServer::handlePlayerTick);
         PlayerEvent.PLAYER_JOIN.register(AstralProjectionServer::handleJoin);

@@ -1,0 +1,11 @@
+{
+  "name": "mediaworks.entry.mediaworks_moreiotas",
+  "icon": "minecraft:red_dye",
+  "category": "hexcasting:interop",
+  "advancement": "hexcasting:root",
+  "flag": "mod:moreiotas",
+  "pages": [
+    "mediaworks.page.mediaworks_moreiotas.1",
+    "mediaworks.page.mediaworks_moreiotas.2"
+  ]
+}

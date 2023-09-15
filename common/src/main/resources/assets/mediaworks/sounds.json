@@ -1,6 +1,6 @@
 {
   "astral.ambience": {
-    "subtitle": "mediaworks.subtitles.astral.ambience",
+    "subtitle": "mediaworks.subtitle.astral.ambience",
     "sounds": [
       {
         "name": "mediaworks:spirit_whisper",
@@ -9,7 +9,7 @@
     ]
   },
   "astral.return": {
-    "subtitle": "mediaworks.subtitles.astral.return",
+    "subtitle": "mediaworks.subtitle.astral.return",
     "sounds": [
       {
         "name": "minecraft:entity/endereye/dead2",

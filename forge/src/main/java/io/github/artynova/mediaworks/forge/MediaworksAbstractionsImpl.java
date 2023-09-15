@@ -1,7 +1,8 @@
 package io.github.artynova.mediaworks.forge;
 
 import io.github.artynova.mediaworks.forge.capabilities.MediaworksCapabilities;
-import io.github.artynova.mediaworks.logic.macula.*;
+import io.github.artynova.mediaworks.logic.macula.Macula;
+import io.github.artynova.mediaworks.logic.macula.MaculaHolder;
 import io.github.artynova.mediaworks.logic.projection.AstralProjection;
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionHolder;
 import net.minecraft.server.network.ServerPlayerEntity;

@@ -2,6 +2,8 @@ package io.github.artynova.mediaworks.client.macula;
 
 import io.github.artynova.mediaworks.logic.macula.MaculaContent;
 import io.github.artynova.mediaworks.logic.macula.MaculaSerializer;
+import io.github.artynova.mediaworks.logic.macula.TextVisage;
+import io.github.artynova.mediaworks.logic.macula.VisageEntry;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.networking.macula.SyncMaculaDimensionsC2SMsg;
 import net.fabricmc.api.EnvType;
@@ -17,7 +19,7 @@ import java.util.List;
 @Environment(EnvType.CLIENT)
 public class MaculaClient {
     private static final MinecraftClient CLIENT = MinecraftClient.getInstance();
-    private static List<VisageRenderer.Prepared<?>> preparedRenderers;
+    private static List<VisageRenderer.Prepared> preparedRenderers;
 
     public static void render(MatrixStack matrixStack) {
         assert CLIENT.world != null;
@@ -35,8 +37,9 @@ public class MaculaClient {
      * Converts the Macula content into an efficient rendering-ready list and stores the list.
      */
     public static void setVisages(MaculaContent maculaContent) {
-        List<VisageRenderer.Prepared<?>> newList = new ArrayList<>();
-        maculaContent.forEach(visage -> newList.add(VisageRendererLoader.getRenderer(visage).prepare(visage)));
+        maculaContent.sortByDepth();
+        List<VisageRenderer.Prepared> newList = new ArrayList<>();
+        maculaContent.forEach(entry -> newList.add(VisageRendererLoader.getRenderer(entry.getVisage()).prepare(entry)));
         preparedRenderers = newList;
     }
 

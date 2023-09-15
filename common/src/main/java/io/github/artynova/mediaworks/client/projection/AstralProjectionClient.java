@@ -131,7 +131,7 @@ public class AstralProjectionClient {
         clearInputActivities(player.input);
         player.input = new Input();
         CLIENT.setCameraEntity(astralCamera);
-        MutableText text = Text.translatable("mediaworks.messages.projection", CLIENT.options.inventoryKey.getBoundKeyLocalizedText());
+        MutableText text = Text.translatable("mediaworks.message.projection", CLIENT.options.inventoryKey.getBoundKeyLocalizedText());
         CLIENT.inGameHud.setOverlayMessage(text, false);
         CLIENT.getNarratorManager().narrate(text);
     }

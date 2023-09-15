@@ -1,18 +1,24 @@
 package io.github.artynova.mediaworks.logic.macula;
 
 import io.github.artynova.mediaworks.registry.MediaworksRegistries;
+import io.github.artynova.mediaworks.util.NbtHelpers;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtLong;
 import net.minecraft.nbt.NbtString;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Vec3i;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class VisageSerializer {
+    // visage tags
     public static final String VISAGE_TYPE_TAG = "type";
-    public static final String END_TIME_TAG = "end_time";
     public static final String VISAGE_DATA_TAG = "data";
+    // entry tags
+    public static final String INSTANCE_TAG = "instance";
+    public static final String ORIGIN_TAG = "origin";
+    public static final String END_TIME_TAG = "end_time";
 
     @Nullable
     public static VisageType<?> parseTypeFromTag(NbtCompound tag) {
@@ -27,7 +33,7 @@ public class VisageSerializer {
         return MediaworksRegistries.getVisageType(typeId);
     }
 
-    public static <T extends Visage> NbtCompound serialize(@NotNull T visage) {
+    public static <T extends Visage> NbtCompound serializeVisage(@NotNull T visage) {
         VisageType<T> type = (VisageType<T>) visage.getType();
         Identifier typeId = MediaworksRegistries.getVisageTypeId(type);
         if (typeId == null) {
@@ -35,24 +41,36 @@ public class VisageSerializer {
         }
         NbtCompound compound = new NbtCompound();
         compound.put(VISAGE_TYPE_TAG, NbtString.of(typeId.toString()));
-        compound.put(END_TIME_TAG, NbtLong.of(visage.getEndTime()));
         compound.put(VISAGE_DATA_TAG, type.serializeData(visage));
+        return compound;
+    }
+
+    /**
+     * @return Data for a {@link Visage} to be rendered, or a "garbage" if a drawable visage could not be parsed (e.g. it is invalid).
+     */
+    public static @NotNull Visage deserializeVisage(@NotNull NbtCompound compound) {
+        VisageType<?> type = parseTypeFromTag(compound);
+        if (type == null) return Visage.makeGarbageVisage(); // if stored id does not correspond to a valid type
+        if (!compound.contains(VISAGE_DATA_TAG)) return Visage.makeGarbageVisage();
+        Visage visage = type.deserializeData(compound.getCompound(VISAGE_DATA_TAG));
+        return visage == null ? Visage.makeGarbageVisage() : visage;
+    }
+
+    public static NbtCompound serializeEntry(@NotNull VisageEntry entry) {
+        NbtCompound compound = new NbtCompound();
+        compound.put(INSTANCE_TAG, serializeVisage(entry.getVisage()));
+        compound.put(ORIGIN_TAG, NbtHelpers.serializeVec3i(entry.getOrigin()));
+        compound.put(END_TIME_TAG, NbtLong.of(entry.getEndTime()));
         return compound;
     }
 
     /**
      * @return Data for a {@link Visage} to be rendered, or null if a drawable visage could not be parsed (e.g. it is invalid or has timed out).
      */
-    public static @Nullable Visage deserialize(@NotNull NbtCompound compound, long currentTime) {
-        VisageType<?> type = parseTypeFromTag(compound);
-        if (type == null) return null; // if stored id does not correspond to a valid type
-        if (!compound.contains(VISAGE_DATA_TAG)) return null;
-        long endTime = -1;
-        if (compound.contains(END_TIME_TAG)) endTime = compound.getLong(END_TIME_TAG);
-        Visage visage = type.deserializeData(compound.getCompound(VISAGE_DATA_TAG));
-        if (visage == null) return null; // if visage is invalid
-        visage.setEndTime(endTime);
-        if (visage.hasTimedOut(currentTime)) return null;
-        return visage;
+    public static VisageEntry deserializeEntry(@NotNull NbtCompound compound) {
+        Visage visage = deserializeVisage(compound.getCompound(INSTANCE_TAG));
+        Vec3i origin = NbtHelpers.deserializeVec3i(compound.getList(ORIGIN_TAG, NbtElement.INT_TYPE));
+        long endTime = compound.getLong(END_TIME_TAG);
+        return new VisageEntry(visage, origin, endTime);
     }
 }

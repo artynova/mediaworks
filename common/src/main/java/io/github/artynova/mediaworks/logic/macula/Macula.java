@@ -27,18 +27,34 @@ public class Macula implements PersistentDataContainer {
         this.content = content;
     }
 
+    /**
+     * It is normally recommended to use {@link #checkFullness()} instead of this
+     * when checking at an arbitrary time, because checkFullness guarantees that only
+     * non-outdated visages are counted towards the size, and this method does not guarantee that.
+     *
+     * @return whether the content is at or above {@link #MAX_VISAGES}.
+     */
     public boolean isFull() {
         return content.size() >= MAX_VISAGES;
     }
 
-    public void add(Visage visage) {
-        if (visage.hasTimedOut(owner.getWorld().getTime())) return;
-        content.add(visage);
+    /**
+     * Trims the content of outdated visages and checks {@link #isFull()}.
+     *
+     * @return whether the trimmed content is at or above {@link #MAX_VISAGES}.
+     */
+    public boolean checkFullness() {
         trim();
+        return isFull();
+    }
+
+    public void add(VisageEntry entry) {
+        if (entry.hasTimedOut(owner.getWorld().getTime())) return;
+        content.add(entry);
     }
 
     public void trim() {
-        content.removeIf(visage -> visage.hasTimedOut(owner.getWorld().getTime()));
+        content.removeIf(entry -> entry.hasTimedOut(owner.getWorld().getTime()));
     }
 
     public void clear() {

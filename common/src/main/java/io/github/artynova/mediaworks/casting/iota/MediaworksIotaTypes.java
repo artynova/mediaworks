@@ -13,7 +13,7 @@ import static io.github.artynova.mediaworks.Mediaworks.id;
 
 public class MediaworksIotaTypes {
     public static Map<Identifier, IotaType<?>> TYPES = new HashMap<>();
-    public static IotaType<Vec2Iota> VEC2 = register("flatvector", Vec2Iota.TYPE);
+    public static IotaType<VisageIota> VISAGE = register("visage", VisageIota.TYPE);
 
     public static void init() {
         for (Map.Entry<Identifier, IotaType<?>> entry : TYPES.entrySet()) {

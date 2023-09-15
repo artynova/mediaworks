@@ -42,8 +42,5 @@
     "fabric-language-kotlin": ">=1.9.0+kotlin.1.8.0",
     "architectury": ">=6.5.85",
     "hexcasting": ">=0.10.3"
-  },
-  "suggests": {
-    "moreiotas": ">=0.0.4"
   }
 }

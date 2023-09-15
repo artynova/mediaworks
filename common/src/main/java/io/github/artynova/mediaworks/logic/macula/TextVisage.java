@@ -1,64 +1,72 @@
 package io.github.artynova.mediaworks.logic.macula;
 
 import at.petrak.hexcasting.api.spell.iota.Iota;
-import dev.architectury.platform.Platform;
-import io.github.artynova.mediaworks.Mediaworks;
-import io.github.artynova.mediaworks.util.NbtHelpers;
+import io.github.artynova.mediaworks.interop.moreiotas.MoreIotasInterop;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
+import net.minecraft.nbt.NbtInt;
 import net.minecraft.nbt.NbtString;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.math.Vec2f;
 import org.jetbrains.annotations.NotNull;
-import ram.talia.moreiotas.api.spell.iota.StringIota;
+
+import java.util.Objects;
 
 public class TextVisage extends Visage {
-    public static final Vec2f UNBOUNDED_DIMENSIONS = new Vec2f(-1, -1);
+    public static final int UNLIMITED_SIZE = -1;
     public static final String TEXT_TAG = "text";
-    public static final String ORIGIN_TAG = "origin";
-    public static final String DIMENSIONS_TAG = "dims";
+    public static final String WIDTH_TAG = "width";
+    public static final String HEIGHT_TAG = "height";
     public static VisageType<TextVisage> TYPE = new VisageType<>() {
         @Override
         public TextVisage deserializeData(NbtCompound compound) {
             Text text = Text.Serializer.fromJson(compound.getString(TEXT_TAG));
-            Vec2f origin = NbtHelpers.deserializeVec2(compound.getList(ORIGIN_TAG, NbtElement.FLOAT_TYPE));
-            Vec2f dimensions = NbtHelpers.deserializeVec2(compound.getList(DIMENSIONS_TAG, NbtElement.FLOAT_TYPE));
-            return new TextVisage(text, origin, dimensions);
+            int width = compound.getInt(WIDTH_TAG);
+            int height = compound.getInt(HEIGHT_TAG);
+            if (width == -1 || height == -1) return new TextVisage(text);
+            return new TextVisage(text, width, height);
         }
 
         @Override
         public @NotNull NbtCompound serializeData(TextVisage visage) {
             NbtCompound compound = new NbtCompound();
             compound.put(TEXT_TAG, NbtString.of(Text.Serializer.toJson(visage.getText())));
-            compound.put(ORIGIN_TAG, NbtHelpers.serializeVec2(visage.getOrigin()));
-            compound.put(DIMENSIONS_TAG, NbtHelpers.serializeVec2(visage.getDimensions()));
+            compound.put(WIDTH_TAG, NbtInt.of(visage.getWidth()));
+            compound.put(HEIGHT_TAG, NbtInt.of(visage.getHeight()));
             return compound;
         }
     };
 
     private final Text text;
-    private final Vec2f origin;
-    private final Vec2f dimensions;
+    private final int width;
+    private final int height;
 
-    public TextVisage(Text text, Vec2f origin, Vec2f dimensions) {
+    /**
+     * Constructs a bounded text visage.
+     * For an unbounded instance, use {@link #TextVisage(Text)}
+     */
+    public TextVisage(Text text, int width, int height) {
         super(TYPE);
         this.text = text;
-        this.origin = origin;
-        if (!UNBOUNDED_DIMENSIONS.equals(dimensions) && (dimensions.x < 0 || dimensions.y < 0)) {
-            throw new IllegalArgumentException("Illegal TextVisage sizes: " + dimensions);
+        if (width < 0) {
+            throw new IllegalArgumentException("Illegal TextVisage width: " + width);
         }
-        this.dimensions = dimensions;
+        this.width = width;
+        if (height < 0) {
+            throw new IllegalArgumentException("Illegal TextVisage height: " + height);
+        }
+        this.height = height;
     }
 
-    public TextVisage(Text text, Vec2f origin) {
-        this(text, origin, UNBOUNDED_DIMENSIONS);
+    public TextVisage(Text text) {
+        super(TYPE);
+        this.text = text;
+        this.width = UNLIMITED_SIZE;
+        this.height = UNLIMITED_SIZE;
     }
 
     public static Text captureText(Iota iota) {
-        if (Platform.isModLoaded(Mediaworks.MOREIOTAS_ID) && iota instanceof StringIota stringIota) {
-            // replacing old formatting (typeable in-game) with new formatting (not typeable in-game)
-            return Text.literal(stringIota.getString().replaceAll("&([1-9a-fk-orA-FK-OR])", "§$1"));
+        if (MoreIotasInterop.isPresent() && MoreIotasInterop.isStringIota(iota)) {
+            return MoreIotasInterop.captureStringIota(iota);
         }
         return iota.display();
     }
@@ -67,15 +75,30 @@ public class TextVisage extends Visage {
         return text;
     }
 
-    public Vec2f getOrigin() {
-        return origin;
+    public int getWidth() {
+        return width;
     }
 
-    public Vec2f getDimensions() {
-        return dimensions;
+    public int getHeight() {
+        return height;
     }
 
-    public boolean isBounded() {
-        return !UNBOUNDED_DIMENSIONS.equals(getDimensions());
+    @Override
+    public MutableText displayOnStack() {
+        if (getWidth() == -1) return Text.translatable("mediaworks.visage.text.unbounded");
+        else return Text.translatable("mediaworks.visage.text.bounded", getWidth(), getHeight());
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+        TextVisage visage = (TextVisage) other;
+        return getWidth() == visage.getWidth() && getHeight() == visage.getHeight() && Objects.equals(getText(), visage.getText());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getText(), getWidth(), getHeight());
     }
 }

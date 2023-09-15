@@ -40,10 +40,3 @@ mandatory = true
 versionRange = "[0.10.3,)"
 ordering = "NONE"
 side = "BOTH"
-
-[[dependencies.mediaworks]]
-modId = "moreiotas"
-mandatory = false
-versionRange = "[0.0.4,)"
-ordering = "NONE"
-side = "BOTH"
