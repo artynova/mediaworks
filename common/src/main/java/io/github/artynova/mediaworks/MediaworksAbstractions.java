@@ -17,4 +17,9 @@ public class MediaworksAbstractions {
     public static @NotNull Macula getMacula(@NotNull ServerPlayerEntity player) {
         throw new AssertionError();
     }
+
+    @ExpectPlatform
+    public static void initLoaderSpecificInterop() {
+        throw new AssertionError();
+    }
 }

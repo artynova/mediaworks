@@ -1,0 +1,12 @@
+{
+  "name": "mediaworks.entry.mediaworks_tweaks",
+  "icon": "minecraft:shulker_box",
+  "category": "hexcasting:basics",
+  "advancement": "hexcasting:root",
+  "sortnum": 1,
+  "pages": [
+    "mediaworks.page.mediaworks_tweaks.1",
+    "mediaworks.page.mediaworks_tweaks.2",
+    "mediaworks.page.mediaworks_tweaks.3"
+  ]
+}

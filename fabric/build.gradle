@@ -38,7 +38,6 @@ dependencies {
     modImplementation("at.petra-k.hexcasting:hexcasting-fabric-${minecraftVersion}:${hexcastingVersion}") {
         // If not excluded here, calls a nonexistent method and crashes the dev client
         exclude module: "phosphor"
-        exclude module: "pehkui"
     }
 
     modImplementation "at.petra-k.paucal:paucal-fabric-${minecraftVersion}:${paucalVersion}"

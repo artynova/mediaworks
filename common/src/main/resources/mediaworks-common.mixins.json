@@ -17,6 +17,7 @@
   ],
   "mixins": [
     "HexInteropMixin",
+    "misc.MediaHelperMixin",
     "projection.EntityMixin"
   ],
   "injectors": {

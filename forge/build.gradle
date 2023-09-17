@@ -49,6 +49,11 @@ dependencies {
 
     runtimeOnly "thedarkcolour:kotlinforforge:$project.forgeKotlinVersion"
 
+    modCompileOnly "top.theillusivec4.curios:curios-forge:$minecraftVersion-$curiosVersion:api"
+    modRuntimeOnly "top.theillusivec4.curios:curios-forge:$minecraftVersion-$curiosVersion"
+
+    // Other Mediaworks dependencies
+
     runtimeOnly(include("com.github.llamalad7.mixinextras:mixinextras-forge:${mixinExtrasVersion}"))
 
     // mysteriously does not work in dev environment only; since production builds are fine, so shall it be

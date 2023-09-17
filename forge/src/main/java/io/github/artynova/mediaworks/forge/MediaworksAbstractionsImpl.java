@@ -1,6 +1,7 @@
 package io.github.artynova.mediaworks.forge;
 
 import io.github.artynova.mediaworks.forge.capabilities.MediaworksCapabilities;
+import io.github.artynova.mediaworks.forge.interop.CuriosInterop;
 import io.github.artynova.mediaworks.logic.macula.Macula;
 import io.github.artynova.mediaworks.logic.macula.MaculaHolder;
 import io.github.artynova.mediaworks.logic.projection.AstralProjection;
@@ -23,5 +24,9 @@ public class MediaworksAbstractionsImpl {
         Optional<MaculaHolder> cap = player.getCapability(MediaworksCapabilities.MACULA_HOLDER_CAP).resolve();
         assert cap.isPresent(); // there should not be such a situation where this capability is missing
         return cap.get().unwrap();
+    }
+
+    public static void initLoaderSpecificInterop() {
+        if (CuriosInterop.isPresent()) CuriosInterop.init();
     }
 }

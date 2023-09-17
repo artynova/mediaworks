@@ -6,6 +6,7 @@
   "client": [
   ],
   "mixins": [
+    "CapItemMediaHolderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

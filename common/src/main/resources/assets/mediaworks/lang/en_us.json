@@ -70,5 +70,10 @@
 
   "mediaworks.entry.mediaworks_moreiotas": "Mediaworks-MoreIotas",
   "mediaworks.page.mediaworks_moreiotas.1": "It appears that $(l:moreiotas:patterns/strings)$(thing)Strings/$ have some special properties when used with $(l:mediaworks:patterns/macula_etching/text_visages)$(thing)Text Visages/$. Specifically, the Calligrapher's patterns extract the underlying strings rather than their colored, quoted displays, and let me take advantage of the old ways of $(l:https://minecraft.fandom.com/wiki/Formatting_codes)formatting/$.",
-  "mediaworks.page.mediaworks_moreiotas.2": "To format text, I need only type the \"codes\" with the $(thing)&/$ symbol instead of the paragraph symbol, since I cannot normally type the latter. Any instances of $(thing)&/$ that are not part of a formatting code are left as-is."
+  "mediaworks.page.mediaworks_moreiotas.2": "To format text, I need only type the \"codes\" with the $(thing)&/$ symbol instead of the paragraph symbol, since I cannot normally type the latter. Any instances of $(thing)&/$ that are not part of a formatting code are left as-is.",
+
+  "mediaworks.entry.mediaworks_tweaks": "Mediaworking Changes",
+  "mediaworks.page.mediaworks_tweaks.1": "The _media flow in the world feels somewhat different lately. It has become more... perhaps, the word I am looking for is \"workable\"?$(p)I have unearthed legends about casters pulling _media from items inside $(thing)Shulker Boxes/$, though only after all other available _media sources are exhausted. Application rules seem to be the same as for _media from $(l:items/phials)$(thing)Media Phials/$.",
+  "mediaworks.page.mediaworks_tweaks.2": "When choosing an inventory slot to pull _media from, it no longer matters how much _media there is in the slot's item stack. This means that multiple successive casts will now prioritize fully exhausting inventory item stacks instead of \"load-balancing\", and thus will free up my pockets more quickly.",
+  "mediaworks.page.mediaworks_tweaks.3": "A $(l:items/lens)$(thing)Scrying Lens/$ worn in my helmet slot or face slot now also condenses the casting grid, much like when held in the other hand. However, having multiple lenses on my person is redundant, because 2 or even 3 of them have the same effect as just 1."
 }

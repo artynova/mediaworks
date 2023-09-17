@@ -6,6 +6,7 @@ import io.github.artynova.mediaworks.effect.MediaworksEffects;
 import io.github.artynova.mediaworks.event.MediaworksEvents;
 import io.github.artynova.mediaworks.interop.MediaworksInterop;
 import io.github.artynova.mediaworks.logic.macula.MediaworksVisageTypes;
+import io.github.artynova.mediaworks.misc.MediaworksMisc;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.registry.MediaworksRegistries;
 import io.github.artynova.mediaworks.sound.MediaworksSounds;
@@ -19,6 +20,7 @@ public class Mediaworks {
 
 
     public static void init() {
+        MediaworksMisc.init();
         MediaworksRegistries.init();
         MediaworksEffects.init();
         MediaworksIotaTypes.init();
