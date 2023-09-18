@@ -1,13 +1,16 @@
 package io.github.artynova.mediaworks.fabric.cc;
 
+import at.petrak.hexcasting.api.addldata.ADMediaHolder;
 import at.petrak.hexcasting.fabric.cc.HexCardinalComponents;
+import at.petrak.hexcasting.fabric.cc.adimpl.CCMediaHolder;
 import dev.onyxstudios.cca.api.v3.component.ComponentKey;
 import dev.onyxstudios.cca.api.v3.component.ComponentRegistry;
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry;
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer;
 import dev.onyxstudios.cca.api.v3.item.ItemComponentFactoryRegistry;
 import dev.onyxstudios.cca.api.v3.item.ItemComponentInitializer;
-import io.github.artynova.mediaworks.logic.media.BEItemMediaHolder;
+import io.github.artynova.mediaworks.interop.supplementaries.SackMediaHolder;
+import io.github.artynova.mediaworks.interop.supplementaries.SupplementariesInterop;
 import io.github.artynova.mediaworks.misc.ShulkerBoxMediaHolder;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -16,6 +19,7 @@ import static io.github.artynova.mediaworks.Mediaworks.id;
 public class MediaworksCardinalComponents implements EntityComponentInitializer, ItemComponentInitializer {
     public static final ComponentKey<ProjectionHolderComp> PROJECTION_HOLDER = ComponentRegistry.getOrCreate(id("projection_holder"), ProjectionHolderComp.class);
     public static final ComponentKey<MaculaHolderComp> MACULA_HOLDER = ComponentRegistry.getOrCreate(id("macula_holder"), MaculaHolderComp.class);
+    public static final ComponentKey<CCMediaHolder> MEDIA_HOLDER = HexCardinalComponents.MEDIA_HOLDER;
 
     @Override
     public void registerEntityComponentFactories(EntityComponentFactoryRegistry registry) {
@@ -27,6 +31,8 @@ public class MediaworksCardinalComponents implements EntityComponentInitializer,
 
     @Override
     public void registerItemComponentFactories(ItemComponentFactoryRegistry registry) {
-        registry.register(ShulkerBoxMediaHolder::isShulkerBox, HexCardinalComponents.MEDIA_HOLDER, stack -> new ContainerItemMediaHolderComp(new ShulkerBoxMediaHolder(stack)));
+        registry.register(ShulkerBoxMediaHolder::isShulkerBox, MEDIA_HOLDER, stack -> new ContainerItemMediaHolderComp(new ShulkerBoxMediaHolder(stack)));
+        // don't need to register this in the first place if supplementaries is not present
+        if (SupplementariesInterop.isPresent()) registry.register(SackMediaHolder::isSack, MEDIA_HOLDER, stack -> new ContainerItemMediaHolderComp(new SackMediaHolder(stack)));
     }
 }

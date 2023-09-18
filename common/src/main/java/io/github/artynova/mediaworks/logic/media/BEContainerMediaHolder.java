@@ -13,14 +13,14 @@ import java.util.function.IntSupplier;
 /**
  * Container media holder implementation for {@link BlockEntity}-based container items, like shulker boxes.
  */
-public class BEItemMediaHolder extends ContainerItemMediaHolder {
+public class BEContainerMediaHolder extends ContainerItemMediaHolder {
     public static final String BLOCK_ENTITY_TAG = "BlockEntityTag";
     public static final String ITEMS_TAG = "Items";
     public static final String SLOT_TAG = "Slot";
 
     private final IntSupplier inventorySizeSupplier;
 
-    public BEItemMediaHolder(ItemStack stack, IntSupplier inventorySizeSupplier) {
+    public BEContainerMediaHolder(ItemStack stack, IntSupplier inventorySizeSupplier) {
         super(stack);
         this.inventorySizeSupplier = inventorySizeSupplier;
     }

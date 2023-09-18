@@ -57,7 +57,6 @@
   "mediaworks.page.macula_patterns.macula_clear": "Clears my Macula quickly and painlessly. Definitely beats suffering a $(l:mediaworks:patterns/macula_etching/macula_mishaps)$(thing)Black Eye/$ or dying. Costs a negligible amount of _media.",
   "mediaworks.page.macula_patterns.macula_dimensions": "Returns my current $(l:mediaworks:patterns/macula_etching/macula_concepts#mediaworks:macula_space)$(thing)Macula width and height/$. An absolute must for any sufficiently complex Macula calculations.",
 
-
   "mediaworks.entry.black_eye_mishap": "Black Eye Mishap",
   "mediaworks.page.black_eye_mishap.1": "Occurs when I have tried to put more than 32 visages onto my Macula, or to create a $(l:mediaworks:patterns/macula_etching/macula_concepts)$(thing)Fleeting Visage/$ for longer than 1 day.$(p)Causes black sparks and damages my Macula, clearing it and blinding me for a couple of seconds.$(p)$(italic)Good thing the blindness is temporary...",
 
@@ -75,5 +74,8 @@
   "mediaworks.entry.mediaworks_tweaks": "Mediaworking Changes",
   "mediaworks.page.mediaworks_tweaks.1": "The _media flow in the world feels somewhat different lately. It has become more... perhaps, the word I am looking for is \"workable\"?$(p)I have unearthed legends about casters pulling _media from items inside $(thing)Shulker Boxes/$, though only after all other available _media sources are exhausted. Application rules seem to be the same as for _media from $(l:items/phials)$(thing)Media Phials/$.",
   "mediaworks.page.mediaworks_tweaks.2": "When choosing an inventory slot to pull _media from, it no longer matters how much _media there is in the slot's item stack. This means that multiple successive casts will now prioritize fully exhausting inventory item stacks instead of \"load-balancing\", and thus will free up my pockets more quickly.",
-  "mediaworks.page.mediaworks_tweaks.3": "A $(l:items/lens)$(thing)Scrying Lens/$ worn in my helmet slot or face slot now also condenses the casting grid, much like when held in the other hand. However, having multiple lenses on my person is redundant, because 2 or even 3 of them have the same effect as just 1."
+  "mediaworks.page.mediaworks_tweaks.3": "A $(l:items/lens)$(thing)Scrying Lens/$ worn in my helmet slot or face slot now also condenses the casting grid, much like when held in the other hand. However, having multiple lenses on my person is redundant, because 2 or even 3 of them have the same effect as just 1.",
+
+  "mediaworks.entry.mediaworks_containers": "Mediaworks Containers",
+  "mediaworks.page.mediaworks_containers.1": "In a $(italic)modified/$ world, there can be all kinds of containers besides $(thing)Shulker Boxes/$. Some of them can even act as _media $(l:mediaworks:basics/mediaworks_tweaks)$(thing)sources/$ in much the same way! I will be cataloguing such special containers here."
 }

@@ -3,6 +3,7 @@ package io.github.artynova.mediaworks.forge.capabilities;
 import at.petrak.hexcasting.api.addldata.ADMediaHolder;
 import at.petrak.hexcasting.forge.cap.ForgeCapabilityHandler;
 import at.petrak.hexcasting.forge.cap.HexCapabilities;
+import io.github.artynova.mediaworks.interop.supplementaries.SackMediaHolder;
 import io.github.artynova.mediaworks.logic.PersistentDataContainer;
 import io.github.artynova.mediaworks.logic.PersistentDataWrapper;
 import io.github.artynova.mediaworks.logic.macula.MaculaHolder;
@@ -55,6 +56,10 @@ public class MediaworksCapabilities {
         ItemStack stack = event.getObject();
         if (ShulkerBoxMediaHolder.isShulkerBox(stack.getItem())) {
             event.addCapability(MEDIA_HOLDER_CAP_ID, provideSimple(stack, MEDIA_HOLDER_CAP, () -> new ShulkerBoxMediaHolder(stack)));
+        }
+        // isSack being true implies that supplementaries is present, no need for a separate supplementaries check
+        if (SackMediaHolder.isSack(stack.getItem())) {
+            event.addCapability(MEDIA_HOLDER_CAP_ID, provideSimple(stack, MEDIA_HOLDER_CAP, () -> new SackMediaHolder(stack)));
         }
     }
 
