@@ -1,10 +1,7 @@
 package io.github.artynova.mediaworks.networking.macula;
 
 import dev.architectury.networking.NetworkManager;
-import io.github.artynova.mediaworks.client.macula.MaculaClient;
-import io.github.artynova.mediaworks.logic.macula.Macula;
 import io.github.artynova.mediaworks.logic.macula.MaculaServer;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -13,6 +10,7 @@ import java.util.function.Supplier;
 public class SyncMaculaDimensionsC2SMsg {
     private final int width;
     private final int height;
+
     public SyncMaculaDimensionsC2SMsg(int width, int height) {
         this.width = width;
         this.height = height;

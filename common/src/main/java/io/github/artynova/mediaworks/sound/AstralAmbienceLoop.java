@@ -8,7 +8,7 @@ import net.minecraft.client.sound.MovingSoundInstance;
 import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.sound.SoundCategory;
 
-@Environment(value = EnvType.CLIENT)
+@Environment(EnvType.CLIENT)
 public class AstralAmbienceLoop extends MovingSoundInstance {
     private final ClientPlayerEntity player;
 

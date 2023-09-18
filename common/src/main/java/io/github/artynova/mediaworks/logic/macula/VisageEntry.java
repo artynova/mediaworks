@@ -2,8 +2,6 @@ package io.github.artynova.mediaworks.logic.macula;
 
 import net.minecraft.util.math.Vec3i;
 
-import java.util.Comparator;
-
 /**
  * Wrapper around a {@link Visage} implementation, containing data that is used for display of any visage.
  * Because of the nature of visage deserialization, this object does not contain specific class information about the visage.

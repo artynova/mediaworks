@@ -16,6 +16,7 @@ import static io.github.artynova.mediaworks.Mediaworks.id;
 public class MediaworksEvents {
     public static final Identifier SHADER_RELOADER_ID = id("shader_reloader");
     public static final Identifier VISAGE_RENDERER_RELOADER_ID = id("shader_reloader");
+
     public static void init() {
         ReloadListenerRegistry.register(ResourceType.CLIENT_RESOURCES, ShaderLoader.getInstance(), SHADER_RELOADER_ID);
         ReloadListenerRegistry.register(ResourceType.CLIENT_RESOURCES, VisageRendererLoader.getInstance(), VISAGE_RENDERER_RELOADER_ID);

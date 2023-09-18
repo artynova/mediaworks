@@ -9,6 +9,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 
 public class AstralProjectionEffect extends StatusEffect {
     public static final int COLOR = 0xFF_65518A;
+
     public AstralProjectionEffect() {
         super(StatusEffectCategory.BENEFICIAL, COLOR);
     }

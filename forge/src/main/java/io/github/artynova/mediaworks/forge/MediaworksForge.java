@@ -1,7 +1,5 @@
 package io.github.artynova.mediaworks.forge;
 
-import at.petrak.hexcasting.forge.cap.ForgeCapabilityHandler;
-import at.petrak.hexcasting.forge.cap.HexCapabilities;
 import dev.architectury.platform.forge.EventBuses;
 import io.github.artynova.mediaworks.Mediaworks;
 import io.github.artynova.mediaworks.forge.capabilities.MediaworksCapabilities;
@@ -21,7 +19,6 @@ public class MediaworksForge {
         EventBuses.registerModEventBus(Mediaworks.MOD_ID, modBus);
         modBus.addListener(MediaworksClientForge::init);
         Mediaworks.init();
-
 
 
         modBus.addListener(MediaworksCapabilities::registerCaps);

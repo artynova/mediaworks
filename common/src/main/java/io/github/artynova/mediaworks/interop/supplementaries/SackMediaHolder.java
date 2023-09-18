@@ -6,10 +6,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import java.util.function.IntSupplier;
-
 /**
- * Funnily enough, this does not even need any of the Supplementaries code to depend on.
+ * Funnily enough, this does not even need any of the Supplementaries code.
  */
 public class SackMediaHolder extends BEContainerMediaHolder {
     public static final Identifier SACK_ID = new Identifier(SupplementariesInterop.MOD_ID, "sack");

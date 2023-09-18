@@ -18,9 +18,9 @@ public class MaculaSerializer {
     }
 
     /**
-     * @param compound an NbtComponent into which the macula content {@link NbtList} will be written.
-     * @param maculaContent   the macula.
-     * @param world    the player's world, for checking world age.
+     * @param compound      an NbtComponent into which the macula content {@link NbtList} will be written.
+     * @param maculaContent the macula.
+     * @param world         the player's world, for checking world age.
      */
     public static void putContent(@NotNull NbtCompound compound, @NotNull MaculaContent maculaContent, @NotNull World world) {
         compound.put(CONTENT_TAG, MaculaContent.serialize(maculaContent, world.getTime()));

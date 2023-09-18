@@ -1,6 +1,5 @@
 package io.github.artynova.mediaworks.fabric.cc;
 
-import at.petrak.hexcasting.api.addldata.ADMediaHolder;
 import at.petrak.hexcasting.fabric.cc.HexCardinalComponents;
 import at.petrak.hexcasting.fabric.cc.adimpl.CCMediaHolder;
 import dev.onyxstudios.cca.api.v3.component.ComponentKey;
@@ -33,6 +32,7 @@ public class MediaworksCardinalComponents implements EntityComponentInitializer,
     public void registerItemComponentFactories(ItemComponentFactoryRegistry registry) {
         registry.register(ShulkerBoxMediaHolder::isShulkerBox, MEDIA_HOLDER, stack -> new ContainerItemMediaHolderComp(new ShulkerBoxMediaHolder(stack)));
         // don't need to register this in the first place if supplementaries is not present
-        if (SupplementariesInterop.isPresent()) registry.register(SackMediaHolder::isSack, MEDIA_HOLDER, stack -> new ContainerItemMediaHolderComp(new SackMediaHolder(stack)));
+        if (SupplementariesInterop.isPresent())
+            registry.register(SackMediaHolder::isSack, MEDIA_HOLDER, stack -> new ContainerItemMediaHolderComp(new SackMediaHolder(stack)));
     }
 }

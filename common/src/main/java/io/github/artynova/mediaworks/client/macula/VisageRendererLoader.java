@@ -14,16 +14,16 @@ public class VisageRendererLoader implements SynchronousResourceReloader {
     private VisageRendererLoader() {
     }
 
-    @Override
-    public void reload(ResourceManager manager) {
-        visageRenderers = VisageRenderers.loadVisageRendererMap();
-    }
-
     public static VisageRendererLoader getInstance() {
         return INSTANCE;
     }
 
     public static <T extends Visage> VisageRenderer<T> getRenderer(T visage) {
         return (VisageRenderer<T>) visageRenderers.get(visage.getType());
+    }
+
+    @Override
+    public void reload(ResourceManager manager) {
+        visageRenderers = VisageRenderers.loadVisageRendererMap();
     }
 }

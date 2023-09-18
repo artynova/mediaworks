@@ -12,6 +12,7 @@ import java.util.Optional;
 
 public class TrinketsInterop {
     public static final String MOD_ID = "trinkets";
+
     public static void init() {
         DiscoveryHandlers.addGridScaleModifier(TrinketsInterop::lensTrinketGridModifier);
     }

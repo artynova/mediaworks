@@ -15,13 +15,6 @@ import java.util.Comparator;
 public class MaculaContent extends ArrayList<VisageEntry> {
     public static final Comparator<VisageEntry> DEPTH_COMPARATOR = Comparator.comparingInt(entry -> entry.getOrigin().getZ());
 
-    /**
-     * Run a standard stable sort that arranges the entries in display order.
-     */
-    public void sortByDepth() {
-        sort(DEPTH_COMPARATOR);
-    }
-
     public static NbtList serialize(@NotNull MaculaContent maculaContent, long currentTime) {
         NbtList list = new NbtList();
         for (VisageEntry entry : maculaContent) {
@@ -45,5 +38,12 @@ public class MaculaContent extends ArrayList<VisageEntry> {
             maculaContent.add(entry);
         }
         return maculaContent;
+    }
+
+    /**
+     * Run a standard stable sort that arranges the entries in display order.
+     */
+    public void sortByDepth() {
+        sort(DEPTH_COMPARATOR);
     }
 }

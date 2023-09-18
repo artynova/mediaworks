@@ -29,7 +29,7 @@ public class MaculaServer {
         newMacula.setHeight(oldMacula.getHeight());
         // update the new player data with the old macula content on returning from the end, no client sync is necessary
         if (wonGame) newMacula.setContent(oldMacula.getContent());
-        // update the client with the empty macula on respawn
+            // update the client with the empty macula on respawn
         else syncContentToClient(newPlayer);
         clearCache(oldPlayer);
     }

@@ -2,7 +2,6 @@ package io.github.artynova.mediaworks.interop.patchouli;
 
 import at.petrak.hexcasting.interop.HexInterop;
 import dev.architectury.platform.Platform;
-import io.github.artynova.mediaworks.Mediaworks;
 import io.github.artynova.mediaworks.interop.moreiotas.MoreIotasInterop;
 import io.github.artynova.mediaworks.interop.supplementaries.SupplementariesInterop;
 import vazkii.patchouli.api.PatchouliAPI;

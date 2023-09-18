@@ -35,7 +35,8 @@ interface RavenmindSpellAction : Action {
             throw MishapNotEnoughArgs(argc, stack.size)
         val args = stack.takeLast(argc)
         for (_i in 0 until argc) stack.removeLast()
-        val executeResult = this.execute(args, ctx, ravenmind) ?: return OperationResult(continuation, stack, ravenmind, listOf())
+        val executeResult =
+            this.execute(args, ctx, ravenmind) ?: return OperationResult(continuation, stack, ravenmind, listOf())
         val (spell, media, particles) = executeResult
 
         val sideEffects = mutableListOf<OperatorSideEffect>()

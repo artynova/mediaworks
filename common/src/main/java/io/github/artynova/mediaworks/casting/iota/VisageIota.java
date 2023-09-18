@@ -5,13 +5,11 @@ import at.petrak.hexcasting.api.spell.iota.IotaType;
 import at.petrak.hexcasting.api.utils.HexUtils;
 import io.github.artynova.mediaworks.logic.macula.Visage;
 import io.github.artynova.mediaworks.logic.macula.VisageSerializer;
-import io.github.artynova.mediaworks.util.NbtHelpers;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.math.Vec2f;
 import org.jetbrains.annotations.NotNull;
 
 public class VisageIota extends Iota {

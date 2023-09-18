@@ -21,7 +21,8 @@ class MishapBlackEye(val reason: String) : Mishap() {
 
     override fun accentColor(ctx: CastingContext, errorCtx: Context): FrozenColorizer = dyeColor(DyeColor.BLACK)
 
-    override fun errorMessage(ctx: CastingContext, errorCtx: Context): Text = error("black_eye.$reason", actionName(errorCtx.action))
+    override fun errorMessage(ctx: CastingContext, errorCtx: Context): Text =
+        error("black_eye.$reason", actionName(errorCtx.action))
 
     override fun execute(ctx: CastingContext, errorCtx: Context, stack: MutableList<Iota>) {
         ctx.caster.addStatusEffect(StatusEffectInstance(StatusEffects.BLINDNESS, BLINDNESS_TICKS))

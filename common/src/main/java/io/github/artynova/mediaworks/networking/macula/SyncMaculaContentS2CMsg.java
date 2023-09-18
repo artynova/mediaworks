@@ -14,14 +14,14 @@ public class SyncMaculaContentS2CMsg extends NbtCompoundMsg {
         super(wrapMacula(macula));
     }
 
+    public SyncMaculaContentS2CMsg(PacketByteBuf buf) {
+        super(buf);
+    }
+
     private static NbtCompound wrapMacula(Macula macula) {
         NbtCompound compound = new NbtCompound();
         macula.writeToNbt(compound);
         return compound;
-    }
-
-    public SyncMaculaContentS2CMsg(PacketByteBuf buf) {
-        super(buf);
     }
 
     @Override

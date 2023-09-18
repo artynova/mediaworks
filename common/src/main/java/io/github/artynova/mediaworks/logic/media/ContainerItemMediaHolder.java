@@ -3,7 +3,6 @@ package io.github.artynova.mediaworks.logic.media;
 import at.petrak.hexcasting.api.addldata.ADMediaHolder;
 import at.petrak.hexcasting.api.utils.MediaHelper;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
-import io.github.artynova.mediaworks.misc.MediaConsumptionTweaks;
 import net.minecraft.item.ItemStack;
 
 import java.util.List;
@@ -52,6 +51,11 @@ public abstract class ContainerItemMediaHolder implements ADMediaHolder {
     }
 
     @Override
+    public void setMedia(int media) {
+        // non-op, media is changed by inserting and removing items via container's preferred method
+    }
+
+    @Override
     public int getMaxMedia() {
         return getMedia();
     }
@@ -77,11 +81,6 @@ public abstract class ContainerItemMediaHolder implements ADMediaHolder {
     }
 
     @Override
-    public void setMedia(int media) {
-        // non-op, media is changed by inserting and removing items via container's preferred method
-    }
-
-    @Override
     public int withdrawMedia(int cost, boolean simulate) {
         int costLeft = cost;
         List<ItemStack> inventory = getInventory();
@@ -90,7 +89,8 @@ public abstract class ContainerItemMediaHolder implements ADMediaHolder {
             costLeft -= MediaHelper.extractMedia(holder, costLeft, false, simulate);
             if (costLeft <= 0) break;
         }
-        if (!simulate) setInventory(inventory); // stacks themselves are updates by holders, so all we need to do is update the container's stack
+        if (!simulate)
+            setInventory(inventory); // stacks themselves are updates by holders, so all we need to do is update the container's stack
         return cost - costLeft;
     }
 

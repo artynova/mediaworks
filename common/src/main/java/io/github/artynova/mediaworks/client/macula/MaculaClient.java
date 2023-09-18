@@ -2,8 +2,6 @@ package io.github.artynova.mediaworks.client.macula;
 
 import io.github.artynova.mediaworks.logic.macula.MaculaContent;
 import io.github.artynova.mediaworks.logic.macula.MaculaSerializer;
-import io.github.artynova.mediaworks.logic.macula.TextVisage;
-import io.github.artynova.mediaworks.logic.macula.VisageEntry;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.networking.macula.SyncMaculaDimensionsC2SMsg;
 import net.fabricmc.api.EnvType;

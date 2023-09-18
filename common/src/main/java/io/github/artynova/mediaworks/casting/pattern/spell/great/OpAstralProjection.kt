@@ -1,10 +1,13 @@
 package io.github.artynova.mediaworks.casting.pattern.spell.great
 
 import at.petrak.hexcasting.api.misc.MediaConstants
-import at.petrak.hexcasting.api.spell.*
+import at.petrak.hexcasting.api.spell.OperationResult
+import at.petrak.hexcasting.api.spell.ParticleSpray
+import at.petrak.hexcasting.api.spell.RenderedSpell
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.casting.eval.SpellContinuation
 import at.petrak.hexcasting.api.spell.casting.sideeffects.OperatorSideEffect
+import at.petrak.hexcasting.api.spell.getPositiveDouble
 import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.mishaps.MishapImmuneEntity
 import at.petrak.hexcasting.api.spell.mishaps.MishapNotEnoughArgs

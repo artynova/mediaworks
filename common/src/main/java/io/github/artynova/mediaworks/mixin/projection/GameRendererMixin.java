@@ -18,7 +18,8 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 @Mixin(GameRenderer.class)
 public abstract class GameRendererMixin {
 
-    @Shadow public abstract MinecraftClient getClient();
+    @Shadow
+    public abstract MinecraftClient getClient();
 
     @Inject(method = "renderHand", at = @At("HEAD"), cancellable = true)
     private void cancelHandRendering(MatrixStack matrices, Camera camera, float tickDelta, CallbackInfo ci) {

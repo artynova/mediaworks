@@ -6,7 +6,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.util.math.MatrixStack;
 
-@Environment(value= EnvType.CLIENT)
+@Environment(EnvType.CLIENT)
 
 public interface VisageRenderer<T extends Visage> {
     /**
