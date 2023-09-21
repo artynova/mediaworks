@@ -16,7 +16,7 @@ public interface VisageRenderer<T extends Visage> {
     Prepared prepare(VisageEntry entry);
 
     interface Prepared {
-        void render(MatrixStack stack);
+        void render(MatrixStack stack, float tickDelta);
 
         /**
          * @return true if the visage should no longer be rendered, and thus the renderer is safe to dispose of.

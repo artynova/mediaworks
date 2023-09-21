@@ -19,9 +19,9 @@ public class MaculaClient {
     private static final MinecraftClient CLIENT = MinecraftClient.getInstance();
     private static List<VisageRenderer.Prepared> preparedRenderers;
 
-    public static void render(MatrixStack matrixStack) {
+    public static void render(MatrixStack matrixStack, float tickDelta) {
         assert CLIENT.world != null;
-        preparedRenderers.forEach(renderer -> renderer.render(matrixStack));
+        preparedRenderers.forEach(renderer -> renderer.render(matrixStack, tickDelta));
         preparedRenderers.removeIf(VisageRenderer.Prepared::doneDisplaying);
     }
 
