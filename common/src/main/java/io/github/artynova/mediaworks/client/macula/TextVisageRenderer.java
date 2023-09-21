@@ -42,9 +42,7 @@ public class TextVisageRenderer implements VisageRenderer<TextVisage> {
 
             int maxWidth = visage.getWidth();
             if (maxWidth == -1) maxWidth = textRenderer.getWidth(text);
-            // TODO verify whether wrapping actually splits a text with newlines into multiple ordered texts
             List<OrderedText> tempLines = textRenderer.wrapLines(text, maxWidth);
-            System.out.println("temp lines size = " + tempLines.size());
 
             int maxHeight = visage.getHeight();
             int maxLines = Math.min(tempLines.size(), maxHeight == -1 ? tempLines.size() : maxHeight / textRenderer.fontHeight);

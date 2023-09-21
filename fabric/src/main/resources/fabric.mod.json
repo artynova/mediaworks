@@ -1,19 +1,20 @@
 {
   "schemaVersion": 1,
-  "id": "mediaworks",
-  "version": "${version}",
-  "name": "Mediaworks",
-  "description": "Please describe me!",
+  "id": "${modId}",
+  "version": "${modVersion}",
+  "name": "${modName}",
+  "description": "${modDescription}",
   "authors": [
-    "artynova"
+    "${modAuthor}"
   ],
   "contact": {
-    "homepage": "https://artynova.github.io",
-    "sources": "https://github.com/artynova/hexcasting-architectury-addon-template"
+    "homepage": "${modPage}",
+    "sources": "${modSource}",
+    "issues": "${modIssueTracker}"
   },
-  "license": "MIT",
+  "license": "${modLicense}",
   "icon": "icon.png",
-  "environment": "*",
+  "environment": "${modFabricEnv}",
   "entrypoints": {
     "main": [
       "io.github.artynova.mediaworks.fabric.MediaworksFabric"
@@ -36,11 +37,12 @@
     ]
   },
   "depends": {
-    "minecraft": ">=1.19.2",
-    "fabricloader": ">=0.14.21",
-    "fabric-api": "*",
-    "fabric-language-kotlin": ">=1.9.0+kotlin.1.8.0",
-    "architectury": ">=6.5.85",
-    "hexcasting": ">=0.10.3"
+    "minecraft": "${minecraftVersion}",
+    "fabricloader": ">=${fabricLoaderVersion}",
+    "fabric-api": ">=${fabricVersion}",
+    "fabric-language-kotlin": ">=${fabricKotlinVersion}",
+    "architectury": ">=${architecturyVersion}",
+    "hexcasting": ">=${hexcastingVersion}",
+    "extensibleenums": ">=${extensibleenumsVersion}"
   }
 }

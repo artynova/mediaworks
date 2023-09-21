@@ -3,6 +3,7 @@ package io.github.artynova.mediaworks;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import io.github.artynova.mediaworks.logic.macula.Macula;
 import io.github.artynova.mediaworks.logic.projection.AstralProjection;
+import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.jetbrains.annotations.NotNull;
 
@@ -20,6 +21,11 @@ public class MediaworksAbstractions {
 
     @ExpectPlatform
     public static void initLoaderSpecificInterop() {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static EnchantmentTarget getCloakEnchantmentTarget() {
         throw new AssertionError();
     }
 }

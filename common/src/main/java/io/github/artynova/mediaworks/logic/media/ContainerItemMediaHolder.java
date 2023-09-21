@@ -2,11 +2,10 @@ package io.github.artynova.mediaworks.logic.media;
 
 import at.petrak.hexcasting.api.addldata.ADMediaHolder;
 import at.petrak.hexcasting.api.utils.MediaHelper;
-import at.petrak.hexcasting.xplat.IXplatAbstractions;
+import io.github.artynova.mediaworks.util.HexHelpers;
 import net.minecraft.item.ItemStack;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * A cross-platform media holder that performs its functions based on items
@@ -84,13 +83,14 @@ public abstract class ContainerItemMediaHolder implements ADMediaHolder {
     public int withdrawMedia(int cost, boolean simulate) {
         int costLeft = cost;
         List<ItemStack> inventory = getInventory();
-        List<ADMediaHolder> holders = inventory.stream().filter(MediaHelper::isMediaItem).map(IXplatAbstractions.INSTANCE::findMediaHolder).filter(Objects::nonNull).sorted((holder1, holder2) -> MediaHelper.compareMediaItem(holder2, holder1)).toList();
+        List<ADMediaHolder> holders = HexHelpers.collectMediaHolders(inventory);
         for (ADMediaHolder holder : holders) {
             costLeft -= MediaHelper.extractMedia(holder, costLeft, false, simulate);
-            if (costLeft <= 0) break;
+            // the first condition is needed because with negative cost (= need to extract all media) costLeft would be negative even though we need to keep going
+            if (cost >= 0 && costLeft <= 0) break;
         }
         if (!simulate)
-            setInventory(inventory); // stacks themselves are updates by holders, so all we need to do is update the container's stack
+            setInventory(inventory); // stacks themselves are updated by holders, so all we need to do is update the container's stack
         return cost - costLeft;
     }
 

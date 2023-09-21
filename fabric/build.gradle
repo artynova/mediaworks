@@ -27,7 +27,7 @@ dependencies {
 
     // Loaders and base APIs
     modImplementation "net.fabricmc:fabric-loader:${project.fabricLoaderVersion}"
-    modApi "net.fabricmc.fabric-api:fabric-api:${fabricApiVersion}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${fabricVersion}"
     modImplementation("net.fabricmc:fabric-language-kotlin:${project.fabricKotlinVersion}")
     modApi("dev.architectury:architectury-fabric:${architecturyVersion}") {
         // Fix for the "two fabric loaders" loading crash
@@ -58,15 +58,35 @@ dependencies {
 
     modRuntimeOnly "maven.modrinth:moreiotas:${moreIotasFabricVersion}"
 
+    modImplementation include("fuzs.extensibleenums:extensibleenums-fabric:$extensibleenumsVersion")
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }
 
 processResources {
-    inputs.property "version", project.version
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+
+    inputs.property "modId", modId
+    inputs.property "modVersion", modVersion
+    inputs.property "modName", modName
+    inputs.property "modDescription", modDescription
+    inputs.property "modAuthor", modAuthor
+    inputs.property "modPage", modPage
+    inputs.property "modSource", modSource
+    inputs.property "modIssueTracker", modIssueTracker
+    inputs.property "modLicense", modLicense
+    inputs.property "minecraftVersion", minecraftVersion
+    inputs.property "fabricLoaderVersion", fabricLoaderVersion
+    inputs.property "fabricVersion", fabricVersion
+    inputs.property "fabricKotlinVersion", fabricKotlinVersion
+    inputs.property "architecturyVersion", architecturyVersion
+    inputs.property "hexcastingVersion", hexcastingVersion
+    inputs.property "extensibleenumsVersion", extensibleenumsVersion
+    inputs.property "modFabricEnv", modFabricEnv
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        expand project.properties
     }
 }
 

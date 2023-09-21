@@ -1,6 +1,18 @@
 {
   "effect.mediaworks.astral_projection": "Astral Projection",
 
+  "item.mediaworks.magic_cloak": "Magic Cloak",
+
+  "enchantment.mediaworks.reciprocation": "Reciprocation",
+  "enchantment.mediaworks.reciprocation.desc": "Casts the held iota (if any) whenever the wearer is damaged.",
+  "enchantment.mediaworks.media_shield": "Media Shield",
+  "enchantment.mediaworks.media_shield.desc": "Absorbs raw incoming damage (before armor calculations) by up to a certain percentage, consuming an amount of media equivalent to the absorbed damage.",
+  "enchantment.mediaworks.locale_magnification": "Locale Magnification",
+  "enchantment.mediaworks.locale_magnification.desc": "Increases personal casting range of influence and raycast distance.",
+
+  "advancements.mediaworks.find_cloak": "Woven Thoughts",
+  "advancements.mediaworks.find_cloak.description": "Find a Magic Cloak among the dark remnants of an ancient age.",
+
   "mediaworks.subtitle.astral.ambience": "Nature whispers",
   "mediaworks.subtitle.astral.return": "Astral Projection ends",
   "mediaworks.message.projection": "Press %1$s to Return",
@@ -17,6 +29,9 @@
   "hexcasting.spell.mediaworks:macula/dimensions": "Macula Gambit",
   "hexcasting.spell.mediaworks:visage/text/unbounded": "Calligrapher's Purification",
   "hexcasting.spell.mediaworks:visage/text/bounded": "Calligrapher's Exaltation",
+
+  "hexcasting.spell.mediaworks:cloak/read": "Medivh's Reflection",
+  "hexcasting.spell.mediaworks:get_media": "Media Reflection",
 
   "hexcasting.mishap.black_eye.visage_cap": "Your Macula could not withstand too many Visages at once",
   "hexcasting.mishap.black_eye.duration_cap": "Your Macula could not accept a Fleeting Visage for longer than a day, consider etching a Lasting Visage instead",
@@ -77,5 +92,23 @@
   "mediaworks.page.mediaworks_tweaks.3": "A $(l:items/lens)$(thing)Scrying Lens/$ worn in my helmet slot or face slot now also condenses the casting grid, much like when held in the other hand. However, having multiple lenses on my person is redundant, because 2 or even 3 of them have the same effect as just 1.",
 
   "mediaworks.entry.mediaworks_containers": "Mediaworks Containers",
-  "mediaworks.page.mediaworks_containers.1": "In a $(italic)modified/$ world, there can be all kinds of containers besides $(thing)Shulker Boxes/$. Some of them can even act as _media $(l:mediaworks:basics/mediaworks_tweaks)$(thing)sources/$ in much the same way! I will be cataloguing such special containers here."
+  "mediaworks.page.mediaworks_containers.1": "In a $(italic)modified/$ world, there can be all kinds of containers besides $(thing)Shulker Boxes/$. Some of them can even act as _media $(l:mediaworks:basics/mediaworks_tweaks)$(thing)sources/$ in much the same way! I will be cataloguing such special containers here.",
+
+  "mediaworks.page.magic_cloak.1": "Many scripts hint at cities deep underground where masters of magic wore feathered cloaks. The first leaders were gifted their magic by a powerful mage who figured out how to embed ideas into the threads of dark fabric. With this fabric did he create the first cloak of its kind.$(p)If I ever manage to obtain one, I will document further discoveries about it here.",
+  "mediaworks.page.magic_cloak.2": "The cloaks exist after all! After god knows how many centuries in the $(thing)Deep Dark/$, the weave feels oddly pristine to the touch, and the threads can hold iotas in a way that I have so far failed to replicate.$(p)I can use a $(thing)Magic Cloak/$ much like a $(l:items/focus)$(thing)Focus/$, save for waxing it. I can also $(l:mediaworks:patterns/cloak_patterns#mediaworks:cloak/read)$(thing)read/$ from a cloak without taking it off, and, I daresay, cut quite the dashing figure while doing so.",
+  "mediaworks.page.magic_cloak.3": "However, this is not the full extend of their potential, $(italic)far/$ from it. I have been finding some peculiar $(thing)Enchanted Books/$ unique to the dark and damp ancient cities, so perhaps the way to greater power lies through the secrets of enchanting.$(p)On the following pages I have compiled a list of enchantments applicable to magic cloaks.",
+  "mediaworks.page.magic_cloak.reciprocation": "Whenever I take damage, this enchantment forces the cloak to retaliate by automatically evaluating its stored iota. An empty cloak will not do anything, and a cloak with a non-evaluatable iota will cause the usual mishap.",
+  "mediaworks.page.magic_cloak.media_shield.1": "Adds an external layer of defense that absorbs a percentage of incoming blockable damage, 10% per level at most. This triggers before any armor calculations, and every absorbed damage point costs as much media as a single health point gives when overcasting. the media is spent in the same way as when casting with a staff.",
+  "mediaworks.page.magic_cloak.media_shield.2": "If there is not enough media to cover the full effect and no way for Nature to force it out of me, the enchantment will only absorb as much damage as the available media allows. Otherwise, the media is spent in the same way as when casting with a staff.",
+  "mediaworks.page.magic_cloak.locale_magnification": "The rarest of them all! An enchantment that unconditionally extends my standard range of influence by 8, 16, or 32 blocks, depending on the level. This extension even applies to my raycast distance, like when using $(l:patterns/basics#hexcasting:raycast)$(thing)Archer's Distillation/$!",
+  "mediaworks.page.magic_cloak.other_enchants": "A magic cloak is wearable and damageable. It stands to reason, then, that it accepts any enchantments available to other such items (e.g. the $(thing)Elytra/$).",
+  "mediaworks.page.magic_cloak.other_enchants.title": "Other Enchantments",
+  "mediaworks.page.magic_cloak.post": "$(italic)More scrawls on ancient paper... \"He betrayed us, these cloths given to our leaders were nothing but a way to disarm us. The Skulk will follow soon after. I am leaving before it's too late. Beware these dark fabrics...\"$(p)I should stay away from this place and its heirlooms. These linens are cursed and no allure of power would ever change that fact.$(p)But how bad could it really be?/$",
+
+  "mediaworks.entry.media_patterns": "Mediaworks",
+  "mediaworks.page.media_patterns.get_media": "Returns the amount of _media currently available to the hex without overcasting, in units of $(l:items/amethyst)$(item)Amethyst Dust/$.",
+
+  "mediaworks.entry.cloak_patterns": "Cloakworks",
+  "mediaworks.page.cloak_patterns.cloak_read.1": "Old tales depict a figure of power unmatched, yet tender to all creatures under the sun. Among his many great feats, he was the first to spin the fabric used in $(l:mediaworks:items/magic_cloak)$(thing)Magic Cloaks/$.",
+  "mediaworks.page.cloak_patterns.cloak_read.2": "This pattern can extract the iota held in a worn magic cloak, without the need to take it off and resort to $(l:patterns/readwrite)$(thing)traditional methods/$."
 }

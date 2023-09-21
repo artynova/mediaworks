@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.casting.pattern.astral
+package io.github.artynova.mediaworks.casting.pattern.projection
 
 import at.petrak.hexcasting.api.spell.ConstMediaAction
 import at.petrak.hexcasting.api.spell.asActionResult

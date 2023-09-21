@@ -1,42 +1,42 @@
 modLoader = "javafml"
-loaderVersion = "[43,)"
-#issueTrackerURL = ""
-license = "MIT"
+loaderVersion = "[${forgeVersion},)"
+issueTrackerURL = "${modIssueTracker}"
+license = "${modLicense}"
 
 [[mods]]
-modId = "mediaworks"
+modId = "${modId}"
 version = "${version}"
-displayName = "Mediaworks"
+displayName = "${modName}"
 logoFile = "icon.png"
-authors = "artynova"
-description = '''
-Hex Casting addon themed around Media utilities and manipulation.
-'''
+authors = "${modAuthor}"
+description = "${modDescription}"
+displayURL = "${modPage}"
+displayTest = "${modForgeDisplayTest}"
 
-[[dependencies.mediaworks]]
+[[dependencies.${ modId }]]
 modId = "forge"
 mandatory = true
-versionRange = "[43,)"
+versionRange = "[${forgeVersion},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.mediaworks]]
+[[dependencies.${ modId }]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.2,)"
+versionRange = "[${minecraftVersion},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.mediaworks]]
+[[dependencies.${ modId }]]
 modId = "architectury"
 mandatory = true
-versionRange = "[6.5.85,)"
+versionRange = "[${architecturyVersion},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.mediaworks]]
+[[dependencies.${ modId }]]
 modId = "hexcasting"
 mandatory = true
-versionRange = "[0.10.3,)"
+versionRange = "[${hexcastingVersion},)"
 ordering = "NONE"
 side = "BOTH"

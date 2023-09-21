@@ -4,9 +4,6 @@ plugins {
     id "dev.architectury.loom" version "1.2.+" apply false
 
     id "org.jetbrains.kotlin.jvm" version "1.8.0" apply false
-
-    // for template.env api keys
-    id "co.uzzu.dotenv.gradle" version "2.0.0"
 }
 
 architectury {
@@ -24,13 +21,8 @@ subprojects {
     dependencies {
         minecraft "com.mojang:minecraft:${project.minecraftVersion}"
 
-        // Mojmap mappings, Hex Casting itself uses them so you may want to as well
-//        mappings loom.officialMojangMappings()
 
-        // Yarn mappings, if you're unsure then I suggest these over mojmap because of the less restrictive license
         mappings "net.fabricmc:yarn:1.19.2+build.28:v2"
-
-        // Or feel free to use any other mappings you prefer
 
         annotationProcessor "org.ow2.asm:asm:${project.asmVersion}"
         annotationProcessor "org.ow2.asm:asm-analysis:${project.asmVersion}"
@@ -95,7 +87,11 @@ allprojects {
             }
         }
 
-        // Add any other repositories with your cross-platform dependency mods
+        // for custom enchantment targets on fabric
+        maven {
+            name = "Fuzs Mod Resources"
+            url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+        }
     }
 
     tasks.withType(JavaCompile) {
@@ -118,6 +114,28 @@ allprojects {
         it.options.release = 17
     }
 
+    // based on https://github.com/Fuzss/extensibleenums/blob/1.20/build.gradle#L98
+    tasks.withType(Jar).configureEach {
+        from rootProject.file("LICENSE.md")
+        from rootProject.file("CHANGELOG.md")
+        manifest {
+            attributes([
+                    "Specification-Title"           : modName,
+                    'Specification-Version'         : modVersion,
+                    "Specification-Vendor"          : modAuthor,
+                    'Implementation-Title'          : modName,
+                    'Implementation-Version'        : modVersion,
+                    'Implementation-Vendor'         : modAuthor,
+                    'Implementation-Timestamp'      : new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                    'Implementation-Timestamp-Milli': System.currentTimeMillis(),
+                    'Implementation-URL'            : modSource,
+                    'Built-On-Java'                 : "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
+                    'Built-On-Minecraft'            : minecraftVersion
+            ])
+        }
+        group 'jar'
+    }
+
     // Disables Gradle's custom module metadata from being published to maven. The
     // metadata includes mapped dependencies which are not reasonably consumable by
     // other mod developers.
@@ -134,7 +152,7 @@ allprojects {
     }
 }
 
-ext.getArtifactId = { platform -> return "$modID-$platform-$minecraftVersion" }
+ext.getArtifactId = { platform -> return "$modId-$platform-$minecraftVersion" }
 
 ext.getLatestChangelog = {
     Collection<String> lines = file("$rootDir/CHANGELOG.md").readLines()

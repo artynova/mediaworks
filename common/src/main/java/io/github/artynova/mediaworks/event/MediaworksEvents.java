@@ -1,6 +1,7 @@
 package io.github.artynova.mediaworks.event;
 
 import dev.architectury.event.events.common.EntityEvent;
+import dev.architectury.event.events.common.LootEvent;
 import dev.architectury.event.events.common.PlayerEvent;
 import dev.architectury.event.events.common.TickEvent;
 import dev.architectury.registry.ReloadListenerRegistry;
@@ -8,6 +9,7 @@ import io.github.artynova.mediaworks.client.macula.VisageRendererLoader;
 import io.github.artynova.mediaworks.client.render.ShaderLoader;
 import io.github.artynova.mediaworks.logic.macula.MaculaServer;
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer;
+import io.github.artynova.mediaworks.misc.LootTableModifiers;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 
@@ -31,5 +33,7 @@ public class MediaworksEvents {
         PlayerEvent.PLAYER_CLONE.register(MaculaServer::handleClone);
         PlayerEvent.PLAYER_JOIN.register(MaculaServer::handleJoin);
         PlayerEvent.PLAYER_JOIN.register(MaculaServer::handleQuit);
+
+        LootEvent.MODIFY_LOOT_TABLE.register(LootTableModifiers::injectCloakLoot);
     }
 }

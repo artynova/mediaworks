@@ -1,0 +1,38 @@
+{
+  "parent": "hexcasting:root",
+  "criteria": {
+    "magic_cloak": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mediaworks:magic_cloak"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mediaworks.find_cloak.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "mediaworks:magic_cloak",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mediaworks.find_cloak"
+    }
+  },
+  "requirements": [
+    [
+      "magic_cloak"
+    ]
+  ]
+}

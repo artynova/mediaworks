@@ -17,6 +17,12 @@
   ],
   "mixins": [
     "HexInteropMixin",
+    "cloak.CastingContextMixin",
+    "cloak.CastingHarnessMixin",
+    "cloak.CloakIsNotArmorMixin",
+    "cloak.LivingEntityMixin",
+    "cloak.PlayerEntityMixin",
+    "cloak.RaycastFixerMixin",
     "misc.MediaHelperMixin",
     "projection.EntityMixin"
   ],

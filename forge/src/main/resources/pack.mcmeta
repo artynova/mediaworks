@@ -1,6 +1,8 @@
 {
   "pack": {
-    "description": "Hex Casting addon themed around Media utilities and manipulation.",
-    "pack_format": 9
-  }
+    "description": "${modDescription}",
+    "pack_format": ${
+  modPackFormat
+}
+}
 }

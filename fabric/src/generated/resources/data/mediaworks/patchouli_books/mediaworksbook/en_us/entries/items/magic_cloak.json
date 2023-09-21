@@ -1,0 +1,58 @@
+{
+  "name": "item.mediaworks.magic_cloak",
+  "category": "hexcasting:items",
+  "icon": "mediaworks:magic_cloak",
+  "sortnum": 6,
+  "advancement": "hexcasting:root",
+  "pages": [
+    "mediaworks.page.magic_cloak.1",
+    {
+      "type": "patchouli:text",
+      "advancement": "mediaworks:find_cloak",
+      "text": "mediaworks.page.magic_cloak.2"
+    },
+    {
+      "type": "patchouli:text",
+      "advancement": "mediaworks:find_cloak",
+      "text": "mediaworks.page.magic_cloak.3"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "advancement": "mediaworks:find_cloak",
+      "item": "minecraft:enchanted_book{StoredEnchantments:[{id:\"mediaworks:reciprocation\",lvl:1s}]}",
+      "title": "enchantment.mediaworks.reciprocation",
+      "text": "mediaworks.page.magic_cloak.reciprocation"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "advancement": "mediaworks:find_cloak",
+      "item": "minecraft:enchanted_book{StoredEnchantments:[{id:\"mediaworks:media_shield\",lvl:4s}]}",
+      "title": "enchantment.mediaworks.media_shield",
+      "text": "mediaworks.page.magic_cloak.media_shield.1"
+    },
+    {
+      "type": "patchouli:text",
+      "advancement": "mediaworks:find_cloak",
+      "text": "mediaworks.page.magic_cloak.media_shield.2"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "advancement": "mediaworks:find_cloak",
+      "item": "minecraft:enchanted_book{StoredEnchantments:[{id:\"mediaworks:locale_magnification\",lvl:3s}]}",
+      "title": "enchantment.mediaworks.locale_magnification",
+      "text": "mediaworks.page.magic_cloak.locale_magnification"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "advancement": "mediaworks:find_cloak",
+      "item": "minecraft:enchanted_book{StoredEnchantments:[{id:\"minecraft:unbreaking\",lvl:3s}]}",
+      "title": "mediaworks.page.magic_cloak.other_enchants.title",
+      "text": "mediaworks.page.magic_cloak.other_enchants"
+    },
+    {
+      "type": "patchouli:text",
+      "advancement": "mediaworks:find_cloak",
+      "text": "mediaworks.page.magic_cloak.post"
+    }
+  ]
+}

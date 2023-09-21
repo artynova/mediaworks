@@ -8,9 +8,7 @@
     "mediaworks.page.mediaworks_containers.1",
     {
       "type": "patchouli:spotlight",
-      "item": {
-        "item": "supplementaries:sack"
-      },
+      "item": "supplementaries:sack",
       "flag": "mod:supplementaries"
     }
   ]
