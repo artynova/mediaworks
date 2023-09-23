@@ -3,7 +3,7 @@ package io.github.artynova.mediaworks.networking;
 import at.petrak.hexcasting.api.misc.FrozenColorizer;
 import at.petrak.hexcasting.api.spell.ParticleSpray;
 import dev.architectury.networking.NetworkManager;
-import io.github.artynova.mediaworks.client.render.RenderHelper;
+import io.github.artynova.mediaworks.client.util.RenderUtils;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.math.Vec3d;
 
@@ -38,6 +38,6 @@ public class SpawnHexParticlesS2CMsg {
     }
 
     public void apply(Supplier<NetworkManager.PacketContext> contextSupplier) {
-        contextSupplier.get().queue(() -> RenderHelper.renderHexParticleSpray(spray, colorizer));
+        contextSupplier.get().queue(() -> RenderUtils.renderHexParticleSpray(spray, colorizer));
     }
 }

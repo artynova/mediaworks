@@ -2,8 +2,8 @@ package io.github.artynova.mediaworks.logic.projection;
 
 import at.petrak.hexcasting.api.spell.iota.Iota;
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes;
+import io.github.artynova.mediaworks.util.NbtUtils;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtDouble;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.server.world.ServerWorld;
@@ -49,16 +49,12 @@ public class AstralDataSerializer {
             playerData.remove(ASTRAL_ORIGIN_TAG);
             return;
         }
-        NbtList list = new NbtList();
-        list.add(NbtDouble.of(pos.getX()));
-        list.add(NbtDouble.of(pos.getY()));
-        list.add(NbtDouble.of(pos.getZ()));
-        playerData.put(ASTRAL_ORIGIN_TAG, list);
+        playerData.put(ASTRAL_ORIGIN_TAG, NbtUtils.serializeVec3d(pos));
     }
 
     public static @Nullable Vec3d getPlayerAstralOrigin(NbtCompound playerData) {
         if (!playerData.contains(ASTRAL_ORIGIN_TAG)) return null;
         NbtList list = playerData.getList(ASTRAL_ORIGIN_TAG, NbtElement.DOUBLE_TYPE);
-        return new Vec3d(list.getDouble(0), list.getDouble(1), list.getDouble(2));
+        return NbtUtils.deserializeVec3d(list);
     }
 }

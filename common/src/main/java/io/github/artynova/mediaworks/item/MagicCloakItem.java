@@ -9,9 +9,9 @@ import at.petrak.hexcasting.api.spell.iota.ListIota;
 import at.petrak.hexcasting.api.spell.iota.NullIota;
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
-import io.github.artynova.mediaworks.logic.media.MediaDiscoveryHandler;
-import io.github.artynova.mediaworks.logic.media.PackagedHexData;
-import io.github.artynova.mediaworks.util.HexHelpers;
+import io.github.artynova.mediaworks.api.logic.media.MediaDiscoveryHandler;
+import io.github.artynova.mediaworks.api.logic.media.PackagedHexData;
+import io.github.artynova.mediaworks.util.HexUtils;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.DyeableItem;
@@ -44,7 +44,7 @@ public interface MagicCloakItem extends DyeableItem, IAnimatable, IotaHolderItem
 
     static void initPackagedHexDiscovery() {
         MediaDiscoveryHandler.addCustomPackagedHexDiscoverer(harness -> {
-            ItemStack maybeCloak = HexHelpers.extend(harness.getCtx()).mediaworks$getForcedCastingStack();
+            ItemStack maybeCloak = HexUtils.extend(harness.getCtx()).mediaworks$getForcedCastingStack();
             if (maybeCloak == null) return null;
             if (!maybeCloak.isOf(MediaworksItems.MAGIC_CLOAK.get())) return null;
             // we only "discover" the cloak in contexts where it has been explicitly forced, so essentially in our own casts
@@ -106,7 +106,7 @@ public interface MagicCloakItem extends DyeableItem, IAnimatable, IotaHolderItem
     default @Nullable List<Iota> getHex(ItemStack stack, ServerWorld world) {
         Iota iota = readIota(stack, world);
         if (iota == null) return null;
-        if (iota instanceof ListIota listIota) return HexHelpers.decompose(listIota);
+        if (iota instanceof ListIota listIota) return HexUtils.decompose(listIota);
         return List.of(iota);
     }
 

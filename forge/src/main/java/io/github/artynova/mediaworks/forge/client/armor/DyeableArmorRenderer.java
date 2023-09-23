@@ -14,18 +14,23 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.DyeableItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Matrix4f;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec3f;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.compat.PatchouliCompat;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.util.Color;
+import software.bernie.geckolib3.geo.render.built.GeoBone;
 import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 import software.bernie.geckolib3.util.EModelRenderCycle;
+import software.bernie.geckolib3.util.RenderUtils;
 
 import java.util.Arrays;
 
-public class DyeableArmorRenderer<T extends ArmorItem & IAnimatable & DyeableItem> extends GeoArmorRenderer<T> {
+public abstract class DyeableArmorRenderer<T extends ArmorItem & IAnimatable & DyeableItem> extends GeoArmorRenderer<T> implements IGeoRendererAccessWorkaround<T> {
     protected DyeableArmorModel<T> modelProvider;
     protected @Nullable Identifier currentTexture;
 
@@ -77,6 +82,38 @@ public class DyeableArmorRenderer<T extends ArmorItem & IAnimatable & DyeableIte
 
         currentTexture = null;
         matrixStack.pop();
+    }
+
+    @Override
+    public void renderRecursively(GeoBone bone, MatrixStack poseStack, VertexConsumer buffer, int packedLight,
+                                  int packedOverlay, float red, float green, float blue, float alpha) {
+        if (bone.isTrackingXform()) {
+            Matrix4f poseState = poseStack.peek().getPositionMatrix();
+            Vec3d renderOffset = getRenderOffset(this.currentArmorItem, 1);
+            Matrix4f localMatrix = RenderUtils.invertAndMultiplyMatrices(poseState, this.dispatchedMat);
+
+            bone.setModelSpaceXform(RenderUtils.invertAndMultiplyMatrices(poseState, this.renderEarlyMat));
+            localMatrix.addToLastColumn(new Vec3f(renderOffset));
+            bone.setLocalSpaceXform(localMatrix);
+        }
+
+        buffer = getArmorGlintConsumer(getCurrentRTB(),
+                getRenderLayer(getTextureLocation(currentArmorItem)), false, itemStack.hasGlint());
+
+        IGeoRendererAccessWorkaround.super.renderRecursively(bone, poseStack, buffer, packedLight, packedOverlay, red, green, blue,
+                alpha);
+    }
+
+    /**
+     * Can be customized to get fundamentally different glints, by default delegates the work to
+     * {@link ItemRenderer#getArmorGlintConsumer(VertexConsumerProvider, RenderLayer, boolean, boolean)}.
+     */
+    public VertexConsumer getArmorGlintConsumer(VertexConsumerProvider provider, RenderLayer layer, boolean solid, boolean glint) {
+        return ItemRenderer.getArmorGlintConsumer(provider, layer, solid, glint);
+    }
+
+    public RenderLayer getRenderLayer(Identifier texture) {
+        return RenderLayer.getArmorCutoutNoCull(texture);
     }
 
     @Override

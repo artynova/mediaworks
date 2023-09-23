@@ -1,6 +1,6 @@
 package io.github.artynova.mediaworks.logic.projection;
 
-import io.github.artynova.mediaworks.logic.PersistentDataWrapper;
+import io.github.artynova.mediaworks.api.logic.PersistentDataWrapper;
 
 /**
  * Common interface for platform-specific astral projection persistent storages.

@@ -3,7 +3,7 @@ package io.github.artynova.mediaworks.casting.iota;
 import at.petrak.hexcasting.api.spell.iota.Iota;
 import at.petrak.hexcasting.api.spell.iota.IotaType;
 import at.petrak.hexcasting.api.utils.HexUtils;
-import io.github.artynova.mediaworks.logic.macula.Visage;
+import io.github.artynova.mediaworks.api.logic.macula.Visage;
 import io.github.artynova.mediaworks.logic.macula.VisageSerializer;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;

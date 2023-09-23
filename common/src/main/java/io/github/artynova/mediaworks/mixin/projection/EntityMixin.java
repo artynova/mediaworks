@@ -1,7 +1,7 @@
 package io.github.artynova.mediaworks.mixin.projection;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import io.github.artynova.mediaworks.client.projection.AstralCameraEntity;
+import io.github.artynova.mediaworks.client.projection.camera.AstralCameraEntity;
 import net.minecraft.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

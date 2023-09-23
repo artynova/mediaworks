@@ -1,5 +1,6 @@
 package io.github.artynova.mediaworks.client.macula;
 
+import io.github.artynova.mediaworks.api.client.macula.VisageRenderer;
 import io.github.artynova.mediaworks.logic.macula.TextVisage;
 import io.github.artynova.mediaworks.logic.macula.VisageEntry;
 import net.fabricmc.api.EnvType;
@@ -76,7 +77,7 @@ public class TextVisageRenderer implements VisageRenderer<TextVisage> {
             long remainingTime = endTime - CLIENT.world.getTime();
             if (remainingTime > FADEOUT_TICKS) return true;
 
-            int alpha = (int)(remainingTime * 255.0f / FADEOUT_TICKS);
+            int alpha = (int) (remainingTime * 255.0f / FADEOUT_TICKS);
             alpha = MathHelper.clamp(alpha, 0, 255);
             if (alpha < MIN_RENDER_ALPHA) return false;
             int argbAlpha = alpha << 24;

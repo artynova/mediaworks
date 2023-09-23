@@ -1,7 +1,9 @@
 package io.github.artynova.mediaworks.client.macula;
 
-import io.github.artynova.mediaworks.logic.macula.Visage;
-import io.github.artynova.mediaworks.logic.macula.VisageType;
+import io.github.artynova.mediaworks.api.client.macula.VisageRenderer;
+import io.github.artynova.mediaworks.api.client.macula.VisageRenderers;
+import io.github.artynova.mediaworks.api.logic.macula.Visage;
+import io.github.artynova.mediaworks.api.logic.macula.VisageType;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.SynchronousResourceReloader;
 
@@ -19,7 +21,8 @@ public class VisageRendererLoader implements SynchronousResourceReloader {
     }
 
     public static <T extends Visage> VisageRenderer<T> getRenderer(T visage) {
-        if (visageRenderers == null) visageRenderers = VisageRenderers.loadVisageRendererMap(); // because forge for some reason does not fire the reload event on initial load
+        if (visageRenderers == null)
+            visageRenderers = VisageRenderers.loadVisageRendererMap(); // because forge for some reason does not fire the reload event on initial load
         return (VisageRenderer<T>) visageRenderers.get(visage.getType());
     }
 

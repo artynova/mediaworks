@@ -5,6 +5,7 @@ import at.petrak.hexcasting.api.spell.casting.CastingContext;
 import at.petrak.hexcasting.api.spell.casting.CastingHarness;
 import at.petrak.hexcasting.api.spell.iota.Iota;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
+import io.github.artynova.mediaworks.api.enchantment.CloakEnchantment;
 import io.github.artynova.mediaworks.casting.ExtendedCastingContext;
 import io.github.artynova.mediaworks.item.MediaworksItems;
 import net.minecraft.entity.Entity;

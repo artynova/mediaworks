@@ -1,7 +1,14 @@
 # Mediaworks
 
 A [Hex Casting](https://github.com/gamma-delta/HexMod) addon with miscellaneous additions and quality-of-life
-improvements, aiming to diversify the Hex Casting experience while staying true to the base mod's theme.
+improvements, aiming to diversify the Hex Casting experience.
+
+## License
+
+This project is licensed under the GNU Lesser General Public License v3.0. The license holders are:
+
+- Hunter
+- artynova
 
 ## Credits
 
@@ -10,4 +17,5 @@ improvements, aiming to diversify the Hex Casting experience while staying true 
   of Astral Projection is greatly inspired by their implementation, and uses some of their code as a reference.
 - The [Perspective](https://github.com/MCLegoMan/Perspective) mod. Astral Projection shader implementation here is
   loosely based on their "grayscale" super secret setting implementation.
-
+- The [Extensible Enums](https://github.com/Fuzss/extensibleenums) library. Fabric version of the mod uses it to add the
+  custom enchantment target to the Featherweave Cloak.

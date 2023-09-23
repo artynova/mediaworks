@@ -1,5 +1,6 @@
 package io.github.artynova.mediaworks.logic.macula;
 
+import io.github.artynova.mediaworks.api.logic.macula.Visage;
 import net.minecraft.util.math.Vec3i;
 
 /**

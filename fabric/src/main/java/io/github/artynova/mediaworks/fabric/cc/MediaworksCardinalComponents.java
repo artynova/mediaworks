@@ -13,7 +13,7 @@ import io.github.artynova.mediaworks.interop.supplementaries.SupplementariesInte
 import io.github.artynova.mediaworks.misc.ShulkerBoxMediaHolder;
 import net.minecraft.server.network.ServerPlayerEntity;
 
-import static io.github.artynova.mediaworks.Mediaworks.id;
+import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 
 public class MediaworksCardinalComponents implements EntityComponentInitializer, ItemComponentInitializer {
     public static final ComponentKey<ProjectionHolderComp> PROJECTION_HOLDER = ComponentRegistry.getOrCreate(id("projection_holder"), ProjectionHolderComp.class);

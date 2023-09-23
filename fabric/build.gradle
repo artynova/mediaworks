@@ -165,7 +165,7 @@ publishMods {
     modLoaders.add("quilt")
 
     version = project.version + "-fabric"
-    displayName = "Hex Dummy $project.version [Fabric]"
+    displayName = "$modName $project.version [Fabric]"
 
     // Uncomment your desired platform(s)
 //    curseforge {

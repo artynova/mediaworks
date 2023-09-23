@@ -1,0 +1,28 @@
+{
+  "name": "mediaworks.entry.macula_concepts",
+  "category": "mediaworks:patterns/macula",
+  "icon": "minecraft:lectern",
+  "sortnum": 0,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    "mediaworks.page.macula_concepts.1",
+    {
+      "type": "patchouli:text",
+      "anchor": "mediaworks:visages",
+      "text": "mediaworks.page.macula_concepts.2",
+      "title": "mediaworks.page.macula_concepts.2.title"
+    },
+    {
+      "type": "patchouli:text",
+      "anchor": "mediaworks:macula_space",
+      "text": "mediaworks.page.macula_concepts.3",
+      "title": "mediaworks.page.macula_concepts.3.title"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "mediaworks.page.macula_concepts.4",
+      "title": "mediaworks.page.macula_concepts.4.title"
+    }
+  ]
+}

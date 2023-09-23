@@ -1,5 +1,6 @@
 package io.github.artynova.mediaworks.enchantment;
 
+import io.github.artynova.mediaworks.api.enchantment.CloakEnchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;

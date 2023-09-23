@@ -1,12 +1,13 @@
 package io.github.artynova.mediaworks.logic.macula;
 
-import io.github.artynova.mediaworks.registry.MediaworksRegistries;
+import io.github.artynova.mediaworks.api.logic.macula.VisageType;
+import io.github.artynova.mediaworks.api.registry.MediaworksRegistries;
 import net.minecraft.util.Identifier;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static io.github.artynova.mediaworks.Mediaworks.id;
+import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 
 public class MediaworksVisageTypes {
     private static final Map<Identifier, VisageType<?>> TYPES = new HashMap<>();

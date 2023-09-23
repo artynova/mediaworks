@@ -1,6 +1,6 @@
 package io.github.artynova.mediaworks.interop.supplementaries;
 
-import io.github.artynova.mediaworks.logic.media.BEContainerMediaHolder;
+import io.github.artynova.mediaworks.api.logic.media.BEContainerMediaHolder;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;

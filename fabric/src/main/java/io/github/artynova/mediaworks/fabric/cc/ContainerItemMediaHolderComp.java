@@ -2,7 +2,7 @@ package io.github.artynova.mediaworks.fabric.cc;
 
 import at.petrak.hexcasting.api.addldata.ADMediaHolder;
 import at.petrak.hexcasting.fabric.cc.adimpl.CCMediaHolder;
-import io.github.artynova.mediaworks.logic.media.ContainerItemMediaHolder;
+import io.github.artynova.mediaworks.api.logic.media.ContainerItemMediaHolder;
 
 /**
  * A component that delegates all its {@link ADMediaHolder} work to the {@link #commonDelegate} object.

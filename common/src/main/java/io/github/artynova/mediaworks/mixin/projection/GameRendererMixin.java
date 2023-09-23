@@ -1,7 +1,7 @@
 package io.github.artynova.mediaworks.mixin.projection;
 
 import io.github.artynova.mediaworks.client.projection.AstralProjectionClient;
-import io.github.artynova.mediaworks.client.render.ShaderLoader;
+import io.github.artynova.mediaworks.client.projection.ShaderLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.GameRenderer;

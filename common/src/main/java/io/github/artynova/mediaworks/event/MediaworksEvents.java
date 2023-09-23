@@ -4,16 +4,9 @@ import dev.architectury.event.events.common.EntityEvent;
 import dev.architectury.event.events.common.LootEvent;
 import dev.architectury.event.events.common.PlayerEvent;
 import dev.architectury.event.events.common.TickEvent;
-import dev.architectury.registry.ReloadListenerRegistry;
-import io.github.artynova.mediaworks.client.macula.VisageRendererLoader;
-import io.github.artynova.mediaworks.client.render.ShaderLoader;
 import io.github.artynova.mediaworks.logic.macula.MaculaServer;
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer;
 import io.github.artynova.mediaworks.misc.LootTableModifiers;
-import net.minecraft.resource.ResourceType;
-import net.minecraft.util.Identifier;
-
-import static io.github.artynova.mediaworks.Mediaworks.id;
 
 public class MediaworksEvents {
     public static void init() {

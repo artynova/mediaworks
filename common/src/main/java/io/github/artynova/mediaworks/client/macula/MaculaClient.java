@@ -1,5 +1,6 @@
 package io.github.artynova.mediaworks.client.macula;
 
+import io.github.artynova.mediaworks.api.client.macula.VisageRenderer;
 import io.github.artynova.mediaworks.logic.macula.MaculaContent;
 import io.github.artynova.mediaworks.logic.macula.MaculaSerializer;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;

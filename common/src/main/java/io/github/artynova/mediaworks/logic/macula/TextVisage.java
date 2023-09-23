@@ -1,6 +1,8 @@
 package io.github.artynova.mediaworks.logic.macula;
 
 import at.petrak.hexcasting.api.spell.iota.Iota;
+import io.github.artynova.mediaworks.api.logic.macula.Visage;
+import io.github.artynova.mediaworks.api.logic.macula.VisageType;
 import io.github.artynova.mediaworks.interop.moreiotas.MoreIotasInterop;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtInt;

@@ -1,7 +1,7 @@
 {
   "effect.mediaworks.astral_projection": "Astral Projection",
 
-  "item.mediaworks.magic_cloak": "Magic Cloak",
+  "item.mediaworks.magic_cloak": "Featherweave Cloak",
 
   "enchantment.mediaworks.reciprocation": "Reciprocation",
   "enchantment.mediaworks.reciprocation.desc": "Casts the held iota (if any) whenever the wearer is damaged.",
@@ -10,8 +10,8 @@
   "enchantment.mediaworks.locale_magnification": "Locale Magnification",
   "enchantment.mediaworks.locale_magnification.desc": "Increases personal casting range of influence and raycast distance.",
 
-  "advancements.mediaworks.find_cloak": "Thoughtful Weave",
-  "advancements.mediaworks.find_cloak.description": "Find a Magic Cloak among the dark remnants of an ancient age.",
+  "advancements.mediaworks.find_cloak": "Dust and Feathers",
+  "advancements.mediaworks.find_cloak.description": "Find a Featherweave Cloak among the dark remnants of an ancient age.",
 
   "mediaworks.subtitle.astral.ambience": "Nature whispers",
   "mediaworks.subtitle.astral.return": "Astral Projection ends",
@@ -39,7 +39,7 @@
   "mediaworks.entry.astral_projection": "Astral Projection",
   "mediaworks.page.astral_projection.1": "Finally, no longer am I confined to my mortal shell! The spell $(l:mediaworks:greatwork/astral_self)$(thing)projects/$ my mind outside of my body, granting multiple useful abilities for the specified number of seconds.",
   "mediaworks.page.astral_projection.2": "Seeing how inert and defenseless the body becomes without a mind actively governing it, I suppose it is a boon that this spell only targets the caster.$(p)Casting the spell costs about 2 units of $(l:items/amethyst)$(item)Amethyst Dust/$ per second of duration.$(br)If my $(l:patterns/readwrite#hexcasting:local)$(thing)ravenmind/$ holds any iota when I cast this spell, the iota is captured as an $(thing)Astral Iota/$ for the entire duration of the projection.",
-  "mediaworks.page.astral_projection.3": "During such a massive paradigm shift, concentration is hard to maintain, so all the patterns I've drawn and iotas I've saved to my previous stack are lost.$(p)At the same time, it seems that simply I cannot extend my remaining time while dissociated. Trying to do so leads to an $(l:casting/mishaps)$(thing)Entity is Immune/$ mishap.",
+  "mediaworks.page.astral_projection.3": "During such a massive paradigm shift, concentration is hard to maintain, so all the patterns I've drawn and iotas I've saved to my previous stack are lost.$(p)Lastly, it seems that I cannot extend my remaining time while already dissociated. Trying to do so leads to an $(l:casting/mishaps)$(thing)Entity is Immune/$ mishap.",
 
   "mediaworks.entry.astral_self": "Astral Self",
   "mediaworks.page.astral_self.1": "The state of $(l:mediaworks:patterns/great_spells/astral_projection)$(thing)Astral Projection/$ is... $(thing)TRUE BLISS/$! In it, I can $(italic)hear/$ the veil thinning, I can $(italic)see/$ the whispers of Nature, I can $(italic)smell/$ colors of _media calling out to me senses jumbled must reach must attain mu$(obf)st remark that you're quite attentive lol/$",
@@ -55,25 +55,25 @@
   "hexcasting.spell.book.mediaworks:astral_look": "Astral Gaze Rfln.",
   "mediaworks.page.astral_utils.astral_look": "Returns the direction my astral self is looking in, similarly to how $(l:patterns/basics#hexcasting:get_entity_look)$(thing)Alidade's Purification/$ works for my physical body. Returns $(l:casting/influences)$(thing)Null/$ if I am not projecting.",
 
-  "mediaworks.entry.macula_etching": "Macula Etching",
-  "mediaworks.entry.macula_etching.desc": "$(l:patterns/basics#hexcasting:print)$(thing)Reveal/$ is a good pattern, but sometimes I find myself wishing for more flexibility. Thankfully, with just a few simple $(l:mediaworks:patterns/macula_etching/macula_patterns)$(thing)patterns/$ I can affect my sight by directly etching $(l:mediaworks:patterns/macula_etching/macula_concepts#mediaworks:visages)$(thing)Visages/$ onto my eye's very $(l:mediaworks:patterns/macula_etching/macula_concepts)$(thing)Macula/$. These visages work similarly to the essential information that seems to have been etched onto my eyes by Nature itself, like health or hotbar.",
+  "mediaworks.entry.macula": "Macula Etching",
+  "mediaworks.entry.macula.desc": "$(l:patterns/basics#hexcasting:print)$(thing)Reveal/$ is a good pattern, but sometimes I find myself wishing for more flexibility. Thankfully, with just a few simple $(l:mediaworks:patterns/macula/macula_patterns)$(thing)patterns/$ I can affect my sight by directly etching $(l:mediaworks:patterns/macula/macula_concepts#mediaworks:visages)$(thing)Visages/$ onto my eye's very $(l:mediaworks:patterns/macula/macula_concepts)$(thing)Macula/$. These visages work similarly to the essential information that seems to have been etched onto my eyes by Nature itself, like health or hotbar.",
 
   "mediaworks.entry.macula_concepts": "Macula Concepts",
   "mediaworks.page.macula_concepts.1": "Macula is the part of my eye where visages are etched. Due to its physical nature, it is not carried between different bodies (like when respawning). It can hold $(thing)Lasting Visages/$ - shown indefinitely - and $(thing)Fleeting Visages/$. However, it appears that my Macula is somewhat fragile, so it cannot hold more than 32 visages at a time, and neither can it accept $(thing)Fleeting Visages/$ that stay for longer than 1 full day.",
-  "mediaworks.page.macula_concepts.2": "Visage is a generic word referring to any element visible on my macula. In order to etch one, I need to prepare one first, e.g. with $(l:mediaworks:patterns/macula_etching/text_visages#mediaworks:visage/text/unbounded)$(thing)Calligrapher's Purification/$. Such operations result in $(thing)Visage Iotas/$: they hold information needed to reproduce their specific visages anywhere on the Macula. I can then store these iotas, or $(l:mediaworks:patterns/macula_etching/macula_patterns#mediaworks:macula/add)$(thing)etch/$ them.",
+  "mediaworks.page.macula_concepts.2": "Visage is a generic word referring to any element visible on my macula. In order to etch one, I need to prepare one first, e.g. with $(l:mediaworks:patterns/macula/text_visages#mediaworks:visage/text/unbounded)$(thing)Calligrapher's Purification/$. Such operations result in $(thing)Visage Iotas/$: they hold information needed to reproduce their specific visages anywhere on the Macula. I can then store these iotas, or $(l:mediaworks:patterns/macula/macula_patterns#mediaworks:macula/add)$(thing)etch/$ them.",
   "mediaworks.page.macula_concepts.2.title": "Visages",
   "mediaworks.page.macula_concepts.3": "Visages are positioned in a somewhat special 3-dimensional space, which I have very creatively dubbed the $(thing)Macula Space/$. It is akin to a box with its front (the Z-axis) facing towards me, though with a few caveats:$(li)The top left corner of my sight corresponds to coordinates X = 0, Y = 0, the $(thing)Macula Origin/$ of sorts.$(li)Macula width and height change along with my $(t:Game window's scaled dimensions, e.g. 480x270 in the 1920x1080 resolution)$(thing)outlook/$.$(li)There is no perspective, so the Z coordinate, $(thing)depth/$, only determines which visage comes out on top in case of overlap.",
   "mediaworks.page.macula_concepts.3.title": "Macula Space",
-  "mediaworks.page.macula_concepts.4": "Though etching things onto my own eyes phases me curiously little, I should probably still be careful that nothing goes wrong, lest I incur the $(l:mediaworks:patterns/macula_etching/black_eye_mishap)$(thing)Black Eye/$ mishap.",
+  "mediaworks.page.macula_concepts.4": "Though etching things onto my own eyes phases me curiously little, I should probably still be careful that nothing goes wrong, lest I incur the $(l:mediaworks:patterns/macula/black_eye)$(thing)Black Eye/$ mishap.",
   "mediaworks.page.macula_concepts.4.title": "Word of Caution",
 
   "mediaworks.entry.macula_patterns": "Macula Patterns",
-  "mediaworks.page.macula_patterns.macula_add": "Puts the visage at the specified point in the $(l:mediaworks:patterns/macula_etching/macula_concepts#mediaworks:macula_space)$(thing)Macula Space/$. If the display duration (the third argument) is supplied, the visage is $(l:mediaworks:patterns/macula_etching/macula_concepts)$(thing)Fleeting/$, otherwise - $(l:mediaworks:patterns/macula_etching/macula_concepts)$(thing)Lasting/$. Costs a negligible amount of _media.",
-  "mediaworks.page.macula_patterns.macula_clear": "Clears my Macula quickly and painlessly. Definitely beats suffering a $(l:mediaworks:patterns/macula_etching/macula_mishaps)$(thing)Black Eye/$ or dying. Costs a negligible amount of _media.",
-  "mediaworks.page.macula_patterns.macula_dimensions": "Returns my current $(l:mediaworks:patterns/macula_etching/macula_concepts#mediaworks:macula_space)$(thing)Macula width and height/$. An absolute must for any sufficiently complex Macula calculations.",
+  "mediaworks.page.macula_patterns.macula_add": "Puts the visage at the specified point in the $(l:mediaworks:patterns/macula/macula_concepts#mediaworks:macula_space)$(thing)Macula Space/$. If the display duration (the third argument) is supplied, the visage is $(l:mediaworks:patterns/macula/macula_concepts)$(thing)Fleeting/$, otherwise - $(l:mediaworks:patterns/macula/macula_concepts)$(thing)Lasting/$. Costs a negligible amount of _media.",
+  "mediaworks.page.macula_patterns.macula_clear": "Clears my Macula quickly and painlessly. Definitely beats suffering a $(l:mediaworks:patterns/macula/black_eye)$(thing)Black Eye/$ or dying. Costs a negligible amount of _media.",
+  "mediaworks.page.macula_patterns.macula_dimensions": "Returns my current $(l:mediaworks:patterns/macula/macula_concepts#mediaworks:macula_space)$(thing)Macula width and height/$. An absolute must for any sufficiently complex Macula calculations.",
 
-  "mediaworks.entry.black_eye_mishap": "Black Eye Mishap",
-  "mediaworks.page.black_eye_mishap.1": "Occurs when I have tried to put more than 32 visages onto my Macula, or to create a $(l:mediaworks:patterns/macula_etching/macula_concepts)$(thing)Fleeting Visage/$ for longer than 1 day.$(p)Causes black sparks and damages my Macula, clearing it and blinding me for a couple of seconds.$(p)$(italic)Good thing the blindness is temporary...",
+  "mediaworks.entry.black_eye": "Black Eye Mishap",
+  "mediaworks.page.black_eye.1": "Occurs when I have tried to put more than 32 visages onto my Macula, or to create a $(l:mediaworks:patterns/macula/macula_concepts)$(thing)Fleeting Visage/$ for longer than 1 day.$(p)Causes black sparks and damages my Macula, clearing it and blinding me for a couple of seconds.$(p)$(italic)Good thing the blindness is temporary...",
 
   "mediaworks.entry.text_visages": "Text Visages",
   "mediaworks.page.text_visages.1": "A type of visages that can show any text, with a constant line height of $(thing)9/$. Their ability to capture iotas' $(italic)current/$ texts makes them a more flexible equivalent of $(l:patterns/basics#hexcasting:print)$(thing)Reveal/$.$(p)Text visages can be $(thing)unbounded/$ or $(thing)bounded/$. The former can stretch infinitely, and the latter wrap lines that exceed the max width, displaying only the lines that fully fit within the max height.",
@@ -83,7 +83,7 @@
   "mediaworks.page.text_visages.create_bounded": "Extracts current display text from any iota and creates a bounded text visage iota, with the first number specifying max width and second - max height.",
 
   "mediaworks.entry.mediaworks_moreiotas": "Mediaworks-MoreIotas",
-  "mediaworks.page.mediaworks_moreiotas.1": "It appears that $(l:moreiotas:patterns/strings)$(thing)Strings/$ have some special properties when used with $(l:mediaworks:patterns/macula_etching/text_visages)$(thing)Text Visages/$. Specifically, the Calligrapher's patterns extract the underlying strings rather than their colored, quoted displays, and let me take advantage of the old ways of $(l:https://minecraft.fandom.com/wiki/Formatting_codes)formatting/$.",
+  "mediaworks.page.mediaworks_moreiotas.1": "It appears that $(l:moreiotas:patterns/strings)$(thing)Strings/$ have some special properties when used with $(l:mediaworks:patterns/macula/text_visages)$(thing)Text Visages/$. Specifically, the Calligrapher's patterns extract the underlying strings rather than their colored, quoted displays, and let me take advantage of the old ways of $(l:https://minecraft.fandom.com/wiki/Formatting_codes)formatting/$.",
   "mediaworks.page.mediaworks_moreiotas.2": "To format text, I need only type the \"codes\" with the $(thing)&/$ symbol instead of the paragraph symbol, since I cannot normally type the latter. Any instances of $(thing)&/$ that are not part of a formatting code are left as-is.",
 
   "mediaworks.entry.mediaworks_tweaks": "Mediaworking Changes",
@@ -96,14 +96,14 @@
 
   "mediaworks.page.magic_cloak.1": "Many scripts hint at cities deep underground where masters of magic wore feathered cloaks. The cloaks were bestowed upon them by a powerful mage who figured out how to embed ideas into the threads of dark fabric. With this fabric did he create the first cloak of this kind.$(p)If I ever manage to obtain one, I will document further discoveries about it here.",
   "mediaworks.page.magic_cloak.2": "The cloaks exist after all! After god knows how many centuries in the $(thing)Deep Dark/$, the weave feels oddly pristine to the touch, and the threads can hold iotas in a way that I have so far failed to replicate.",
-  "mediaworks.page.magic_cloak.3": "I can write iotas to and read them from a $(thing)Magic Cloak/$ much like with a $(l:items/focus)$(thing)Focus/$. It doesn't seem like waxing it would work, though.$(p)Conveniently, I can also $(l:mediaworks:patterns/cloak_patterns#mediaworks:cloak/read)$(thing)read/$ from a cloak without taking it off, and cut quite the dashing figure while doing so.",
+  "mediaworks.page.magic_cloak.3": "I can write iotas to and read them from a $(thing)Featherweave Cloak/$ much like with a $(l:items/focus)$(thing)Focus/$. It doesn't seem like waxing it would work, though.$(p)Conveniently, I can also $(l:mediaworks:patterns/cloak_patterns#mediaworks:cloak/read)$(thing)read/$ from a cloak without taking it off, and cut quite the dashing figure while doing so.",
   "mediaworks.page.magic_cloak.4": "Speaking of dashing figures, I can dye the cloak almost any color imaginable! The fabric absorbs dyes much like the mundane leather gear, yet infinitely more befitting of a true mage such as myself.$(p)Should I ever need to get rid of the applied dyes, a good ol' cauldron wash will do.",
-  "mediaworks.page.magic_cloak.5": "However, this is not the full extent of their potential, $(italic)far/$ from it. I have been finding some peculiar $(thing)Enchanted Books/$ unique to the dark and damp ancient cities, so perhaps the way to greater power lies through the secrets of enchanting.$(p)On the following pages I have compiled a list of enchantments applicable to magic cloaks.",
+  "mediaworks.page.magic_cloak.5": "However, this is not the full extent of their potential, $(italic)far/$ from it. I have been finding some peculiar $(thing)Enchanted Books/$ unique to the dark and damp ancient cities, so perhaps the way to greater power lies through the secrets of enchanting.$(p)On the following pages I have compiled a list of enchantments applicable to featherweave cloaks.",
   "mediaworks.page.magic_cloak.reciprocation": "Whenever I take damage, this enchantment forces the cloak to retaliate by automatically evaluating its stored iota. An empty cloak will not do anything, and a cloak with a non-evaluatable iota will cause the usual mishap.",
   "mediaworks.page.magic_cloak.media_shield.1": "Adds an external layer of defense that absorbs a percentage of incoming blockable damage, 10% per level at most. This triggers before any armor calculations, and every absorbed damage point costs as much media as a single health point gives when overcasting. the media is spent in the same way as when casting with a staff.",
   "mediaworks.page.magic_cloak.media_shield.2": "If there is not enough media to cover the full effect and no way for Nature to force it out of me, the enchantment will only absorb as much damage as the available media allows. Otherwise, the media is spent in the same way as when casting with a staff.",
   "mediaworks.page.magic_cloak.locale_magnification": "The rarest of them all! An enchantment that unconditionally extends my standard range of influence by 8, 16, or 32 blocks, depending on the level. This extension even applies to my raycast distance, like when using $(l:patterns/basics#hexcasting:raycast)$(thing)Archer's Distillation/$!",
-  "mediaworks.page.magic_cloak.other_enchants": "A magic cloak is wearable and damageable. It stands to reason, then, that it accepts any enchantments available to other such items (e.g. the $(thing)Elytra/$).",
+  "mediaworks.page.magic_cloak.other_enchants": "A featherweave cloak is wearable and damageable. It stands to reason, then, that it accepts any enchantments available to other such items (e.g. the $(thing)Elytra/$).",
   "mediaworks.page.magic_cloak.other_enchants.title": "Other Enchantments",
   "mediaworks.page.magic_cloak.post": "$(italic)More scrawls on ancient paper... \"He betrayed us, these cloths given to our leaders were nothing but a way to disarm us. The Skulk will follow soon after. I am leaving before it's too late. Beware these dark fabrics...\"$(p)I should stay away from this place and its heirlooms. These linens are cursed and no allure of power would ever change that fact.$(p)But how bad could it really be?/$",
 
@@ -111,6 +111,6 @@
   "mediaworks.page.media_patterns.get_media": "Returns the amount of _media currently available to the hex without overcasting, in units of $(l:items/amethyst)$(item)Amethyst Dust/$.",
 
   "mediaworks.entry.cloak_patterns": "Cloakworks",
-  "mediaworks.page.cloak_patterns.cloak_read.1": "Old tales depict a figure of power unmatched, yet tender to all creatures under the sun. Among his many great feats, he was the first to spin the fabric used in $(l:mediaworks:items/magic_cloak)$(thing)Magic Cloaks/$.",
-  "mediaworks.page.cloak_patterns.cloak_read.2": "This pattern can extract the iota held in a worn magic cloak, without the need to take it off and resort to $(l:patterns/readwrite)$(thing)traditional methods/$."
+  "mediaworks.page.cloak_patterns.cloak_read.1": "Old tales depict a figure of power unmatched, yet tender to all creatures under the sun. Among his many great feats, he was the first to spin the $(l:mediaworks:items/magic_cloak)$(thing)Featherweave Cloak/$ fabric out of feathers and dust.",
+  "mediaworks.page.cloak_patterns.cloak_read.2": "This pattern can extract the iota held in a worn featherweave cloak, without the need to take it off and resort to $(l:patterns/readwrite)$(thing)traditional methods/$."
 }

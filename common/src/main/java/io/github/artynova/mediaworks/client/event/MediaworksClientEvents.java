@@ -6,13 +6,13 @@ import dev.architectury.registry.ReloadListenerRegistry;
 import io.github.artynova.mediaworks.client.macula.MaculaClient;
 import io.github.artynova.mediaworks.client.macula.VisageRendererLoader;
 import io.github.artynova.mediaworks.client.projection.AstralProjectionClient;
-import io.github.artynova.mediaworks.client.render.ShaderLoader;
+import io.github.artynova.mediaworks.client.projection.ShaderLoader;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 
-import static io.github.artynova.mediaworks.Mediaworks.id;
+import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 
 @Environment(EnvType.CLIENT)
 public class MediaworksClientEvents {

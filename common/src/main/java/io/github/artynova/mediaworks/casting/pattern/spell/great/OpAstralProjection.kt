@@ -11,7 +11,7 @@ import at.petrak.hexcasting.api.spell.getPositiveDouble
 import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.mishaps.MishapImmuneEntity
 import at.petrak.hexcasting.api.spell.mishaps.MishapNotEnoughArgs
-import io.github.artynova.mediaworks.casting.pattern.RavenmindSpellAction
+import io.github.artynova.mediaworks.api.casting.RavenmindSpellAction
 import io.github.artynova.mediaworks.effect.MediaworksEffects
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionServer
 import net.minecraft.entity.effect.StatusEffectInstance

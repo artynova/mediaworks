@@ -1,6 +1,6 @@
 package io.github.artynova.mediaworks.logic.macula;
 
-import io.github.artynova.mediaworks.logic.PersistentDataContainer;
+import io.github.artynova.mediaworks.api.logic.PersistentDataContainer;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.jetbrains.annotations.NotNull;

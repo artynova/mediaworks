@@ -8,7 +8,7 @@ import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.entry.LootTableEntry;
 import net.minecraft.util.Identifier;
 
-import static io.github.artynova.mediaworks.Mediaworks.id;
+import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 
 public class LootTableModifiers {
     public static final Identifier ANCIENT_CITY_ADDITIONS = id("chests/ancient_city_additions");

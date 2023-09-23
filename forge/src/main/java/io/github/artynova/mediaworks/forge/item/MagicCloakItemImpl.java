@@ -2,7 +2,6 @@ package io.github.artynova.mediaworks.forge.item;
 
 import io.github.artynova.mediaworks.item.MagicCloakItem;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorItem;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.item.GeoArmorItem;
 import software.bernie.geckolib3.util.GeckoLibUtil;

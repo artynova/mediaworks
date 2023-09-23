@@ -4,7 +4,7 @@ import io.github.artynova.mediaworks.client.armor.DyeableArmorModel;
 import io.github.artynova.mediaworks.forge.item.MagicCloakItemImpl;
 import net.minecraft.util.Identifier;
 
-import static io.github.artynova.mediaworks.Mediaworks.id;
+import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 
 public class MagicCloakModel extends DyeableArmorModel<MagicCloakItemImpl> {
     public static final Identifier MODEL_ID = id("geo/magic_cloak.geo.json");
@@ -22,6 +22,7 @@ public class MagicCloakModel extends DyeableArmorModel<MagicCloakItemImpl> {
         return TEXTURE_ID;
     }
 
+    @Override
     public Identifier getOverlayTextureResource(MagicCloakItemImpl object) {
         return OVERLAY_TEXTURE_ID;
     }

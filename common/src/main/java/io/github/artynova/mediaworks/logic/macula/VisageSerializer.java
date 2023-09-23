@@ -1,7 +1,9 @@
 package io.github.artynova.mediaworks.logic.macula;
 
-import io.github.artynova.mediaworks.registry.MediaworksRegistries;
-import io.github.artynova.mediaworks.util.NbtHelpers;
+import io.github.artynova.mediaworks.api.logic.macula.Visage;
+import io.github.artynova.mediaworks.api.logic.macula.VisageType;
+import io.github.artynova.mediaworks.api.registry.MediaworksRegistries;
+import io.github.artynova.mediaworks.util.NbtUtils;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtLong;
@@ -59,7 +61,7 @@ public class VisageSerializer {
     public static NbtCompound serializeEntry(@NotNull VisageEntry entry) {
         NbtCompound compound = new NbtCompound();
         compound.put(INSTANCE_TAG, serializeVisage(entry.getVisage()));
-        compound.put(ORIGIN_TAG, NbtHelpers.serializeVec3i(entry.getOrigin()));
+        compound.put(ORIGIN_TAG, NbtUtils.serializeVec3i(entry.getOrigin()));
         compound.put(END_TIME_TAG, NbtLong.of(entry.getEndTime()));
         return compound;
     }
@@ -69,7 +71,7 @@ public class VisageSerializer {
      */
     public static VisageEntry deserializeEntry(@NotNull NbtCompound compound) {
         Visage visage = deserializeVisage(compound.getCompound(INSTANCE_TAG));
-        Vec3i origin = NbtHelpers.deserializeVec3i(compound.getList(ORIGIN_TAG, NbtElement.INT_TYPE));
+        Vec3i origin = NbtUtils.deserializeVec3i(compound.getList(ORIGIN_TAG, NbtElement.INT_TYPE));
         long endTime = compound.getLong(END_TIME_TAG);
         return new VisageEntry(visage, origin, endTime);
     }

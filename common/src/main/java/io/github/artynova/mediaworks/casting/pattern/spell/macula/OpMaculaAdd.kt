@@ -8,12 +8,12 @@ import at.petrak.hexcasting.api.spell.getPositiveDouble
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.DoubleIota
 import at.petrak.hexcasting.api.spell.iota.Iota
+import io.github.artynova.mediaworks.api.casting.OverloadedSpellAction
+import io.github.artynova.mediaworks.api.logic.macula.Visage
 import io.github.artynova.mediaworks.casting.mishap.MishapBlackEye
-import io.github.artynova.mediaworks.casting.pattern.OverloadedSpellAction
 import io.github.artynova.mediaworks.casting.pattern.getVisage
 import io.github.artynova.mediaworks.logic.macula.Macula
 import io.github.artynova.mediaworks.logic.macula.MaculaServer
-import io.github.artynova.mediaworks.logic.macula.Visage
 import io.github.artynova.mediaworks.logic.macula.VisageEntry
 import net.minecraft.util.math.Vec3d
 import net.minecraft.util.math.Vec3i

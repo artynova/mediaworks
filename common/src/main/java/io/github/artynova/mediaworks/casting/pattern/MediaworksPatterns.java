@@ -19,7 +19,7 @@ import net.minecraft.util.Identifier;
 import java.util.ArrayList;
 import java.util.List;
 
-import static io.github.artynova.mediaworks.Mediaworks.id;
+import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 
 public class MediaworksPatterns {
     public static List<Triple<HexPattern, Identifier, Action>> PATTERNS = new ArrayList<>();

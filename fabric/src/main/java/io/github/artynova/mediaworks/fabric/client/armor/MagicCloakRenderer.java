@@ -1,7 +1,12 @@
 package io.github.artynova.mediaworks.fabric.client.armor;
 
+import io.github.artynova.mediaworks.client.armor.ArmorLayersCulled;
 import io.github.artynova.mediaworks.fabric.item.MagicCloakItemImpl;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.util.Identifier;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 public class MagicCloakRenderer extends DyeableArmorRenderer<MagicCloakItemImpl> {
@@ -21,5 +26,15 @@ public class MagicCloakRenderer extends DyeableArmorRenderer<MagicCloakItemImpl>
         }
 
         return this;
+    }
+
+    @Override
+    public VertexConsumer getArmorGlintConsumer(VertexConsumerProvider provider, RenderLayer layer, boolean solid, boolean glint) {
+        return ArmorLayersCulled.getArmorGlintConsumer(provider, layer, solid, glint);
+    }
+
+    @Override
+    public RenderLayer getRenderType(Identifier texture) {
+        return ArmorLayersCulled.getArmorCutoutCull(texture);
     }
 }

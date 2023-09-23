@@ -9,7 +9,7 @@ import net.minecraft.util.registry.Registry;
 import java.util.HashMap;
 import java.util.Map;
 
-import static io.github.artynova.mediaworks.Mediaworks.id;
+import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 
 public class MediaworksIotaTypes {
     public static Map<Identifier, IotaType<?>> TYPES = new HashMap<>();

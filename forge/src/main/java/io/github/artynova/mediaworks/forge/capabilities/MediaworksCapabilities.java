@@ -3,10 +3,10 @@ package io.github.artynova.mediaworks.forge.capabilities;
 import at.petrak.hexcasting.api.addldata.ADMediaHolder;
 import at.petrak.hexcasting.forge.cap.ForgeCapabilityHandler;
 import at.petrak.hexcasting.forge.cap.HexCapabilities;
+import io.github.artynova.mediaworks.api.logic.PersistentDataContainer;
+import io.github.artynova.mediaworks.api.logic.PersistentDataWrapper;
+import io.github.artynova.mediaworks.api.logic.macula.MaculaHolder;
 import io.github.artynova.mediaworks.interop.supplementaries.SackMediaHolder;
-import io.github.artynova.mediaworks.logic.PersistentDataContainer;
-import io.github.artynova.mediaworks.logic.PersistentDataWrapper;
-import io.github.artynova.mediaworks.logic.macula.MaculaHolder;
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionHolder;
 import io.github.artynova.mediaworks.misc.ShulkerBoxMediaHolder;
 import net.minecraft.entity.Entity;
@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BooleanSupplier;
 
-import static io.github.artynova.mediaworks.Mediaworks.id;
+import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 
 // "simple provider" code is based on https://github.com/gamma-delta/HexMod/blob/c8510ed83d50ac7e05d91ba3f1924e21ec10d837/Forge/src/main/java/at/petrak/hexcasting/forge/cap/ForgeCapabilityHandler.java
 public class MediaworksCapabilities {

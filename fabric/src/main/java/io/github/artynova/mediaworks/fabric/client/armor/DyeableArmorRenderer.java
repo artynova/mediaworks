@@ -9,25 +9,32 @@ import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.DyeableItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Matrix4f;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec3f;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.compat.PatchouliCompat;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.util.Color;
+import software.bernie.geckolib3.geo.render.built.GeoBone;
 import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 import software.bernie.geckolib3.util.EModelRenderCycle;
+import software.bernie.geckolib3.util.RenderUtils;
 
 import java.util.Arrays;
 
-public class DyeableArmorRenderer<T extends ArmorItem & DyeableItem & IAnimatable> extends GeoArmorRenderer<T> {
+public class DyeableArmorRenderer<T extends ArmorItem & DyeableItem & IAnimatable> extends GeoArmorRenderer<T> implements IGeoRendererAccessWorkaround<T> {
     protected DyeableArmorModel<T> modelProvider;
     protected @Nullable Identifier currentTexture;
+
     public DyeableArmorRenderer(DyeableArmorModel<T> modelProvider) {
         super(modelProvider);
         this.modelProvider = modelProvider; // saving a proper reference with access to the added method
@@ -87,6 +94,40 @@ public class DyeableArmorRenderer<T extends ArmorItem & DyeableItem & IAnimatabl
         stack.pop();
         stack.scale(-1.005F, -1.0F, 1.005F);
         stack.translate(0.0D, -1.497F, 0.0D);
+    }
+
+
+    @Override
+    public void renderRecursively(GeoBone bone, MatrixStack poseStack, VertexConsumer buffer, int packedLight,
+                                  int packedOverlay, float red, float green, float blue, float alpha) {
+        if (bone.isTrackingXform()) {
+            Matrix4f poseState = poseStack.peek().getPositionMatrix();
+            Vec3d renderOffset = getRenderOffset(this.currentArmorItem, 1);
+            Matrix4f localMatrix = RenderUtils.invertAndMultiplyMatrices(poseState, this.dispatchedMat);
+
+            bone.setModelSpaceXform(RenderUtils.invertAndMultiplyMatrices(poseState, this.renderEarlyMat));
+            localMatrix.addToLastColumn(new Vec3f(renderOffset));
+            bone.setLocalSpaceXform(localMatrix);
+        }
+
+        buffer = getArmorGlintConsumer(getCurrentRTB(),
+                getRenderType(getTextureLocation(currentArmorItem)), false, itemStack.hasGlint());
+
+        IGeoRendererAccessWorkaround.super.renderRecursively(bone, poseStack, buffer, packedLight, packedOverlay, red, green, blue,
+                alpha);
+    }
+
+    public VertexConsumer getArmorGlintConsumer(VertexConsumerProvider provider, RenderLayer layer, boolean solid, boolean glint) {
+        return ItemRenderer.getArmorGlintConsumer(provider, layer, solid, glint);
+    }
+
+    @Override
+    public RenderLayer getRenderType(T animatable, float partialTick, MatrixStack poseStack, VertexConsumerProvider bufferSource, net.minecraft.client.render.VertexConsumer buffer, int packedLight, net.minecraft.util.Identifier texture) {
+        return getRenderType(texture);
+    }
+
+    public RenderLayer getRenderType(Identifier texture) {
+        return RenderLayer.getArmorCutoutNoCull(texture);
     }
 
     @Override

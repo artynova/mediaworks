@@ -3,7 +3,7 @@ package io.github.artynova.mediaworks.mixin.cloak;
 import at.petrak.hexcasting.api.spell.casting.CastingContext;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import io.github.artynova.mediaworks.casting.ExtendedCastingContext;
-import io.github.artynova.mediaworks.util.HexHelpers;
+import io.github.artynova.mediaworks.util.HexUtils;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.MathHelper;
@@ -20,7 +20,7 @@ public abstract class CastingContextMixin implements ExtendedCastingContext {
 
     @ModifyExpressionValue(method = "isVecInRange", at = @At(value = "CONSTANT", args = "doubleValue=1024.0"))
     private double extendAmbit(double original) {
-        return MathHelper.square(HexHelpers.getAmbitRadius(getCaster()));
+        return MathHelper.square(HexUtils.getAmbitRadius(getCaster()));
     }
 
     @Unique

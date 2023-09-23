@@ -1,5 +1,6 @@
 package io.github.artynova.mediaworks.client.macula;
 
+import io.github.artynova.mediaworks.api.client.macula.VisageRenderers;
 import io.github.artynova.mediaworks.logic.macula.TextVisage;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

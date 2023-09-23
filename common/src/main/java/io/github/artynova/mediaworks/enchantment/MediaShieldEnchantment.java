@@ -3,8 +3,9 @@ package io.github.artynova.mediaworks.enchantment;
 import at.petrak.hexcasting.api.mod.HexConfig;
 import at.petrak.hexcasting.api.spell.casting.CastingContext;
 import at.petrak.hexcasting.api.spell.casting.CastingHarness;
+import io.github.artynova.mediaworks.api.enchantment.CloakEnchantment;
 import io.github.artynova.mediaworks.item.MediaworksItems;
-import io.github.artynova.mediaworks.util.HexHelpers;
+import io.github.artynova.mediaworks.util.HexUtils;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
@@ -40,12 +41,12 @@ public class MediaShieldEnchantment extends CloakEnchantment {
 
     private static int consumeMedia(ServerPlayerEntity caster, ItemStack cloakStack, int mediaCost) {
         CastingContext context = new CastingContext(caster, Hand.OFF_HAND, CastingContext.CastSource.PACKAGED_HEX);
-        HexHelpers.extend(context).mediaworks$setForcedCastingStack(cloakStack);
+        HexUtils.extend(context).mediaworks$setForcedCastingStack(cloakStack);
         CastingHarness harness = new CastingHarness(context);
 
         int remaining = harness.withdrawMedia(mediaCost, context.getCanOvercast());
 
-        HexHelpers.extend(context).mediaworks$setForcedCastingStack(null);
+        HexUtils.extend(context).mediaworks$setForcedCastingStack(null);
 
         return remaining;
     }

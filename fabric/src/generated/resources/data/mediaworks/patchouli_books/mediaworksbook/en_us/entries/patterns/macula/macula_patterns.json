@@ -1,0 +1,34 @@
+{
+  "name": "mediaworks.entry.macula_patterns",
+  "category": "mediaworks:patterns/macula",
+  "icon": "minecraft:painting",
+  "sortnum": 1,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "mediaworks:macula/add",
+      "anchor": "mediaworks:macula/add",
+      "input": "vec, vis | vec, vis, num",
+      "output": "",
+      "text": "mediaworks.page.macula_patterns.macula_add"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "mediaworks:macula/clear",
+      "anchor": "mediaworks:macula/clear",
+      "input": "",
+      "output": "",
+      "text": "mediaworks.page.macula_patterns.macula_clear"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "mediaworks:macula/dimensions",
+      "anchor": "mediaworks:macula/dimensions",
+      "input": "",
+      "output": "number, number",
+      "text": "mediaworks.page.macula_patterns.macula_dimensions"
+    }
+  ]
+}

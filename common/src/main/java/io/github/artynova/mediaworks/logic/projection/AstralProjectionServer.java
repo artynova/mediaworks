@@ -15,7 +15,7 @@ import io.github.artynova.mediaworks.networking.SpawnHexParticlesS2CMsg;
 import io.github.artynova.mediaworks.networking.projection.EndProjectionS2CMsg;
 import io.github.artynova.mediaworks.networking.projection.SyncAstralPositionS2CMsg;
 import io.github.artynova.mediaworks.sound.MediaworksSounds;
-import io.github.artynova.mediaworks.util.HexHelpers;
+import io.github.artynova.mediaworks.util.HexUtils;
 import io.github.artynova.mediaworks.util.PlayerHelpers;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -62,7 +62,7 @@ public class AstralProjectionServer {
         getProjection(player).setPosition(position);
 
         // check if the camera has left the ambit
-        if (!HexHelpers.isInAmbit(position.coordinates(), player)) {
+        if (!HexUtils.isInAmbit(position.coordinates(), player)) {
             endProjectionAbruptly(player);
             return;
         }
@@ -131,7 +131,7 @@ public class AstralProjectionServer {
         if (iota == null) return; // missing astral iota = non-op
         ControllerInfo outcome;
         if (iota instanceof ListIota listIota) {
-            outcome = harness.executeIotas(HexHelpers.decompose(listIota), player.getWorld());
+            outcome = harness.executeIotas(HexUtils.decompose(listIota), player.getWorld());
         } else {
             outcome = harness.executeIota(iota, player.getWorld());
         }

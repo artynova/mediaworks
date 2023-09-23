@@ -1,0 +1,7 @@
+{
+  "name": "mediaworks.entry.macula",
+  "icon": "minecraft:ender_eye",
+  "description": "mediaworks.entry.macula.desc",
+  "parent": "hexcasting:patterns",
+  "sortnum": 2
+}

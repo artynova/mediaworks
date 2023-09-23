@@ -6,7 +6,7 @@ import io.github.artynova.mediaworks.networking.macula.SyncMaculaDimensionsC2SMs
 import io.github.artynova.mediaworks.networking.projection.*;
 import net.minecraft.server.network.ServerPlayerEntity;
 
-import static io.github.artynova.mediaworks.Mediaworks.id;
+import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 
 // I love networking with Architectury, that's all I wanted to say
 public class MediaworksNetworking {

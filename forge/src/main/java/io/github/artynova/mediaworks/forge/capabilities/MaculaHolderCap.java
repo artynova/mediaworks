@@ -1,7 +1,7 @@
 package io.github.artynova.mediaworks.forge.capabilities;
 
+import io.github.artynova.mediaworks.api.logic.macula.MaculaHolder;
 import io.github.artynova.mediaworks.logic.macula.Macula;
-import io.github.artynova.mediaworks.logic.macula.MaculaHolder;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.jetbrains.annotations.NotNull;
 

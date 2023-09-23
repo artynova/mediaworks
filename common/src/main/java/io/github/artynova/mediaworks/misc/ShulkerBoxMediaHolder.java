@@ -1,6 +1,6 @@
 package io.github.artynova.mediaworks.misc;
 
-import io.github.artynova.mediaworks.logic.media.BEContainerMediaHolder;
+import io.github.artynova.mediaworks.api.logic.media.BEContainerMediaHolder;
 import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

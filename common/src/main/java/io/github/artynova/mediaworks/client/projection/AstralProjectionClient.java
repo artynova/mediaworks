@@ -1,16 +1,15 @@
 package io.github.artynova.mediaworks.client.projection;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import io.github.artynova.mediaworks.client.render.RenderHelper;
-import io.github.artynova.mediaworks.client.render.ShaderLoader;
+import io.github.artynova.mediaworks.client.projection.camera.AstralCameraEntity;
+import io.github.artynova.mediaworks.client.util.RenderUtils;
 import io.github.artynova.mediaworks.logic.projection.AstralPosition;
 import io.github.artynova.mediaworks.networking.MediaworksNetworking;
 import io.github.artynova.mediaworks.networking.projection.CastAstralIotaC2SMsg;
 import io.github.artynova.mediaworks.networking.projection.EndProjectionC2SMsg;
 import io.github.artynova.mediaworks.networking.projection.SyncAstralPositionC2SMsg;
-import io.github.artynova.mediaworks.sound.AstralAmbienceLoop;
-import io.github.artynova.mediaworks.util.HexHelpers;
-import io.github.artynova.mediaworks.util.MathHelpers;
+import io.github.artynova.mediaworks.util.HexUtils;
+import io.github.artynova.mediaworks.util.MathUtils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -28,7 +27,7 @@ import org.apache.commons.lang3.function.TriFunction;
 @Environment(EnvType.CLIENT)
 public class AstralProjectionClient {
     private static final MinecraftClient CLIENT = MinecraftClient.getInstance();
-    private static final TriFunction<Float, Float, Float, Float> INTERPOLATION_DELTA_FUNCTION = MathHelpers.slowdownInterpolationProgressWithCoeff(10);
+    private static final TriFunction<Float, Float, Float, Float> INTERPOLATION_DELTA_FUNCTION = MathUtils.slowdownInterpolationProgressWithCoeff(10);
     private static final int CLOSE_OVERLAY_COLOR = 0x00_888888;
     private static final int FAR_OVERLAY_COLOR = 0xEE_111111;
     private static final float[] FOG_COMPONENTS = new float[]{0.588f, 0.588f, 0.588f};
@@ -72,14 +71,14 @@ public class AstralProjectionClient {
      */
     public static void renderAstralBody(MatrixStack matrixStack, WorldRenderer worldRenderer, Camera camera, float tickDelta, VertexConsumerProvider consumers) {
         if (camera.isThirdPerson()) {
-            RenderHelper.renderPlayerEntity(astralCamera, matrixStack, worldRenderer, camera, tickDelta, consumers);
+            RenderUtils.renderPlayerEntity(astralCamera, matrixStack, worldRenderer, camera, tickDelta, consumers);
         }
     }
 
     public static void applyFogPosition(float viewDistance, BackgroundRenderer.FogType fogType) {
-        float fogRadius = Math.min(viewDistance, (float) HexHelpers.getAmbitRadius(MinecraftClient.getInstance().player));
+        float fogRadius = Math.min(viewDistance, (float) HexUtils.getAmbitRadius(MinecraftClient.getInstance().player));
         ClientPlayerEntity player = CLIENT.player;
-        double ambit = HexHelpers.getAmbitRadius(player);
+        double ambit = HexUtils.getAmbitRadius(player);
         float squaredDist = (float) astralCamera.getPos().squaredDistanceTo(player.getPos());
         float squaredAmbit = (float) (ambit * ambit);
         if (squaredDist > squaredAmbit) {
@@ -118,7 +117,7 @@ public class AstralProjectionClient {
         int scaledHeight = CLIENT.getWindow().getScaledHeight();
         MinecraftClient client = MinecraftClient.getInstance();
         float squaredDistance = (float) astralCamera.getPos().squaredDistanceTo(client.player.getPos());
-        int color = RenderHelper.interpolateColor(squaredDistance, 0, (float) Math.pow(HexHelpers.getAmbitRadius(client.player), 2), CLOSE_OVERLAY_COLOR, FAR_OVERLAY_COLOR, INTERPOLATION_DELTA_FUNCTION);
+        int color = RenderUtils.interpolateColor(squaredDistance, 0, (float) Math.pow(HexUtils.getAmbitRadius(client.player), 2), CLOSE_OVERLAY_COLOR, FAR_OVERLAY_COLOR, INTERPOLATION_DELTA_FUNCTION);
         DrawableHelper.fill(matrixStack, 0, 0, scaledWidth, scaledHeight, color);
     }
 
