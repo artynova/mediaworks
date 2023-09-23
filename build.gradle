@@ -187,6 +187,6 @@ tasks.register("generateOnlineNotebookPage") {
     exec {
         workingDir "${rootDir}"
         executable 'python'
-        args "doc/collate_data.py", "common/src/main/resources", "doc/HexCastingResources", "mediaworks", "mediaworksbook", "doc/template.html", "doc/out.html"
+        args "doc/collate_data.py", "common/src/main/resources", "doc/resources", "mediaworks", "mediaworksbook", "doc/template.html", "doc/out.html"
     }
 }

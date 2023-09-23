@@ -6,7 +6,7 @@ from collections import namedtuple
 from sys import argv, stdout
 
 # TO USE:
-# python doc/collate_data.py common/src/main/resources doc/HexCastingResources mediaworks mediaworksbook doc/template.html doc/out.html
+# python doc/collate_data.py common/src/main/resources doc/resources mediaworks mediaworksbook doc/template.html doc/out.html
 
 # IMPORTANT: if you change pattern registration code, go to line 199 and verify the pattern_pat regex
 
@@ -344,17 +344,21 @@ def parse_sortnum(cats, name):
     return cats[name].get("sortnum", 0),
 
 
-def parse_book(root, hex_root, mod_name, book_name):
+def parse_book(root, resources_root, mod_name, book_name):
     base_dir = f"{root}/data/{mod_name}/patchouli_books/{book_name}"
-    hex_base_dir = f"{hex_root}/data/hexcasting/patchouli_books/thehexbook"
+    hex_base_dir = f"{resources_root}/data/hexcasting/patchouli_books/thehexbook"
     root_info = slurp(f"{base_dir}/book.json")
 
     root_info["resource_dir"] = root
     root_info["modid"] = mod_name
     root_info.setdefault("macros", {}).update(default_macros)
     # if root_info.setdefault("i18n", {}):
-    root_info["i18n"] = slurp(f"{hex_root}/assets/hexcasting/lang/{lang}.json")
+    root_info["i18n"] = slurp(f"{resources_root}/assets/hexcasting/lang/{lang}.json")
     root_info["i18n"].update(slurp(f"{root}/assets/{mod_name}/lang/{lang}.json"))
+
+    # LOOK HERE TO ADD EXTRA LANGS
+    root_info["i18n"].update(slurp(f"{resources_root}/assets/minecraft/lang/{lang}.json"))
+    root_info["i18n"].update(slurp(f"{resources_root}/assets/supplementaries/lang/{lang}.json"))
     root_info["i18n"].update(extra_i18n)
 
     book_dir = f"{base_dir}/{lang}"
