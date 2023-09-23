@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [
+    "cloak.ItemColorsMixin",
     "macula.GameRendererMixin",
     "projection.BackgroundRendererMixin",
     "projection.ClientPlayerEntityMixin",
@@ -13,18 +14,18 @@
     "projection.MouseMixin",
     "projection.PlayerEntityRendererMixin",
     "projection.WorldRendererAccessor",
-    "projection.WorldRendererMixin"
+    "projection.WorldRendererMixin",
+    "projection.EntityMixin"
   ],
   "mixins": [
-    "HexInteropMixin",
+    "misc.HexInteropMixin",
     "cloak.CastingContextMixin",
     "cloak.CastingHarnessMixin",
     "cloak.CloakIsNotArmorMixin",
     "cloak.LivingEntityMixin",
     "cloak.PlayerEntityMixin",
     "cloak.RaycastFixerMixin",
-    "misc.MediaHelperMixin",
-    "projection.EntityMixin"
+    "misc.MediaHelperMixin"
   ],
   "injectors": {
     "defaultRequire": 1

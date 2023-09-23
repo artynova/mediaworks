@@ -56,9 +56,12 @@ dependencies {
     // Mediaworks other dependencies
     runtimeOnly(include("com.github.llamalad7.mixinextras:mixinextras-fabric:${mixinExtrasVersion}"))
 
+    modImplementation "maven.modrinth:moreiotas:${moreIotasFabricVersion}"
     modRuntimeOnly "maven.modrinth:moreiotas:${moreIotasFabricVersion}"
 
     modImplementation include("fuzs.extensibleenums:extensibleenums-fabric:$extensibleenumsVersion")
+
+    modImplementation "software.bernie.geckolib:geckolib-fabric-1.19:${geckolibVersion}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }

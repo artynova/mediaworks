@@ -212,7 +212,7 @@ def identity(x): return x
 
 pattern_pat = re.compile(
     r'(register|registerPerWorld)\(HexPattern\.fromAngles\("([qweasd]+)",\s*HexDir\.(\w+)\),\s*"([^"]+)"?')
-pattern_stubs = [(None, "io/github/artynova/mediaworks/casting/patterns/MediaworksPatterns.java")]
+pattern_stubs = [(None, "io/github/artynova/mediaworks/casting/pattern/MediaworksPatterns.java")]
 
 
 def fetch_patterns(root_data):

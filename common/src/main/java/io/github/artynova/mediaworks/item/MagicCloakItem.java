@@ -13,69 +13,36 @@ import io.github.artynova.mediaworks.logic.media.MediaDiscoveryHandler;
 import io.github.artynova.mediaworks.logic.media.PackagedHexData;
 import io.github.artynova.mediaworks.util.HexHelpers;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.DyeableItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.recipe.Ingredient;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.manager.AnimationData;
 
 import java.util.List;
 
-public class MagicCloakItem extends ArmorItem implements IotaHolderItem, HexHolderItem {
-    public static final ArmorMaterial MATERIAL = new ArmorMaterial() {
-        @Override
-        public int getDurability(EquipmentSlot slot) {
-            return 432; // like elytra
-        }
+/**
+ * Just an interface masquerading as a class, nothing weird to see here.
+ * This is an interface because geckolib requires extending a dedicated GeoArmorItem class on forge and not on fabric,
+ * so the actual impl class has to be completely platform-specific.
+ */
+public interface MagicCloakItem extends DyeableItem, IAnimatable, IotaHolderItem, HexHolderItem {
+    ArmorMaterial MATERIAL = new MagicCloakMaterial();
+    String IOTA_TAG = "mediaworks:iota";
+    Item.Settings SETTINGS = new Item.Settings().group(IXplatAbstractions.INSTANCE.getTab()).rarity(Rarity.UNCOMMON);
+    int DEFAULT_COLOR = 0x5B4533;
 
-        @Override
-        public int getProtectionAmount(EquipmentSlot slot) {
-            return 0; // "not armor"
-        }
-
-        @Override
-        public int getEnchantability() {
-            return 25; // like gold
-        }
-
-        @Override
-        public SoundEvent getEquipSound() {
-            return SoundEvents.ITEM_ARMOR_EQUIP_LEATHER;
-        }
-
-        @Override
-        public Ingredient getRepairIngredient() {
-            return null;
-        }
-
-        @Override
-        public String getName() {
-            return "magic_cloak";
-        }
-
-        @Override
-        public float getToughness() {
-            return 0; // "not armor"
-        }
-
-        @Override
-        public float getKnockbackResistance() {
-            return 0; // "not armor"
-        }
-    };
-    public static final String IOTA_TAG = "mediaworks:iota";
-    public static final Settings SETTINGS = new Item.Settings().group(IXplatAbstractions.INSTANCE.getTab()).rarity(Rarity.UNCOMMON);
-
-    static {
+    static void initPackagedHexDiscovery() {
         MediaDiscoveryHandler.addCustomPackagedHexDiscoverer(harness -> {
             ItemStack maybeCloak = HexHelpers.extend(harness.getCtx()).mediaworks$getForcedCastingStack();
             if (maybeCloak == null) return null;
@@ -88,27 +55,31 @@ public class MagicCloakItem extends ArmorItem implements IotaHolderItem, HexHold
         });
     }
 
-    public MagicCloakItem() {
-        super(MATERIAL, EquipmentSlot.HEAD, SETTINGS);
-    }
-
-    @Override
-    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+    default boolean canRepair(ItemStack stack, ItemStack ingredient) {
         return false;
     }
 
+    default void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        IotaHolderItem.appendHoverText(this, stack, tooltip, context);
+    }
+
     @Override
-    public @Nullable NbtCompound readIotaTag(ItemStack stack) {
+    default void registerControllers(AnimationData animationData) {
+        animationData.addAnimationController(new AnimationController<>(this, "controller", 20, event -> PlayState.STOP));
+    }
+
+    @Override
+    default @Nullable NbtCompound readIotaTag(ItemStack stack) {
         return stack.getSubNbt(IOTA_TAG);
     }
 
     @Override
-    public boolean canWrite(ItemStack stack, @Nullable Iota iota) {
+    default boolean canWrite(ItemStack stack, @Nullable Iota iota) {
         return true;
     }
 
     @Override
-    public void writeDatum(ItemStack stack, @Nullable Iota iota) {
+    default void writeDatum(ItemStack stack, @Nullable Iota iota) {
         if (iota == null) {
             stack.removeSubNbt(IOTA_TAG);
         } else {
@@ -117,27 +88,22 @@ public class MagicCloakItem extends ArmorItem implements IotaHolderItem, HexHold
     }
 
     @Override
-    public @Nullable Iota emptyIota(ItemStack stack) {
+    default @Nullable Iota emptyIota(ItemStack stack) {
         return new NullIota();
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        IotaHolderItem.appendHoverText(this, stack, tooltip, context);
-    }
-
-    @Override
-    public boolean canDrawMediaFromInventory(ItemStack stack) {
+    default boolean canDrawMediaFromInventory(ItemStack stack) {
         return true;
     }
 
     @Override
-    public boolean hasHex(ItemStack stack) {
+    default boolean hasHex(ItemStack stack) {
         return stack.getSubNbt(IOTA_TAG) != null;
     }
 
     @Override
-    public @Nullable List<Iota> getHex(ItemStack stack, ServerWorld world) {
+    default @Nullable List<Iota> getHex(ItemStack stack, ServerWorld world) {
         Iota iota = readIota(stack, world);
         if (iota == null) return null;
         if (iota instanceof ListIota listIota) return HexHelpers.decompose(listIota);
@@ -145,37 +111,46 @@ public class MagicCloakItem extends ArmorItem implements IotaHolderItem, HexHold
     }
 
     @Override
-    public void writeHex(ItemStack stack, List<Iota> program, int media) {
+    default void writeHex(ItemStack stack, List<Iota> program, int media) {
         writeDatum(stack, new ListIota(program));
     }
 
     @Override
-    public void clearHex(ItemStack stack) {
+    default void clearHex(ItemStack stack) {
         writeDatum(stack, null);
     }
 
     @Override
-    public int getMedia(ItemStack stack) {
+    default int getMedia(ItemStack stack) {
         return 0;
     }
 
     @Override
-    public int getMaxMedia(ItemStack stack) {
+    default int getMaxMedia(ItemStack stack) {
         return 0;
     }
 
     @Override
-    public void setMedia(ItemStack stack, int media) {
+    default void setMedia(ItemStack stack, int media) {
         // non-op
     }
 
     @Override
-    public boolean canProvideMedia(ItemStack stack) {
+    default boolean canProvideMedia(ItemStack stack) {
         return false;
     }
 
     @Override
-    public boolean canRecharge(ItemStack stack) {
+    default boolean canRecharge(ItemStack stack) {
         return false;
+    }
+
+    @Override
+    default int getColor(ItemStack stack) {
+        NbtCompound nbtCompound = stack.getSubNbt(DISPLAY_KEY);
+        if (nbtCompound != null && nbtCompound.contains(COLOR_KEY, NbtElement.NUMBER_TYPE)) {
+            return nbtCompound.getInt(COLOR_KEY);
+        }
+        return DEFAULT_COLOR;
     }
 }

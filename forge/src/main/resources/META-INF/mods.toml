@@ -40,3 +40,11 @@ mandatory = true
 versionRange = "[${hexcastingVersion},)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.${ modId }]]
+modId = "geckolib3"
+mandatory = true
+versionRange = "[${geckolibVersion},)"
+ordering = "NONE"
+side = "BOTH"
+

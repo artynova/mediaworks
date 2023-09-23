@@ -1,4 +1,4 @@
-package io.github.artynova.mediaworks.mixin;
+package io.github.artynova.mediaworks.mixin.misc;
 
 import at.petrak.hexcasting.interop.HexInterop;
 import io.github.artynova.mediaworks.interop.patchouli.PatchouliInterop;

@@ -18,6 +18,8 @@ subprojects {
         silentMojangMappingsLicense()
     }
 
+    javadoc.enabled = false
+
     dependencies {
         minecraft "com.mojang:minecraft:${project.minecraftVersion}"
 

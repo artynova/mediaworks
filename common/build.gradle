@@ -11,6 +11,8 @@ loom {
     accessWidenerPath = file("src/main/resources/mediaworks.accesswidener")
 }
 
+javadoc.enabled(false)
+
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
@@ -24,7 +26,9 @@ dependencies {
     modCompileOnly "at.petra-k.hexcasting:hexcasting-fabric-$minecraftVersion:$hexcastingVersion"
     modCompileOnly "vazkii.patchouli:Patchouli-xplat:$minecraftVersion-$patchouliVersion"
 
-    modImplementation "maven.modrinth:moreiotas:${moreIotasFabricVersion}"
+    modCompileOnly "maven.modrinth:moreiotas:${moreIotasFabricVersion}"
+
+    modCompileOnly "software.bernie.geckolib:geckolib-fabric-1.19:${geckolibVersion}"
 
     // for other-mod-friendly expression value modification
     compileOnly(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixinExtrasVersion}"))

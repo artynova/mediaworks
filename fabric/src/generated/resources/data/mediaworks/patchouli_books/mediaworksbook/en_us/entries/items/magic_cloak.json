@@ -7,14 +7,26 @@
   "pages": [
     "mediaworks.page.magic_cloak.1",
     {
-      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
       "advancement": "mediaworks:find_cloak",
+      "item": "mediaworks:magic_cloak",
+      "link_recipe": "true",
       "text": "mediaworks.page.magic_cloak.2"
     },
     {
       "type": "patchouli:text",
       "advancement": "mediaworks:find_cloak",
       "text": "mediaworks.page.magic_cloak.3"
+    },
+    {
+      "type": "patchouli:text",
+      "advancement": "mediaworks:find_cloak",
+      "text": "mediaworks.page.magic_cloak.4"
+    },
+    {
+      "type": "patchouli:text",
+      "advancement": "mediaworks:find_cloak",
+      "text": "mediaworks.page.magic_cloak.5"
     },
     {
       "type": "patchouli:spotlight",

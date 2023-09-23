@@ -1,0 +1,48 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "mediaworks:magic_cloak"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "mediaworks:magic_cloak",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{display:{color:4346650}}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "mediaworks:magic_cloak",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{display:{color:5016222}}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "mediaworks:magic_cloak",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{display:{color:8863803}}"
+            }
+          ]
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 1.0
+      }
+    }
+  ]
+}

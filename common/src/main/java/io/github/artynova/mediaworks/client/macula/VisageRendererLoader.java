@@ -19,6 +19,7 @@ public class VisageRendererLoader implements SynchronousResourceReloader {
     }
 
     public static <T extends Visage> VisageRenderer<T> getRenderer(T visage) {
+        if (visageRenderers == null) visageRenderers = VisageRenderers.loadVisageRendererMap(); // because forge for some reason does not fire the reload event on initial load
         return (VisageRenderer<T>) visageRenderers.get(visage.getType());
     }
 

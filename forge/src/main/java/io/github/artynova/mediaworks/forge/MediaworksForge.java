@@ -18,6 +18,7 @@ public class MediaworksForge {
 
         EventBuses.registerModEventBus(Mediaworks.MOD_ID, modBus);
         modBus.addListener(MediaworksClientForge::init);
+        modBus.addListener(MediaworksClientForge::registerArmorRenderer);
         Mediaworks.init();
 
 

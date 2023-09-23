@@ -31,6 +31,7 @@ public class ShaderLoader implements SynchronousResourceReloader {
     }
 
     public static ShaderEffect getShader() {
+        if (shader == null) loadShader(); // because forge does not fire the initial reload
         return shader;
     }
 

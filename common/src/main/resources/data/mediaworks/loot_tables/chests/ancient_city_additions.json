@@ -5,8 +5,8 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "mediaworks:magic_cloak",
+          "type": "minecraft:loot_table",
+          "name": "mediaworks:colored_magic_cloak",
           "weight": 5
         },
         {

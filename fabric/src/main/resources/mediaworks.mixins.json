@@ -6,6 +6,7 @@
   "client": [
   ],
   "mixins": [
+    "GeoArmorRendererAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

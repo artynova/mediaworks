@@ -43,6 +43,7 @@
     "fabric-language-kotlin": ">=${fabricKotlinVersion}",
     "architectury": ">=${architecturyVersion}",
     "hexcasting": ">=${hexcastingVersion}",
-    "extensibleenums": ">=${extensibleenumsVersion}"
+    "extensibleenums": ">=${extensibleenumsVersion}",
+    "geckolib3": ">=${geckolibVersion}"
   }
 }

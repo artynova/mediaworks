@@ -2,12 +2,14 @@ package io.github.artynova.mediaworks.forge;
 
 import io.github.artynova.mediaworks.forge.capabilities.MediaworksCapabilities;
 import io.github.artynova.mediaworks.forge.interop.CuriosInterop;
+import io.github.artynova.mediaworks.forge.item.MagicCloakItemImpl;
 import io.github.artynova.mediaworks.item.MagicCloakItem;
 import io.github.artynova.mediaworks.logic.macula.Macula;
 import io.github.artynova.mediaworks.logic.macula.MaculaHolder;
 import io.github.artynova.mediaworks.logic.projection.AstralProjection;
 import io.github.artynova.mediaworks.logic.projection.AstralProjectionHolder;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.jetbrains.annotations.NotNull;
 
@@ -34,5 +36,9 @@ public class MediaworksAbstractionsImpl {
 
     public static EnchantmentTarget getCloakEnchantmentTarget() {
         return EnchantmentTarget.create("CLOAK", item -> item instanceof MagicCloakItem);
+    }
+
+    public static ArmorItem makeMagicCloakItem() {
+        return new MagicCloakItemImpl();
     }
 }

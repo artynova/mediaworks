@@ -56,9 +56,7 @@ dependencies {
 
     runtimeOnly(include("com.github.llamalad7.mixinextras:mixinextras-forge:${mixinExtrasVersion}"))
 
-    // mysteriously does not work in dev environment only; since production builds are fine, so shall it be
-//    modImplementation "maven.modrinth:moreiotas:${moreIotasForgeVersion}"
-//    modRuntimeOnly "maven.modrinth:moreiotas:${moreIotasForgeVersion}"
+    modImplementation "software.bernie.geckolib:geckolib-forge-1.19:${geckolibVersion}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }

@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mediaworks:item/magic_cloak"
+    "layer0": "mediaworks:item/magic_cloak",
+    "layer1": "mediaworks:item/magic_cloak_overlay"
   }
 }

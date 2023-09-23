@@ -3,12 +3,6 @@
 A [Hex Casting](https://github.com/gamma-delta/HexMod) addon with miscellaneous additions and quality-of-life
 improvements, aiming to diversify the Hex Casting experience while staying true to the base mod's theme.
 
-## Building notes
-
-- [Curios](https://github.com/TheIllusiveC4/Curios) API crashes the javadoc generation task on forge, apparently due to
-  a mismatch between mappings that javadoc can't figure out despite the dependency configuration with remapping. To
-  build the main jar despite the javadoc jar failure, build with `--continue`.
-
 ## Credits
 
 - The [Hex Casting](https://github.com/gamma-delta/HexMod) mod, of course.
