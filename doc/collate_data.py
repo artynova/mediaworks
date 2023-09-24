@@ -356,7 +356,7 @@ def parse_book(root, resources_root, mod_name, book_name):
     root_info["i18n"] = slurp(f"{resources_root}/assets/hexcasting/lang/{lang}.json")
     root_info["i18n"].update(slurp(f"{root}/assets/{mod_name}/lang/{lang}.json"))
 
-    # LOOK HERE TO ADD EXTRA LANGS
+    # IMPORTANT: EXTRA LANGS
     root_info["i18n"].update(slurp(f"{resources_root}/assets/minecraft/lang/{lang}.json"))
     root_info["i18n"].update(slurp(f"{resources_root}/assets/supplementaries/lang/{lang}.json"))
     root_info["i18n"].update(extra_i18n)
@@ -369,7 +369,13 @@ def parse_book(root, resources_root, mod_name, book_name):
         basename = filename[:-5]
         parse_ret = parse_category(root_info, book_dir, cat_dir, basename)
         if parse_ret != -1: categories.append(parse_ret)
+    for filename in walk_dir(f"{book_dir}/categories", ""):
+        basename = filename[:-5]
+        parse_ret = parse_category(root_info, book_dir, book_dir, basename)
+        if parse_ret != -1: categories.append(parse_ret)
     cats = {cat["id"]: cat for cat in categories}
+
+
     categories.sort(key=lambda cat: (parse_sortnum(cats, cat["id"]), cat["name"]))
 
     do_localize(root_info, root_info, "name")
