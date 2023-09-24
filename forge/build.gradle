@@ -76,6 +76,7 @@ processResources {
     inputs.property "minecraftVersion", minecraftVersion
     inputs.property "architecturyVersion", architecturyVersion
     inputs.property "hexcastingVersion", hexcastingVersion
+    inputs.property "geckolibVersion", geckolibVersion
     inputs.property "modForgeDisplayTest", modForgeDisplayTest
 
     filesMatching("META-INF/mods.toml") {
