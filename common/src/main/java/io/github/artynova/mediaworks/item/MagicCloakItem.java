@@ -55,10 +55,6 @@ public interface MagicCloakItem extends DyeableItem, IAnimatable, IotaHolderItem
         });
     }
 
-    default boolean canRepair(ItemStack stack, ItemStack ingredient) {
-        return false;
-    }
-
     default void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         IotaHolderItem.appendHoverText(this, stack, tooltip, context);
     }

@@ -29,7 +29,7 @@ public class MagicCloakMaterial implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return null;
+        return Ingredient.EMPTY;
     }
 
     @Override
