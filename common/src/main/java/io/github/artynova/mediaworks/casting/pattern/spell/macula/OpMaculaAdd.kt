@@ -22,7 +22,7 @@ import kotlin.math.roundToInt
 class OpMaculaAdd : OverloadedSpellAction {
     override fun argc(allArgs: List<Iota>): Int {
         if (allArgs.size <= 2) return 2
-        return if (allArgs.get(2) is DoubleIota) 3 else 2
+        return if (allArgs.get(allArgs.size - 1) is DoubleIota) 3 else 2
     }
 
     val cost: Int = MediaConstants.DUST_UNIT / 100
