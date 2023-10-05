@@ -1,6 +1,6 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
-    id "me.modmuss50.mod-publish-plugin" version "0.3.0"
+    id "me.modmuss50.mod-publish-plugin" version "0.3.5"
 }
 
 archivesBaseName = getArtifactId("forge")
@@ -159,7 +159,7 @@ publishMods {
     modLoaders.add("forge")
 
     version = project.version + "-forge"
-    displayName = "$modName $project.version [Forge]"
+    displayName = "$modName $project.version (Forge)"
 
     // Uncomment your desired platform(s)
 //    curseforge {
@@ -178,20 +178,35 @@ publishMods {
 //            slug = "hexcasting"
 //        }
 //    }
-//
-//    modrinth {
-//        accessToken = project.modrinthApiToken
-//        projectId = project.modrinthId
-//        minecraftVersions.add("1.19.2")
-//
-//        requires {
-//            slug = "architectury-api"
-//        }
-//        requires {
-//            slug = "kotlin-for-forge"
-//        }
-//        requires {
-//            slug = "hex-casting"
-//        }
-//    }
+
+    modrinth {
+        accessToken = modrinthApiToken
+        projectId = modrinthId
+        minecraftVersions.add("1.19.2")
+
+        requires {
+            slug = "architectury-api"
+        }
+        requires {
+            slug = "kotlin-for-forge"
+        }
+        requires {
+            slug = "paucal"
+        }
+        requires {
+            slug = "patchouli"
+        }
+        requires {
+            slug = "geckolib"
+        }
+        requires {
+            slug = "hex-casting"
+        }
+        optional {
+            slug = "curios"
+        }
+        optional {
+            slug = "supplementaries"
+        }
+    }
 }

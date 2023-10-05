@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3
+
+### Fixes
+
+- Fix Reciprocation triggering hexes only for entity-based damage instead of any damage.
+
 ## 1.0.2
 
 ### Additions

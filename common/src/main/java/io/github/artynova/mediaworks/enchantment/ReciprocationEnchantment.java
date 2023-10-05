@@ -8,9 +8,9 @@ import at.petrak.hexcasting.xplat.IXplatAbstractions;
 import io.github.artynova.mediaworks.api.enchantment.CloakEnchantment;
 import io.github.artynova.mediaworks.casting.ExtendedCastingContext;
 import io.github.artynova.mediaworks.item.MediaworksItems;
-import net.minecraft.entity.Entity;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
@@ -22,22 +22,15 @@ public class ReciprocationEnchantment extends CloakEnchantment {
         super(Rarity.UNCOMMON);
     }
 
-
-    public int getMinPower(int level) {
-        return 1;
-    }
-
-    public int getMaxPower(int level) {
-        return this.getMinPower(level) + 40;
-    }
-
-    @Override
-    public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
-        super.onUserDamaged(user, attacker, level);
-        if (!(user instanceof ServerPlayerEntity player)) return;
+    public static void processPlayerHurt(PlayerEntity maybeUser) {
+        if (!(maybeUser instanceof ServerPlayerEntity player)) return;
 
         ItemStack stack = player.getEquippedStack(EquipmentSlot.HEAD);
-        if (!stack.isOf(MediaworksItems.MAGIC_CLOAK.get())) return; // just in case
+        if (!stack.isOf(MediaworksItems.MAGIC_CLOAK.get())) return;
+
+        int level = EnchantmentHelper.getLevel(MediaworksEnchantments.RECIPROCATION.get(), stack);
+        if (level <= 0) return;
+
         ADHexHolder holder = IXplatAbstractions.INSTANCE.findHexHolder(stack);
         assert holder != null;
         List<Iota> hex = holder.getHex(player.getWorld());
@@ -50,5 +43,14 @@ public class ReciprocationEnchantment extends CloakEnchantment {
         harness.executeIotas(hex, player.getWorld());
 
         extended.mediaworks$setForcedCastingStack(null);
+        return;
+    }
+
+    public int getMinPower(int level) {
+        return 1;
+    }
+
+    public int getMaxPower(int level) {
+        return this.getMinPower(level) + 40;
     }
 }

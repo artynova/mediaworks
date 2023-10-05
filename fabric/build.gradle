@@ -1,6 +1,6 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
-    id "me.modmuss50.mod-publish-plugin" version "0.3.0"
+    id "me.modmuss50.mod-publish-plugin" version "0.3.5"
 }
 
 archivesBaseName = getArtifactId("fabric")
@@ -163,10 +163,9 @@ publishMods {
     changelog = getLatestChangelog()
     type = STABLE
     modLoaders.add("fabric")
-    modLoaders.add("quilt")
 
     version = project.version + "-fabric"
-    displayName = "$modName $project.version [Fabric]"
+    displayName = "$modName $project.version (Fabric)"
 
     // Uncomment your desired platform(s)
 //    curseforge {
@@ -187,23 +186,41 @@ publishMods {
 //            slug = "hexcasting"
 //        }
 //    }
-//
-//    modrinth {
-//        accessToken = project.modrinthApiToken
-//        projectId = project.modrinthId
-//        minecraftVersions.add("1.19.2")
-//
-//        requires{
-//            slug = "fabric-api"
-//        }
-//        requires {
-//            slug = "architectury-api"
-//        }
-//        requires {
-//            slug = "fabric-language-kotlin"
-//        }
-//        requires {
-//            slug = "hex-casting"
-//        }
-//    }
+
+    modrinth {
+        accessToken = modrinthApiToken
+        projectId = modrinthId
+        minecraftVersions.add("1.19.2")
+
+        requires {
+            slug = "fabric-api"
+        }
+        requires {
+            slug = "architectury-api"
+        }
+        requires {
+            slug = "fabric-language-kotlin"
+        }
+        requires {
+            slug = "paucal"
+        }
+        requires {
+            slug = "patchouli"
+        }
+        requires {
+            slug = "geckolib"
+        }
+        requires {
+            slug = "cardinal-components-api"
+        }
+        requires {
+            slug = "hex-casting"
+        }
+        optional {
+            slug = "trinkets"
+        }
+        optional {
+            slug = "supplementaries"
+        }
+    }
 }
