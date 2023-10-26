@@ -42,6 +42,7 @@
     "fabric-api": ">=${fabricVersion}",
     "fabric-language-kotlin": ">=${fabricKotlinVersion}",
     "architectury": ">=${architecturyVersion}",
+    "cardinal-components": ">=${cardinalComponentsVersion}",
     "hexcasting": ">=${hexcastingVersion}",
     "extensibleenums": ">=${extensibleenumsVersion}",
     "geckolib3": ">=${geckolibVersion}"

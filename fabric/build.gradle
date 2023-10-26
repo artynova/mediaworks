@@ -84,6 +84,7 @@ processResources {
     inputs.property "fabricVersion", fabricVersion
     inputs.property "fabricKotlinVersion", fabricKotlinVersion
     inputs.property "architecturyVersion", architecturyVersion
+    inputs.property "cardinalComponentsVersion", cardinalComponentsVersion
     inputs.property "hexcastingVersion", hexcastingVersion
     inputs.property "geckolibVersion", geckolibVersion
     inputs.property "extensibleenumsVersion", extensibleenumsVersion
