@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
     @Unique
-    private static final int MAX_HOTBAR_TIME = 20;
+    private static final int MAX_HOTBAR_TIME = 30;
     @Unique
     private int mediaworks$hotbarTime = 0;
 

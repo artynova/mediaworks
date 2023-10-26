@@ -35,6 +35,7 @@
 
   "hexcasting.mishap.black_eye.visage_cap": "Your Macula could not withstand too many Visages at once",
   "hexcasting.mishap.black_eye.duration_cap": "Your Macula could not accept a Fleeting Visage for longer than a day, consider etching a Lasting Visage instead",
+  "hexcasting.mishap.invalid_value.class.visage": "Visage",
 
   "mediaworks.entry.astral_projection": "Astral Projection",
   "mediaworks.page.astral_projection.1": "Finally, no longer am I confined to my mortal shell! The spell $(l:mediaworks:greatwork/astral_self)$(thing)projects/$ my mind outside of my body, granting multiple useful abilities for the specified number of seconds.",

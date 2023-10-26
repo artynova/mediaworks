@@ -35,6 +35,7 @@
 
   "hexcasting.mishap.black_eye.visage_cap": "你的黄斑无法同时承受过多示像",
   "hexcasting.mishap.black_eye.duration_cap": "你的黄斑无法承受显示时间超过1天的短暂示像，可考虑蚀刻长效示像",
+  "hexcasting.mishap.invalid_value.class.visage": "示像",
 
   "mediaworks.entry.astral_projection": "魂灵投射",
   "mediaworks.page.astral_projection.1": "终于，不需再受我会衰老躯壳的禁锢了！此法术会将我的意识$(l:mediaworks:greatwork/astral_self)$(thing)投射/$出我的身体，所给数代表投射秒数，这几秒内我会获得多种有用的能力。",

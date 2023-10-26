@@ -58,6 +58,7 @@ dependencies {
 
     modImplementation "software.bernie.geckolib:geckolib-forge-1.19:${geckolibVersion}"
 
+    compileOnly(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixinExtrasVersion}"))
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
