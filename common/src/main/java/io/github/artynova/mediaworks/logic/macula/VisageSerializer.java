@@ -20,6 +20,7 @@ public class VisageSerializer {
     // entry tags
     public static final String INSTANCE_TAG = "instance";
     public static final String ORIGIN_TAG = "origin";
+    public static final String START_TIME_TAG = "start_time";
     public static final String END_TIME_TAG = "end_time";
 
     @Nullable
@@ -62,6 +63,7 @@ public class VisageSerializer {
         NbtCompound compound = new NbtCompound();
         compound.put(INSTANCE_TAG, serializeVisage(entry.getVisage()));
         compound.put(ORIGIN_TAG, NbtUtils.serializeVec3i(entry.getOrigin()));
+        compound.put(START_TIME_TAG, NbtLong.of(entry.getStartTime()));
         compound.put(END_TIME_TAG, NbtLong.of(entry.getEndTime()));
         return compound;
     }
@@ -72,7 +74,8 @@ public class VisageSerializer {
     public static VisageEntry deserializeEntry(@NotNull NbtCompound compound) {
         Visage visage = deserializeVisage(compound.getCompound(INSTANCE_TAG));
         Vec3i origin = NbtUtils.deserializeVec3i(compound.getList(ORIGIN_TAG, NbtElement.INT_TYPE));
+        long startTime = compound.getLong(START_TIME_TAG);
         long endTime = compound.getLong(END_TIME_TAG);
-        return new VisageEntry(visage, origin, endTime);
+        return new VisageEntry(visage, origin, startTime, endTime);
     }
 }

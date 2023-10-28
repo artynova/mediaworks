@@ -20,6 +20,11 @@ public class GameRendererMixin {
         MaculaClient.render(new MatrixStack(), tickDelta);
     }
 
+    @Inject(method = "tick", at = @At("TAIL"))
+    private void tickMacula(CallbackInfo ci) {
+        MaculaClient.tick();
+    }
+
     @Inject(method = "onResized", at = @At("TAIL"))
     private void notifyAboutResize(int width, int height, CallbackInfo ci) {
         if (MinecraftClient.getInstance().world != null) MaculaClient.sendDimensions();

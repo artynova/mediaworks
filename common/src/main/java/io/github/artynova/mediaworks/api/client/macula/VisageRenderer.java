@@ -19,6 +19,11 @@ public interface VisageRenderer<T extends Visage> {
         void render(MatrixStack stack, float tickDelta);
 
         /**
+         * Process clientside ticks (e.g. for any animations).
+         */
+        void tick();
+
+        /**
          * @return true if the visage should no longer be rendered, and thus the renderer is safe to dispose of.
          */
         boolean doneDisplaying();

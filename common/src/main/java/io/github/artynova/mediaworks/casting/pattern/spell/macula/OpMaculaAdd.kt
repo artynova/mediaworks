@@ -42,7 +42,7 @@ class OpMaculaAdd : OverloadedSpellAction {
         val endTime: Long = if (ticks == -1.0) -1 else ctx.caster.world.time + ticks.toLong()
 
         return Triple(
-            Spell(macula, VisageEntry(visage, origin, endTime)), cost, listOf(ParticleSpray.burst(ctx.caster.pos, 1.0))
+            Spell(macula, VisageEntry(visage, origin, ctx.world.time, endTime)), cost, listOf()
         )
     }
 

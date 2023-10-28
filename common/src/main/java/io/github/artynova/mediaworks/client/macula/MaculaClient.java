@@ -26,6 +26,10 @@ public class MaculaClient {
         preparedRenderers.removeIf(VisageRenderer.Prepared::doneDisplaying);
     }
 
+    public static void tick() {
+        preparedRenderers.forEach(VisageRenderer.Prepared::tick);
+    }
+
     public static void syncFromServer(NbtCompound maculaCompound) {
         assert CLIENT.world != null;
         MaculaContent maculaContent = MaculaSerializer.getContent(maculaCompound, CLIENT.world);

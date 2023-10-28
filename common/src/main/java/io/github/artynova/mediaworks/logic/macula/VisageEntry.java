@@ -8,15 +8,20 @@ import net.minecraft.util.math.Vec3i;
  * Because of the nature of visage deserialization, this object does not contain specific class information about the visage.
  */
 public class VisageEntry {
+    public static final long FADE_TICKS = 20;
     private final Visage visage;
     private final Vec3i origin;
+    private final long startTime;
     private final long endTime;
 
-    public VisageEntry(Visage visage, Vec3i origin, long endTime) {
-        this.visage = visage;
-        this.origin = origin;
+    public VisageEntry(Visage visage, Vec3i origin, long startTime, long endTime) {
+        if (startTime > endTime)
+            throw new IllegalArgumentException("Malformed visage lifetime, with start at " + startTime + " and end at " + endTime);
         if (endTime < 0 && endTime != -1)
             throw new IllegalArgumentException("End time of a VisageEntry must be a natural number, or -1 if the entry is not fleeting");
+        this.visage = visage;
+        this.origin = origin;
+        this.startTime = startTime;
         this.endTime = endTime;
     }
 
@@ -24,8 +29,16 @@ public class VisageEntry {
         return origin;
     }
 
+    public long getStartTime() {
+        return startTime;
+    }
+
     public long getEndTime() {
         return endTime;
+    }
+
+    public boolean doFadeout() {
+        return endTime - startTime > FADE_TICKS;
     }
 
     /**

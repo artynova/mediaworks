@@ -14,9 +14,7 @@ class OpMaculaClear : SpellAction {
 
     override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>>? {
         return Triple(
-            Spell(),
-            cost,
-            listOf(ParticleSpray.burst(ctx.caster.pos, 1.0))
+            Spell(), cost, listOf()
         )
     }
 
