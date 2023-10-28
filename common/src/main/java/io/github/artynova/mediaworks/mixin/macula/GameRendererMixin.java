@@ -3,14 +3,11 @@ package io.github.artynova.mediaworks.mixin.macula;
 import io.github.artynova.mediaworks.client.macula.MaculaClient;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.GameRenderer;
-import net.minecraft.client.util.Window;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.math.Matrix4f;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 /**
  * Using a mixin because Macula is a separate kind of hud that should render
@@ -18,9 +15,9 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
  */
 @Mixin(GameRenderer.class)
 public class GameRendererMixin {
-    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/InGameHud;render(Lnet/minecraft/client/util/math/MatrixStack;F)V", shift = At.Shift.AFTER), locals = LocalCapture.CAPTURE_FAILHARD)
-    private void renderMacula(float tickDelta, long startTime, boolean tick, CallbackInfo ci, int i, int j, Window window, Matrix4f matrix4f, MatrixStack matrixStack, MatrixStack matrixStack2) {
-        MaculaClient.render(matrixStack2, tickDelta);
+    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/InGameHud;render(Lnet/minecraft/client/util/math/MatrixStack;F)V", shift = At.Shift.AFTER))
+    private void renderMacula(float tickDelta, long startTime, boolean tick, CallbackInfo ci) {
+        MaculaClient.render(new MatrixStack(), tickDelta);
     }
 
     @Inject(method = "onResized", at = @At("TAIL"))
