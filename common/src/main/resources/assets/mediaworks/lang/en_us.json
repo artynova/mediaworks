@@ -32,6 +32,8 @@
 
   "hexcasting.spell.mediaworks:cloak/read": "Medivh's Reflection",
   "hexcasting.spell.mediaworks:get_media": "Media Reflection",
+  "hexcasting.spell.mediaworks:get_entity_media": "Media Purification I",
+  "hexcasting.spell.mediaworks:get_pos_media": "Media Purification II",
 
   "hexcasting.mishap.black_eye.visage_cap": "Your Macula could not withstand too many Visages at once",
   "hexcasting.mishap.black_eye.duration_cap": "Your Macula could not accept a Fleeting Visage for longer than a day, consider etching a Lasting Visage instead",
@@ -60,7 +62,7 @@
   "mediaworks.entry.macula.desc": "$(l:patterns/basics#hexcasting:print)$(thing)Reveal/$ is a good pattern, but sometimes I find myself wishing for more flexibility. Thankfully, with just a few simple $(l:mediaworks:patterns/macula/macula_patterns)$(thing)patterns/$ I can affect my sight by directly etching $(l:mediaworks:patterns/macula/macula_concepts#mediaworks:visages)$(thing)Visages/$ onto my eye's very $(l:mediaworks:patterns/macula/macula_concepts)$(thing)Macula/$. These visages work similarly to the essential information that seems to have been etched onto my eyes by Nature itself, like health or hotbar.",
 
   "mediaworks.entry.macula_concepts": "Macula Concepts",
-  "mediaworks.page.macula_concepts.1": "Macula is the part of my eye where visages are etched. Due to its physical nature, it is not carried between different bodies (like when respawning). It can hold $(thing)Lasting Visages/$ - shown indefinitely - and $(thing)Fleeting Visages/$. Fleeting visages fade gracefully at the end of their lifetime, unless it is less than 1 second in the first place. However, it appears that my Macula is somewhat fragile, so it cannot hold more than 32 visages at a time, and neither can it accept $(thing)Fleeting Visages/$ that stay for longer than 1 full day.",
+  "mediaworks.page.macula_concepts.1": "Macula is the part of my eye where visages are etched. Due to its physical nature, it is not carried between different bodies (like when respawning). It can hold $(thing)Lasting Visages/$ - shown indefinitely - and $(thing)Fleeting Visages/$. Fleeting visages fade gradually in the last second of their lifetime, unless the lifetime is 1 second or less in the first place. However, it appears that my Macula is somewhat fragile, so it cannot hold more than 32 visages at a time, and neither can it accept $(thing)Fleeting Visages/$ that stay for longer than 1 full day.",
   "mediaworks.page.macula_concepts.2": "Visage is a generic word referring to any element visible on my macula. In order to etch one, I need to prepare one first, e.g. with $(l:mediaworks:patterns/macula/text_visages#mediaworks:visage/text/unbounded)$(thing)Calligrapher's Purification/$. Such operations result in $(thing)Visage Iotas/$: they hold information needed to reproduce their specific visages anywhere on the Macula. I can then store these iotas, or $(l:mediaworks:patterns/macula/macula_patterns#mediaworks:macula/add)$(thing)etch/$ them.",
   "mediaworks.page.macula_concepts.2.title": "Visages",
   "mediaworks.page.macula_concepts.3": "Visages are positioned in a somewhat special 3-dimensional space, which I have very creatively dubbed the $(thing)Macula Space/$. It is akin to a box with its front (the Z-axis) facing towards me, though with a few caveats:$(li)The top left corner of my sight corresponds to coordinates X = 0, Y = 0, the $(thing)Macula Origin/$ of sorts.$(li)Macula width and height change along with my $(t:Game window's scaled dimensions, e.g. 480x270 in the 1920x1080 resolution)$(thing)outlook/$.$(li)There is no perspective, so the Z coordinate, $(thing)depth/$, only determines which visage comes out on top in case of overlap.",
@@ -110,6 +112,10 @@
 
   "mediaworks.entry.media_patterns": "Mediaworks",
   "mediaworks.page.media_patterns.get_media": "Returns the amount of _media currently available to the hex without overcasting, in units of $(l:items/amethyst)$(item)Amethyst Dust/$.",
+  "mediaworks.page.media_patterns.get_entity_media.1": "Returns the amount of _media in a dropped item entity, or in an entity's inventory if it is a player, in units of $(l:items/amethyst)$(item)Amethyst Dust/$. Returns 0 if not applicable.",
+  "mediaworks.page.media_patterns.get_entity_media.2": "Curiously, the _media in $(l:items/hexcasting)$(thing)Casting Items/$ seems to be obscured: they do not contribute to a player's evaluated _media total. However, this obscurity does not hold under closer scrutiny: when evaluating a dropped casting item directly, the pattern does report its contained _media.",
+  "mediaworks.page.media_patterns.get_pos_media.1": "Returns the total amount of _media in the container at the position, in units of $(l:items/amethyst)$(item)Amethyst Dust/$. Returns 0 if not applicable. Works for a certain $(l:greatwork/impetus)$(thing)special container/$ as well.",
+  "mediaworks.page.media_patterns.get_pos_media.2": "Stored $(l:items/hexcasting)$(thing)Casting Items/$ do not contribute to the calculated _media total.",
 
   "mediaworks.entry.cloak_patterns": "Cloakworks",
   "mediaworks.page.cloak_patterns.cloak_read.1": "Old tales depict a figure of power unmatched, yet tender to all creatures under the sun. Among his many great feats, he was the first to spin the $(l:mediaworks:items/magic_cloak)$(thing)Featherweave Cloak/$ fabric out of feathers and dust.",

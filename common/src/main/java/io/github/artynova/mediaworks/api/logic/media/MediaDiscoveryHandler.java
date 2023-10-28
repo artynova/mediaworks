@@ -2,7 +2,7 @@ package io.github.artynova.mediaworks.api.logic.media;
 
 import at.petrak.hexcasting.api.spell.casting.CastingContext;
 import at.petrak.hexcasting.api.spell.casting.CastingHarness;
-import io.github.artynova.mediaworks.util.HexUtils;
+import io.github.artynova.mediaworks.util.MediaUtils;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class MediaDiscoveryHandler {
     }
 
     /**
-     * Collects the custom packaged hex information for the harness, currently used for {@link HexUtils#collectMediaHolders(List)}.
+     * Collects the custom packaged hex information for the harness, currently used for {@link MediaUtils#collectMediaHolders(List)}.
      * Return values are as such:
      * <ul>
      *     <li>{@code null} if the cast source is not a packaged hex</li>

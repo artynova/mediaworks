@@ -7,7 +7,9 @@ import at.petrak.hexcasting.api.spell.math.HexPattern;
 import io.github.artynova.mediaworks.casting.pattern.macula.OpMaculaDimensions;
 import io.github.artynova.mediaworks.casting.pattern.macula.OpVisageText;
 import io.github.artynova.mediaworks.casting.pattern.misc.OpCloakRead;
+import io.github.artynova.mediaworks.casting.pattern.misc.OpGetEntityMedia;
 import io.github.artynova.mediaworks.casting.pattern.misc.OpGetMedia;
+import io.github.artynova.mediaworks.casting.pattern.misc.OpGetPosMedia;
 import io.github.artynova.mediaworks.casting.pattern.projection.OpAstralLook;
 import io.github.artynova.mediaworks.casting.pattern.projection.OpAstralPos;
 import io.github.artynova.mediaworks.casting.pattern.spell.great.OpAstralProjection;
@@ -33,6 +35,8 @@ public class MediaworksPatterns {
     public static HexPattern VISAGE_TEXT_UNBOUNDED = register(HexPattern.fromAngles("aaqdwdwd", HexDir.NORTH_EAST), "visage/text/unbounded", new OpVisageText(false));
     public static HexPattern VISAGE_TEXT_BOUNDED = register(HexPattern.fromAngles("aaqdwdwde", HexDir.NORTH_EAST), "visage/text/bounded", new OpVisageText(true));
     public static HexPattern GET_MEDIA = register(HexPattern.fromAngles("dde", HexDir.WEST), "get_media", new OpGetMedia());
+    public static HexPattern GET_ENTITY_MEDIA = register(HexPattern.fromAngles("ddew", HexDir.WEST), "get_entity_media", new OpGetEntityMedia());
+    public static HexPattern GET_POS_MEDIA = register(HexPattern.fromAngles("ddewa", HexDir.WEST), "get_pos_media", new OpGetPosMedia());
     public static HexPattern CLOAK_READ = register(HexPattern.fromAngles("adda", HexDir.EAST), "cloak/read", new OpCloakRead());
 
     public static void init() {

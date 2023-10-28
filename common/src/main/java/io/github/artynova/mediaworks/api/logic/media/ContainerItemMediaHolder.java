@@ -2,7 +2,7 @@ package io.github.artynova.mediaworks.api.logic.media;
 
 import at.petrak.hexcasting.api.addldata.ADMediaHolder;
 import at.petrak.hexcasting.api.utils.MediaHelper;
-import io.github.artynova.mediaworks.util.HexUtils;
+import io.github.artynova.mediaworks.util.MediaUtils;
 import net.minecraft.item.ItemStack;
 
 import java.util.List;
@@ -83,7 +83,7 @@ public abstract class ContainerItemMediaHolder implements ADMediaHolder {
     public int withdrawMedia(int cost, boolean simulate) {
         int costLeft = cost;
         List<ItemStack> inventory = getInventory();
-        List<ADMediaHolder> holders = HexUtils.collectMediaHolders(inventory);
+        List<ADMediaHolder> holders = MediaUtils.collectMediaHolders(inventory);
         for (ADMediaHolder holder : holders) {
             costLeft -= MediaHelper.extractMedia(holder, costLeft, false, simulate);
             // the first condition is needed because with negative cost (= need to extract all media) costLeft would be negative even though we need to keep going
