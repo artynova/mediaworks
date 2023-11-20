@@ -32,8 +32,8 @@
 
   "hexcasting.spell.mediaworks:cloak/read": "麦迪文之精思",
   "hexcasting.spell.mediaworks:get_media": "媒质之精思",
-  "hexcasting.spell.mediaworks:get_entity_media": "媒质之精思，第一型",
-  "hexcasting.spell.mediaworks:get_pos_media": "媒质之精思，第二型",
+  "hexcasting.spell.mediaworks:get_entity_media": "媒质之纯化，第一型",
+  "hexcasting.spell.mediaworks:get_pos_media": "媒质之纯化，第二型",
 
   "hexcasting.mishap.black_eye.visage_cap": "你的黄斑无法同时承受过多示像",
   "hexcasting.mishap.black_eye.duration_cap": "你的黄斑无法承受显示时间超过1天的短暂示像，可考虑蚀刻长效示像",
