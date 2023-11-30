@@ -15,7 +15,7 @@ public class VisageEntry {
     private final long endTime;
 
     public VisageEntry(Visage visage, Vec3i origin, long startTime, long endTime) {
-        if (startTime > endTime)
+        if (startTime > endTime && endTime != -1)
             throw new IllegalArgumentException("Malformed visage lifetime, with start at " + startTime + " and end at " + endTime);
         if (endTime < 0 && endTime != -1)
             throw new IllegalArgumentException("End time of a VisageEntry must be a natural number, or -1 if the entry is not fleeting");
