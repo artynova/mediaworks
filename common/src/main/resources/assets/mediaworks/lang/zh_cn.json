@@ -32,6 +32,8 @@
 
   "hexcasting.spell.mediaworks:cloak/read": "麦迪文之精思",
   "hexcasting.spell.mediaworks:get_media": "媒质之精思",
+  "hexcasting.spell.mediaworks:get_entity_media": "媒质之纯化，第一型",
+  "hexcasting.spell.mediaworks:get_pos_media": "媒质之纯化，第二型",
 
   "hexcasting.mishap.black_eye.visage_cap": "你的黄斑无法同时承受过多示像",
   "hexcasting.mishap.black_eye.duration_cap": "你的黄斑无法承受显示时间超过1天的短暂示像，可考虑蚀刻长效示像",
@@ -60,7 +62,7 @@
   "mediaworks.entry.macula.desc": "$(l:patterns/basics#hexcasting:print)$(thing)揭示/$是个好图案，但偶尔我也想要些更灵活的手段。好在只需若干简单$(l:mediaworks:patterns/macula/macula_patterns)$(thing)图案/$，我就能将$(l:mediaworks:patterns/macula/macula_concepts#mediaworks:visages)$(thing)示像/$直接蚀刻到我眼内的$(l:mediaworks:patterns/macula/macula_concepts)$(thing)黄斑/$上，以此修改我的视觉。这些示像的运作方式与自然蚀刻入眼的基础信息（如生命值和快捷栏）类似。",
 
   "mediaworks.entry.macula_concepts": "黄斑相关概念",
-  "mediaworks.page.macula_concepts.1": "黄斑是我眼球中蚀刻示像的位置。受其物理性质限制，黄斑不会在不同身体间继承（比如重生）。黄斑支持两种示像：能显示任意长时间的$(thing)长效示像/$，以及$(thing)短暂示像/$。不过，我的黄斑较为脆弱，无法同时承受超过 32 个示像，也不能接受持续超过 1 天的$(thing)短暂示像/$。",
+  "mediaworks.page.macula_concepts.1": "黄斑是我眼球中蚀刻示像的位置。受其物理性质限制，黄斑不会在不同身体间继承（比如重生）。黄斑支持两种示像：能显示任意长时间的$(thing)长效示像/$，以及$(thing)短暂示像/$。短暂示像会在持续时间的最后一秒淡出，除非持续时间本身就不足 1 秒。不过，我的黄斑较为脆弱，无法同时承受超过 32 个示像，也不能接受持续超过 1 天的$(thing)短暂示像/$。",
   "mediaworks.page.macula_concepts.2": "示像是描述我黄斑上视觉元素的通用词汇。蚀刻示像之前先要将其准备完善，$(l:mediaworks:patterns/macula/text_visages#mediaworks:visage/text/unbounded)$(thing)书法家之纯化/$就能做到。此类操作会产生$(thing)示像 iota/$，它们存有在黄斑上重现对应示像所需的信息。可以存储它们，也可直接将其$(l:mediaworks:patterns/macula/macula_patterns#mediaworks:macula/add)$(thing)蚀刻/$。",
   "mediaworks.page.macula_concepts.2.title": "示像",
   "mediaworks.page.macula_concepts.3": "示像的坐标对应着某种特殊 3 维空间中的位置，我将其创造性地称为$(thing)黄斑空间/$。这种空间类似于一个前面（Z 轴）面朝我的盒子，但仍有几点不同：$(li)我视野的左上角对应坐标 X = 0，Y = 0，也称作$(thing)黄斑原点/$。$(li)黄斑宽度和高度会随我$(t:游戏窗口的长宽，例如1920x1080分辨率下的480x270)$(thing)视野/$的变化而变化。$(li)不存在透视，因此 Z 坐标（$(thing)深度/$）只决定重叠示像的遮挡关系。",
@@ -110,6 +112,10 @@
 
   "mediaworks.entry.media_patterns": "媒质工程",
   "mediaworks.page.media_patterns.get_media": "返回当前咒术可用的$(media)媒质/$总量，以$(l:items/amethyst)$(item)紫水晶粉/$计，过度施法不计入。",
+  "mediaworks.page.media_patterns.get_entity_media.1": "返回物品实体中的$(media)媒质/$量，如果是玩家则返回其物品栏中的$(media)媒质/$量，以$(l:items/amethyst)$(item)紫水晶粉/$计。不适用则返回 0。",
+  "mediaworks.page.media_patterns.get_entity_media.2": "奇怪的是，$(l:items/hexcasting)$(thing)施法物品/$中的$(media)媒质/$量无法读取：它们不计入玩家的$(media)媒质/$总量。然而，这种隐秘在仔细的审视之下无所遁形：直接对施法物品的物品实体施放，则确实会返回其中的$(media)媒质/$量。",
+  "mediaworks.page.media_patterns.get_pos_media.1": "返回所给位置处容器中的$(media)媒质/$总量，以$(l:items/amethyst)$(item)紫水晶粉/$计。不适用则返回 0。对某种$(l:greatwork/impetus)$(thing)特殊的容器/$也有效。",
+  "mediaworks.page.media_patterns.get_pos_media.2": "容器中的$(l:items/hexcasting)$(thing)施法物品/$不计入$(media)媒质/$总量。",
 
   "mediaworks.entry.cloak_patterns": "斗篷工程",
   "mediaworks.page.cloak_patterns.cloak_read.1": "古代的故事描述了一位人物，他拥有无可比拟的伟力，却对行于日光下的万事万物温柔有加。他伟大成就的其中之一，便是以尘和羽编织出了第一份$(l:mediaworks:items/magic_cloak)$(thing)羽织斗篷/$织料。",
