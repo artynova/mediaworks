@@ -13,6 +13,10 @@ public class MathUtils {
         return (p, l, r) -> MathUtils.slowdownInterpolationProgress(p, l, r, growthCoeff);
     }
 
+    public static double geomProgressionSum(double first, double ratio, int num) {
+        return first * (1 - Math.pow(ratio, num)) / (1 - ratio);
+    }
+
     public static Vec3d getRotationVector(float pitch, float yaw) {
         float f = pitch * ((float) Math.PI / 180);
         float g = -yaw * ((float) Math.PI / 180);
