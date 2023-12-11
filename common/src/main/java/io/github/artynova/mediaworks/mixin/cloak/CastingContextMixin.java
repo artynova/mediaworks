@@ -17,6 +17,8 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class CastingContextMixin implements ExtendedCastingContext {
     @Unique
     private @Nullable ItemStack mediaworks$forcedCastingStack;
+    @Unique
+    private int mediaworks$reciprocationReps;
 
     @ModifyExpressionValue(method = "isVecInRange", at = @At(value = "CONSTANT", args = "doubleValue=1024.0"))
     private double extendAmbit(double original) {
@@ -33,6 +35,16 @@ public abstract class CastingContextMixin implements ExtendedCastingContext {
     @Override
     public void mediaworks$setForcedCastingStack(@Nullable ItemStack itemStack) {
         this.mediaworks$forcedCastingStack = itemStack;
+    }
+
+    @Override
+    public int mediaworks$getReciprocationReps() {
+        return mediaworks$reciprocationReps;
+    }
+
+    @Override
+    public void mediaworks$setReciprocationReps(int reps) {
+        this.mediaworks$reciprocationReps = reps;
     }
 
     @Shadow

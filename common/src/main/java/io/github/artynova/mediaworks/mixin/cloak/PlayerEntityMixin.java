@@ -16,23 +16,23 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin {
     @Unique
-    private DamageSource mediaworks$lastSource;
+    private DamageSource lastSource;
 
     @Inject(method = "applyDamage", at = @At("HEAD"))
     private void captureDamageSource(DamageSource source, float amount, CallbackInfo ci) {
-        this.mediaworks$lastSource = source;
+        this.lastSource = source;
     }
 
     @ModifyVariable(method = "applyDamage", at = @At("HEAD"), index = 2, argsOnly = true)
     private float modifyIncomingDamage(float amount) {
-        if (isInvulnerableTo(mediaworks$lastSource)) return amount;
-        if (mediaworks$lastSource.isUnblockable()) return amount;
+        if (isInvulnerableTo(lastSource)) return amount;
+        if (lastSource.isUnblockable()) return amount;
         return MediaShieldEnchantment.processIncomingDamage((PlayerEntity) (Object) this, amount);
     }
 
     @Inject(method = "damage", at = @At("RETURN"))
     private void captureReturn(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (cir.getReturnValueZ()) ReciprocationEnchantment.processPlayerHurt((PlayerEntity) (Object) this);
+        if (cir.getReturnValueZ()) ReciprocationEnchantment.processPlayerHurt(source, (PlayerEntity) (Object) this);
     }
 
     @Shadow

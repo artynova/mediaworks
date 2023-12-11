@@ -15,14 +15,11 @@ public class LocaleMagnificationEnchantment extends CloakEnchantment {
 
     // Will be checked quite often, so it's beneficial to cache specific formula outputs
     private static final Map<Integer, Double> INCREASE_CACHE = new HashMap<>();
-    private static final double CUTOFF_LEVEL_INCREASE = getIncreaseForLevel(CUTOFF_LEVEL);
-    private static final double FIRST_POST_CUTOFF_INCREMENT = (CUTOFF_LEVEL_INCREASE - getIncreaseForLevel(CUTOFF_LEVEL - 1)) / 2.0;
     // Each next step is 0.5 of the last
-    private static final double POST_CUTOFF_STEP_RATIO = 0.5;
-
+    private static final double POST_CUTOFF_STEP_RATIO = 0.5;    private static final double CUTOFF_LEVEL_INCREASE = getIncreaseForLevel(CUTOFF_LEVEL);
     public LocaleMagnificationEnchantment() {
         super(Rarity.VERY_RARE);
-    }
+    }    private static final double FIRST_POST_CUTOFF_INCREMENT = (CUTOFF_LEVEL_INCREASE - getIncreaseForLevel(CUTOFF_LEVEL - 1)) / 2.0;
 
     /**
      * Finds the ambit increase for the player based on the Locale Magnification enchantment on their cloak, if any.
@@ -62,4 +59,8 @@ public class LocaleMagnificationEnchantment extends CloakEnchantment {
     public int getMaxLevel() {
         return CUTOFF_LEVEL;
     }
+
+
+
+
 }

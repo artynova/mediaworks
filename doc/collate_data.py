@@ -375,7 +375,6 @@ def parse_book(root, resources_root, mod_name, book_name):
         if parse_ret != -1: categories.append(parse_ret)
     cats = {cat["id"]: cat for cat in categories}
 
-
     categories.sort(key=lambda cat: (parse_sortnum(cats, cat["id"]), cat["name"]))
 
     do_localize(root_info, root_info, "name")

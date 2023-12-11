@@ -32,13 +32,13 @@ public class TextVisageRenderer implements VisageRenderer<TextVisage> {
         private final int y;
         private final long endTime;
         private final boolean doFadeout;
+        private final List<OrderedText> lines;
         /**
          * Value -1 specifies that fadeout is not occurring at the moment.
          * Value 0 specifies that the visage has already finished fading, even if it still logically exists.
          * Short-lived visages bypass the fading animation and go straight from -1 to 0.
          */
         private long remainingFadeoutTicks = INERT_REMAINING_FADEOUT_TICKS;
-        private final List<OrderedText> lines;
 
         private PreparedTextVisageRenderer(VisageEntry entry) {
             if (!(entry.getVisage() instanceof TextVisage visage)) {
@@ -108,7 +108,8 @@ public class TextVisageRenderer implements VisageRenderer<TextVisage> {
                 if (remainingTime > VisageEntry.FADE_TICKS) return WHITE_COLOR;
 
                 // initiate fadeout sequence
-                if (remainingFadeoutTicks == INERT_REMAINING_FADEOUT_TICKS) remainingFadeoutTicks = VisageEntry.FADE_TICKS;
+                if (remainingFadeoutTicks == INERT_REMAINING_FADEOUT_TICKS)
+                    remainingFadeoutTicks = VisageEntry.FADE_TICKS;
             }
 
 

@@ -33,7 +33,12 @@
       "advancement": "mediaworks:find_cloak",
       "item": "minecraft:enchanted_book{StoredEnchantments:[{id:\"mediaworks:reciprocation\",lvl:1s}]}",
       "title": "enchantment.mediaworks.reciprocation",
-      "text": "mediaworks.page.magic_cloak.reciprocation"
+      "text": "mediaworks.page.magic_cloak.reciprocation.1"
+    },
+    {
+      "type": "patchouli:text",
+      "advancement": "mediaworks:find_cloak",
+      "text": "mediaworks.page.magic_cloak.reciprocation.2"
     },
     {
       "type": "patchouli:spotlight",

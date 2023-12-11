@@ -7,4 +7,8 @@ public interface ExtendedCastingContext {
     @Nullable ItemStack mediaworks$getForcedCastingStack();
 
     void mediaworks$setForcedCastingStack(@Nullable ItemStack itemStack);
+
+    int mediaworks$getReciprocationReps();
+
+    void mediaworks$setReciprocationReps(int reps);
 }

@@ -20,11 +20,9 @@ import java.util.Map;
 public class MediaShieldEnchantment extends CloakEnchantment {
     public static final int CUTOFF_LEVEL = 4;
     private static final Map<Integer, Float> RATIOS_CACHE = new HashMap<>();
-    private static final float CUTOFF_LEVEL_ABSORPTION = getAbsorptionRatioForLevel(CUTOFF_LEVEL);
     // Absorption increase before diminishing returns start (pre-cutoff)
-    private static final float BASE_ABSORPTION_PER_LEVEL = 0.1f;
+    private static final float BASE_ABSORPTION_PER_LEVEL = 0.1f;    private static final float CUTOFF_LEVEL_ABSORPTION = getAbsorptionRatioForLevel(CUTOFF_LEVEL);
     private static final float POST_CUTOFF_STEP_RATIO = 0.5f;
-    
     public MediaShieldEnchantment() {
         super(Rarity.UNCOMMON);
     }
@@ -71,7 +69,6 @@ public class MediaShieldEnchantment extends CloakEnchantment {
         return RATIOS_CACHE.computeIfAbsent(level, MediaShieldEnchantment::computeAbsorptionRatioForLevel);
     }
 
-
     /**
      * Calculates the absorption ratio (e.g. 0.5 for absorbing half the damage).
      *
@@ -87,4 +84,6 @@ public class MediaShieldEnchantment extends CloakEnchantment {
     public int getMaxLevel() {
         return CUTOFF_LEVEL;
     }
+
+
 }
