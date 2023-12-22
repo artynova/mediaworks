@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.5
+
+### Changes
+
+- Make Locale Magnification and Media Shield enchantments scale beyond the standard max level, in spirit of compatibility with mods that allow overenchanting (suggested by anna-s-h).
+- Improve Reciprocation loop behaviour. If the Reciprocation enchantment causes a loop where lack of media causes overcasting damage and overcasting damage causes further reciprocation, the loop now fizzles out after 50 repetitions. This should still kill the player if the loop is capable of doing so in the first place, and in other cases (e.g. some kind of non-invulnerability damage negation) this avoids a crash (crash reported by walksanatora).
+- Update Simplified Chinese translation (by ChuijkYahus).
+
+
+### Fixes
+
+- Fix internal error occurring when trying to etch a Lasting Visage.
+
 ## 1.0.4
 
 ### Additions
