@@ -23,3 +23,4 @@ This project is licensed under the GNU Lesser General Public License v3.0. The l
   it, [Soulsand Valley Whisper 1](https://minecraft.fandom.com/wiki/Ambience) for astral ambience (slightly modified to
   loop better) and [Ender Eye Death 2](https://minecraft.fandom.com/wiki/Category:Eye_of_ender_sounds) for projection
   end.
+- Developers of the [HexDoc template](https://github.com/hexdoc-dev/hexdoc-hexcasting-template) for Hex Casting addons.

@@ -86,7 +86,7 @@
   "mediaworks.page.text_visages.create_bounded": "Extracts current display text from any iota and creates a bounded text visage iota, with the first number specifying max width and second - max height.",
 
   "mediaworks.entry.mediaworks_moreiotas": "Mediaworks-MoreIotas",
-  "mediaworks.page.mediaworks_moreiotas.1": "It appears that $(l:moreiotas:patterns/strings)$(thing)Strings/$ have some special properties when used with $(l:mediaworks:patterns/macula/text_visages)$(thing)Text Visages/$. Specifically, the Calligrapher's patterns extract the underlying strings rather than their colored, quoted displays, and let me take advantage of the old ways of $(l:https://minecraft.fandom.com/wiki/Formatting_codes)formatting/$.",
+  "mediaworks.page.mediaworks_moreiotas.1": "It appears that $(thing)Strings/$ have some special properties when used with $(l:mediaworks:patterns/macula/text_visages)$(thing)Text Visages/$. Specifically, the Calligrapher's patterns extract the underlying strings rather than their colored, quoted displays, and let me take advantage of the old ways of $(l:https://minecraft.fandom.com/wiki/Formatting_codes)formatting/$.",
   "mediaworks.page.mediaworks_moreiotas.2": "To format text, I need only type the \"codes\" with the $(thing)&/$ symbol instead of the paragraph symbol, since I cannot normally type the latter. Any instances of $(thing)&/$ that are not part of a formatting code are left as-is.",
 
   "mediaworks.entry.mediaworks_tweaks": "Mediaworking Changes",

@@ -1,0 +1,27 @@
+# Changes here will be overwritten by Copier. NEVER EDIT MANUALLY
+# See: https://copier.readthedocs.io/en/stable/configuring/#the-copier-answersyml-file
+_commit: v0.1.11
+_src_path: gh:hexdoc-dev/hexdoc-hexcasting-template
+author: artynova
+book_id: mediaworks:mediaworksbook
+default_branch: main
+github_repo: mediaworks
+gradle_mod_version_key: modVersion
+hexdoc_mod_plugin_classname: MediaworksModPlugin
+hexdoc_plugin_classname: MediaworksPlugin
+java_lang:
+    ext: java
+    src: java
+java_package: io/github/artynova/mediaworks
+mod_display_name: Mediaworks
+modid: mediaworks
+multiloader: true
+package_export_root: doc/src/hexdoc_mediaworks/_export
+package_name: hexdoc-mediaworks
+package_slug: hexdoc_mediaworks
+package_src: doc/src/hexdoc_mediaworks
+pages_url: https://artynova.github.io/mediaworks/
+pattern_regex:
+    per_world_value: 'true'
+    regex: HexPattern\.fromAngles\("(?P<signature>[qweasd]+)", HexDir\.(?P<startdir>\w+)\),\s*modLoc\("(?P<name>[^"]+)"\)[^;]+?(?:makeConstantOp|Op\w+|Widget\.\w+)(?:[^;]*(?P<is_per_world>true)\);)?
+pattern_registry: casting/pattern/MediaworksPatterns.java

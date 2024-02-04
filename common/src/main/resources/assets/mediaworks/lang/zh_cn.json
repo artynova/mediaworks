@@ -86,7 +86,7 @@
   "mediaworks.page.text_visages.create_bounded": "提取任意 iota 当前显示的文本，并创建一个绑定文本示像 iota，第一个数代表最大宽度，第二个代表最大高度。",
 
   "mediaworks.entry.mediaworks_moreiotas": "媒质工程-更多 Iota",
-  "mediaworks.page.mediaworks_moreiotas.1": "似乎$(l:moreiotas:patterns/strings)$(thing)字符串/$与$(l:mediaworks:patterns/macula/text_visages)$(thing)文本示像/$一起使用时会表现出特殊性质。具体而言，书法家图案会提取字符串本身，而非有色带引号的显示版本，同时也允许利用古老的$(l:https://minecraft.fandom.com/wiki/Formatting_codes)格式化/$方法。",
+  "mediaworks.page.mediaworks_moreiotas.1": "似乎$(thing)字符串/$与$(l:mediaworks:patterns/macula/text_visages)$(thing)文本示像/$一起使用时会表现出特殊性质。具体而言，书法家图案会提取字符串本身，而非有色带引号的显示版本，同时也允许利用古老的$(l:https://minecraft.fandom.com/wiki/Formatting_codes)格式化/$方法。",
   "mediaworks.page.mediaworks_moreiotas.2": "格式化文本只需要在“代码”前加上“$(thing)&/$”，而非小节号（一般无法打出）。所有不属于格式化代码的“$(thing)&/$”则保留原样。",
 
   "mediaworks.entry.mediaworks_tweaks": "媒质工程的变化",

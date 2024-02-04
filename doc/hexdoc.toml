@@ -1,0 +1,61 @@
+modid = "mediaworks"
+book = "mediaworks:mediaworksbook"
+default_lang = "en_us"
+default_branch = "main"
+
+resource_dirs = [  # top takes priority
+    "resources",
+    "{_common.src}/main/resources",
+    "{_fabric.src}/main/resources",
+    "{_forge.src}/main/resources",
+    { modid="hexcasting" },
+    { modid="minecraft" },
+    { modid="hexdoc" },
+]
+export_dir = "src/hexdoc_mediaworks/_export/generated"
+
+[template]
+icon = "icon.png"
+include = [
+    "mediaworks",
+    "hexcasting",
+    "hexdoc",
+]
+
+[template.args]
+mod_name = "Mediaworks"
+author = "artynova"
+show_landing_text = false
+
+[extra.hexcasting]
+# regexes for parsing pattern registry files - try running copier update and picking a different regex if your patterns aren't loading
+# NOTE: "!Raw" means "don't apply variable interpolation to this value"
+_pattern_regex = { "!Raw"='HexPattern\.fromAngles\("(?P<signature>[qweasd]+)", HexDir\.(?P<startdir>\w+)\),\s*"(?P<name>[^"]+)"[^;]+?(?:makeConstantOp|Op\w+|Widget\.\w+)(?:[^;]*(?P<is_per_world>true)\);)?' }
+_per_world_value = "true"
+
+[[extra.hexcasting.pattern_stubs]]
+path = "{^^^_common.package}/casting/pattern/MediaworksPatterns.java"
+regex = "{^_pattern_regex}"
+per_world_value = "{^_per_world_value}"
+
+[textures]
+missing = [
+    "minecraft:chest"
+]
+
+[textures.override]
+"mediaworks:magic_cloak" = { texture = "mediaworks:textures/item/magic_cloak_default.png" }
+
+# platforms
+
+[_common]
+src = "../common/src"
+package = "{src}/main/java/io/github/artynova/mediaworks"
+
+[_fabric]
+src = "../fabric/src"
+package = "{src}/main/java/io/github/artynova/mediaworks/fabric"
+
+[_forge]
+src = "../forge/src"
+package = "{src}/main/java/io/github/artynova/mediaworks/forge"

@@ -26,7 +26,7 @@ import static io.github.artynova.mediaworks.api.MediaworksAPI.id;
 public class MediaworksPatterns {
     public static List<Triple<HexPattern, Identifier, Action>> PATTERNS = new ArrayList<>();
     public static List<Triple<HexPattern, Identifier, Action>> PER_WORLD_PATTERNS = new ArrayList<>();
-    public static HexPattern ASTRAL_PROJECTION = registerPerWorld(HexPattern.fromAngles("qdadwewewdadeadwddaaedqdeddew", HexDir.NORTH_WEST), "astral_projection", new OpAstralProjection());
+    public static HexPattern ASTRAL_PROJECTION = register(HexPattern.fromAngles("qdadwewewdadeadwddaaedqdeddew", HexDir.NORTH_WEST), "astral_projection", new OpAstralProjection(), true);
     public static HexPattern ASTRAL_POS = register(HexPattern.fromAngles("qaqqqqaq", HexDir.NORTH_EAST), "astral_pos", new OpAstralPos());
     public static HexPattern ASTRAL_LOOK = register(HexPattern.fromAngles("waawaq", HexDir.NORTH_EAST), "astral_look", new OpAstralLook());
     public static HexPattern MACULA_ADD = register(HexPattern.fromAngles("wddaaddw", HexDir.NORTH_WEST), "macula/add", new OpMaculaAdd());
@@ -53,14 +53,13 @@ public class MediaworksPatterns {
     }
 
     private static HexPattern register(HexPattern pattern, String name, Action action) {
-        Triple<HexPattern, Identifier, Action> triple = new Triple<>(pattern, id(name), action);
-        PATTERNS.add(triple);
-        return pattern;
+        return register(pattern, name, action, false);
     }
 
-    private static HexPattern registerPerWorld(HexPattern pattern, String name, Action action) {
+    private static HexPattern register(HexPattern pattern, String name, Action action, boolean perWorld) {
         Triple<HexPattern, Identifier, Action> triple = new Triple<>(pattern, id(name), action);
-        PER_WORLD_PATTERNS.add(triple);
+        if (perWorld) PER_WORLD_PATTERNS.add(triple);
+        else PATTERNS.add(triple);
         return pattern;
     }
 }

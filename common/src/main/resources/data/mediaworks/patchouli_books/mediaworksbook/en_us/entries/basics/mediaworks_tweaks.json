@@ -1,6 +1,6 @@
 {
   "name": "mediaworks.entry.mediaworks_tweaks",
-  "icon": "minecraft:shulker_box",
+  "icon": "hexcasting:amethyst_dust",
   "category": "hexcasting:basics",
   "advancement": "hexcasting:root",
   "sortnum": 1,
