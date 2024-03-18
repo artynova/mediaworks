@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.7
+
+### Fixes
+
+- Fix astral projection sound playing after death unconditionally (reported by miyucomics).
+
 ## 1.0.6
 
 - Update Simplified Chinese translation (by ChuijkYahus).

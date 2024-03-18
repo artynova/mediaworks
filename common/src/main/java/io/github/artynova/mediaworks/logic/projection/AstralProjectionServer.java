@@ -184,7 +184,8 @@ public class AstralProjectionServer {
 
     public static EventResult handleDeath(LivingEntity entity, DamageSource source) {
         if (!(entity instanceof ServerPlayerEntity serverPlayer)) return EventResult.pass();
-        endProjection(serverPlayer);
+        if (!isProjecting(serverPlayer)) return EventResult.pass();
+        endProjectionEarly(serverPlayer);
         return EventResult.pass();
     }
 
