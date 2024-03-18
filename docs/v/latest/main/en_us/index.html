@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Mediaworks Book</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="The Mediaworks Book, all in one place." />
+      <meta name="author" content="artynova" />
+        <link rel="None" type="image/ico" href="favicon.ico" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" />
+        <link rel="icon" type="image/png" href="favicon-32x32.png" />
+        <link rel="icon" type="image/png" href="favicon-64x64.png" />
+        <link rel="icon" type="image/png" href="favicon-96x96.png" />
+        <link rel="icon" type="image/png" href="favicon-180x180.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-167x167.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-180x180.png" />
+        <link rel="None" type="image/png" href="mstile-70x70.png" />
+        <link rel="None" type="image/png" href="mstile-270x270.png" />
+        <link rel="None" type="image/png" href="mstile-310x310.png" />
+        <link rel="None" type="image/png" href="mstile-310x150.png" />
+        <link rel="shortcut icon" type="image/png" href="favicon-196x196.png" />
+      <link rel="mask-icon" href="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/main/media/safari-pinned-tab.svg" color="#332233">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Mediaworks Book" />
+<meta property="og:image" content="https://artynova.github.io/mediaworks/v/latest/main/en_us/icon.png" />
+<meta property="og:url" content="https://artynova.github.io/mediaworks/v/latest/main/en_us" />
+<meta property="og:description" content="The Mediaworks Book, all in one place." />
+<meta property="og:site_name" content="Mediaworks (latest/main)" />
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="textures.css">
+      <noscript>
+        <style>
+          /* for accessibility */
+          .spoilered {
+            filter: none !important;
+          }
+        </style>
+      </noscript>
+        <script type="module" src="index.js"></script>
+  <script type="module" src="hexcasting.js"></script>
+  </head>
+  <body>
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <!-- toggle and name -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#navbar-collapse"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../..">Mediaworks Book</a>
+    </div>
+    <!-- content -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >latest/main <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="version-dropdown"></ul>
+        </li>
+        <li class="dropdown">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >English (United States) <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left" id="lang-dropdown"></ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container" style="margin-top: 3em;">
+  <blockquote>
+      <h1><p>This is the online version of the Mediaworks documentation.</p></h1>
+        <p>This page is built from the latest code on GitHub. It may describe <strong>newer</strong> features that you may not necessarily have, even on the latest Modrinth/CurseForge version!</p>
+      <p><strong>Entries which are blurred are spoilers</strong>. Click to reveal them, but be aware that they may spoil endgame progression. Alternatively, click <a href="?nospoiler">here</a> to get a version with all spoilers showing.</p>
+      <span id="old-version-notice" class="hidden">
+        <br />
+        <p><i>The past is a foreign country; they do things differently there.</i></p>
+      </span>
+  </blockquote>
+</div>
+<div class="container">
+<div id="table-of-contents"></div>
+<nav class="toc-container">
+  <h2 class="page-header">
+    Table of <span class="nobr">Contents<a
+      href="javascript:void(0)"
+      class="permalink toggle-link small"
+      data-target="toc-category"
+      title="Toggle all"
+    ><i class="bi bi-list-nested"></i></a><a
+    href="#table-of-contents"
+    class="permalink small toc-permalink"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></span>
+  </h2>
+    <details class="toc-category">
+      <summary><a href="#basics" class="toc-elem "><img
+      title="Amethyst Shard"
+      alt="Amethyst Shard"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/amethyst_shard.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Getting Started</a></summary>
+      <ul>
+          <li><a href="#basics/mediaworks_tweaks" class="toc-elem "><img
+      title="Amethyst Dust"
+      alt="Amethyst Dust"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/amethyst_dust.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Mediaworking Changes</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#items" class="toc-elem "><img
+      title="Focus"
+      alt="Focus"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Items</a></summary>
+      <ul>
+          <li><a href="#items/magic_cloak" class="toc-elem "><img
+      title="Featherweave Cloak"
+      alt="Featherweave Cloak"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/9c20c722fdc30dd558f95b277f5816b192de04ca/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Featherweave Cloak</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#greatwork" class="toc-elem spoilered"><img
+      title="Music Disc"
+      alt="Music Disc"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/music_disc_11.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > The Great Work</a></summary>
+      <ul>
+          <li><a href="#greatwork/astral_self" class="toc-elem spoilered"><img
+      title="End Crystal"
+      alt="End Crystal"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/end_crystal.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Astral Self</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#interop" class="toc-elem "><img
+      title="Chain"
+      alt="Chain"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/chain.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Cross-Mod Compatibility</a></summary>
+      <ul>
+          <li><a href="#interop/mediaworks_containers" class="toc-elem "><img
+      title="Shulker Shell"
+      alt="Shulker Shell"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/shulker_shell.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Mediaworks Containers</a></li>
+          <li><a href="#interop/mediaworks_moreiotas" class="toc-elem "><img
+      title="Red Dye"
+      alt="Red Dye"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/red_dye.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Mediaworks-MoreIotas</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns" class="toc-elem "><img
+      title="Bookshelf"
+      alt="Bookshelf"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/bookshelf.png"
+      loading="lazy"
+      class="item-texture  texture "
+    > Patterns</a></summary>
+      <ul>
+          <li><a href="#patterns/media_patterns" class="toc-elem "><img
+      title="Phial of Media"
+      alt="Phial of Media"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/phial/phial_small_0.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Mediaworks</a></li>
+          <li><a href="#patterns/cloak_patterns" class="toc-elem "><img
+      title="Featherweave Cloak"
+      alt="Featherweave Cloak"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/9c20c722fdc30dd558f95b277f5816b192de04ca/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Cloakworks</a></li>
+          <li><a href="#patterns/astral_utils" class="toc-elem spoilered"><img
+      title="Phantom Membrane"
+      alt="Phantom Membrane"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/phantom_membrane.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Astral Utilities</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns/great_spells" class="toc-elem "><img
+      title="Conduit Power"
+      alt="Conduit Power"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/conduit_power.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Great Spells</a></summary>
+      <ul>
+          <li><a href="#patterns/great_spells/astral_projection" class="toc-elem "><img
+      title="Astral Projection"
+      alt="Astral Projection"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/9c20c722fdc30dd558f95b277f5816b192de04ca/common/src/main/resources/assets/mediaworks/textures/mob_effect/astral_projection.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Astral Projection</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns/macula" class="toc-elem "><img
+      title="Eye of Ender"
+      alt="Eye of Ender"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/ender_eye.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Macula Etching</a></summary>
+      <ul>
+          <li><a href="#patterns/macula/macula_concepts" class="toc-elem "><img
+      title="Lectern"
+      alt="Lectern"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/lectern.png"
+      loading="lazy"
+      class="item-texture  texture "
+    > Macula Concepts</a></li>
+          <li><a href="#patterns/macula/macula_patterns" class="toc-elem "><img
+      title="Painting"
+      alt="Painting"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/painting.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Macula Patterns</a></li>
+          <li><a href="#patterns/macula/black_eye" class="toc-elem "><img
+      title="Blindness"
+      alt="Blindness"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/blindness.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Black Eye Mishap</a></li>
+          <li><a href="#patterns/macula/text_visages" class="toc-elem "><img
+      title="Book and Quill"
+      alt="Book and Quill"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/writable_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Text Visages</a></li>
+      </ul>
+    </details>
+</nav>
+  <main class="book-body">
+<section id="basics">
+    <h2 class="category-title page-header">
+    <img
+      title="Amethyst Shard"
+      alt="Amethyst Shard"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/amethyst_shard.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Getting Started<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#basics"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>The practitioners of this art would cast their so-called <span style="color: #b38ef3">Hexes</span> by drawing strange patterns in the air with a <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/staff"><span style="color: #b0b">staff</span></a>-- or craft <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/hexcasting"><span style="color: #b0b">powerful magical items</span></a> to do the casting for them. How might I do the same?</p>
+<div id="basics/mediaworks_tweaks" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Amethyst Dust"
+      alt="Amethyst Dust"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/amethyst_dust.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Mediaworking Changes<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#basics/mediaworks_tweaks"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>The <span style="color: #74b3f2">media</span> flow in the world feels somewhat different lately. It has become more... perhaps, the word I am looking for is &#34;workable&#34;?</p><p>I have unearthed legends about casters pulling <span style="color: #74b3f2">media</span> from items inside <span style="color: #8d6acc">Shulker Boxes</span>, though only after all other available <span style="color: #74b3f2">media</span> sources are exhausted. Application rules seem to be the same as for <span style="color: #74b3f2">media</span> from <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/phials"><span style="color: #8d6acc">Media Phials</span></a>.</p>
+<br />
+    <p>When choosing an inventory slot to pull <span style="color: #74b3f2">media</span> from, it no longer matters how much <span style="color: #74b3f2">media</span> there is in the slot&#39;s item stack. This means that multiple successive casts will now prioritize fully exhausting inventory item stacks instead of &#34;load-balancing&#34;, and thus will free up my pockets more quickly.</p>
+<br />
+    <p>A <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/lens"><span style="color: #8d6acc">Scrying Lens</span></a> worn in my helmet slot or face slot now also condenses the casting grid, much like when held in the other hand. However, having multiple lenses on my person is redundant, because 2 or even 3 of them have the same effect as just 1.</p>
+<br />
+</div>
+</section>
+<section id="items">
+    <h2 class="category-title page-header">
+    <img
+      title="Focus"
+      alt="Focus"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Items<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#items"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>I devote this section to the magical and mysterious items I might encounter in my studies.</p><p>It seems like many of these items have uses when held alongside my <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/staff"><span style="color: #b0b">staff</span></a>. I suppose I will have to choose what goes in my other hand carefully.</p>
+<div id="items/magic_cloak" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Featherweave Cloak"
+      alt="Featherweave Cloak"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/9c20c722fdc30dd558f95b277f5816b192de04ca/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Featherweave Cloak<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#items/magic_cloak"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>Many scripts hint at cities deep underground where masters of magic wore feathered cloaks. The cloaks were bestowed upon them by a powerful mage who figured out how to embed ideas into the threads of dark fabric. With this fabric did he create the first cloak of this kind.</p><p>If I ever manage to obtain one, I will document further discoveries about it here.</p>
+<br />
+  <h4 class="spotlight-title page-header">Featherweave Cloak</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="Featherweave Cloak"
+      alt="Featherweave Cloak"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/9c20c722fdc30dd558f95b277f5816b192de04ca/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>The cloaks exist after all! After god knows how many centuries in the <span style="color: #8d6acc">Deep Dark</span>, the weave feels oddly pristine to the touch, and the threads can hold iotas in a way that I have so far failed to replicate.</p>
+<br />
+    <p>I can write iotas to and read them from a <span style="color: #8d6acc">Featherweave Cloak</span> much like with a <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/focus"><span style="color: #8d6acc">Focus</span></a>. It doesn&#39;t seem like waxing it would work, though.</p><p>Conveniently, I can also <a href="#patterns/cloak_patterns@mediaworks:cloak/read"><span style="color: #8d6acc">read</span></a> from a cloak without taking it off, and cut quite the dashing figure while doing so.</p>
+<br />
+    <p>Speaking of dashing figures, I can dye the cloak almost any color imaginable! The fabric absorbs dyes much like the mundane leather gear, yet infinitely more befitting of a true mage such as myself.</p><p>Should I ever need to get rid of the applied dyes, a good ol&#39; cauldron wash will do.</p>
+<br />
+    <p>However, this is not the full extent of their potential, <i>far</i> from it. I have been finding some peculiar <span style="color: #8d6acc">Enchanted Books</span> unique to the dark and damp ancient cities, so perhaps the way to greater power lies through the secrets of enchanting.</p><p>On the following pages I have compiled a list of enchantments applicable to featherweave cloaks.</p>
+<br />
+  <h4>Reciprocation</h4>
+  <h4 class="spotlight-title page-header">Enchanted Book</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="Enchanted Book"
+      alt="Enchanted Book"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>Whenever I take damage, this enchantment forces the cloak to retaliate by automatically evaluating its stored iota. An empty cloak will not do anything, and a cloak with a non-evaluatable iota will cause the usual mishap.</p>
+<br />
+    <p>This also triggers when overcasting from health, thereby causing a self-perpetuating loop that can easily consume my mind in the blink of an eye.</p><p>However, if it cannot kill me for some reason, it should fizzle out after about 50 repetitions.</p>
+<br />
+  <h4>Media Shield</h4>
+  <h4 class="spotlight-title page-header">Enchanted Book</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="Enchanted Book"
+      alt="Enchanted Book"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>Adds an external layer of defense that absorbs a percentage of incoming blockable damage, 10% per level at most. This triggers before any armor calculations, and every absorbed damage point costs as much media as a single health point gives when overcasting. the media is spent in the same way as when casting with a staff.</p>
+<br />
+    <p>If there is not enough media to cover the full effect and no way for Nature to force it out of me, the enchantment will only absorb as much damage as the available media allows. Otherwise, the media is spent in the same way as when casting with a staff.</p>
+<br />
+  <h4>Locale Magnification</h4>
+  <h4 class="spotlight-title page-header">Enchanted Book</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="Enchanted Book"
+      alt="Enchanted Book"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>The rarest of them all! An enchantment that unconditionally extends my standard range of influence by 8, 16, or 32 blocks, depending on the level. This extension even applies to my raycast distance, like when using <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:raycast"><span style="color: #8d6acc">Archer&#39;s Distillation</span></a>!</p>
+<br />
+  <h4>Other Enchantments</h4>
+  <h4 class="spotlight-title page-header">Enchanted Book</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="Enchanted Book"
+      alt="Enchanted Book"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>A featherweave cloak is wearable and damageable. It stands to reason, then, that it accepts any enchantments available to other such items (e.g. the <span style="color: #8d6acc">Elytra</span>).</p>
+<br />
+    <p><i>More scrawls on ancient paper... &#34;He betrayed us, these cloths given to our leaders were nothing but a way to disarm us. The Skulk will follow soon after. I am leaving before it&#39;s too late. Beware these dark fabrics...&#34;</i></p><i><p>I should stay away from this place and its heirlooms. These linens are cursed and no allure of power would ever change that fact.</p><p>But how bad could it really be?</p></i>
+<br />
+</div>
+</section>
+<section id="greatwork">
+    <div class="spoilered">
+      <h2 class="category-title page-header">
+    <img
+      title="Music Disc"
+      alt="Music Disc"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/music_disc_11.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >The Great Work<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#greatwork"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>I have seen... so much. I have... experienced... annihilation and deconstruction and reconstruction. I have seen the atoms of the world screaming as they were inverted and subverted and demoted to energy. I have seen I have seen I have s<span class="obfuscated">get stick bugged lmao</span></p>
+    </div>
+<div id="greatwork/astral_self" class="entry">
+    <div class="spoilered">
+      <h3 class="entry-title page-header">
+    <img
+      title="End Crystal"
+      alt="End Crystal"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/end_crystal.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Astral Self<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#greatwork/astral_self"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>The state of <a href="#patterns/great_spells/astral_projection"><span style="color: #8d6acc">Astral Projection</span></a> is... <span style="color: #8d6acc">TRUE BLISS</span>! In it, I can <i>hear</i> the veil thinning, I can <i>see</i> the whispers of Nature, I can <i>smell</i> colors of <span style="color: #74b3f2">media</span> calling out to me senses jumbled must reach must attain mu<span class="obfuscated">st remark that you&#39;re quite attentive lol</span></p>
+<br />
+    <p>While projecting, I can fly as I please within my range of influence and phase through any blocks. However, my astral self sees the world in black and white, its sight fading as it moves further from my body, and a thick fog occludes its sight not that far away. It cannot interact with anything and cannot be interacted with.</p>
+<br />
+    <p>While I visualise my astral self as a translucent copy of me, other casters can only see a flying particle cloud colored with my <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/pigments"><span style="color: #8d6acc">pigment</span></a>, and other creatures ignore my astral self completely.</p><p>There is still one more boon: if my <a href="#patterns/great_spells/astral_projection"><span style="color: #8d6acc">Astral Projection</span></a> spell captured an <span style="color: #8d6acc">Astral Iota</span>, then whenever I press <span style="color: #8d6acc">Use Item/Place Block</span> during that projection, Nature evaluates the iota, much like when casting from a <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/hexcasting"><span style="color: #8d6acc">Casting Item</span></a>.</p>
+<br />
+    <p>If Astral Projection ends peacefully, Nature gently pushes my mind back into my body. This happens if:</p><p class="fake-li">The time allotted by the corresponding <a href="#patterns/great_spells/astral_projection"><span style="color: #8d6acc">spell</span></a> runs out;</p><p class="fake-li">I press <span style="color: #8d6acc">Open/Close Inventory</span>.</p>
+<br />
+    <p>However, sometimes Astral Projection ends... not so peacefully. Nature does not take kindly to betrayal of its expectations, and throws my mind back into my body, in disarray. This happens if:</p><p class="fake-li">My attempt to cast an Astral Iota results in a failure;</p><p class="fake-li">My dull body is moved further than 3 blocks from the casting position;</p><p class="fake-li">My astral self leaves my range of influence.</p>
+<br />
+    <p>...I&#39;ve done some more research, though. It appears that, if I act carefully, - I need to be careful I MUST, I can NOT lose myself to arrogance now, - there might be a way to <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/great_spells/greater_sentinel"><span style="color: #8d6acc">circumvent</span></a> the range limitation altogether.</p>
+<br />
+    </div>
+</div>
+</section>
+<section id="interop">
+    <h2 class="category-title page-header">
+    <img
+      title="Chain"
+      alt="Chain"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/chain.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Cross-Mod Compatibility<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#interop"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>It appears I have installed some mods Hexcasting interoperates with! I&#39;ve detailed them here.</p>
+<div id="interop/mediaworks_containers" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Shulker Shell"
+      alt="Shulker Shell"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/shulker_shell.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Mediaworks Containers<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#interop/mediaworks_containers"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>In a <i>modified</i> world, there can be all kinds of containers besides <span style="color: #8d6acc">Shulker Boxes</span>. Some of them can even act as <span style="color: #74b3f2">media</span> <a href="#basics/mediaworks_tweaks"><span style="color: #8d6acc">sources</span></a> in much the same way! I will be cataloguing such special containers here.</p>
+<br />
+  <h4 class="spotlight-title page-header">Sack</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="Sack"
+      alt="Sack"
+      src="https://artynova.github.io/mediaworks/v/latest/main/assets/supplementaries/textures/block/sack_closed.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >
+  </div>
+<br />
+</div>
+<div id="interop/mediaworks_moreiotas" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Red Dye"
+      alt="Red Dye"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/red_dye.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Mediaworks-MoreIotas<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#interop/mediaworks_moreiotas"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>It appears that <span style="color: #8d6acc">Strings</span> have some special properties when used with <a href="#patterns/macula/text_visages"><span style="color: #8d6acc">Text Visages</span></a>. Specifically, the Calligrapher&#39;s patterns extract the underlying strings rather than their colored, quoted displays, and let me take advantage of the old ways of <a href="https://minecraft.fandom.com/wiki/Formatting_codes" target="_blank">formatting</a>.</p>
+<br />
+    <p>To format text, I need only type the &#34;codes&#34; with the <span style="color: #8d6acc">&amp;</span> symbol instead of the paragraph symbol, since I cannot normally type the latter. Any instances of <span style="color: #8d6acc">&amp;</span> that are not part of a formatting code are left as-is.</p>
+<br />
+</div>
+</section>
+<section id="patterns">
+    <h2 class="category-title page-header">
+    <img
+      title="Bookshelf"
+      alt="Bookshelf"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/bookshelf.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >Patterns<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>A list of all the patterns I&#39;ve discovered, as well as what they do.</p>
+<div id="patterns/media_patterns" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Phial of Media"
+      alt="Phial of Media"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/phial/phial_small_0.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Mediaworks<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/media_patterns"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/media_patterns@mediaworks:get_media">
+<h4 class="pattern-title">Media Reflection (→ number)<a
+    href="#patterns/media_patterns@mediaworks:get_media"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dde"
+        data-start="west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: dde</canvas>
+  </details>
+      <p>Returns the amount of <span style="color: #74b3f2">media</span> currently available to the hex without overcasting, in units of <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/amethyst"><span style="color: #b0b">Amethyst Dust</span></a>.</p>
+  </div>
+<br />
+  <div id="patterns/media_patterns@mediaworks:get_entity_media">
+<h4 class="pattern-title">Media Purification I (entity → number)<a
+    href="#patterns/media_patterns@mediaworks:get_entity_media"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="ddew"
+        data-start="west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: ddew</canvas>
+  </details>
+      <p>Returns the amount of <span style="color: #74b3f2">media</span> in a dropped item entity, or in an entity&#39;s inventory if it is a player, in units of <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/amethyst"><span style="color: #b0b">Amethyst Dust</span></a>. Returns 0 if not applicable.</p>
+  </div>
+<br />
+    <p>Curiously, the <span style="color: #74b3f2">media</span> in <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/hexcasting"><span style="color: #8d6acc">Casting Items</span></a> seems to be obscured: they do not contribute to a player&#39;s evaluated <span style="color: #74b3f2">media</span> total. However, this obscurity does not hold under closer scrutiny: when evaluating a dropped casting item directly, the pattern does report its contained <span style="color: #74b3f2">media</span>.</p>
+<br />
+  <div id="patterns/media_patterns@mediaworks:get_pos_media">
+<h4 class="pattern-title">Media Purification II (vector → number)<a
+    href="#patterns/media_patterns@mediaworks:get_pos_media"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="ddewa"
+        data-start="west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: ddewa</canvas>
+  </details>
+      <p>Returns the total amount of <span style="color: #74b3f2">media</span> in the container at the position, in units of <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/amethyst"><span style="color: #b0b">Amethyst Dust</span></a>. Returns 0 if not applicable. Works for a certain <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#greatwork/impetus"><span style="color: #8d6acc">special container</span></a> as well.</p>
+  </div>
+<br />
+    <p>Stored <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/hexcasting"><span style="color: #8d6acc">Casting Items</span></a> do not contribute to the calculated <span style="color: #74b3f2">media</span> total.</p>
+<br />
+</div>
+<div id="patterns/cloak_patterns" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Featherweave Cloak"
+      alt="Featherweave Cloak"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/9c20c722fdc30dd558f95b277f5816b192de04ca/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Cloakworks<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/cloak_patterns"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/cloak_patterns@mediaworks:cloak/read">
+<h4 class="pattern-title">Medivh&#39;s Reflection (→ any)<a
+    href="#patterns/cloak_patterns@mediaworks:cloak/read"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="adda"
+        data-start="east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: adda</canvas>
+  </details>
+      <p>Old tales depict a figure of power unmatched, yet tender to all creatures under the sun. Among his many great feats, he was the first to spin the <a href="#items/magic_cloak"><span style="color: #8d6acc">Featherweave Cloak</span></a> fabric out of feathers and dust.</p>
+  </div>
+<br />
+    <p>This pattern can extract the iota held in a worn featherweave cloak, without the need to take it off and resort to <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/readwrite"><span style="color: #8d6acc">traditional methods</span></a>.</p>
+<br />
+</div>
+<div id="patterns/astral_utils" class="entry">
+    <div class="spoilered">
+      <h3 class="entry-title page-header">
+    <img
+      title="Phantom Membrane"
+      alt="Phantom Membrane"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/phantom_membrane.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Astral Utilities<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/astral_utils"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/astral_utils@mediaworks:astral_pos">
+<h4 class="pattern-title">Astral Locale Rfln. (→ vector)<a
+    href="#patterns/astral_utils@mediaworks:astral_pos"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaqqqqaq"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qaqqqqaq</canvas>
+  </details>
+      <p>Returns the &#34;eye&#34; position vector of my astral self, similarly to how <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:entity_pos/eye"><span style="color: #8d6acc">Compass&#39; Purification</span></a> works for my physical body. Returns <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if I am not projecting.</p>
+  </div>
+<br />
+  <div id="patterns/astral_utils@mediaworks:astral_look">
+<h4 class="pattern-title">Astral Gaze Rfln. (→ vector)<a
+    href="#patterns/astral_utils@mediaworks:astral_look"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="waawaq"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: waawaq</canvas>
+  </details>
+      <p>Returns the direction my astral self is looking in, similarly to how <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:get_entity_look"><span style="color: #8d6acc">Alidade&#39;s Purification</span></a> works for my physical body. Returns <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if I am not projecting.</p>
+  </div>
+<br />
+    </div>
+</div>
+</section>
+<section id="patterns/great_spells">
+    <h2 class="category-title page-header">
+    <img
+      title="Conduit Power"
+      alt="Conduit Power"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/conduit_power.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Great Spells<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/great_spells"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>The spells catalogued here are purported to be of legendary difficulty and power. They seem to have been recorded only sparsely (for good reason, the texts claim). It&#39;s probably just the hogwash of extinct traditionalists, though-- a pattern&#39;s a pattern. What could possibly go wrong?</p>
+<div id="patterns/great_spells/astral_projection" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Astral Projection"
+      alt="Astral Projection"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/9c20c722fdc30dd558f95b277f5816b192de04ca/common/src/main/resources/assets/mediaworks/textures/mob_effect/astral_projection.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Astral Projection<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/great_spells/astral_projection"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/great_spells/astral_projection@mediaworks:astral_projection">
+<h4 class="pattern-title">Astral Projection (number →)<a
+    href="#patterns/great_spells/astral_projection@mediaworks:astral_projection"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qdadwewewdadeadwddaaedqdeddew"
+        data-start="north_west"
+        data-per-world="True"
+      >Your browser does not support visualizing patterns. Pattern code: qdadwewewdadeadwddaaedqdeddew</canvas>
+  </details>
+      <p>Finally, no longer am I confined to my mortal shell! The spell <a href="#greatwork/astral_self"><span style="color: #8d6acc">projects</span></a> my mind outside of my body, granting multiple useful abilities for the specified number of seconds.</p>
+  </div>
+<br />
+    <p>Seeing how inert and defenseless the body becomes without a mind actively governing it, I suppose it is a boon that this spell only targets the caster.</p><p>Casting the spell costs about 2 units of <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/amethyst"><span style="color: #b0b">Amethyst Dust</span></a> per second of duration.<br />If my <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/readwrite@hexcasting:local"><span style="color: #8d6acc">ravenmind</span></a> holds any iota when I cast this spell, the iota is captured as an <span style="color: #8d6acc">Astral Iota</span> for the entire duration of the projection.</p>
+<br />
+    <p>During such a massive paradigm shift, concentration is hard to maintain, so all the patterns I&#39;ve drawn and iotas I&#39;ve saved to my previous stack are lost.</p><p>Lastly, it seems that I cannot extend my remaining time while already dissociated. Trying to do so leads to an <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#casting/mishaps"><span style="color: #8d6acc">Entity is Immune</span></a> mishap.</p>
+<br />
+</div>
+</section>
+<section id="patterns/macula">
+    <h2 class="category-title page-header">
+    <img
+      title="Eye of Ender"
+      alt="Eye of Ender"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/ender_eye.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Macula Etching<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p><a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:print"><span style="color: #8d6acc">Reveal</span></a> is a good pattern, but sometimes I find myself wishing for more flexibility. Thankfully, with just a few simple <a href="#patterns/macula/macula_patterns"><span style="color: #8d6acc">patterns</span></a> I can affect my sight by directly etching <a href="#patterns/macula/macula_concepts@mediaworks:visages"><span style="color: #8d6acc">Visages</span></a> onto my eye&#39;s very <a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">Macula</span></a>. These visages work similarly to the essential information that seems to have been etched onto my eyes by Nature itself, like health or hotbar.</p>
+<div id="patterns/macula/macula_concepts" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Lectern"
+      alt="Lectern"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/lectern.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >Macula Concepts<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula/macula_concepts"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>Macula is the part of my eye where visages are etched. Due to its physical nature, it is not carried between different bodies (like when respawning). It can hold <span style="color: #8d6acc">Lasting Visages</span> - shown indefinitely - and <span style="color: #8d6acc">Fleeting Visages</span>. Fleeting visages fade gradually in the last second of their lifetime, unless the lifetime is 1 second or less in the first place. However, it appears that my Macula is somewhat fragile, so it cannot hold more than 32 visages at a time, and neither can it accept <span style="color: #8d6acc">Fleeting Visages</span> that stay for longer than 1 full day.</p>
+<br />
+  <div id="patterns/macula/macula_concepts@mediaworks:visages">
+<h4>Visages<a
+    href="#patterns/macula/macula_concepts@mediaworks:visages"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+    <p>Visage is a generic word referring to any element visible on my macula. In order to etch one, I need to prepare one first, e.g. with <a href="#patterns/macula/text_visages@mediaworks:visage/text/unbounded"><span style="color: #8d6acc">Calligrapher&#39;s Purification</span></a>. Such operations result in <span style="color: #8d6acc">Visage Iotas</span>: they hold information needed to reproduce their specific visages anywhere on the Macula. I can then store these iotas, or <a href="#patterns/macula/macula_patterns@mediaworks:macula/add"><span style="color: #8d6acc">etch</span></a> them.</p>
+  </div>
+<br />
+  <div id="patterns/macula/macula_concepts@mediaworks:macula_space">
+<h4>Macula Space<a
+    href="#patterns/macula/macula_concepts@mediaworks:macula_space"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+    <p>Visages are positioned in a somewhat special 3-dimensional space, which I have very creatively dubbed the <span style="color: #8d6acc">Macula Space</span>. It is akin to a box with its front (the Z-axis) facing towards me, though with a few caveats:</p><p class="fake-li">The top left corner of my sight corresponds to coordinates X = 0, Y = 0, the <span style="color: #8d6acc">Macula Origin</span> of sorts.</p><p class="fake-li">Macula width and height change along with my <span class="has-tooltip" title="Game window&#39;s scaled dimensions, e.g. 480x270 in the 1920x1080 resolution"><span style="color: #8d6acc">outlook</span></span>.</p><p class="fake-li">There is no perspective, so the Z coordinate, <span style="color: #8d6acc">depth</span>, only determines which visage comes out on top in case of overlap.</p>
+  </div>
+<br />
+  <h4>Word of Caution</h4>
+    <p>Though etching things onto my own eyes phases me curiously little, I should probably still be careful that nothing goes wrong, lest I incur the <a href="#patterns/macula/black_eye"><span style="color: #8d6acc">Black Eye</span></a> mishap.</p>
+<br />
+</div>
+<div id="patterns/macula/macula_patterns" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Painting"
+      alt="Painting"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/painting.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Macula Patterns<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula/macula_patterns"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/macula/macula_patterns@mediaworks:macula/add">
+<h4 class="pattern-title">Etch Visage (vec, vis | vec, vis, num →)<a
+    href="#patterns/macula/macula_patterns@mediaworks:macula/add"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="wddaaddw"
+        data-start="north_west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: wddaaddw</canvas>
+  </details>
+      <p>Puts the visage at the specified point in the <a href="#patterns/macula/macula_concepts@mediaworks:macula_space"><span style="color: #8d6acc">Macula Space</span></a>. If the display duration (the third argument) is supplied, the visage is <a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">Fleeting</span></a>, otherwise - <a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">Lasting</span></a>. Costs a negligible amount of <span style="color: #74b3f2">media</span>.</p>
+  </div>
+<br />
+  <div id="patterns/macula/macula_patterns@mediaworks:macula/clear">
+<h4 class="pattern-title">Macula Erasure<a
+    href="#patterns/macula/macula_patterns@mediaworks:macula/clear"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="awawa"
+        data-start="west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: awawa</canvas>
+  </details>
+      <p>Clears my Macula quickly and painlessly. Definitely beats suffering a <a href="#patterns/macula/black_eye"><span style="color: #8d6acc">Black Eye</span></a> or dying. Costs a negligible amount of <span style="color: #74b3f2">media</span>.</p>
+  </div>
+<br />
+  <div id="patterns/macula/macula_patterns@mediaworks:macula/dimensions">
+<h4 class="pattern-title">Macula Gambit (→ number, number)<a
+    href="#patterns/macula/macula_patterns@mediaworks:macula/dimensions"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aawawaa"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: aawawaa</canvas>
+  </details>
+      <p>Returns my current <a href="#patterns/macula/macula_concepts@mediaworks:macula_space"><span style="color: #8d6acc">Macula width and height</span></a>. An absolute must for any sufficiently complex Macula calculations.</p>
+  </div>
+<br />
+</div>
+<div id="patterns/macula/black_eye" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Blindness"
+      alt="Blindness"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/blindness.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Black Eye Mishap<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula/black_eye"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>Occurs when I have tried to put more than 32 visages onto my Macula, or to create a <a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">Fleeting Visage</span></a> for longer than 1 day.</p><p>Causes black sparks and damages my Macula, clearing it and blinding me for a couple of seconds.</p><p><i>Good thing the blindness is temporary...</i></p>
+<br />
+</div>
+<div id="patterns/macula/text_visages" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Book and Quill"
+      alt="Book and Quill"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/writable_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Text Visages<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula/text_visages"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>A type of visages that can show any text, with a constant line height of <span style="color: #8d6acc">9</span>. Their ability to capture iotas&#39; <i>current</i> texts makes them a more flexible equivalent of <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:print"><span style="color: #8d6acc">Reveal</span></a>.</p><p>Text visages can be <span style="color: #8d6acc">unbounded</span> or <span style="color: #8d6acc">bounded</span>. The former can stretch infinitely, and the latter wrap lines that exceed the max width, displaying only the lines that fully fit within the max height.</p>
+<br />
+  <div id="patterns/macula/text_visages@mediaworks:visage/text/unbounded">
+<h4 class="pattern-title">Calligrapher&#39;s Prfn. (any → visage)<a
+    href="#patterns/macula/text_visages@mediaworks:visage/text/unbounded"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aaqdwdwd"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: aaqdwdwd</canvas>
+  </details>
+      <p>Extracts current display text from any iota and creates an unbounded text visage iota.</p>
+  </div>
+<br />
+  <div id="patterns/macula/text_visages@mediaworks:visage/text/bounded">
+<h4 class="pattern-title">Calligrapher&#39;s Exlt. (number, number, any → visage)<a
+    href="#patterns/macula/text_visages@mediaworks:visage/text/bounded"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aaqdwdwde"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: aaqdwdwde</canvas>
+  </details>
+      <p>Extracts current display text from any iota and creates a bounded text visage iota, with the first number specifying max width and second - max height.</p>
+  </div>
+<br />
+</div>
+</section>
+  </main>
+</div>
+      <footer class="footer">
+        <div class="container">
+          <p class="text-muted">
+            Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.<br />
+            Minecraft content and materials are the intellectual property of their respective owners.<br />
+            Made with ❤️ using <a href="https://pypi.org/project/hexdoc/" target="_blank">hexdoc</a>.
+          </p>
+        </div>
+      </footer>
+  </body>
+</html>
