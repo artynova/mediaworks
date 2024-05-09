@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Mediaworks Book</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="The Mediaworks Book, all in one place." />
+      <meta name="author" content="artynova" />
+        <link rel="None" type="image/ico" href="favicon.ico" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" />
+        <link rel="icon" type="image/png" href="favicon-32x32.png" />
+        <link rel="icon" type="image/png" href="favicon-64x64.png" />
+        <link rel="icon" type="image/png" href="favicon-96x96.png" />
+        <link rel="icon" type="image/png" href="favicon-180x180.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-167x167.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-180x180.png" />
+        <link rel="None" type="image/png" href="mstile-70x70.png" />
+        <link rel="None" type="image/png" href="mstile-270x270.png" />
+        <link rel="None" type="image/png" href="mstile-310x310.png" />
+        <link rel="None" type="image/png" href="mstile-310x150.png" />
+        <link rel="shortcut icon" type="image/png" href="favicon-196x196.png" />
+      <link rel="mask-icon" href="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/main/media/safari-pinned-tab.svg" color="#332233">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Mediaworks Book" />
+<meta property="og:image" content="https://artynova.github.io/mediaworks/v/1.0.7/1.0.dev0/zh_cn/icon.png" />
+<meta property="og:url" content="https://artynova.github.io/mediaworks/v/1.0.7/1.0.dev0/zh_cn" />
+<meta property="og:description" content="The Mediaworks Book, all in one place." />
+<meta property="og:site_name" content="Mediaworks (1.0.7)" />
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="textures.css">
+      <noscript>
+        <style>
+          /* for accessibility */
+          .spoilered {
+            filter: none !important;
+          }
+        </style>
+      </noscript>
+        <script type="module" src="index.js"></script>
+  <script type="module" src="hexcasting.js"></script>
+  <script type="module" src="hexcasting_render.js"></script>
+  </head>
+  <body>
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <!-- toggle and name -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#navbar-collapse"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../..">Mediaworks Book</a>
+    </div>
+    <!-- content -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >1.0.7 <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="version-dropdown"></ul>
+        </li>
+        <li class="dropdown">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >简体中文 (中国大陆) <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left" id="lang-dropdown"></ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container" style="margin-top: 3em;">
+  <blockquote>
+      <h1><p>这是Mediaworks文档的在线版本。</p></h1>
+      <p><strong>条目的模糊处理相当于剧透警告</strong>。点击可取消模糊，不过这么做有可能破坏游戏后期的进程与体验。也可点击<a href="?nospoiler">此处</a>以取消所有模糊。</p>
+      <span id="old-version-notice" class="hidden">
+        <br />
+        <p><i>往事犹若异乡；他们在那里做的事情都不一样。</i></p>
+      </span>
+  </blockquote>
+</div>
+<div class="container">
+<div id="table-of-contents"></div>
+<nav class="toc-container">
+  <h2 class="page-header">
+    <span class="nobr">目录<a
+      href="javascript:void(0)"
+      class="permalink toggle-link small"
+      data-target="toc-category"
+      title="显示或收起全部"
+    ><i class="bi bi-list-nested"></i></a><a
+    href="#table-of-contents"
+    class="permalink small toc-permalink"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></span>
+  </h2>
+    <details class="toc-category">
+      <summary><a href="#basics" class="toc-elem "><img
+      title="紫水晶碎片"
+      alt="紫水晶碎片"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/amethyst_shard.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 初入咒法</a></summary>
+      <ul>
+          <li><a href="#basics/mediaworks_tweaks" class="toc-elem "><img
+      title="紫水晶粉"
+      alt="紫水晶粉"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/amethyst_dust.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 媒质工程的变化</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#items" class="toc-elem "><img
+      title="核心"
+      alt="核心"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 物品</a></summary>
+      <ul>
+          <li><a href="#items/magic_cloak" class="toc-elem "><img
+      title="羽织斗篷"
+      alt="羽织斗篷"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 羽织斗篷</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#greatwork" class="toc-elem spoilered"><img
+      title="音乐唱片"
+      alt="音乐唱片"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/music_disc_11.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 卓伟之作</a></summary>
+      <ul>
+          <li><a href="#greatwork/astral_self" class="toc-elem spoilered"><img
+      title="末地水晶"
+      alt="末地水晶"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/end_crystal.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 魂灵自我</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#interop" class="toc-elem "><img
+      title="锁链"
+      alt="锁链"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/chain.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 模组联动</a></summary>
+      <ul>
+          <li><a href="#interop/mediaworks_moreiotas" class="toc-elem "><img
+      title="红色染料"
+      alt="红色染料"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/red_dye.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 媒质工程-更多 Iota</a></li>
+          <li><a href="#interop/mediaworks_containers" class="toc-elem "><img
+      title="潜影壳"
+      alt="潜影壳"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/shulker_shell.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 媒质工程容器</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns" class="toc-elem "><img
+      title="书架"
+      alt="书架"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/bookshelf.png"
+      loading="lazy"
+      class="item-texture  texture "
+    > 图案</a></summary>
+      <ul>
+          <li><a href="#patterns/media_patterns" class="toc-elem "><img
+      title="媒质之瓶"
+      alt="媒质之瓶"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/phial/phial_small_0.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 媒质工程</a></li>
+          <li><a href="#patterns/cloak_patterns" class="toc-elem "><img
+      title="羽织斗篷"
+      alt="羽织斗篷"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 斗篷工程</a></li>
+          <li><a href="#patterns/astral_utils" class="toc-elem spoilered"><img
+      title="幻翼膜"
+      alt="幻翼膜"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/phantom_membrane.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 魂灵实用图案</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns/great_spells" class="toc-elem "><img
+      title="潮涌能量"
+      alt="潮涌能量"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/conduit_power.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 卓越法术</a></summary>
+      <ul>
+          <li><a href="#patterns/great_spells/astral_projection" class="toc-elem "><img
+      title="魂灵投射"
+      alt="魂灵投射"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/mob_effect/astral_projection.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 魂灵投射</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns/macula" class="toc-elem "><img
+      title="末影之眼"
+      alt="末影之眼"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/ender_eye.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 黄斑蚀刻</a></summary>
+      <ul>
+          <li><a href="#patterns/macula/macula_concepts" class="toc-elem "><img
+      title="讲台"
+      alt="讲台"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/lectern.png"
+      loading="lazy"
+      class="item-texture  texture "
+    > 黄斑相关概念</a></li>
+          <li><a href="#patterns/macula/macula_patterns" class="toc-elem "><img
+      title="画"
+      alt="画"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/painting.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 黄斑图案</a></li>
+          <li><a href="#patterns/macula/black_eye" class="toc-elem "><img
+      title="失明"
+      alt="失明"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/blindness.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 黑眼事故</a></li>
+          <li><a href="#patterns/macula/text_visages" class="toc-elem "><img
+      title="书与笔"
+      alt="书与笔"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/writable_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 文本示像</a></li>
+      </ul>
+    </details>
+</nav>
+  <main class="book-body">
+<section id="basics">
+    <h2 class="category-title page-header">
+    <img
+      title="紫水晶碎片"
+      alt="紫水晶碎片"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/amethyst_shard.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >初入咒法<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#basics"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>研究这种魔法的人士会用<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/staff"><span style="color: #b0b">法杖</span></a>在空中绘制奇异的图案来施放他们口中的“<span style="color: #b38ef3">咒术</span>”，他们也会让<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/hexcasting"><span style="color: #b0b">强大的魔法物品</span></a>替他们施法。我应该也可以这样做？</p>
+<div id="basics/mediaworks_tweaks" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="紫水晶粉"
+      alt="紫水晶粉"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/amethyst_dust.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >媒质工程的变化<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#basics/mediaworks_tweaks"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>近来，世界中的<span style="color: #74b3f2">媒质</span>流貌似稍有变化。它现在愈发……合适的用词应该是“便于操纵”？</p><p>我新发现了一些传说，主要记载了施法者从<span style="color: #8d6acc">潜影盒</span>中的物品抽取<span style="color: #74b3f2">媒质</span>的事迹，但这种现象只会在所有其他<span style="color: #74b3f2">媒质</span>源枯竭后发生。这些规则对<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/phials"><span style="color: #8d6acc">媒质之瓶</span></a>中的<span style="color: #74b3f2">媒质</span>似乎也同样有效。</p>
+<br />
+    <p>选择<span style="color: #74b3f2">媒质</span>抽取槽位时也不会再按照物品组中<span style="color: #74b3f2">媒质</span>的总量的顺序依次抽取。也就是说，多次连续施法会优先消耗同一物品组，而非采用“负载均衡”策略，如此我的口袋便能更快清出空间。</p>
+<br />
+    <p>佩戴于头盔槽或头饰槽的<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/lens"><span style="color: #8d6acc">探知透镜</span></a>现在也能凝聚咒术网格，和在另一只手中手持的效果相仿。然而，佩戴或持有多个透镜不会增强效果，佩戴 2 个乃至 3 个的效果和仅佩戴 1 个没什么不同。</p>
+<br />
+</div>
+</section>
+<section id="items">
+    <h2 class="category-title page-header">
+    <img
+      title="核心"
+      alt="核心"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >物品<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#items"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>这部分主要介绍我在研究过程中可能要用到的魔法物品和各类神秘物品。</p><p>这里面的许多物品似乎在和<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/staff"><span style="color: #b0b">法杖</span></a>一起持有的时候就会起效。要谨慎考虑另一只手里要拿什么物品。</p>
+<div id="items/magic_cloak" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="羽织斗篷"
+      alt="羽织斗篷"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >羽织斗篷<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#items/magic_cloak"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>许多文本都提及在地底深处的城市中，魔法大师们会穿着缀有羽毛的斗篷。这些斗篷是一位强大的法师给予他们的。那位法师成功将思绪嵌入了暗色织物的纤维之中，也正是这种织物制成了第一件羽织斗篷。</p><p>倘若我真有机会找到一件，我会将后续发现一并记录在此。</p>
+<br />
+  <h4 class="spotlight-title page-header">羽织斗篷</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="羽织斗篷"
+      alt="羽织斗篷"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>世上竟然真有这种斗篷！在<span style="color: #8d6acc">深暗之域</span>中经过难以想象的岁月后，织物本身的触感却新得出奇，织线存储 iota 的方式我到现在也没能复现。</p>
+<br />
+    <p><span style="color: #8d6acc">羽织斗篷</span>的写入和读取操作与<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/focus"><span style="color: #8d6acc">核心</span></a>非常类似。不过，上蜡貌似没有什么作用。</p><p>我还能在不脱下斗篷的情况下从中便捷地<a href="#patterns/cloak_patterns@mediaworks:cloak/read"><span style="color: #8d6acc">读取</span></a>，也算形貌非凡。</p>
+<br />
+    <p>而谈及形貌非凡，斗篷本身可以被染成几乎任何一种颜色！这种织物会和普通的皮革装备一样吸收染料，但它可比皮革更适合我这种真正的法师。</p><p>假若要去除其上的染料，放到炼药锅中清洗一遍即可。</p>
+<br />
+    <p>然而，这还不是它能力的极限，<i>远远</i>不及。我在阴暗潮湿的远古城市中发现过几本奇异的<span style="color: #8d6acc">附魔书</span>，而且从未在别处发现过。也许通向强大力量之路就在附魔的秘密之中。</p><p>我在后几页整理了羽织斗篷可用魔咒的列表。</p>
+<br />
+  <h4>回应</h4>
+  <h4 class="spotlight-title page-header">附魔书</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="附魔书"
+      alt="附魔书"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>每当我受到伤害，此魔咒会强制令斗篷回应复仇，也即自动运行其存储的 iota。空斗篷不会回应，而存有无法运行的 iota 的斗篷则会产生事故。</p>
+<br />
+    <p>过度施法导致的生命值损失也会触发这种回应，如此就进入了某种“永动”循环，在极短的时间内耗尽我的意识。</p><p>不过，若是它由于某种原因无法杀死我，这种回应便会在进行大概 50 次后停止。</p>
+<br />
+  <h4>媒质护盾</h4>
+  <h4 class="spotlight-title page-header">附魔书</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="附魔书"
+      alt="附魔书"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>在外面附上防御层，并吸收一定比例的可格挡伤害，每级最多吸收 10%。此效果会在护甲值计算开始前进行，且吸收的伤害会按照过度施法时生命值媒质代换比消耗等价的媒质。消耗媒质的方式与法杖施法相同。</p>
+<br />
+    <p>如果剩余的媒质不足以发挥全部能力，并且自然也无法从我身上强行逼出，则魔咒只会吸收可用媒质能吸收的伤害量。其余情况下，消耗媒质的方式与法杖施法相同。</p>
+<br />
+  <h4>术场扩增</h4>
+  <h4 class="spotlight-title page-header">附魔书</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="附魔书"
+      alt="附魔书"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>最为稀有的魔咒！不同等级会将我的基础影响范围分别无条件扩展 8、16、32 格。这种扩展对我的射线追踪（例如<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:raycast"><span style="color: #8d6acc">弓箭手之馏化</span></a>）也有效！</p>
+<br />
+  <h4>其他魔咒</h4>
+  <h4 class="spotlight-title page-header">附魔书</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="附魔书"
+      alt="附魔书"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >
+  </div>
+      <p>羽织斗篷可穿戴，也会受损。那么推论可得，它同时也会接受同类物品（例如<span style="color: #8d6acc">鞘翅</span>）可用的其他魔咒。</p>
+<br />
+    <p><i>古代纸页上还有其他仓促写下的字……“他背叛了我们，他送给我们领袖的布匹只是解除我们武装的手段。幽匿将至。我得在无可挽回前离开。小心那些暗色的织物……”</i></p><i><p>我应该远离此处和其中的珍宝。这些布料附有诅咒，任何强大能力带来的诱惑都无法否认这一点。</p><p>但这又能坏到哪里去呢？</p></i>
+<br />
+</div>
+</section>
+<section id="greatwork">
+    <div class="spoilered">
+      <h2 class="category-title page-header">
+    <img
+      title="音乐唱片"
+      alt="音乐唱片"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/music_disc_11.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >卓伟之作<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#greatwork"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>我所见……甚多。我已……经历……湮灭与解构与重构。我已听闻世上的原子在被翻转而后被搅乱而后消散为能量时的尖啸。我已见我已见我已冂<span class="obfuscated">get stick bugged lmao</span></p>
+    </div>
+<div id="greatwork/astral_self" class="entry">
+    <div class="spoilered">
+      <h3 class="entry-title page-header">
+    <img
+      title="末地水晶"
+      alt="末地水晶"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/end_crystal.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >魂灵自我<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#greatwork/astral_self"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p><a href="#patterns/great_spells/astral_projection"><span style="color: #8d6acc">魂灵投射</span></a>的状态是……<span style="color: #8d6acc"><strong>真正的极乐</strong></span>！处于这种状态中的我能<i>听见</i>屏障的减弱，我能<i>看见</i>自然的低语，我能<i>闻到</i><span style="color: #74b3f2">媒质</span>引召我的颜色感官崩解必须达到必须获得必<span class="obfuscated">st remark that you&#39;re quite attentive lol</span></p>
+<br />
+    <p>投射状态下，我能在我影响范围内随心所欲地飞翔，并且能穿过任何方块。然而，我的魂灵自我看到的世界是灰度的，离身体越远视野也越暗，远处的景象也被浓雾笼罩隐藏。它无法与任何事物交互，也无法被任何事物交互。</p>
+<br />
+    <p>我眼中我的魂灵自我是我形体的透明翻版，但其他施法者只能看见与我<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/pigments"><span style="color: #8d6acc">染色剂</span></a>同色的浮空粒子云，其他生物则完全无视我的魂灵自我。</p><p>还有一点益处：如果<a href="#patterns/great_spells/astral_projection"><span style="color: #8d6acc">魂灵投射</span></a>法术捕获有<span style="color: #8d6acc">魂灵 iota</span>，则在投射过程中按下<span style="color: #8d6acc">右键</span>时，自然就会运行该 iota，和用<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/hexcasting"><span style="color: #8d6acc">施法物品</span></a>施放类似。</p>
+<br />
+    <p>如果魂灵投射平安无事地结束，自然会温柔地将我的意识推回我的身体。这种现象发生于：</p><p class="fake-li">对应<a href="#patterns/great_spells/astral_projection"><span style="color: #8d6acc">法术</span></a>分配到的时间耗尽时；</p><p class="fake-li">我按下<span style="color: #8d6acc">开启/关闭物品栏</span>时。</p>
+<br />
+    <p>但是，有些时候魂灵投射的结束……并不会平安无事。自然不会善待对其期望的背叛，并会将我的意识以紊乱的状态扔回我的身体。这种现象发生于：</p><p class="fake-li">施放魂灵 iota 导致事故与错误；</p><p class="fake-li">我的迟钝身体移动到距施法位置 3 格之外；</p><p class="fake-li">我的魂灵自我离开影响范围。</p>
+<br />
+    <p>……我也做过一些研究。似乎只要我足够小心——我需要注意千万小心不被自大迷惑心智——就能找到完全<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/great_spells/greater_sentinel"><span style="color: #8d6acc">绕开</span></a>范围限制的方式。</p>
+<br />
+    </div>
+</div>
+</section>
+<section id="interop">
+    <h2 class="category-title page-header">
+    <img
+      title="锁链"
+      alt="锁链"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/chain.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >模组联动<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#interop"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>好像我装了某些能和咒法学联动的模组！详情如下。</p>
+<div id="interop/mediaworks_moreiotas" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="红色染料"
+      alt="红色染料"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/red_dye.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >媒质工程-更多 Iota<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#interop/mediaworks_moreiotas"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>似乎<span style="color: #8d6acc">字符串</span>与<a href="#patterns/macula/text_visages"><span style="color: #8d6acc">文本示像</span></a>一起使用时会表现出特殊性质。具体而言，书法家图案会提取字符串本身，而非有色带引号的显示版本，同时也允许利用古老的<a href="https://minecraft.fandom.com/wiki/Formatting_codes" target="_blank">格式化</a>方法。</p>
+<br />
+    <p>格式化文本只需要在“代码”前加上“<span style="color: #8d6acc">&amp;</span>”，而非小节号（一般无法打出）。所有不属于格式化代码的“<span style="color: #8d6acc">&amp;</span>”则保留原样。</p>
+<br />
+</div>
+<div id="interop/mediaworks_containers" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="潜影壳"
+      alt="潜影壳"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/shulker_shell.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >媒质工程容器<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#interop/mediaworks_containers"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>在<i>经模组修改的</i>世界中，容器可能不只有<span style="color: #8d6acc">潜影盒</span>一种。其中某些甚至也能以同样的方式成为<span style="color: #74b3f2">媒质</span><a href="#basics/mediaworks_tweaks"><span style="color: #8d6acc">源</span></a>！如下是我整理的一份特殊容器列表。</p>
+<br />
+  <h4 class="spotlight-title page-header">Sack</h4>
+  <div class="spotlight">
+    <img
+      alt="Spotlight inventory slot"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+    >
+    <img
+      title="Sack"
+      alt="Sack"
+      src="https://artynova.github.io/mediaworks/v/1.0.7/1.0.dev0/assets/supplementaries/textures/block/sack_closed.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >
+  </div>
+<br />
+</div>
+</section>
+<section id="patterns">
+    <h2 class="category-title page-header">
+    <img
+      title="书架"
+      alt="书架"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/bookshelf.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >图案<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>我所发现的各式图案，和它们的功用。</p>
+<div id="patterns/media_patterns" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="媒质之瓶"
+      alt="媒质之瓶"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/phial/phial_small_0.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >媒质工程<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/media_patterns"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/media_patterns@mediaworks:get_media" class="">
+<h4 class="pattern-title">媒质之精思 (→ number)<a
+    href="#patterns/media_patterns@mediaworks:get_media"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dde"
+        data-start="west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：dde</canvas>
+  </details>
+      <p>返回当前咒术可用的<span style="color: #74b3f2">媒质</span>总量，以<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>计，过度施法不计入。</p>
+  </div>
+<br />
+  <div id="patterns/media_patterns@mediaworks:get_entity_media" class="">
+<h4 class="pattern-title">媒质之纯化，第一型 (entity → number)<a
+    href="#patterns/media_patterns@mediaworks:get_entity_media"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="ddew"
+        data-start="west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：ddew</canvas>
+  </details>
+      <p>返回物品实体中的<span style="color: #74b3f2">媒质</span>量，如果是玩家则返回其物品栏中的<span style="color: #74b3f2">媒质</span>量，以<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>计。不适用则返回 0。</p>
+  </div>
+<br />
+    <p>奇怪的是，<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/hexcasting"><span style="color: #8d6acc">施法物品</span></a>中的<span style="color: #74b3f2">媒质</span>量无法读取：它们不计入玩家的<span style="color: #74b3f2">媒质</span>总量。然而，这种隐秘在仔细的审视之下无所遁形：直接对施法物品的物品实体施放，则确实会返回其中的<span style="color: #74b3f2">媒质</span>量。</p>
+<br />
+  <div id="patterns/media_patterns@mediaworks:get_pos_media" class="">
+<h4 class="pattern-title">媒质之纯化，第二型 (vector → number)<a
+    href="#patterns/media_patterns@mediaworks:get_pos_media"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="ddewa"
+        data-start="west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：ddewa</canvas>
+  </details>
+      <p>返回所给位置处容器中的<span style="color: #74b3f2">媒质</span>总量，以<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>计。不适用则返回 0。对某种<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#greatwork/impetus"><span style="color: #8d6acc">特殊的容器</span></a>也有效。</p>
+  </div>
+<br />
+    <p>容器中的<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/hexcasting"><span style="color: #8d6acc">施法物品</span></a>不计入<span style="color: #74b3f2">媒质</span>总量。</p>
+<br />
+</div>
+<div id="patterns/cloak_patterns" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="羽织斗篷"
+      alt="羽织斗篷"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >斗篷工程<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/cloak_patterns"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/cloak_patterns@mediaworks:cloak/read" class="">
+<h4 class="pattern-title">麦迪文之精思 (→ any)<a
+    href="#patterns/cloak_patterns@mediaworks:cloak/read"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="adda"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：adda</canvas>
+  </details>
+      <p>古代的故事描述了一位人物，他拥有无可比拟的伟力，却对行于日光下的万事万物温柔有加。他伟大成就的其中之一，便是以尘和羽编织出了第一份<a href="#items/magic_cloak"><span style="color: #8d6acc">羽织斗篷</span></a>织料。</p>
+  </div>
+<br />
+    <p>此图案可将身上羽织斗篷中所存的 iota 直接读出，不需再脱下后采用<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/readwrite"><span style="color: #8d6acc">传统方法</span></a>。</p>
+<br />
+</div>
+<div id="patterns/astral_utils" class="entry">
+    <div class="spoilered">
+      <h3 class="entry-title page-header">
+    <img
+      title="幻翼膜"
+      alt="幻翼膜"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/phantom_membrane.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >魂灵实用图案<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/astral_utils"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/astral_utils@mediaworks:astral_pos" class="">
+<h4 class="pattern-title">魂灵所处之精思 (→ vector)<a
+    href="#patterns/astral_utils@mediaworks:astral_pos"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaqqqqaq"
+        data-start="north_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qaqqqqaq</canvas>
+  </details>
+      <p>返回我魂灵自我的“眼部”位置向量，和<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:entity_pos/eye"><span style="color: #8d6acc">指南针之纯化</span></a>在物理身体上的效果相似。如果我并未处于投射状态，则返回 <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+  </div>
+<br />
+  <div id="patterns/astral_utils@mediaworks:astral_look" class="">
+<h4 class="pattern-title">魂灵视线之精思 (→ vector)<a
+    href="#patterns/astral_utils@mediaworks:astral_look"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="waawaq"
+        data-start="north_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：waawaq</canvas>
+  </details>
+      <p>返回我魂灵自我所看的方向，和<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:get_entity_look"><span style="color: #8d6acc">照准仪之纯化</span></a>在物理身体上的效果相似。如果我并未处于投射状态，则返回 <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+  </div>
+<br />
+    </div>
+</div>
+</section>
+<section id="patterns/great_spells">
+    <h2 class="category-title page-header">
+    <img
+      title="潮涌能量"
+      alt="潮涌能量"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/conduit_power.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >卓越法术<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/great_spells"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>这类法术据信极难施放，但也极为强力。记载它们的文献极为少见（据称理由充分）。这也许只是某些消亡的老古董口中的胡言乱语，不过——它们只是简单的图案罢了。试试看又能出什么错呢？</p>
+<div id="patterns/great_spells/astral_projection" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="魂灵投射"
+      alt="魂灵投射"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/mob_effect/astral_projection.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >魂灵投射<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/great_spells/astral_projection"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/great_spells/astral_projection@mediaworks:astral_projection" class="">
+<h4 class="pattern-title">魂灵投射 (number →)<a
+    href="#patterns/great_spells/astral_projection@mediaworks:astral_projection"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qdadwewewdadeadwddaaedqdeddew"
+        data-start="north_west"
+        data-per-world="True"
+      >浏览器不支持图案的可视化。图案代码见此：qdadwewewdadeadwddaaedqdeddew</canvas>
+  </details>
+      <p>终于，不需再受我会衰老躯壳的禁锢了！此法术会将我的意识<a href="#greatwork/astral_self"><span style="color: #8d6acc">投射</span></a>出我的身体，所给数代表投射秒数，这几秒内我会获得多种有用的能力。</p>
+  </div>
+<br />
+    <p>如今亲眼见到无意识操控的身体的惰性和脆弱，我想此法术只会以施法者为目标也算是一种益处。</p><p>施放法术后，每秒持续时间消耗大约 2 个<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>。<br />如果在施放此法术时我的<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/readwrite@hexcasting:local"><span style="color: #8d6acc">渡鸦之思</span></a>中存有 iota，则该 iota 会在整段投射过程中被捕获为<span style="color: #8d6acc">魂灵 iota</span>。</p>
+<br />
+    <p>在如此大型的范式转移过程中，人很难维持集中力，也因此我绘制的所有图案和前一个栈中的所有 iota 都会消失。</p><p>最后，在魂灵离体后我无法再延长投射时间。试图这么做会导致<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#casting/mishaps"><span style="color: #8d6acc">实体免疫</span></a>事故。</p>
+<br />
+</div>
+</section>
+<section id="patterns/macula">
+    <h2 class="category-title page-header">
+    <img
+      title="末影之眼"
+      alt="末影之眼"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/ender_eye.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >黄斑蚀刻<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p><a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:print"><span style="color: #8d6acc">揭示</span></a>是个好图案，但偶尔我也想要些更灵活的手段。好在只需若干简单<a href="#patterns/macula/macula_patterns"><span style="color: #8d6acc">图案</span></a>，我就能将<a href="#patterns/macula/macula_concepts@mediaworks:visages"><span style="color: #8d6acc">示像</span></a>直接蚀刻到我眼内的<a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">黄斑</span></a>上，以此修改我的视觉。这些示像的运作方式与自然蚀刻入眼的基础信息（如生命值和快捷栏）类似。</p>
+<div id="patterns/macula/macula_concepts" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="讲台"
+      alt="讲台"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/lectern.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >黄斑相关概念<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula/macula_concepts"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>黄斑是我眼球中蚀刻示像的位置。受其物理性质限制，黄斑不会在不同身体间继承（比如重生）。黄斑支持两种示像：能显示任意长时间的<span style="color: #8d6acc">长效示像</span>，以及<span style="color: #8d6acc">短暂示像</span>。短暂示像会在持续时间的最后一秒淡出，除非持续时间本身就不足 1 秒。不过，我的黄斑较为脆弱，无法同时承受超过 32 个示像，也不能接受持续超过 1 天的<span style="color: #8d6acc">短暂示像</span>。</p>
+<br />
+  <div id="patterns/macula/macula_concepts@mediaworks:visages" class="">
+<h4>示像<a
+    href="#patterns/macula/macula_concepts@mediaworks:visages"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+    <p>示像是描述我黄斑上视觉元素的通用词汇。蚀刻示像之前先要将其准备完善，<a href="#patterns/macula/text_visages@mediaworks:visage/text/unbounded"><span style="color: #8d6acc">书法家之纯化</span></a>就能做到。此类操作会产生<span style="color: #8d6acc">示像 iota</span>，它们存有在黄斑上重现对应示像所需的信息。可以存储它们，也可直接将其<a href="#patterns/macula/macula_patterns@mediaworks:macula/add"><span style="color: #8d6acc">蚀刻</span></a>。</p>
+  </div>
+<br />
+  <div id="patterns/macula/macula_concepts@mediaworks:macula_space" class="">
+<h4>黄斑空间<a
+    href="#patterns/macula/macula_concepts@mediaworks:macula_space"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+    <p>示像的坐标对应着某种特殊 3 维空间中的位置，我将其创造性地称为<span style="color: #8d6acc">黄斑空间</span>。这种空间类似于一个前面（Z 轴）面朝我的盒子，但仍有几点不同：</p><p class="fake-li">我视野的左上角对应坐标 X = 0，Y = 0，也称作<span style="color: #8d6acc">黄斑原点</span>。</p><p class="fake-li">黄斑宽度和高度会随我<span class="has-tooltip" title="游戏窗口的长宽，例如1920x1080分辨率下的480x270"><span style="color: #8d6acc">视野</span></span>的变化而变化。</p><p class="fake-li">不存在透视，因此 Z 坐标（<span style="color: #8d6acc">深度</span>）只决定重叠示像的遮挡关系。</p>
+  </div>
+<br />
+  <h4>注意事项</h4>
+    <p>尽管向眼睛蚀刻事物不会对我造成太大影响，我还是应该小心谨慎减少失误，以免招致<a href="#patterns/macula/black_eye"><span style="color: #8d6acc">黑眼</span></a>事故。</p>
+<br />
+</div>
+<div id="patterns/macula/macula_patterns" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="画"
+      alt="画"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/painting.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >黄斑图案<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula/macula_patterns"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/macula/macula_patterns@mediaworks:macula/add" class="">
+<h4 class="pattern-title">蚀刻示像 (vec, vis | vec, vis, num →)<a
+    href="#patterns/macula/macula_patterns@mediaworks:macula/add"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="wddaaddw"
+        data-start="north_west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：wddaaddw</canvas>
+  </details>
+      <p>在<a href="#patterns/macula/macula_concepts@mediaworks:macula_space"><span style="color: #8d6acc">黄斑空间</span></a>中给定位置显示示像。若提供显示时长（第三个参数），则显示为<a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">短暂示像</span></a>；否则显示为<a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">长效示像</span></a>。消耗极少量<span style="color: #74b3f2">媒质</span>。</p>
+  </div>
+<br />
+  <div id="patterns/macula/macula_patterns@mediaworks:macula/clear" class="">
+<h4 class="pattern-title">黄斑擦除<a
+    href="#patterns/macula/macula_patterns@mediaworks:macula/clear"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="awawa"
+        data-start="west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：awawa</canvas>
+  </details>
+      <p>迅速而无痛地清空我的黄斑。和承受<a href="#patterns/macula/black_eye"><span style="color: #8d6acc">黑眼</span></a>或垂死的痛苦相比要好很多。消耗极少量<span style="color: #74b3f2">媒质</span>。</p>
+  </div>
+<br />
+  <div id="patterns/macula/macula_patterns@mediaworks:macula/dimensions" class="">
+<h4 class="pattern-title">黄斑之策略 (→ number, number)<a
+    href="#patterns/macula/macula_patterns@mediaworks:macula/dimensions"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aawawaa"
+        data-start="north_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：aawawaa</canvas>
+  </details>
+      <p>返回当前的<a href="#patterns/macula/macula_concepts@mediaworks:macula_space"><span style="color: #8d6acc">黄斑宽度和高度</span></a>。任何足够复杂的黄斑运算均以其为基础。</p>
+  </div>
+<br />
+</div>
+<div id="patterns/macula/black_eye" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="失明"
+      alt="失明"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/blindness.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >黑眼事故<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula/black_eye"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>试图在黄斑上显示超过 32 个示像，或试图显示持续时间超过 1 天的<a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">短暂示像</span></a>时出现。</p><p>产生黑色火花，并损伤我的黄斑，清空其上所有示像并致盲几秒。</p><p><i>好在失明只是暂时的……</i></p>
+<br />
+</div>
+<div id="patterns/macula/text_visages" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="书与笔"
+      alt="书与笔"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/writable_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >文本示像<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/macula/text_visages"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>可显示任意文本的示像，行高恒定为 <span style="color: #8d6acc">9</span>。它们能够捕获 iota 的<i>当前</i>文本，是比<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:print"><span style="color: #8d6acc">揭示</span></a>更加灵活的替代品。</p><p>文本示像分为<span style="color: #8d6acc">未绑定</span>和<span style="color: #8d6acc">绑定</span>两种。前者可无限延伸，后者则会在超出最大宽度时换行，同时只会显示能在最大高度内完全显示的行。</p>
+<br />
+  <div id="patterns/macula/text_visages@mediaworks:visage/text/unbounded" class="">
+<h4 class="pattern-title">书法家之纯化 (any → visage)<a
+    href="#patterns/macula/text_visages@mediaworks:visage/text/unbounded"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aaqdwdwd"
+        data-start="north_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：aaqdwdwd</canvas>
+  </details>
+      <p>提取任意 iota 当前显示的文本，并创建一个未绑定文本示像 iota。</p>
+  </div>
+<br />
+  <div id="patterns/macula/text_visages@mediaworks:visage/text/bounded" class="">
+<h4 class="pattern-title">书法家之提整 (number, number, any → visage)<a
+    href="#patterns/macula/text_visages@mediaworks:visage/text/bounded"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aaqdwdwde"
+        data-start="north_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：aaqdwdwde</canvas>
+  </details>
+      <p>提取任意 iota 当前显示的文本，并创建一个绑定文本示像 iota，第一个数代表最大宽度，第二个代表最大高度。</p>
+  </div>
+<br />
+</div>
+</section>
+  </main>
+</div>
+      <footer class="footer">
+        <div class="container">
+          <p class="text-muted">
+            Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.<br />
+            Minecraft content and materials are the intellectual property of their respective owners.<br />
+            Made with ❤️ using <a href="https://pypi.org/project/hexdoc/" target="_blank">hexdoc</a>.
+          </p>
+        </div>
+      </footer>
+  </body>
+</html>
