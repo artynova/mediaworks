@@ -53,6 +53,7 @@
       </noscript>
         <script type="module" src="index.js"></script>
   <script type="module" src="hexcasting.js"></script>
+  <script type="module" src="hexcasting_render.js"></script>
   </head>
   <body>
 <nav class="navbar navbar-default navbar-static-top">
@@ -104,9 +105,9 @@
 </nav>
 <div class="container" style="margin-top: 3em;">
   <blockquote>
-      <h1><p>This is the online version of the Mediaworks documentation.</p></h1>
-        <p>This page is built from the latest code on GitHub. It may describe <strong>newer</strong> features that you may not necessarily have, even on the latest Modrinth/CurseForge version!</p>
-      <p><strong>Entries which are blurred are spoilers</strong>. Click to reveal them, but be aware that they may spoil endgame progression. Alternatively, click <a href="?nospoiler">here</a> to get a version with all spoilers showing.</p>
+      <h1><p>这是Mediaworks文档的在线版本。</p></h1>
+        <p>此版本是根据GitHub上最新代码构建而来的。其中可能包含游戏内暂未实装的<strong>新</strong>特性，就连Modrinth和CurseForge上的最新版本里也找不到！</p>
+      <p><strong>条目的模糊处理相当于剧透警告</strong>。点击可取消模糊，不过这么做有可能破坏游戏后期的进程与体验。也可点击<a href="?nospoiler">此处</a>以取消所有模糊。</p>
       <span id="old-version-notice" class="hidden">
         <br />
         <p><i>往事犹若异乡；他们在那里做的事情都不一样。</i></p>
@@ -140,7 +141,7 @@
           <li><a href="#basics/mediaworks_tweaks" class="toc-elem "><img
       title="紫水晶粉"
       alt="紫水晶粉"
-      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/amethyst_dust.png"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/amethyst_dust.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     > 媒质工程的变化</a></li>
@@ -150,7 +151,7 @@
       <summary><a href="#items" class="toc-elem "><img
       title="核心"
       alt="核心"
-      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     > 物品</a></summary>
@@ -158,7 +159,7 @@
           <li><a href="#items/magic_cloak" class="toc-elem "><img
       title="羽织斗篷"
       alt="羽织斗篷"
-      src="https://raw.githubusercontent.com/artynova/mediaworks/bf1922ca848848316ac08a3135aa6f94b5e9336c/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     > 羽织斗篷</a></li>
@@ -219,14 +220,14 @@
           <li><a href="#patterns/media_patterns" class="toc-elem "><img
       title="媒质之瓶"
       alt="媒质之瓶"
-      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/phial/phial_small_0.png"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/phial/phial_small_0.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     > 媒质工程</a></li>
           <li><a href="#patterns/cloak_patterns" class="toc-elem "><img
       title="羽织斗篷"
       alt="羽织斗篷"
-      src="https://raw.githubusercontent.com/artynova/mediaworks/bf1922ca848848316ac08a3135aa6f94b5e9336c/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     > 斗篷工程</a></li>
@@ -251,7 +252,7 @@
           <li><a href="#patterns/great_spells/astral_projection" class="toc-elem "><img
       title="魂灵投射"
       alt="魂灵投射"
-      src="https://raw.githubusercontent.com/artynova/mediaworks/bf1922ca848848316ac08a3135aa6f94b5e9336c/common/src/main/resources/assets/mediaworks/textures/mob_effect/astral_projection.png"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/mob_effect/astral_projection.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     > 魂灵投射</a></li>
@@ -315,13 +316,13 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h2>
-    <p>研究这种魔法的人士会用<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/staff"><span style="color: #b0b">法杖</span></a>在空中绘制奇异的图案来施放他们口中的“<span style="color: #b38ef3">咒术</span>”，他们也会让<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/hexcasting"><span style="color: #b0b">强大的魔法物品</span></a>替他们施法。我应该也可以这样做？</p>
+    <p>研究这种魔法的人士会用<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/staff"><span style="color: #b0b">法杖</span></a>在空中绘制奇异的图案来施放他们口中的“<span style="color: #b38ef3">咒术</span>”，他们也会让<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/hexcasting"><span style="color: #b0b">强大的魔法物品</span></a>替他们施法。我应该也可以这样做？</p>
 <div id="basics/mediaworks_tweaks" class="entry">
     <h3 class="entry-title page-header">
     <img
       title="紫水晶粉"
       alt="紫水晶粉"
-      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/amethyst_dust.png"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/amethyst_dust.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     >媒质工程的变化<a
@@ -333,11 +334,11 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-    <p>近来，世界中的<span style="color: #74b3f2">媒质</span>流貌似稍有变化。它现在愈发……合适的用词应该是“便于操纵”？</p><p>我新发现了一些传说，主要记载了施法者从<span style="color: #8d6acc">潜影盒</span>中的物品抽取<span style="color: #74b3f2">媒质</span>的事迹，但这种现象只会在所有其他<span style="color: #74b3f2">媒质</span>源枯竭后发生。这些规则对<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/phials"><span style="color: #8d6acc">媒质之瓶</span></a>中的<span style="color: #74b3f2">媒质</span>似乎也同样有效。</p>
+    <p>近来，世界中的<span style="color: #74b3f2">媒质</span>流貌似稍有变化。它现在愈发……合适的用词应该是“便于操纵”？</p><p>我新发现了一些传说，主要记载了施法者从<span style="color: #8d6acc">潜影盒</span>中的物品抽取<span style="color: #74b3f2">媒质</span>的事迹，但这种现象只会在所有其他<span style="color: #74b3f2">媒质</span>源枯竭后发生。这些规则对<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/phials"><span style="color: #8d6acc">媒质之瓶</span></a>中的<span style="color: #74b3f2">媒质</span>似乎也同样有效。</p>
 <br />
     <p>选择<span style="color: #74b3f2">媒质</span>抽取槽位时也不会再按照物品组中<span style="color: #74b3f2">媒质</span>的总量的顺序依次抽取。也就是说，多次连续施法会优先消耗同一物品组，而非采用“负载均衡”策略，如此我的口袋便能更快清出空间。</p>
 <br />
-    <p>佩戴于头盔槽或头饰槽的<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/lens"><span style="color: #8d6acc">探知透镜</span></a>现在也能凝聚咒术网格，和在另一只手中手持的效果相仿。然而，佩戴或持有多个透镜不会增强效果，佩戴 2 个乃至 3 个的效果和仅佩戴 1 个没什么不同。</p>
+    <p>佩戴于头盔槽或头饰槽的<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/lens"><span style="color: #8d6acc">探知透镜</span></a>现在也能凝聚咒术网格，和在另一只手中手持的效果相仿。然而，佩戴或持有多个透镜不会增强效果，佩戴 2 个乃至 3 个的效果和仅佩戴 1 个没什么不同。</p>
 <br />
 </div>
 </section>
@@ -346,7 +347,7 @@
     <img
       title="核心"
       alt="核心"
-      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     >物品<a
@@ -358,13 +359,13 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h2>
-    <p>这部分主要介绍我在研究过程中可能要用到的魔法物品和各类神秘物品。</p><p>这里面的许多物品似乎在和<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/staff"><span style="color: #b0b">法杖</span></a>一起持有的时候就会起效。要谨慎考虑另一只手里要拿什么物品。</p>
+    <p>这部分主要介绍我在研究过程中可能要用到的魔法物品和各类神秘物品。</p><p>这里面的许多物品似乎在和<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/staff"><span style="color: #b0b">法杖</span></a>一起持有的时候就会起效。要谨慎考虑另一只手里要拿什么物品。</p>
 <div id="items/magic_cloak" class="entry">
     <h3 class="entry-title page-header">
     <img
       title="羽织斗篷"
       alt="羽织斗篷"
-      src="https://raw.githubusercontent.com/artynova/mediaworks/bf1922ca848848316ac08a3135aa6f94b5e9336c/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     >羽织斗篷<a
@@ -382,19 +383,19 @@
   <div class="spotlight">
     <img
       alt="Spotlight inventory slot"
-      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
     >
     <img
       title="羽织斗篷"
       alt="羽织斗篷"
-      src="https://raw.githubusercontent.com/artynova/mediaworks/bf1922ca848848316ac08a3135aa6f94b5e9336c/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     >
   </div>
       <p>世上竟然真有这种斗篷！在<span style="color: #8d6acc">深暗之域</span>中经过难以想象的岁月后，织物本身的触感却新得出奇，织线存储 iota 的方式我到现在也没能复现。</p>
 <br />
-    <p><span style="color: #8d6acc">羽织斗篷</span>的写入和读取操作与<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/focus"><span style="color: #8d6acc">核心</span></a>非常类似。不过，上蜡貌似没有什么作用。</p><p>我还能在不脱下斗篷的情况下从中便捷地<a href="#patterns/cloak_patterns@mediaworks:cloak/read"><span style="color: #8d6acc">读取</span></a>，也算形貌非凡。</p>
+    <p><span style="color: #8d6acc">羽织斗篷</span>的写入和读取操作与<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/focus"><span style="color: #8d6acc">核心</span></a>非常类似。不过，上蜡貌似没有什么作用。</p><p>我还能在不脱下斗篷的情况下从中便捷地<a href="#patterns/cloak_patterns@mediaworks:cloak/read"><span style="color: #8d6acc">读取</span></a>，也算形貌非凡。</p>
 <br />
     <p>而谈及形貌非凡，斗篷本身可以被染成几乎任何一种颜色！这种织物会和普通的皮革装备一样吸收染料，但它可比皮革更适合我这种真正的法师。</p><p>假若要去除其上的染料，放到炼药锅中清洗一遍即可。</p>
 <br />
@@ -405,7 +406,7 @@
   <div class="spotlight">
     <img
       alt="Spotlight inventory slot"
-      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
     >
     <img
       title="附魔书"
@@ -424,7 +425,7 @@
   <div class="spotlight">
     <img
       alt="Spotlight inventory slot"
-      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
     >
     <img
       title="附魔书"
@@ -443,7 +444,7 @@
   <div class="spotlight">
     <img
       alt="Spotlight inventory slot"
-      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
     >
     <img
       title="附魔书"
@@ -453,14 +454,14 @@
       class="item-texture  texture pixelated"
     >
   </div>
-      <p>最为稀有的魔咒！不同等级会将我的基础影响范围分别无条件扩展 8、16、32 格。这种扩展对我的射线追踪（例如<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:raycast"><span style="color: #8d6acc">弓箭手之馏化</span></a>）也有效！</p>
+      <p>最为稀有的魔咒！不同等级会将我的基础影响范围分别无条件扩展 8、16、32 格。这种扩展对我的射线追踪（例如<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:raycast"><span style="color: #8d6acc">弓箭手之馏化</span></a>）也有效！</p>
 <br />
   <h4>其他魔咒</h4>
   <h4 class="spotlight-title page-header">附魔书</h4>
   <div class="spotlight">
     <img
       alt="Spotlight inventory slot"
-      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
     >
     <img
       title="附魔书"
@@ -518,13 +519,13 @@
 <br />
     <p>投射状态下，我能在我影响范围内随心所欲地飞翔，并且能穿过任何方块。然而，我的魂灵自我看到的世界是灰度的，离身体越远视野也越暗，远处的景象也被浓雾笼罩隐藏。它无法与任何事物交互，也无法被任何事物交互。</p>
 <br />
-    <p>我眼中我的魂灵自我是我形体的透明翻版，但其他施法者只能看见与我<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/pigments"><span style="color: #8d6acc">染色剂</span></a>同色的浮空粒子云，其他生物则完全无视我的魂灵自我。</p><p>还有一点益处：如果<a href="#patterns/great_spells/astral_projection"><span style="color: #8d6acc">魂灵投射</span></a>法术捕获有<span style="color: #8d6acc">魂灵 iota</span>，则在投射过程中按下<span style="color: #8d6acc">右键</span>时，自然就会运行该 iota，和用<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/hexcasting"><span style="color: #8d6acc">施法物品</span></a>施放类似。</p>
+    <p>我眼中我的魂灵自我是我形体的透明翻版，但其他施法者只能看见与我<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/pigments"><span style="color: #8d6acc">染色剂</span></a>同色的浮空粒子云，其他生物则完全无视我的魂灵自我。</p><p>还有一点益处：如果<a href="#patterns/great_spells/astral_projection"><span style="color: #8d6acc">魂灵投射</span></a>法术捕获有<span style="color: #8d6acc">魂灵 iota</span>，则在投射过程中按下<span style="color: #8d6acc">右键</span>时，自然就会运行该 iota，和用<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/hexcasting"><span style="color: #8d6acc">施法物品</span></a>施放类似。</p>
 <br />
     <p>如果魂灵投射平安无事地结束，自然会温柔地将我的意识推回我的身体。这种现象发生于：</p><p class="fake-li">对应<a href="#patterns/great_spells/astral_projection"><span style="color: #8d6acc">法术</span></a>分配到的时间耗尽时；</p><p class="fake-li">我按下<span style="color: #8d6acc">开启/关闭物品栏</span>时。</p>
 <br />
     <p>但是，有些时候魂灵投射的结束……并不会平安无事。自然不会善待对其期望的背叛，并会将我的意识以紊乱的状态扔回我的身体。这种现象发生于：</p><p class="fake-li">施放魂灵 iota 导致事故与错误；</p><p class="fake-li">我的迟钝身体移动到距施法位置 3 格之外；</p><p class="fake-li">我的魂灵自我离开影响范围。</p>
 <br />
-    <p>……我也做过一些研究。似乎只要我足够小心——我需要注意千万小心不被自大迷惑心智——就能找到完全<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/great_spells/greater_sentinel"><span style="color: #8d6acc">绕开</span></a>范围限制的方式。</p>
+    <p>……我也做过一些研究。似乎只要我足够小心——我需要注意千万小心不被自大迷惑心智——就能找到完全<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/great_spells/greater_sentinel"><span style="color: #8d6acc">绕开</span></a>范围限制的方式。</p>
 <br />
     </div>
 </div>
@@ -592,7 +593,7 @@
   <div class="spotlight">
     <img
       alt="Spotlight inventory slot"
-      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/c608af606202b5b78d83148d30227909bad40cbb/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/95a79b62652bc31545046e3accb13d53b24f8784/src/hexdoc/_export/resources/assets/hexdoc/textures/gui/spotlight.png"
     >
     <img
       title="Sack"
@@ -628,7 +629,7 @@
     <img
       title="媒质之瓶"
       alt="媒质之瓶"
-      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/phial/phial_small_0.png"
+      src="https://raw.githubusercontent.com/FallingColors/HexMod/f569ba1530666f43e84584e446e6fd060395b5f4/Common/src/main/resources/assets/hexcasting/textures/item/phial/phial_small_0.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     >媒质工程<a
@@ -640,7 +641,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-  <div id="patterns/media_patterns@mediaworks:get_media">
+  <div id="patterns/media_patterns@mediaworks:get_media" class="">
 <h4 class="pattern-title">媒质之精思 (→ number)<a
     href="#patterns/media_patterns@mediaworks:get_media"
     class="permalink small"
@@ -648,6 +649,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -657,10 +694,10 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dde</canvas>
   </details>
-      <p>返回当前咒术可用的<span style="color: #74b3f2">媒质</span>总量，以<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>计，过度施法不计入。</p>
+      <p>返回当前咒术可用的<span style="color: #74b3f2">媒质</span>总量，以<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>计，过度施法不计入。</p>
   </div>
 <br />
-  <div id="patterns/media_patterns@mediaworks:get_entity_media">
+  <div id="patterns/media_patterns@mediaworks:get_entity_media" class="">
 <h4 class="pattern-title">媒质之纯化，第一型 (entity → number)<a
     href="#patterns/media_patterns@mediaworks:get_entity_media"
     class="permalink small"
@@ -668,6 +705,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -677,12 +750,12 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：ddew</canvas>
   </details>
-      <p>返回物品实体中的<span style="color: #74b3f2">媒质</span>量，如果是玩家则返回其物品栏中的<span style="color: #74b3f2">媒质</span>量，以<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>计。不适用则返回 0。</p>
+      <p>返回物品实体中的<span style="color: #74b3f2">媒质</span>量，如果是玩家则返回其物品栏中的<span style="color: #74b3f2">媒质</span>量，以<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>计。不适用则返回 0。</p>
   </div>
 <br />
-    <p>奇怪的是，<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/hexcasting"><span style="color: #8d6acc">施法物品</span></a>中的<span style="color: #74b3f2">媒质</span>量无法读取：它们不计入玩家的<span style="color: #74b3f2">媒质</span>总量。然而，这种隐秘在仔细的审视之下无所遁形：直接对施法物品的物品实体施放，则确实会返回其中的<span style="color: #74b3f2">媒质</span>量。</p>
+    <p>奇怪的是，<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/hexcasting"><span style="color: #8d6acc">施法物品</span></a>中的<span style="color: #74b3f2">媒质</span>量无法读取：它们不计入玩家的<span style="color: #74b3f2">媒质</span>总量。然而，这种隐秘在仔细的审视之下无所遁形：直接对施法物品的物品实体施放，则确实会返回其中的<span style="color: #74b3f2">媒质</span>量。</p>
 <br />
-  <div id="patterns/media_patterns@mediaworks:get_pos_media">
+  <div id="patterns/media_patterns@mediaworks:get_pos_media" class="">
 <h4 class="pattern-title">媒质之纯化，第二型 (vector → number)<a
     href="#patterns/media_patterns@mediaworks:get_pos_media"
     class="permalink small"
@@ -690,6 +763,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -699,10 +808,10 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：ddewa</canvas>
   </details>
-      <p>返回所给位置处容器中的<span style="color: #74b3f2">媒质</span>总量，以<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>计。不适用则返回 0。对某种<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#greatwork/impetus"><span style="color: #8d6acc">特殊的容器</span></a>也有效。</p>
+      <p>返回所给位置处容器中的<span style="color: #74b3f2">媒质</span>总量，以<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>计。不适用则返回 0。对某种<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#greatwork/impetus"><span style="color: #8d6acc">特殊的容器</span></a>也有效。</p>
   </div>
 <br />
-    <p>容器中的<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/hexcasting"><span style="color: #8d6acc">施法物品</span></a>不计入<span style="color: #74b3f2">媒质</span>总量。</p>
+    <p>容器中的<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/hexcasting"><span style="color: #8d6acc">施法物品</span></a>不计入<span style="color: #74b3f2">媒质</span>总量。</p>
 <br />
 </div>
 <div id="patterns/cloak_patterns" class="entry">
@@ -710,7 +819,7 @@
     <img
       title="羽织斗篷"
       alt="羽织斗篷"
-      src="https://raw.githubusercontent.com/artynova/mediaworks/bf1922ca848848316ac08a3135aa6f94b5e9336c/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/item/magic_cloak_default.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     >斗篷工程<a
@@ -722,7 +831,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-  <div id="patterns/cloak_patterns@mediaworks:cloak/read">
+  <div id="patterns/cloak_patterns@mediaworks:cloak/read" class="">
 <h4 class="pattern-title">麦迪文之精思 (→ any)<a
     href="#patterns/cloak_patterns@mediaworks:cloak/read"
     class="permalink small"
@@ -730,6 +839,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -742,7 +887,7 @@
       <p>古代的故事描述了一位人物，他拥有无可比拟的伟力，却对行于日光下的万事万物温柔有加。他伟大成就的其中之一，便是以尘和羽编织出了第一份<a href="#items/magic_cloak"><span style="color: #8d6acc">羽织斗篷</span></a>织料。</p>
   </div>
 <br />
-    <p>此图案可将身上羽织斗篷中所存的 iota 直接读出，不需再脱下后采用<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/readwrite"><span style="color: #8d6acc">传统方法</span></a>。</p>
+    <p>此图案可将身上羽织斗篷中所存的 iota 直接读出，不需再脱下后采用<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/readwrite"><span style="color: #8d6acc">传统方法</span></a>。</p>
 <br />
 </div>
 <div id="patterns/astral_utils" class="entry">
@@ -763,7 +908,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-  <div id="patterns/astral_utils@mediaworks:astral_pos">
+  <div id="patterns/astral_utils@mediaworks:astral_pos" class="">
 <h4 class="pattern-title">魂灵所处之精思 (→ vector)<a
     href="#patterns/astral_utils@mediaworks:astral_pos"
     class="permalink small"
@@ -771,6 +916,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -780,10 +961,10 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqqqaq</canvas>
   </details>
-      <p>返回我魂灵自我的“眼部”位置向量，和<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:entity_pos/eye"><span style="color: #8d6acc">指南针之纯化</span></a>在物理身体上的效果相似。如果我并未处于投射状态，则返回 <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+      <p>返回我魂灵自我的“眼部”位置向量，和<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:entity_pos/eye"><span style="color: #8d6acc">指南针之纯化</span></a>在物理身体上的效果相似。如果我并未处于投射状态，则返回 <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
-  <div id="patterns/astral_utils@mediaworks:astral_look">
+  <div id="patterns/astral_utils@mediaworks:astral_look" class="">
 <h4 class="pattern-title">魂灵视线之精思 (→ vector)<a
     href="#patterns/astral_utils@mediaworks:astral_look"
     class="permalink small"
@@ -791,6 +972,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -800,7 +1017,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：waawaq</canvas>
   </details>
-      <p>返回我魂灵自我所看的方向，和<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:get_entity_look"><span style="color: #8d6acc">照准仪之纯化</span></a>在物理身体上的效果相似。如果我并未处于投射状态，则返回 <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+      <p>返回我魂灵自我所看的方向，和<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:get_entity_look"><span style="color: #8d6acc">照准仪之纯化</span></a>在物理身体上的效果相似。如果我并未处于投射状态，则返回 <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
     </div>
@@ -829,7 +1046,7 @@
     <img
       title="魂灵投射"
       alt="魂灵投射"
-      src="https://raw.githubusercontent.com/artynova/mediaworks/bf1922ca848848316ac08a3135aa6f94b5e9336c/common/src/main/resources/assets/mediaworks/textures/mob_effect/astral_projection.png"
+      src="https://raw.githubusercontent.com/artynova/mediaworks/f3a451383c92b331b9adecf83e5c5996683e9f48/common/src/main/resources/assets/mediaworks/textures/mob_effect/astral_projection.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     >魂灵投射<a
@@ -841,7 +1058,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-  <div id="patterns/great_spells/astral_projection@mediaworks:astral_projection">
+  <div id="patterns/great_spells/astral_projection@mediaworks:astral_projection" class="">
 <h4 class="pattern-title">魂灵投射 (number →)<a
     href="#patterns/great_spells/astral_projection@mediaworks:astral_projection"
     class="permalink small"
@@ -849,6 +1066,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -861,9 +1114,9 @@
       <p>终于，不需再受我会衰老躯壳的禁锢了！此法术会将我的意识<a href="#greatwork/astral_self"><span style="color: #8d6acc">投射</span></a>出我的身体，所给数代表投射秒数，这几秒内我会获得多种有用的能力。</p>
   </div>
 <br />
-    <p>如今亲眼见到无意识操控的身体的惰性和脆弱，我想此法术只会以施法者为目标也算是一种益处。</p><p>施放法术后，每秒持续时间消耗大约 2 个<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>。<br />如果在施放此法术时我的<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/readwrite@hexcasting:local"><span style="color: #8d6acc">渡鸦之思</span></a>中存有 iota，则该 iota 会在整段投射过程中被捕获为<span style="color: #8d6acc">魂灵 iota</span>。</p>
+    <p>如今亲眼见到无意识操控的身体的惰性和脆弱，我想此法术只会以施法者为目标也算是一种益处。</p><p>施放法术后，每秒持续时间消耗大约 2 个<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#items/amethyst"><span style="color: #b0b">紫水晶粉</span></a>。<br />如果在施放此法术时我的<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/readwrite@hexcasting:local"><span style="color: #8d6acc">渡鸦之思</span></a>中存有 iota，则该 iota 会在整段投射过程中被捕获为<span style="color: #8d6acc">魂灵 iota</span>。</p>
 <br />
-    <p>在如此大型的范式转移过程中，人很难维持集中力，也因此我绘制的所有图案和前一个栈中的所有 iota 都会消失。</p><p>最后，在魂灵离体后我无法再延长投射时间。试图这么做会导致<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#casting/mishaps"><span style="color: #8d6acc">实体免疫</span></a>事故。</p>
+    <p>在如此大型的范式转移过程中，人很难维持集中力，也因此我绘制的所有图案和前一个栈中的所有 iota 都会消失。</p><p>最后，在魂灵离体后我无法再延长投射时间。试图这么做会导致<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#casting/mishaps"><span style="color: #8d6acc">实体免疫</span></a>事故。</p>
 <br />
 </div>
 </section>
@@ -884,7 +1137,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h2>
-    <p><a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:print"><span style="color: #8d6acc">揭示</span></a>是个好图案，但偶尔我也想要些更灵活的手段。好在只需若干简单<a href="#patterns/macula/macula_patterns"><span style="color: #8d6acc">图案</span></a>，我就能将<a href="#patterns/macula/macula_concepts@mediaworks:visages"><span style="color: #8d6acc">示像</span></a>直接蚀刻到我眼内的<a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">黄斑</span></a>上，以此修改我的视觉。这些示像的运作方式与自然蚀刻入眼的基础信息（如生命值和快捷栏）类似。</p>
+    <p><a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:print"><span style="color: #8d6acc">揭示</span></a>是个好图案，但偶尔我也想要些更灵活的手段。好在只需若干简单<a href="#patterns/macula/macula_patterns"><span style="color: #8d6acc">图案</span></a>，我就能将<a href="#patterns/macula/macula_concepts@mediaworks:visages"><span style="color: #8d6acc">示像</span></a>直接蚀刻到我眼内的<a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">黄斑</span></a>上，以此修改我的视觉。这些示像的运作方式与自然蚀刻入眼的基础信息（如生命值和快捷栏）类似。</p>
 <div id="patterns/macula/macula_concepts" class="entry">
     <h3 class="entry-title page-header">
     <img
@@ -904,7 +1157,7 @@
   ><i class="bi bi-link-45deg"></i></a></h3>
     <p>黄斑是我眼球中蚀刻示像的位置。受其物理性质限制，黄斑不会在不同身体间继承（比如重生）。黄斑支持两种示像：能显示任意长时间的<span style="color: #8d6acc">长效示像</span>，以及<span style="color: #8d6acc">短暂示像</span>。短暂示像会在持续时间的最后一秒淡出，除非持续时间本身就不足 1 秒。不过，我的黄斑较为脆弱，无法同时承受超过 32 个示像，也不能接受持续超过 1 天的<span style="color: #8d6acc">短暂示像</span>。</p>
 <br />
-  <div id="patterns/macula/macula_concepts@mediaworks:visages">
+  <div id="patterns/macula/macula_concepts@mediaworks:visages" class="">
 <h4>示像<a
     href="#patterns/macula/macula_concepts@mediaworks:visages"
     class="permalink small"
@@ -913,7 +1166,7 @@
     <p>示像是描述我黄斑上视觉元素的通用词汇。蚀刻示像之前先要将其准备完善，<a href="#patterns/macula/text_visages@mediaworks:visage/text/unbounded"><span style="color: #8d6acc">书法家之纯化</span></a>就能做到。此类操作会产生<span style="color: #8d6acc">示像 iota</span>，它们存有在黄斑上重现对应示像所需的信息。可以存储它们，也可直接将其<a href="#patterns/macula/macula_patterns@mediaworks:macula/add"><span style="color: #8d6acc">蚀刻</span></a>。</p>
   </div>
 <br />
-  <div id="patterns/macula/macula_concepts@mediaworks:macula_space">
+  <div id="patterns/macula/macula_concepts@mediaworks:macula_space" class="">
 <h4>黄斑空间<a
     href="#patterns/macula/macula_concepts@mediaworks:macula_space"
     class="permalink small"
@@ -943,7 +1196,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-  <div id="patterns/macula/macula_patterns@mediaworks:macula/add">
+  <div id="patterns/macula/macula_patterns@mediaworks:macula/add" class="">
 <h4 class="pattern-title">蚀刻示像 (vec, vis | vec, vis, num →)<a
     href="#patterns/macula/macula_patterns@mediaworks:macula/add"
     class="permalink small"
@@ -951,6 +1204,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -963,7 +1252,7 @@
       <p>在<a href="#patterns/macula/macula_concepts@mediaworks:macula_space"><span style="color: #8d6acc">黄斑空间</span></a>中给定位置显示示像。若提供显示时长（第三个参数），则显示为<a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">短暂示像</span></a>；否则显示为<a href="#patterns/macula/macula_concepts"><span style="color: #8d6acc">长效示像</span></a>。消耗极少量<span style="color: #74b3f2">媒质</span>。</p>
   </div>
 <br />
-  <div id="patterns/macula/macula_patterns@mediaworks:macula/clear">
+  <div id="patterns/macula/macula_patterns@mediaworks:macula/clear" class="">
 <h4 class="pattern-title">黄斑擦除<a
     href="#patterns/macula/macula_patterns@mediaworks:macula/clear"
     class="permalink small"
@@ -971,6 +1260,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -983,7 +1308,7 @@
       <p>迅速而无痛地清空我的黄斑。和承受<a href="#patterns/macula/black_eye"><span style="color: #8d6acc">黑眼</span></a>或垂死的痛苦相比要好很多。消耗极少量<span style="color: #74b3f2">媒质</span>。</p>
   </div>
 <br />
-  <div id="patterns/macula/macula_patterns@mediaworks:macula/dimensions">
+  <div id="patterns/macula/macula_patterns@mediaworks:macula/dimensions" class="">
 <h4 class="pattern-title">黄斑之策略 (→ number, number)<a
     href="#patterns/macula/macula_patterns@mediaworks:macula/dimensions"
     class="permalink small"
@@ -991,6 +1316,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -1041,9 +1402,9 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-    <p>可显示任意文本的示像，行高恒定为 <span style="color: #8d6acc">9</span>。它们能够捕获 iota 的<i>当前</i>文本，是比<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/basics@hexcasting:print"><span style="color: #8d6acc">揭示</span></a>更加灵活的替代品。</p><p>文本示像分为<span style="color: #8d6acc">未绑定</span>和<span style="color: #8d6acc">绑定</span>两种。前者可无限延伸，后者则会在超出最大宽度时换行，同时只会显示能在最大高度内完全显示的行。</p>
+    <p>可显示任意文本的示像，行高恒定为 <span style="color: #8d6acc">9</span>。它们能够捕获 iota 的<i>当前</i>文本，是比<a href="https://hexcasting.hexxy.media/v/0.10.3/1.0/en_us#patterns/basics@hexcasting:print"><span style="color: #8d6acc">揭示</span></a>更加灵活的替代品。</p><p>文本示像分为<span style="color: #8d6acc">未绑定</span>和<span style="color: #8d6acc">绑定</span>两种。前者可无限延伸，后者则会在超出最大宽度时换行，同时只会显示能在最大高度内完全显示的行。</p>
 <br />
-  <div id="patterns/macula/text_visages@mediaworks:visage/text/unbounded">
+  <div id="patterns/macula/text_visages@mediaworks:visage/text/unbounded" class="">
 <h4 class="pattern-title">书法家之纯化 (any → visage)<a
     href="#patterns/macula/text_visages@mediaworks:visage/text/unbounded"
     class="permalink small"
@@ -1051,6 +1412,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
@@ -1063,7 +1460,7 @@
       <p>提取任意 iota 当前显示的文本，并创建一个未绑定文本示像 iota。</p>
   </div>
 <br />
-  <div id="patterns/macula/text_visages@mediaworks:visage/text/bounded">
+  <div id="patterns/macula/text_visages@mediaworks:visage/text/bounded" class="">
 <h4 class="pattern-title">书法家之提整 (number, number, any → visage)<a
     href="#patterns/macula/text_visages@mediaworks:visage/text/bounded"
     class="permalink small"
@@ -1071,6 +1468,42 @@
   ><i class="bi bi-link-45deg"></i></a></h4>
   <details class="details-collapsible">
     <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
       <canvas
         class="spell-viz"
         width="216"
