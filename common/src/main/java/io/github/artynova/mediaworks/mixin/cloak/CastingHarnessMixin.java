@@ -30,8 +30,10 @@ public abstract class CastingHarnessMixin {
         ExtendedCastingContext extended = HexUtils.extend(getCtx());
         ItemStack maybeForcedStack = extended.mediaworks$getForcedCastingStack();
 
-        if (maybeForcedStack == null || !maybeForcedStack.isOf(MediaworksItems.MAGIC_CLOAK.get()))
+        if (maybeForcedStack == null || !maybeForcedStack.isOf(MediaworksItems.MAGIC_CLOAK.get())) {
             original.call(companion, entity, source, damage);
+            return;
+        }
 
         original.call(companion, entity, new DamageSourceReciprocationOvercast(extended.mediaworks$getReciprocationReps() + 1), damage);
     }
