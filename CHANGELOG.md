@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.8
+
+### Fixes
+
+- Fix overcast damage triggering twice for non-cloak sources (reported by ChloeTax).
+
 ## 1.0.7
 
 ### Fixes
