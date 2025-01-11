@@ -3,6 +3,12 @@
 A [Hex Casting](https://github.com/gamma-delta/HexMod) addon with miscellaneous additions and quality-of-life
 improvements, aiming to diversify the Hex Casting experience.
 
+## Not currently maintained
+
+Active development may resume at some point, but until then the repository will be archived and there will be no updates or bugfixes.
+
+If you are interested in porting any of the mod's features to newer versions, you may do so. Just don't forget to add some sort of attribution for the code if you end up using it, as per the license.
+
 ## License
 
 This project is licensed under the GNU Lesser General Public License v3.0. The license holders are:
